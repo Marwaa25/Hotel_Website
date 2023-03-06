@@ -18,6 +18,7 @@ class Chambre extends Model
         'Prix_par_nuit',
         'Disponibilité'
     ];
+   
 
     
 }

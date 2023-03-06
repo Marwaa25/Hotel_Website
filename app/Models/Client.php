@@ -16,6 +16,10 @@ class Client extends Model
         'email',
         'adresse',
     ];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 
     public function reservations()
     {

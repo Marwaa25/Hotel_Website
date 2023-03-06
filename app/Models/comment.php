@@ -9,16 +9,15 @@ class Comment extends Model
 {
     use HasFactory;
 
-    use HasFactory, SoftDeletes;
-
-    protected $table = 'comment';
-
     protected $fillable = [
-        'ID_Chambre',
-        'Type_de_chambre',
-        'Etage',
-        'Prix_par_nuit',
-        'Disponibilité'
+        'ID_Client',
+        'Comment',
+        'Note',
+        'datecomment',
     ];
 
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'ID_Client');
+    }
 }

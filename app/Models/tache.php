@@ -9,13 +9,15 @@ class Tache extends Model
 {
     use HasFactory;
 
-    protected $table = 'tache';
-
     protected $fillable = [
         'ID_Personnel',
-        'Description_tache',
-        'Datedébut',
-        'Datefin'
+        'description_tache',
+        'date_debut',
+        'date_fin',
     ];
 
+    public function personnel()
+    {
+        return $this->belongsTo(Personnel::class, 'ID_Personnel');
+    }
 }

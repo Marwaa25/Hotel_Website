@@ -26,32 +26,31 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Service::create([
-            'name' => 'Chambre double',
-            'description' => '1 lit double , réfrigirateur , vue panoramique, salle de bain , wifi gratuit',
-            'price' => 1000.0,
+            'name' => 'Petit Déjeuner',
+            'description' => 'Français,Espagnol,Beldi,Khlie,Menu Enfant',
+            'price' => 50,
         ]);
 
         Service::create([
-            'name' => 'Chambre jumeaux',
-            'description' => '2 lit simple , réfrigirateur , vue panoramique, salle de bain , wifi gratuit',
-            'price' => 700.0,
+            'name' => 'Déjeuner',
+            'description' => 'Pot au feu , Kefta, Tajine',
+            'price' => 120,
         ]);
-        // hotel::create([
-        //     'name'=>'',
-        //     'adresse'=>'',
-        //     'CP'=>'',
-        //     'tele'=>'',
-        //     'email'=>'',
-        //     'site'=>'',
-        //     'nb_etoiles'=>''
-        // ]);
-        // chambre::create([
-        //     'ID_Chambre' => '',
-        //     'Type de chambre' =>'',
-        //     'Etage' => '',
-        //     'Prix-par-nuit'=>'',
-        //     'Disponibilité'=>''
-        // ]);
+        Hotel::create([
+            'name'=>'Code d\'Or',
+            'adresse'=>'MMQF+RF5, Av. Lalla Nezha, M\'diq',
+            'CP'=>'93200',
+            'tele'=>'05396-63219',
+            'email'=>'cotedor@gmail.com',
+            'site'=>'www.cotedor.com',
+            'nb_etoiles'=>'2'
+        ]);
+        Chambre::create([
+            'type_de_chambre' =>'Simple',
+            'etage' => '1',
+            'prix_par_nuit'=>'500',
+            'disponibilite'=>true
+        ]);
         // personnel::create([
         //     'Nom'=>'',
         //     'Prenom'=>'',

@@ -17,9 +17,9 @@ class ReservationsFactory extends Factory
     public function definition(): array
     {
         return [
-            'date_reservation'->$this->faker->date(),
-            'date_arrivee'->$this->faker->date(),
-            'date_dapart' ->$this->faker->date()
+            'date_reservation' => $this->faker->date(),
+            'date_arrivee' => $this->faker->date(),
+            'date_depart' => $this->faker->date()
         ];
     }
 }
