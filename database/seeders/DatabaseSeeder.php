@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Service;
+use App\Models\Reservation;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,6 +30,21 @@ class DatabaseSeeder extends Seeder
             'name' => 'Chambre jumeaux',
             'description' => '2 lit simple , réfrigirateur , vue panoramique, salle de bain , wifi gratuit',
             'price' => 700.0,
+        ]);
+        Reservation::create([
+           
+            'date_reservation'=>date(),
+            // 'date_arrivee'=>date(),
+            // 'date_dapart' =>date()
+
+
+        ]);
+        Client::create([
+            'nom'=>'Ahmed',
+            'prenom' => 'Ahmad',
+            'Adresse' => 'Adresse',
+            'email' => 'email@gmail.com'
+
         ]);
 
     }
