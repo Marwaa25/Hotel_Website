@@ -5,11 +5,15 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Service;
+<<<<<<< HEAD
 use App\Models\hotel;
 use App\Models\chambre;
 use App\Models\comment;
 use App\Models\tache;
 use App\Models\personnel;
+=======
+use App\Models\Reservation;
+>>>>>>> 972135f4dba27b6a9e2fc049ca08b28545727505
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,6 +39,7 @@ class DatabaseSeeder extends Seeder
             'description' => '2 lit simple , réfrigirateur , vue panoramique, salle de bain , wifi gratuit',
             'price' => 700.0,
         ]);
+<<<<<<< HEAD
         hotel::create([
             'name-hotel'=>'',
             'adresse-hotel'=>'',
@@ -71,6 +76,22 @@ class DatabaseSeeder extends Seeder
             'Comment'=>'',
             'Note'=>'',
             'datecomment'=>''
+=======
+        Reservation::create([
+           
+            'date_reservation'=>date(),
+            // 'date_arrivee'=>date(),
+            // 'date_dapart' =>date()
+
+
+        ]);
+        Client::create([
+            'nom'=>'Ahmed',
+            'prenom' => 'Ahmad',
+            'Adresse' => 'Adresse',
+            'email' => 'email@gmail.com'
+
+>>>>>>> 972135f4dba27b6a9e2fc049ca08b28545727505
         ]);
 
     }

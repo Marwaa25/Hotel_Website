@@ -9,6 +9,18 @@ class Service extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price'];
+    use HasFactory, SoftDeletes;
 
+    protected $table = 'services';
+
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+    ];
+
+    public function reservations()
+    {
+        return $this->belongsToMany(Reservation::class)->withPivot('quantity', 'total_price');
+    }
 }
