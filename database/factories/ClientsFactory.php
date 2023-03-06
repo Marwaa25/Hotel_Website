@@ -16,11 +16,13 @@ class ClientsFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'nom' => $this->faker->word,
-            'prenom' -> $this->faker->sentence,
-            'Adresse'->$this->faker->sentence,
-            'email'->$this->faker->sentence
-        ];
+            return [
+                'nom' => $this->faker->firstName(),
+                'prenom' => $this->faker->lastName(),
+                'telephone' => $this->faker->phoneNumber(),
+                'email' => $this->faker->unique()->safeEmail(),
+                'adresse' => $this->faker->address(),
+            ];
+        
     }
 }
