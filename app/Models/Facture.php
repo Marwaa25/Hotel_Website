@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Client;
 
 class Facture extends Model
 {
@@ -15,8 +16,8 @@ class Facture extends Model
         'date_facturation',
         'date_paiement',
         'montant',
-        'client_id',
-        'reservation_id',
+        // 'client_id',
+        // 'reservation_id',
     ];
 
     public function client()
