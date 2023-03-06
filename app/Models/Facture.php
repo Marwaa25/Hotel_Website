@@ -8,4 +8,29 @@ use Illuminate\Database\Eloquent\Model;
 class Facture extends Model
 {
     use HasFactory;
+
+    protected $table = 'factures';
+
+    protected $fillable = [
+        'date_facturation',
+        'date_paiement',
+        'montant',
+        'client_id',
+        'reservation_id',
+    ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function reservation()
+    {
+        return $this->belongsTo(Reservation::class);
+    }
+
+    public function historiqueFactures()
+    {
+        return $this->hasMany(HistoriqueFacture::class);
+    }
 }
