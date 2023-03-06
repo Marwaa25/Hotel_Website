@@ -13,7 +13,7 @@ class Tache extends Model
 
     protected $fillable = [
         'ID_Personnel',
-        'Description-tache',
+        'Description_tache',
         'Datedébut',
         'Datefin'
     ];

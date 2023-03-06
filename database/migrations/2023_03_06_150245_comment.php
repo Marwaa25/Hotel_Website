@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('comment', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('ID_Client')->constrained('clients')->onDelete('cascade');
+            $table->text('Comment');
+            $table->decimal('Note', 3, 1);
+            $table->date('datecomment');
             $table->timestamps();
         });
     }

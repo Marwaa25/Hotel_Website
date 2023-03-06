@@ -13,9 +13,9 @@ class Chambre extends Model
 
     protected $fillable = [
         'ID_Chambre',
-        'Type de chambre',
+        'Type_de_chambre',
         'Etage',
-        'Prix-par-nuit',
+        'Prix_par_nuit',
         'Disponibilité'
     ];
 

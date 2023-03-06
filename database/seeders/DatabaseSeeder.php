@@ -36,53 +36,54 @@ class DatabaseSeeder extends Seeder
             'description' => '2 lit simple , réfrigirateur , vue panoramique, salle de bain , wifi gratuit',
             'price' => 700.0,
         ]);
-        hotel::create([
-            'name-hotel'=>'',
-            'adresse-hotel'=>'',
-            'CP-hotel'=>'',
-            'tele-hotel'=>'',
-            'email-hotel'=>'',
-            'site-hotel'=>'',
-            'nb-etoiles'=>''
-        ]);
-        chambre::create([
-            'ID_Chambre' => '',
-            'Type de chambre' =>'',
-            'Etage' => '',
-            'Prix-par-nuit'=>'',
-            'Disponibilité'=>''
-        ]);
-        personnel::create([
-            'Nom'=>'',
-            'Prenom'=>'',
-            'Adresse'=>'',
-            'Email'=>'',
-            'Telephone'=>'',
-            'Poste'=>'',
-            'Salaire'=>''
-        ]);
-        tache::create([
-            'ID_Personnel'=>'',
-            'Description-tache'=>'',
-            'Datedébut'=>'',
-            'Datefin'=>''
-        ]);
-        comment::create([
-            'ID_Client'=>'',
-            'Comment'=>'',
-            'Note'=>'',
-            'datecomment'=>'']);
-        Reservation::create([
+        // hotel::create([
+        //     'name'=>'',
+        //     'adresse'=>'',
+        //     'CP'=>'',
+        //     'tele'=>'',
+        //     'email'=>'',
+        //     'site'=>'',
+        //     'nb_etoiles'=>''
+        // ]);
+        // chambre::create([
+        //     'ID_Chambre' => '',
+        //     'Type de chambre' =>'',
+        //     'Etage' => '',
+        //     'Prix-par-nuit'=>'',
+        //     'Disponibilité'=>''
+        // ]);
+        // personnel::create([
+        //     'Nom'=>'',
+        //     'Prenom'=>'',
+        //     'Adresse'=>'',
+        //     'Email'=>'',
+        //     'Telephone'=>'',
+        //     'Poste'=>'',
+        //     'Salaire'=>''
+        // ]);
+        // tache::create([
+        //     'ID_Personnel'=>'',
+        //     'Description-tache'=>'',
+        //     'Datedébut'=>'',
+        //     'Datefin'=>''
+        // ]);
+        // comment::create([
+        //     'ID_Client'=>'',
+        //     'Comment'=>'',
+        //     'Note'=>'',
+        //     'datecomment'=>'']);
+        // \App\Models\Reservation::create([
            
-            'date_reservation'=>date(),
-            // 'date_arrivee'=>date(),
-            // 'date_dapart' =>date()
+        //     'date_reservation'=>date('2022-07-25'),
+        //     // 'date_arrivee'=>date(),
+        //     // 'date_dapart' =>date()
 
 
-        ]);
-        Client::create([
+        // ]);
+        \App\Models\Client::create([
             'nom'=>'Ahmed',
             'prenom' => 'Ahmad',
+            'telephone'=> '061192774',
             'Adresse' => 'Adresse',
             'email' => 'email@gmail.com'
 

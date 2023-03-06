@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('tache', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('ID_Personnel')->constrained('personnel')->onDelete('cascade');
+            $table->string('description_tache');
+            $table->dateTime('date_debut');
+            $table->dateTime('date_fin');
             $table->timestamps();
         });
     }

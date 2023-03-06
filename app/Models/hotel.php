@@ -12,13 +12,13 @@ class Hotel extends Model
     protected $table = 'hotel';
 
     protected $fillable = [
-        'name-hotel',
-        'adresse-hotel',
-        'CP-hotel',
-        'tele-hotel',
-        'email-hotel',
-        'site-hotel',
-        'nb-etoiles'
+        'name',
+        'adresse',
+        'CP',
+        'tele',
+        'email',
+        'site',
+        'nb_etoiles'
     ];
 
 }
