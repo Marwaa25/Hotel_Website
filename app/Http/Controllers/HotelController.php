@@ -27,11 +27,14 @@ class HotelController extends Controller
             'nb_etoiles' => 'required|numeric',
         ]);
 
-        // Créer une nouvelle instance d'hôtel en utilisant la factory
-        $hotel = Hotel::factory()->create($data);
 
         // Retourner la réponse
         return response()->json(['message' => 'Hôtel créé avec succès.', 'data' => $hotel]);
     }
+    public function index(hotel $hotel)
+    {
+        $hotel = Hotel::first();
+        return view('hotel.index', compact('hotel'));    }
+
 }
 

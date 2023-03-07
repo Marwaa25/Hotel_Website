@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('type_de_chambre');
             $table->string('etage');
             $table->float('prix_par_nuit');
-            $table->boolean('disponibilite');
+            $table->string('disponibilite');
             $table->timestamps();
         });
     }

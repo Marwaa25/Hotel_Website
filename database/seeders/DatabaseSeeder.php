@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+         \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -43,13 +43,13 @@ class DatabaseSeeder extends Seeder
             'tele'=>'05396-63219',
             'email'=>'cotedor@gmail.com',
             'site'=>'www.cotedor.com',
-            'nb_etoiles'=>'2'
+            'nb_etoiles'=>2
         ]);
         Chambre::create([
             'type_de_chambre' =>'Simple',
-            'etage' => '1',
-            'prix_par_nuit'=>'500',
-            'disponibilite'=>true
+            'etage' => 1,
+            'prix_par_nuit'=>500,
+            'disponibilite'=>'Oui'
         ]);
         // personnel::create([
         //     'Nom'=>'',
@@ -87,6 +87,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'email@gmail.com'
 
         ]);
+      
 
     }
 }
