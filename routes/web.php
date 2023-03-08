@@ -49,7 +49,7 @@ Route::post('/reservations', [ReservationController::class, 'store'])->name('res
 
 Route::delete('/reservations/{reservation}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
 
-Route::post('/reservations/{id}', [ReservationsController::class,'update'])->name('reservations.update');
+Route::post('/reservations/{id}', [ReservationController::class,'update'])->name('reservations.update');
 Route::get('/reservations/{id}/edit', [ReservationController::class, 'edit'])->name('reservations.edit');
 
 

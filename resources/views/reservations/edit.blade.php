@@ -5,7 +5,7 @@
         <h1>Edit Reservation</h1>
         <form action="{{ route('reservations.update', $reservation->id) }}" method="POST">
             @csrf
-            @method('PUT')
+            @method('POST')
             <div class="form-group">
                 <label for="date_arrivee">Arrival Date:</label>
                 <input type="date" class="form-control" id="date_arrivee" name="date_arrivee"
@@ -25,7 +25,7 @@
                 <select class="form-control" id="chambre_id" name="chambre_id">
                     @foreach ($chambres as $chambre)
                         <option value="{{ $chambre->id }}" @if ($reservation->chambre_id == $chambre->id) selected @endif>
-                            {{ $chambre->nom }}
+                            {{ $chambre->type_de_chambre }}
                         </option>
                     @endforeach
                 </select>
