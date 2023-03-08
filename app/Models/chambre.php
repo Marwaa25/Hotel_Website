@@ -18,7 +18,12 @@ class Chambre extends Model
         'Prix_par_nuit',
         'Disponibilité'
     ];
-   
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+    
 
     
 }

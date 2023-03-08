@@ -2,42 +2,38 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Toutes les réservations</h1>
-                <table class="table">
-                    <thead>
+        <h2>Reservations</h2>
+        <a href="{{ route('reservations.create') }}" class="btn btn-primary mb-3">Create New Reservation</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Arrival Date</th>
+                    <th>Departure Date</th>
+                    <th>Email</th>
+                    <th>Room ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($reservations as $reservation)
                     <tr>
-                        <th>ID</th>
-                        <th>ID Chambre</th>
-                        <th>Email</th>
-                        <th>Date d'arrivée</th>
-                        <th>Date de départ</th>
-                        <th>Actions</th>
+                        <td>{{ $reservation->id }}</td>
+                        <td>{{ $reservation->date_arrivee }}</td>
+                        <td>{{ $reservation->date_depart }}</td>
+                        <td>{{ $reservation->email }}</td>
+                        <td>{{ $reservation->chambre_id }}</td>
+                        <td>
+                            <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST">
+                                <a href="{{ route('reservations.edit', $reservation->id) }}" class="btn btn-primary">Edit</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($reservations as $reservation)
-                        <tr>
-                            <td>{{$reservation->id_reservation}}</td>
-                            <td>{{$reservation->id_chambre}}</td>
-                            <td>{{$reservation->email}}</td>
-                            <td>{{$reservation->date_arrivee}}</td>
-                            <td>{{$reservation->date_depart}}</td>
-                            <td>
-                                <a href="{{ route('reservations.edit', $reservation->id_reservation)}}" class="btn btn-primary">Modifier</a>
-                                <form action="{{ route('reservations.destroy', $reservation->id_reservation)}}" method="post" style="display: inline-block">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger" type="submit">Supprimer</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-                <a href="{{ route('reservations.create')}}" class="btn btn-success">Ajouter une réservation</a>
-            </div>
-        </div>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 @endsection

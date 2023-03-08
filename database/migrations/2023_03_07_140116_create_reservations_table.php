@@ -18,7 +18,7 @@ class CreateReservationsTable extends Migration
             $table->date('date_arrivee');
             $table->date('date_depart');
             $table->string('email');
-            $table->foreignId('chambre_id')->constrained('chambre')->onDelete('cascade');
+            $table->foreignId('chambre_id')->constrained('chambre')->default(0)->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,87 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Nouvelle réservation') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('reservations.store') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="chambre_id" class="col-md-4 col-form-label text-md-right">{{ __('Chambre') }}</label>
-
-                            <div class="col-md-6">
-                                <select id="chambre_id" class="form-control @error('chambre_id') is-invalid @enderror" name="chambre_id" required>
-                                    @foreach($chambres as $chambre)
-                                        <option value="{{ $chambre->id }}">{{ $chambre->type_de_chambre }}</option>
-                                    @endforeach
-                                </select>
-
-                                @error('chambre_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="date_arrivee" class="col-md-4 col-form-label text-md-right">{{ __('Date d\'arrivée') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="date_arrivee" type="date" class="form-control @error('date_arrivee') is-invalid @enderror" name="date_arrivee" value="{{ old('date_arrivee') }}" required>
-
-                                @error('date_arrivee')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="date_depart" class="col-md-4 col-form-label text-md-right">{{ __('Date de départ') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="date_depart" type="date" class="form-control @error('date_depart') is-invalid @enderror" name="date_depart" value="{{ old('date_depart') }}" required>
-
-                                @error('date_depart')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Enregistrer') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <div class="container">
+        <h2>Create New Reservation</h2>
+        <form action="{{ route('reservations.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="date_arrivee">Arrival Date:</label>
+                <input type="date" class="form-control" id="date_arrivee" name="date_arrivee">
             </div>
-        </div>
+            <div class="form-group">
+                <label for="date_depart">Departure Date:</label>
+                <input type="date" class="form-control" id="date_depart" name="date_depart">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="chambre_id">Room ID:</label>
+                <input type="number" class="form-control" id="chambre_id" name="chambre_id">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
-</div>
 @endsection

@@ -47,6 +47,7 @@ Route::resource('hotel', HotelController::class)->only('index');
 Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
 Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
 
+Route::delete('/reservations/{reservation}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
 
 Route::post('/reservations/{id}', [ReservationsController::class,'update'])->name('reservations.update');
 Route::get('/reservations/{id}/edit', [ReservationController::class, 'edit'])->name('reservations.edit');
