@@ -23,7 +23,7 @@ class ReservationController extends Controller
 
     public function store(Request $request)
 {
-    // Règles de validation
+    // Règles de validation : 
     $validatedData = $request->validate([
         'date_arrivee' => 'required|date',
         'date_depart' => 'required|date|after:date_arrivee',
