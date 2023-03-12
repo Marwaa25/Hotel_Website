@@ -9,12 +9,9 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'ID_Client',
-        'Comment',
-        'Note',
-        'datecomment',
-    ];
+    protected $table = 'comments';
+    protected $primaryKey = 'id';
+    protected $fillable = ['ID_Client', 'Comment', 'Note', 'datecomment'];
 
     public function client()
     {

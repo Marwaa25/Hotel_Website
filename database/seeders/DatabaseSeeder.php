@@ -7,10 +7,11 @@ use Illuminate\Database\Seeder;
 use App\Models\Service;
 use App\Models\hotel;
 use App\Models\chambre;
-use App\Models\comment;
+use App\Models\Comment;
 use App\Models\tache;
 use App\Models\personnel;
 use App\Models\Reservation;
+use App\Models\Client;
 
 class DatabaseSeeder extends Seeder
 {
@@ -43,14 +44,27 @@ class DatabaseSeeder extends Seeder
             'tele'=>'05396-63219',
             'email'=>'cotedor@gmail.com',
             'site'=>'www.cotedor.com',
-            'nb_etoiles'=>2
+            'nb_etoiles'=>'2'
         ]);
         Chambre::create([
             'type_de_chambre' =>'Simple',
-            'etage' => 1,
-            'prix_par_nuit'=>500,
-            'disponibilite'=>'Oui'
+            'etage' => '1',
+            'prix_par_nuit'=>'500',
+            'disponibilite'=>true
         ]);
+        Client::create([
+            'nom'=>'Ahmed',
+            'prenom' => 'Ahmad',
+            'telephone'=> '061192774',
+            'Adresse' => 'Adresse',
+            'email' => 'Ahmad@gmail.com'
+
+        ]);
+        Comment::create([
+            'ID_Client'=>'1',
+            'Comment'=>'Le service est excellent',
+            'Note'=>'8.8',
+            'datecomment'=>'2023-03-08 14:44:04']);
         // personnel::create([
         //     'Nom'=>'',
         //     'Prenom'=>'',
@@ -66,11 +80,7 @@ class DatabaseSeeder extends Seeder
         //     'Datedébut'=>'',
         //     'Datefin'=>''
         // ]);
-        // comment::create([
-        //     'ID_Client'=>'',
-        //     'Comment'=>'',
-        //     'Note'=>'',
-        //     'datecomment'=>'']);
+
         // \App\Models\Reservation::create([
            
         //     'date_reservation'=>date('2022-07-25'),
@@ -79,15 +89,7 @@ class DatabaseSeeder extends Seeder
 
 
         // ]);
-        \App\Models\Client::create([
-            'nom'=>'Ahmed',
-            'prenom' => 'Ahmad',
-            'telephone'=> '061192774',
-            'Adresse' => 'Adresse',
-            'email' => 'email@gmail.com'
 
-        ]);
-      
 
     }
 }
