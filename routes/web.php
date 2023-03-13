@@ -8,6 +8,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\ContactController;
 
 
 /*
@@ -61,8 +62,6 @@ Route::get('/comments/{comment}', [CommentController::class, 'show'])->name('com
 Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
 Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
-
-
 Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
 Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
 Route::post('/services', [ServicesController::class, 'store'])->name('services.store');
@@ -70,5 +69,8 @@ Route::get('/services/{service}', [ServicesController::class, 'show'])->name('se
 Route::get('/services/{service}/edit', [ServicesController::class, 'edit'])->name('services.edit');
 Route::put('/services/{service}', [ServicesController::class, 'update'])->name('services.update');
 Route::delete('/services/{service}', [ServicesController::class, 'destroy'])->name('services.destroy');
+
+Route::get('/contact',[ContactController::class,'create'])->name('contact.contact');
+Route::post('/contact',[ContactController::class,'store'])->name('contact.contact');
 
 require __DIR__.'/auth.php';
