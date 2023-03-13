@@ -32,6 +32,5 @@
                 <option value="0">Non disponible</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Créer</button>
     </form>
 @endsection
