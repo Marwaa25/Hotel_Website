@@ -31,6 +31,7 @@ class ChambreController extends Controller
             'etage' => 'required',
             'prix_par_nuit' => 'required|numeric|min:0',
             'disponibilite' => 'required|boolean',
+            'image' => 'required',
         ]);
     
         $chambre = new Chambre();
@@ -38,6 +39,7 @@ class ChambreController extends Controller
         $chambre->etage = $validatedData['etage'];
         $chambre->prix_par_nuit = $validatedData['prix_par_nuit'];
         $chambre->disponibilite = $validatedData['disponibilite'];
+        $chambre->image = $validatedData['images/1678707929132.jpg'];
         $chambre->save();
     
         return redirect()->route('chambres.index')
@@ -58,6 +60,8 @@ public function update(Request $request, $id)
     $chambre->etage = $request->input('etage');
     $chambre->prix_par_nuit = $request->input('prix_par_nuit');
     $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
+    $chambre->prix_par_nuit = $request->input('image');
+
     $chambre->save();
 
 

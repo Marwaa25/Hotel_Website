@@ -34,6 +34,8 @@
             </tbody>
         </table>
         <a href="{{ route('reservations.create', ['chambre_id' => $chambre->id]) }}" class="btn btn-primary">Réserver</a>
-
+        <div class="room chambre">
+            <img src="{{ asset('images/1678707929132.jpg')}}" alt="Image 1">
+        </div>
     </div>
 @endsection
