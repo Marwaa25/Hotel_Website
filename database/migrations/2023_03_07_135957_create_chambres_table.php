@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('etage');
             $table->float('prix_par_nuit');
             $table->string('disponibilite');
+            $table->string('image')->default('images/1678707929132.jpg');
             $table->timestamps();
         });
     }

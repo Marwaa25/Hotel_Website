@@ -50,7 +50,8 @@ class DatabaseSeeder extends Seeder
             'type_de_chambre' =>'Simple',
             'etage' => '1',
             'prix_par_nuit'=>'500',
-            'disponibilite'=>true
+            'disponibilite'=>true,
+            'image'=>'images/1678707929132.jpg'
         ]);
         Client::create([
             'nom'=>'Ahmed',
