@@ -14,26 +14,21 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('filename');
+            $table->string('path');
             $table->timestamps();
         });
 
-        // Move existing images to storage
-        $images = DB::table('old_images')->get();
+        $path = 'images/1678707929132.jpg';
+        $filename = basename($path);
 
-        foreach ($images as $image) {
-            $oldPath = '/path/to/old/images/' . $image->filename;
-            $newPath = '/path/to/new/storage/' . $image->filename;
+        Storage::move($path, 'public/' . $filename);
 
-            Storage::move($oldPath, $newPath);
-
-            DB::table('images')->insert([
-                'filename' => $image->filename,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        }
-
-        Schema::drop('old_images');
+        DB::table('images')->insert([
+            'filename' => $filename,
+            'path' => 'public/' . $filename,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 
     /**
@@ -41,27 +36,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::create('old_images', function (Blueprint $table) {
-            $table->id();
-            $table->string('filename');
-            $table->timestamps();
-        });
+        $image = DB::table('images')->where('filename', '1678707929132.jpg')->first();
 
-        // Move images back to old location
-        $images = DB::table('images')->get();
+        Storage::delete($image->path);
 
-        foreach ($images as $image) {
-            $oldPath = '/path/to/old/images/' . $image->filename;
-            $newPath = '/path/to/new/storage/' . $image->filename;
-
-            Storage::move($newPath, $oldPath);
-
-            DB::table('old_images')->insert([
-                'filename' => $image->filename,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        }
+        DB::table('images')->where('filename', $image->filename)->delete();
 
         Schema::drop('images');
     }
