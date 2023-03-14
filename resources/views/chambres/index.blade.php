@@ -12,6 +12,7 @@
                     <th>Prix par nuit</th>
                     <th>Disponibilité</th>
                     <th>Action</th>
+                    <th>Images</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,13 +30,14 @@
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Voulez-vous vraiment supprimer cette chambre ?')">Supprimer</button>
                             </form>
                         </td>
+                        <td>{{$chambre->image}} </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
         <a href="{{ route('reservations.create', ['chambre_id' => $chambre->id]) }}" class="btn btn-primary">Réserver</a>
         <div class="room chambre">
-            <img src="{{ asset('images/1678707929132.jpg')}}" alt="Image 1">
+            <img src="{{ asset('images/1678707929132.jpg')}}" alt="Image 1" style="height: 250px" width="250">
         </div>
     </div>
 @endsection
