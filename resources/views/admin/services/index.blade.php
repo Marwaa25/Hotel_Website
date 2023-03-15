@@ -21,8 +21,8 @@
                     <td>{{ $service->description }}</td>
                     <td>{{ $service->price }}</td>
                     <td>
-                        <a href="{{ route('services.show', $service) }}" class="btn btn-primary">View</a>
-                        <a href="{{ route('services.edit', $service) }}" class="btn btn-secondary">Edit</a>
+                        <a href="{{ route('services.show', ['service' => $service->id]) }}">Voir le service</a>
+                        <a href="{{ route('services.edit', ['service' => $service->id]) }}">Modifier le service</a>
                         <form action="{{ route('services.destroy', $service) }}" method="POST" style="display:inline">
                             @csrf
                             @method('DELETE')

@@ -83,30 +83,29 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
     // Routes pour les réservations
-    Route::get('/admin/reservations', [AdminController::class, 'listReservations'])->name('admin.reservations');
-    Route::get('/admin/reservations/create', [AdminController::class, 'createReservation'])->name('admin.reservations.create');
-    Route::get('/admin/reservations/{reservation}', [AdminController::class, 'showReservation'])->name('admin.reservations.show');
+    Route::resource('admin/reservations', 'App\Http\Controllers\AdminController');
+
+    Route::get('/admin/reservations', [AdminController::class, 'index'])->name('admin.reservations.index');
     Route::get('/admin/reservations/{reservation}/edit', [AdminController::class, 'editReservation'])->name('admin.reservations.edit');
     Route::put('/admin/reservations/{reservation}', [AdminController::class, 'updateReservation'])->name('admin.reservations.update');
     Route::delete('/admin/reservations/{reservation}', [AdminController::class, 'destroyReservation'])->name('admin.reservations.destroy');
-
+    
     // Routes pour les chambres
-    Route::get('/admin/chambres', [AdminController::class, 'listChambres'])->name('admin.chambres');
     Route::get('/admin/chambres/create', [AdminController::class, 'createChambre'])->name('admin.chambres.create');
     Route::post('/admin/chambres', [AdminController::class, 'storeChambre'])->name('admin.chambres.store');
-    Route::get('/admin/chambres/{chambre}', [AdminController::class, 'showChambre'])->name('admin.chambres.show');
-    Route::get('/admin/chambres/{chambre}/edit', [AdminController::class, 'editChambre'])->name('admin.chambres.edit');
-    Route::put('/admin/chambres/{chambre}', [AdminController::class, 'updateChambre'])->name('admin.chambres.update');
-    Route::delete('/admin/chambres/{chambre}', [AdminController::class, 'destroyChambre'])->name('admin.chambres.destroy');
-
+    Route::get('/admin/chambres/{id}', [AdminController::class, 'showChambre'])->name('admin.chambres.show');
+    Route::get('/admin/chambres/{id}/edit', [AdminController::class, 'editChambre'])->name('admin.chambres.edit');
+    Route::put('/admin/chambres/{id}', [AdminController::class, 'updateChambre'])->name('admin.chambres.update');
+    Route::delete('/admin/chambres/{id}', [AdminController::class, 'destroyChambre'])->name('admin.chambres.destroy');
+    
     // Routes pour les services
-    Route::get('/admin/services', [AdminController::class, 'listServices'])->name('admin.services');
-    Route::get('/admin/services/create', [AdminController::class, 'createService'])->name('services.create');
-    Route::post('/admin/services', [AdminController::class, 'storeService'])->name('admin.services.store');
-    Route::get('/services/{service}', [ServiceController::class, 'show'])->name('services.show');
-    Route::get('/services/{service}/edit', [ServiceController::class, 'edit'])->name('services.edit');
-    Route::put('/admin/services/{service}', [AdminController::class, 'update'])->name('services.update');
-    Route::delete('/admin/services/{service}', [AdminController::class, 'destroy'])->name('services.destroy');
+    Route::get('/services/create', [AdminController::class, 'createService'])->name('services.create');
+    Route::post('/admin/services', [AdminController::class, 'storeServices'])->name('admin.services.store');
+    Route::get('/services/{id}', [AdminController::class, 'showService'])->name('services.show');
+    Route::get('services/{id}/edit', [AdminController::class, 'editService'])->name('services.edit');
+    Route::put('/admin/services/{id}', [AdminController::class, 'updateService'])->name('admin.services.update');
+    Route::delete('/services/{id}', [AdminController::class, 'destroyService'])->name('services.destroy');
+    
 });
 
 require __DIR__.'/auth.php';

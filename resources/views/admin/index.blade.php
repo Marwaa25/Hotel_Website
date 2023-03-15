@@ -4,7 +4,6 @@
     <div class="container">
         <h1>Administration</h1>
         <h2>Réservations</h2>
-        <a href="{{ route('admin.reservations.create') }}" class="btn btn-primary mb-3">Ajouter une réservation</a>
         <table class="table">
             <thead>
                 <tr>

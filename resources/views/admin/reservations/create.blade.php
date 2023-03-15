@@ -4,7 +4,7 @@
     <div class="container">
   
         <h2>Create New Reservation</h2>
-        <form action="{{ route('reservations.store') }}" method="POST">
+        <form action="{{ route('admin.reservations.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="date_arrivee">Arrival Date:</label>
