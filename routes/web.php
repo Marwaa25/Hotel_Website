@@ -64,7 +64,10 @@ Route::resource('hotel', HotelController::class)->only('index');
 // Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
 // Route::post('/services', [ServicesController::class, 'store'])->name('services.store');
 
+Route::delete('/reservations/{reservation}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
 
+Route::post('/reservations/{id}', [ReservationController::class,'update'])->name('reservations.update');
+Route::get('/reservations/{id}/edit', [ReservationController::class, 'edit'])->name('reservations.edit');
 
 Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
 Route::get('/comments/create', [CommentController::class, 'create'])->name('comments.create');
