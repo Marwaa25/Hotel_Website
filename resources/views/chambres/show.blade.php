@@ -8,6 +8,11 @@
                 <p>Etage: {{ $chambre->etage }}</p>
                 <p>Prix par nuit: {{ $chambre->prix_par_nuit }}</p>
                 <p>Disponibilité: {{ $chambre->disponibilite }}</p>
+                {{-- <p>Images: 
+                    <div class="card-body">
+                <img src="{{ $chambre->image_path }}" alt="{{ $chambre->Type_de_chambre }}">
+             </p> --}}
+
             </div>
         </div>
     </div>
