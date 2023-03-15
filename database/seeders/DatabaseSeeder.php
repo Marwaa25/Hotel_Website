@@ -77,7 +77,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         // tache::create([
         //     'ID_Personnel'=>'',
-        //     'Description-tache'=>'',
+        //     'Description_tache'=>'',
         //     'Datedébut'=>'',
         //     'Datefin'=>''
         // ]);

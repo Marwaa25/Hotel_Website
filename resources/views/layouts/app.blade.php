@@ -2,6 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <!-- Les balises meta et les liens vers les feuilles de styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     </head>
     <body>
         <nav>
@@ -14,9 +18,13 @@
                 <li><a href="{{ route('reservations.index')}}">Réservation</a></li>
             </ul>
         </nav>
+        
+
         <main class="container">
             @yield('content')
         </main>
-        <!-- Les balises script -->
+        <div>
+        @yield('scripts')
+        </div>
     </body>
 </html>
