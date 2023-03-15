@@ -23,37 +23,36 @@ class ReservationController extends Controller
     }
 
     public function store(Request $request)
-{
-    // Règles de validation
-    $validatedData = $request->validate([
-        'date_arrivee' => 'required|date',
-        'date_depart' => 'required|date|after:date_arrivee',
-        'email' => 'required|email',
-        'chambre_id' => [
-            'required',
-            Rule::exists('chambre', 'id')->where(function ($query) use ($request) {
-                return $query->whereNotIn('id', function ($subquery) use ($request) {
-                    $subquery->select('chambre_id')
-                            ->from('reservations')
-                            ->where(function ($q) use ($request) {
-                                $q->where('date_arrivee', '<', $request->date_depart)
-                                  ->where('date_depart', '>', $request->date_arrivee);
-                            });
-                });
-            })
-        ]
-    ]);
-
-    $reservation = new Reservation;
-    $reservation->date_arrivee = $validatedData['date_arrivee'];
-    $reservation->date_depart = $validatedData['date_depart'];
-    $reservation->email = $validatedData['email'];
-    $reservation->chambre_id = $validatedData['chambre_id'];
-    $reservation->save();
+    {
+        // Règles de validation
+        $validatedData = $request->validate([
+            'date_arrivee' => 'required|date',
+            'date_depart' => 'required|date|after:date_arrivee',
+            'email' => 'required|email',
+            'chambre_id' => [
+                'required',
+                Rule::exists('chambre', 'id')->where(function ($query) use ($request) {
+                    return $query->whereNotIn('id', function ($subquery) use ($request) {
+                        $subquery->select('chambre_id')
+                                ->from('reservations')
+                                ->where(function ($q) use ($request) {
+                                    $q->where('date_arrivee', '<', $request->date_depart)
+                                      ->where('date_depart', '>', $request->date_arrivee);
+                                });
+                    });
+                })
+            ]
+        ]);
     
-    return redirect()->route('reservations.index');
-}
-
+        $reservation = new Reservation;
+        $reservation->date_arrivee = $validatedData['date_arrivee'];
+        $reservation->date_depart = $validatedData['date_depart'];
+        $reservation->email = $validatedData['email'];
+        $reservation->chambre_id = $validatedData['chambre_id'];
+        $reservation->save();
+        
+        return redirect()->route('home')->with('success', 'Réservation créée avec succès !');
+    }
     
 
 

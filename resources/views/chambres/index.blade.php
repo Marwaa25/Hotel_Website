@@ -2,6 +2,15 @@
 
 @section('content')
     <div class="container">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <x-responsive-nav-link :href="route('logout')"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                {{ __('Log Out') }}
+            </x-responsive-nav-link>
+        </form>
         <h1>Liste des chambres</h1>
         <a href="{{ route('chambres.create') }}" class="btn btn-primary mb-3">Ajouter une chambre</a>
         <table class="table">
@@ -30,14 +39,12 @@
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Voulez-vous vraiment supprimer cette chambre ?')">Supprimer</button>
                             </form>
                         </td>
-                        <td>{{$chambre->image}} </td>
+                        <td><a href="{{ route('chambres.show', $chambre) }}">Voir plus</a></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
         <a href="{{ route('reservations.create', ['chambre_id' => $chambre->id]) }}" class="btn btn-primary">Réserver</a>
-        <div class="room chambre">
-            <img src="{{ asset('images/1678707929132.jpg')}}" alt="Image 1" style="height: 250px" width="250">
-        </div>
+      
     </div>
 @endsection
