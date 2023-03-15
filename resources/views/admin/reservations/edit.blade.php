@@ -1,7 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
+<form method="POST" action="{{ route('logout') }}">
+    @csrf
+
+    <x-responsive-nav-link :href="route('logout')"
+            onclick="event.preventDefault();
+                        this.closest('form').submit();">
+        {{ __('Log Out') }}
+    </x-responsive-nav-link>
+</form>
     <div class="container">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <x-responsive-nav-link :href="route('logout')"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                {{ __('Log Out') }}
+            </x-responsive-nav-link>
+        </form>
         <h1>Edit Reservation</h1>
         <form action="{{ route('reservations.update', $reservation->id) }}" method="POST">
             @csrf

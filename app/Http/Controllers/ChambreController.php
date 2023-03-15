@@ -33,15 +33,16 @@ class ChambreController extends Controller
             'disponibilite' => 'required|boolean',
             'image' => 'required',
         ]);
+        $path = $request->file('image')->store('public/images');
     
         $chambre = new Chambre();
         $chambre->type_de_chambre = $validatedData['type_de_chambre'];
         $chambre->etage = $validatedData['etage'];
         $chambre->prix_par_nuit = $validatedData['prix_par_nuit'];
         $chambre->disponibilite = $validatedData['disponibilite'];
-        $chambre->image = $validatedData['image'];
-        $chambre->image2 = $validatedData['image'];
-        $chambre->image3 = $validatedData['image'];
+        $chambre->image = $path;
+        // $chambre->image2 = $validatedData['image'];
+        // $chambre->image3 = $validatedData['image'];
         $chambre->save();
     
         return redirect()->route('chambres.index')

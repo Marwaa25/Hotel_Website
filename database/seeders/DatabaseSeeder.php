@@ -12,6 +12,8 @@ use App\Models\tache;
 use App\Models\personnel;
 use App\Models\Reservation;
 use App\Models\Client;
+use App\Models\User;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,7 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         \App\Models\User::factory(10)->create();
+        //  \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -47,9 +49,9 @@ class DatabaseSeeder extends Seeder
             'nb_etoiles'=>'2'
         ]);
         Chambre::create([
-            'type_de_chambre' =>'Simple',
+            'type_de_chambre' =>'Double',
             'etage' => '1',
-            'prix_par_nuit'=>'500',
+            'prix_par_nuit'=>'800',
             'disponibilite'=>true
         ]);
         Client::create([
@@ -89,7 +91,12 @@ class DatabaseSeeder extends Seeder
 
 
         // ]);
-
+        $user = new User();
+        $user->name = "Manal";
+        $user->email = "manal@gmail.com";
+        $user->email_verified_at = now();
+        $user->password = bcrypt('password');
+        $user->save();
 
     }
 }

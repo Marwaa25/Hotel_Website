@@ -2,6 +2,15 @@
 
 @section('content')
     <div class="container">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <x-responsive-nav-link :href="route('logout')"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                {{ __('Log Out') }}
+            </x-responsive-nav-link>
+        </form>
         <h2>Reservations</h2>
         <a href="{{ route('reservations.create') }}" class="btn btn-primary mb-3">Create New Reservation</a>
         <table class="table table-striped">

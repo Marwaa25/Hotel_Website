@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<form method="POST" action="{{ route('logout') }}">
+    @csrf
+
+    <x-responsive-nav-link :href="route('logout')"
+            onclick="event.preventDefault();
+                        this.closest('form').submit();">
+        {{ __('Log Out') }}
+    </x-responsive-nav-link>
+</form>
 <div class="container">
 <h1>Edit service</h1>
 <form action="{{ route('services.update', $service->id) }}" method="POST">

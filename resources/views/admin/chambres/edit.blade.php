@@ -2,6 +2,15 @@
 
 @section('content')
     <h1>Éditer une chambre</h1>
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+
+        <x-responsive-nav-link :href="route('logout')"
+                onclick="event.preventDefault();
+                            this.closest('form').submit();">
+            {{ __('Log Out') }}
+        </x-responsive-nav-link>
+    </form>
     <form action="{{ route('chambres.update', $chambre->id) }}" method="POST">
         @csrf
         @method('PUT')

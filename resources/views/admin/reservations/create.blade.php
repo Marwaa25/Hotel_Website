@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+  
         <h2>Create New Reservation</h2>
         <form action="{{ route('reservations.store') }}" method="POST">
             @csrf
