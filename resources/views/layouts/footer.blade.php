@@ -1,4 +1,4 @@
-<footer>
+{{-- <footer>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -37,4 +37,4 @@
 </footer>
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script> --}}

@@ -15,8 +15,6 @@
                 {{-- <li><a href="{{ route('services.index') }}">Nos services</a></li> --}}
                 <li><a href="{{route('contact.contact')}}">Contact</a></li>
                 <li><a href="{{ route('hotel.index')}}">À propos de nous</a></li>
-                <li><a href="{{ route('reservations.index')}}">Réservation</a></li>
-                <li><a href="{{ route('comments.index')}}">Check Rates</a></li>
                 {{-- <li><a href="{{ route('reservations.index')}}">Réservation</a></li> --}}
                 <li><a href="{{ route('admin.index')}}">Admin</a></li>
 
@@ -29,9 +27,6 @@
         </main>
         <div>
         @yield('scripts')
-        </div>
-        <div>
-            @yield('footer')
         </div>
     </body>
 </html>
