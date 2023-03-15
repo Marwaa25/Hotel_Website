@@ -45,13 +45,6 @@ class AdminController extends Controller
     }
 
     // Chambres
-    public function indexChambre()
-{
-    $chambres = Chambre::all();
-
-    return view('admin.chambres.index', compact('chambres'));
-}
-
     public function createChambre()
     {
         return view('admin.chambres.create');
@@ -97,7 +90,7 @@ class AdminController extends Controller
     {
         $chambre = Chambre::findOrFail($id);
         $chambre->update($request->all());
-
+ 
         return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été mise à jour avec succès.');
     }
 
