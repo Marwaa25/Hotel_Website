@@ -39,7 +39,9 @@ class ChambreController extends Controller
         $chambre->etage = $validatedData['etage'];
         $chambre->prix_par_nuit = $validatedData['prix_par_nuit'];
         $chambre->disponibilite = $validatedData['disponibilite'];
-        $chambre->image = $validatedData['images/1678707929132.jpg'];
+        $chambre->image = $validatedData['image'];
+        $chambre->image2 = $validatedData['image'];
+        $chambre->image3 = $validatedData['image'];
         $chambre->save();
     
         return redirect()->route('chambres.index')

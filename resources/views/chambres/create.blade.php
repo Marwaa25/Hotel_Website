@@ -32,7 +32,13 @@
                 <option value="0">Non disponible</option>
             </select>
         </div>
-      
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="file" class="form-control-file" id="image" name="image" accept="images/*" required multiple>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Room</button>
+    </div>
 
     </form>
 @endsection
