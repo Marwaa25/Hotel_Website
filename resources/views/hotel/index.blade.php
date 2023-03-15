@@ -5,8 +5,8 @@
         <div class="card">
             <div class="card-header">{{ $hotel->name }}</div>
             <div class="card-body">
-                <img src="{{ asset('storage/images/hotel.jpg') }}" alt="Photo de l'hôtel">
-                <img src="{{ asset('storage/images/vue.jpg') }}" alt="Photo d'une vue de l'hôtel">
+                <img src="{{ asset('images/hotel.jpg') }}" alt="Photo de l'hôtel">
+                <img src="{{ asset('images/vue.jpg') }}" alt="Photo d'une vue de l'hôtel">
 
                 <p>Adresse: {{ $hotel->adresse }}</p>
                 <p>Téléphone: {{ $hotel->tele }}</p>
