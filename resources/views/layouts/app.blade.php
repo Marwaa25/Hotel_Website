@@ -26,5 +26,8 @@
         <div>
         @yield('scripts')
         </div>
+        <div>
+            @yield('footer')
+        </div>
     </body>
 </html>

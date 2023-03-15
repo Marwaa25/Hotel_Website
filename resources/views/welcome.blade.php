@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
     <h1>Accueil</h1>
     <p>Bienvenue sur notre site !</p>
@@ -17,6 +18,13 @@
     <p>Av Casablanca lot n°90 M'diq, Maroc se trouve dans la ville de M'diq, Maroc.</p>
 </div>
 @endsection
+
+@section('footer')
+    @include('layouts.footer')
+@endsection
+
+
+
 
 
 
