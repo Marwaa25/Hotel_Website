@@ -45,6 +45,13 @@ class AdminController extends Controller
     }
 
     // Chambres
+    public function indexChambre()
+{
+    $chambres = Chambre::all();
+
+    return view('admin.chambres.index', compact('chambres'));
+}
+
     public function createChambre()
     {
         return view('admin.chambres.create');
@@ -52,11 +59,23 @@ class AdminController extends Controller
 
     public function storeChambre(Request $request)
     {
-        $chambre = new Chambre($request->all());
+        $validatedData = $request->validate([
+            'numero' => 'required|unique:chambres',
+            'description' => 'required',
+            'prix' => 'required|numeric',
+            'disponible' => 'required|boolean',
+        ]);
+    
+        $chambre = new Chambre;
+        $chambre->numero = $validatedData['numero'];
+        $chambre->description = $validatedData['description'];
+        $chambre->prix = $validatedData['prix'];
+        $chambre->disponible = $validatedData['disponible'];
         $chambre->save();
-
+    
         return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été créée avec succès.');
     }
+    
 
     public function showChambre($id)
     {

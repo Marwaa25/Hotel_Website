@@ -92,7 +92,7 @@ Route::middleware(['auth'])->group(function () {
     
     // Routes pour les chambres
     Route::get('/admin/chambres/create', [AdminController::class, 'createChambre'])->name('admin.chambres.create');
-    Route::post('/admin/chambres', [AdminController::class, 'storeChambre'])->name('admin.chambres.store');
+    Route::post('/chambres', [ChambreController::class, 'store'])->name('chambres.store');
     Route::get('/admin/chambres/{id}', [AdminController::class, 'showChambre'])->name('admin.chambres.show');
     Route::get('/admin/chambres/{id}/edit', [AdminController::class, 'editChambre'])->name('admin.chambres.edit');
     Route::put('/admin/chambres/{id}', [AdminController::class, 'updateChambre'])->name('admin.chambres.update');

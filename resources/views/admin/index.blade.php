@@ -18,7 +18,7 @@
             <tbody>
                 @foreach ($reservations as $reservation)
                     <tr>
-                        <td>{{ $reservation->id_reservation }}</td>
+                        <td>{{ $reservation->id }}</td>
                         <td>{{ $reservation->chambre->type_de_chambre }}</td>
                         <td>{{ $reservation->email }}</td>
                         <td>{{ $reservation->date_arrivee }}</td>

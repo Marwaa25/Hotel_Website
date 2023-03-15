@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.reservations.update',$reservation->id_reservation) }}" method="POST">
+    <form action="{{ route('admin.reservations.update',$reservation->id) }}" method="POST">
         @csrf
         @method('PUT')
 
