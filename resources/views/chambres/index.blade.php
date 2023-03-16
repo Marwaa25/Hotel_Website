@@ -10,7 +10,6 @@
                     <th>Etage</th>
                     <th>Prix par nuit</th>
                     <th>Disponibilité</th>
-                    <th>Action</th>
                     <th>Images</th>
                 </tr>
             </thead>
@@ -21,9 +20,7 @@
                         <td>{{ $chambre->etage }}</td>
                         <td>{{ $chambre->prix_par_nuit }}</td>
                         <td>{{ $chambre->disponibilite == 'Disponible' ? 'Oui' : 'Non' }}</td>
-                        <td>
-                            <a href="{{ route('reservations.create') }}">Create Reservation</a>
-                        </td>
+                      
                         <td><a href="{{ route('chambres.show', $chambre) }}">Voir plus</a></td>
                     </tr>
                 @endforeach
