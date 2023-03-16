@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('type_de_chambre');
             $table->string('etage');
-            $table->float('prix_par_nuit');
+            $table->float('prix_par_nuit')->nullable();
             $table->string('disponibilite');
             $table->string('image')->default('images');
             $table->string('image2')->default('images');

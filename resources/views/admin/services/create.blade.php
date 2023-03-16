@@ -11,7 +11,7 @@
     </x-responsive-nav-link>
 </form>
     <h1>Create Service</h1>
-    <form action="{{ route('services.store') }}" method="POST">
+    <form action="{{ route('admin.services.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="name">Name:</label>

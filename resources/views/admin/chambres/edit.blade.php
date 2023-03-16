@@ -11,7 +11,7 @@
             {{ __('Log Out') }}
         </x-responsive-nav-link>
     </form>
-    <form action="{{ route('chambres.update', $chambre->id) }}" method="POST">
+    <form action="{{ route('admin.chambres.update', $chambre->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -29,8 +29,8 @@
         <div class="form-group">
             <label for="disponibilite">Disponibilité:</label>
             <select class="form-control" id="disponibilite" name="disponibilite" required>
-                <option value="1" {{ $chambre->disponibilite == 'Disponible' ? 'selected' : '' }}>Disponible</option>
-                <option value="0" {{ $chambre->disponibilite == 'Non disponible' ? 'selected' : '' }}>Non disponible</option>
+                <option value="Disponible" {{ $chambre->disponibilite == 'Disponible' ? 'selected' : '' }}>Disponible</option>
+                <option value="Non disponible" {{ $chambre->disponibilite == 'Non disponible' ? 'selected' : '' }}>Non disponible</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Enregistrer</button>

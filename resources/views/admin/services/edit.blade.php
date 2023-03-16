@@ -12,7 +12,7 @@
 </form>
 <div class="container">
 <h1>Edit service</h1>
-<form action="{{ route('services.update', $service->id) }}" method="POST">
+<form action="{{ route('admin.services.update', $service->id) }}" method="POST">
 @csrf
 @method('PUT')
 <div class="form-group">

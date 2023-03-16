@@ -11,7 +11,7 @@
                     </x-responsive-nav-link>
                 </form>
     <h1>Créer une chambre</h1>
-    <form action="{{ route('chambres.store') }}" method="POST">
+    <form action="{{ route('admin.chambres.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="type_de_chambre">Type de chambre:</label>
@@ -32,10 +32,7 @@
                 <option value="0">Non disponible</option>
             </select>
         </div>
-      <div class="form-group">
-        <label for="image">Image:</label>
-        <input type="file" class="form-control-file" id="image" name="image" accept="images/*" required multiple>
-    </div>
+      
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Add Room</button>
     </div>

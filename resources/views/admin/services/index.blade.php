@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Services</h1>
-    <a href="{{ route('services.create') }}" class="btn btn-primary mb-3">Create Service</a>
+    <a href="{{ route('admin.services.create') }}" class="btn btn-primary mb-3">Create Service</a>
     <table class="table">
         <thead>
             <tr>
@@ -21,9 +21,9 @@
                     <td>{{ $service->description }}</td>
                     <td>{{ $service->price }}</td>
                     <td>
-                        <a href="{{ route('services.show', ['service' => $service->id]) }}">Voir le service</a>
-                        <a href="{{ route('services.edit', ['service' => $service->id]) }}">Modifier le service</a>
-                        <form action="{{ route('services.destroy', $service) }}" method="POST" style="display:inline">
+                        <a href="{{ route('admin.services.show', ['service' => $service->id]) }}">Voir le service</a>
+                        <a href="{{ route('admin.services.edit', ['service' => $service->id]) }}">Modifier le service</a>
+                        <form action="{{ route('admin.services.destroy', $service) }}" method="POST" style="display:inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
