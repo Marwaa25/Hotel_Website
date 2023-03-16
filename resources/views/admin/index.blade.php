@@ -3,7 +3,17 @@
 @section('content')
     <div class="container">
         <h1>Administration</h1>
+        <div>
         <h2>Réservations</h2>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <x-responsive-nav-link :href="route('logout')"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                {{ __('Log Out') }}
+            </x-responsive-nav-link>
+        </form>
         <table class="table">
             <thead>
                 <tr>

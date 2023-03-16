@@ -48,12 +48,7 @@ class DatabaseSeeder extends Seeder
             'site'=>'www.cotedor.com',
             'nb_etoiles'=>'2'
         ]);
-        Chambre::create([
-            'type_de_chambre' =>'Double',
-            'etage' => '1',
-            'prix_par_nuit'=>'800',
-            'disponibilite'=>true
-        ]);
+       
         Client::create([
             'nom'=>'Ahmed',
             'prenom' => 'Ahmad',
@@ -98,5 +93,18 @@ class DatabaseSeeder extends Seeder
         $user->password = bcrypt('password');
         $user->save();
 
+        $chambre = Chambre::create([
+            'id' => '101',
+            'etage'=>2,
+            'type_de_chambre' => 'simple',
+            'disponibilite'=>true,
+            'prix_par_nuit' => 50,
+        ]);
+        Reservation::create([
+            'email' => 'johndoe@example.com',
+            'date_arrivee' => '2023-04-01',
+            'date_depart' => '2023-04-05',
+            'chambre_id' => $chambre->id,
+        ]);
     }
 }

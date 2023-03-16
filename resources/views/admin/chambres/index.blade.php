@@ -12,7 +12,7 @@
             </x-responsive-nav-link>
         </form>
         <h1>Liste des chambres</h1>
-        <a href="{{ route('chambres.create') }}" class="btn btn-primary mb-3">Ajouter une chambre</a>
+        <a href="{{ route('admin.chambres.create') }}" class="btn btn-primary mb-3">Ajouter une chambre</a>
         <table class="table">
             <thead>
                 <tr>
@@ -32,19 +32,19 @@
                         <td>{{ $chambre->prix_par_nuit }}</td>
                         <td>{{ $chambre->disponibilite == 'Disponible' ? 'Oui' : 'Non' }}</td>
                         <td>
-                            <a href="{{ route('chambres.edit', $chambre) }}" class="btn btn-sm btn-primary">Editer</a>
-                            <form action="{{ route('chambres.destroy', $chambre) }}" method="POST" class="d-inline">
+                            <a href="{{ route('admin.chambres.edit', $chambre) }}" class="btn btn-sm btn-primary">Editer</a>
+                            <form action="{{ route('admin.chambres.destroy', $chambre) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Voulez-vous vraiment supprimer cette chambre ?')">Supprimer</button>
                             </form>
+                            <a href="{{ route('reservations.create', ['chambre_id' => $chambre->id]) }}" class="btn btn-primary">Réserver</a>
                         </td>
-                        <td><a href="{{ route('chambres.show', $chambre) }}">Voir plus</a></td>
+                        <td><a href="{{ route('admin.chambres.show', $chambre) }}">Voir plus</a></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        <a href="{{ route('reservations.create', ['chambre_id' => $chambre->id]) }}" class="btn btn-primary">Réserver</a>
       
     </div>
 @endsection
