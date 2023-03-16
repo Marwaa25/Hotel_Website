@@ -12,14 +12,16 @@ class ReservationController extends Controller
 {
     
     public function index()
-    {
-        $reservations = Reservation::all();
-        return view('reservations.index', compact('reservations'));
-    }
+{
+    $reservations = Reservation::all();
+
+    return view('admin.reservations.index', compact('reservations'));
+}
 
     public function create()
     {
-        return view('reservations.create');
+        $chambres = Chambre::all();
+        return view('reservations.create', compact('chambres'));
     }
 
     public function store(Request $request)
@@ -56,41 +58,41 @@ class ReservationController extends Controller
     
 
 
-    public function edit($id)
-    {
-        $reservation = Reservation::find($id);
+    // public function edit($id)
+    // {
+    //     $reservation = Reservation::find($id);
     
-        if (!$reservation) {
-            abort(404);
-        }
+    //     if (!$reservation) {
+    //         abort(404);
+    //     }
     
-        $chambres = Chambre::all();
+    //     $chambres = Chambre::all();
     
-        return view('reservations.edit', [
-            'reservation' => $reservation,
-            'chambres' => $chambres
-        ]);
-    }
+    //     return view('reservations.edit', [
+    //         'reservation' => $reservation,
+    //         'chambres' => $chambres
+    //     ]);
+    // }
     
 
-    public function update(Request $request, $id)
-    {
-        $reservation = Reservation::findOrFail($id);
-        $reservation->date_arrivee = $request->input('date_arrivee');
-        $reservation->date_depart = $request->input('date_depart');
-        $reservation->email = $request->input('email');
-        $reservation->chambre_id = $request->input('chambre_id'); // Nouvelle ligne
-        $reservation->save();
+    // public function update(Request $request, $id)
+    // {
+    //     $reservation = Reservation::findOrFail($id);
+    //     $reservation->date_arrivee = $request->input('date_arrivee');
+    //     $reservation->date_depart = $request->input('date_depart');
+    //     $reservation->email = $request->input('email');
+    //     $reservation->chambre_id = $request->input('chambre_id'); // Nouvelle ligne
+    //     $reservation->save();
 
-        return redirect()->route('reservations.index');
-    }
+    //     return redirect()->route('reservations.index');
+    // }
 
 
-    public function destroy(Reservation $reservation)
-    {
-        $reservation->delete();
+    // public function destroy(Reservation $reservation)
+    // {
+    //     $reservation->delete();
 
-        return redirect()->route('reservations.index')
-            ->with('success', 'Reservation deleted successfully.');
-    }
+    //     return redirect()->route('reservations.index')
+    //         ->with('success', 'Reservation deleted successfully.');
+    // }
 }

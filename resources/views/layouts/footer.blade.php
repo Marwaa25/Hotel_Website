@@ -4,15 +4,12 @@
             <div class="col-md-4">
                 <h3>Notre hôtel</h3>
                 <ul>
-                    <li><a href="{{ route('home') }}">Accueil</a></li>
-                    {{-- <li><a href="{{ route('chambres.index') }}">Nos chambres</a></li>
-                    <li><a href="{{ route('services.index') }}">Nos services</a></li> --}}
-                    <li><a href="{{route('contact.contact')}}">Contact</a></li>
-                    <li><a href="{{ route('hotel.index')}}">À propos de nous</a></li>
-                    <li><a href="{{ route('admin.index')}}">Admin</a></li>
-
-
-                    {{-- <li><a href="{{ route('reservations.index')}}">Réservation</a></li> --}}
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Nos chambres</a></li>
+                    <li><a href="#">Nos services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">À propos de nous</a></li>
+                    <li><a href="#">Réservation</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -40,4 +37,4 @@
 </footer>
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script> 

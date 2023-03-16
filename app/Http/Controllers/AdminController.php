@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    
     public function index()
     {
         $reservations = Reservation::all();
@@ -17,7 +18,7 @@ class AdminController extends Controller
 
         return view('admin.index', compact('reservations', 'chambres', 'services'));
     }
-
+    
     // Réservations
     
     public function editReservation($id)
