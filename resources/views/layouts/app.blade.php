@@ -48,7 +48,7 @@
             cursor: pointer;
             background-color:white;
             color:#191970;
-            margin-left:160vh;
+            margin-left:170vh;
     
             
         }
@@ -67,7 +67,7 @@
             
         }
         .langue{
-            margin-left:1200px;
+            margin-left:1210px;
             margin-top:25px;
             font-size: 18px;
             border: none;
@@ -198,6 +198,166 @@
     border-radius: 5px;
 }
 
+/* test */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right:90%;
+  margin-top:-20px;
+
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 32px;
+  height:400px;
+  width:280px;
+
+  background-color: #fff;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+}
+
+.dropdown-content a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+}
+.dropdown-content p{
+border-bottom: 1px solid black;
+font-size:18px;
+font-family:arial;
+padding-bottom:3px;
+text-align:center;
+}
+.dropdown-content a:hover {
+  background-color: #eee;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.dropdown:hover .dropdown-btn span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.dropdown:hover .dropdown-btn span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+form a {
+    background-color:white;
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration:none;
+    color:gray;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top:60px;
+  color:#A9A9A9;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.feature i {
+  font-size: 26px;
+  margin-right: 10px;
+}
+.why-choose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  justify-content: center;
+  text-align: center;
+  width:100%;
+}
+
+.discover-btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  align-self:center;
+  max-width: 400px;
+  text-decoration:none;
+}
+.stats {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+  flex-wrap:wrap;
+  gap:30px;
+}
+
+.number {
+  font-size:12rem;
+  font-weight: bold;
+  margin-right: 20px;
+  color:#ADD8E6;
+  font-family:"Copperplate";
+
+}
+
+.description {
+  font-size: 28px;
+  font-weight: bold;
+  color:#2F4F4F;
+}
+
+
+
+.discover-btn:hover {
+  background-color: #333;
+}
+.why-choose h2{
+    font-family:"Copperplate Gothic Light";
+    color:#2F4F4F;
+    font-size:28px;
+}
 
     </style>
     </head>
@@ -214,15 +374,30 @@
             <div class='title'>
                 <a class="navbar-brand" href="#">Cote d'or</a>
             </div>
+    
             <ul>
                 <li><a href="{{ route('/') }}">Accueil</a></li>
                 <li><a href="{{ route('chambres.index') }}">Nos chambres</a></li> 
                 <li><a href="{{ route('services.index') }}">Nos services</a></li>
                 <li><a href="{{route('contact.contact')}}">Contact</a></li>
                 <li><a href="{{ route('hotel.index')}}">À propos de nous</a></li>
-                {{-- <li><a href="{{ route('reservations.index')}}">Réservation</a></li> --}}
                 <li><a href="{{ route('admin.index')}}">Admin</a></li>
             </ul>
+            <div class="dropdown">
+                <button class="dropdown-btn"><span></span><span></span><span></span></button>
+                <div class="dropdown-content">
+                    <p>Menu</p>
+                    <a href="{{ route('/') }}">Accueil</a>
+                    <a href="{{ route('chambres.index') }}">Nos chambres</a>
+                    <a href="{{ route('services.index') }}">Nos services</a>
+                    <a href="{{route('contact.contact')}}">Contact</a>
+                    <a href="{{ route('hotel.index')}}">À propos de nous</a>
+                    <a href="{{ route('reservations.create') }}" class="btn btn-primary">Réservation</a>
+                    <a href="{{ route('admin.index')}}">Administrateur</a>
+                    <a href="#">Tél: 05 39 66 32 19 / Fax: 05 39 66 32 32</a>
+                    <a href="#">Email:cote.dor@live.fr</a>
+                </div>
+            </div>
             <div>
             <button>check rates</button>
             </div>
@@ -260,12 +435,35 @@
         <form action="" method="GET">
             <span class='spane'><i class="fa fa-search"></i></span>
             <input type="text" name="search" placeholder="Cote d'or M'diq Maroc">
-            <input type="date" name="checkin" class="datepicker" placeholder="Check-in">
-            <input type="date" name="checkout" class="datepicker" placeholder="Check-out">
+            <input type="date" name="date_arrivee" class="form-control" id="date_arrivee" required title="Entrez la date d'arrivée">
+            <input type="date" name="date_depart" class="form-control" id="date_depart" required title="Entrez la date de depart">
             <input type="number" name="guests" placeholder="2 Adultes">
-            <button class='reserver' type="submit">reserver</button>
+            <a href="{{ route('reservations.create')}}">Réserver</a>
         </form>
-        
+        <div class="features">
+        <div class="feature">
+            <i class="fas fa-water"></i>
+            <span>Front de mer</span>
+        </div>
+        <div class="feature">
+            <i class="fas fa-concierge-bell"></i>
+            <span>Service d'étage</span>
+        </div>
+        <div class="feature">
+            <i class="fas fa-users"></i>
+            <span>Chambres familiales</span>
+        </div>
+        </div>
+
+        <div class="why-choose">
+            <h2>Pourquoi</h2>
+            <div class="stats">
+                <div class="number">10 000</div>
+                <div class="description">clients ont fait le choix de Cote d'or ?</div>
+            </div>
+            <a class="discover-btn" href="{{ route('hotel.index')}}">DÉCOUVREZ CE QUI FAIT NOTRE DIFFÉRENCE</a>
+        </div>
+
         <main class="container">
             @yield('content')
         </main>
