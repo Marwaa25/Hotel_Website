@@ -222,14 +222,7 @@
                 <li><a href="{{ route('hotel.index')}}">À propos de nous</a></li>
                 {{-- <li><a href="{{ route('reservations.index')}}">Réservation</a></li> --}}
                 <li><a href="{{ route('admin.index')}}">Admin</a></li>
-                
             </ul>
-
-        </nav>
-        <div>
-            <button><a href="{{ route('comments.index')}} ">Check rates</a></button>
-        </div>
-        
             <div>
             <button>check rates</button>
             </div>
