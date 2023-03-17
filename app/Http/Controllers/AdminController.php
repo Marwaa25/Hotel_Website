@@ -39,25 +39,32 @@ class AdminController extends Controller
     }
 
     
-        public function updateReservation(Request $request, Reservation $reservation)
-        {
-            $request->validate([
-                'chambre_id' => 'required|exists:chambre,id',
-                'email' => 'required|email',
-                'date_arrivee' => 'required|date',
-                'date_depart' => 'required|date|after:date_arrivee',
-            ]);
+    public function updateReservation(Request $request, $id)
+    {
+        $reservation = Reservation::find($id);
     
-            $reservation->chambre_id = $request->chambre_id;
-            $reservation->email = $request->email;
-            $reservation->date_arrivee = $request->date_arrivee;
-            $reservation->date_depart = $request->date_depart;
-    
-            $reservation->save();
-    
-            return redirect()->route('admin.reservations.index')
-                ->with('success', 'La réservation a été mise à jour avec succès.');
+        if (!$reservation) {
+            abort(404);
         }
+    
+        $request->validate([
+            'chambre_id' => 'required|exists:chambre,id',
+            'email' => 'required|email',
+            'date_arrivee' => 'required|date',
+            'date_depart' => 'required|date|after:date_arrivee',
+        ]);
+    
+        $reservation->chambre_id = $request->chambre_id;
+        $reservation->email = $request->email;
+        $reservation->date_arrivee = $request->date_arrivee;
+        $reservation->date_depart = $request->date_depart;
+    
+        $reservation->save();
+    
+        return redirect()->route('admin.reservations.index')
+            ->with('success', 'La réservation a été mise à jour avec succès.');
+    }
+    
     
 
     public function destroyReservation($id)
