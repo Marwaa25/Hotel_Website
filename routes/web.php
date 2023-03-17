@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChambreController;
@@ -10,7 +9,6 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -25,57 +23,10 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-//     Route::get('/chambres/create', [ChambreController::class, 'create'])->name('chambres.create');
-//     Route::put('/chambres/{chambre}', 'App\Http\Controllers\ChambreController@update')->name('chambres.update');
-//     Route::get('/chambres/{id}/edit', [ChambreController::class, 'edit'])->name('chambres.edit');
-//     Route::delete('/chambres/{chambre}', [ChambreController::class, 'destroy'])->name('chambres.destroy');
-//     Route::post('/chambres', [ChambreController::class, 'store'])->name('chambres.store');
-
-//     Route::resource('reservations', ReservationController::class)->only('index');
-//     Route::delete('/reservations/{reservation}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
-//     Route::post('/reservations/{id}', [ReservationController::class,'update'])->name('reservations.update');
-//     Route::get('/reservations/{id}/edit', [ReservationController::class, 'edit'])->name('reservations.edit');
-
-
-// });
-
-Route::resource('hotel', HotelController::class)->only('index');
-
-// Route::resource('chambres', ChambreController::class)->only('index','show');
-// Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
-// Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
-// Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
-
-// Route::get('/services/{service}', [ServicesController::class, 'show'])->name('services.show');
-// Route::get('/services/{service}/edit', [ServicesController::class, 'edit'])->name('services.edit');
-// Route::put('/services/{service}', [ServicesController::class, 'update'])->name('services.update');
-// Route::delete('/services/{service}', [ServicesController::class, 'destroy'])->name('services.destroy');
-// Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
-// Route::post('/services', [ServicesController::class, 'store'])->name('services.store');
+})->name('/');
 
 
 
-Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
-Route::get('/comments/create', [CommentController::class, 'create'])->name('comments.create');
-Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
-Route::get('/comments/{comment}', [CommentController::class, 'show'])->name('comments.show');
-Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
-Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
-Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
-
-Route::get('/contact',[ContactController::class,'create'])->name('contact.contact');
-Route::post('/contact',[ContactController::class,'store'])->name('contact.contact');
 
 
 
@@ -87,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/reservations', [AdminController::class, 'index'])->name('admin.reservations.index');
     Route::get('/admin/reservations/{reservation}/edit', [AdminController::class, 'editReservation'])->name('admin.reservations.edit');
-    Route::put('/admin/reservations/{reservation}', [AdminController::class, 'updateReservation'])->name('admin.reservations.update');
+    Route::post('/admin/reservations/{id}', [AdminController::class, 'updateReservation'])->name('admin.reservations.update');
     Route::delete('/admin/reservations/{reservation}', [AdminController::class, 'destroyReservation'])->name('admin.reservations.destroy');
     
     // Routes pour les chambres
@@ -102,13 +53,31 @@ Route::middleware(['auth'])->group(function () {
     // Routes pour les services
     Route::get('/admin/services', [AdminController::class, 'index'])->name('admin.services.index');
 
-    Route::get('/services/create', [AdminController::class, 'createService'])->name('services.create');
+    Route::get('/services/create', [AdminController::class, 'createService'])->name('admin.services.create');
     Route::post('/admin/services', [AdminController::class, 'storeServices'])->name('admin.services.store');
-    Route::get('/services/{id}', [AdminController::class, 'showService'])->name('services.show');
-    Route::get('services/{id}/edit', [AdminController::class, 'editService'])->name('services.edit');
+    Route::get('/admin/services/{id}', [AdminController::class, 'showService'])->name('admin.services.show');
+    Route::get('/admin/services/{id}/edit', [AdminController::class, 'editService'])->name('admin.services.edit');
     Route::put('/admin/services/{id}', [AdminController::class, 'updateService'])->name('admin.services.update');
-    Route::delete('/services/{id}', [AdminController::class, 'destroyService'])->name('services.destroy');
+    Route::delete('/admin/services/{id}', [AdminController::class, 'destroyService'])->name('admin.services.destroy');
     
 });
+
+Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
+Route::get('/services/{service}', [ServicesController::class, 'show'])->name('services.show');
+Route::resource('hotel', HotelController::class)->only('index');
+
+Route::resource('chambres', ChambreController::class)->only('index','show');
+Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
+Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
+Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
+Route::get('/comments/create', [CommentController::class, 'create'])->name('comments.create');
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::get('/comments/{comment}', [CommentController::class, 'show'])->name('comments.show');
+Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
+Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+
+Route::get('/contact',[ContactController::class,'create'])->name('contact.contact');
+Route::post('/contact',[ContactController::class,'store'])->name('contact.contact');
 
 require __DIR__.'/auth.php';
