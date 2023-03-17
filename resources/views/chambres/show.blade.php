@@ -11,18 +11,15 @@
     </div>
     <div class="room chambre">
 
-    <img src="{{ asset('images/double (2).png')}}" alt="Image 1" style="height: 250px" width="250">
+    @foreach($chambre->images as $image)
+        <img src="{{ asset('images/' . $image->url) }}" alt="{{ $image->alt }}" style="height: 250px" width="250">
+    @endforeach
+    {{-- <img src="{{ asset('images/double (2).png')}}" alt="Image 1" style="height: 250px" width="250">
     <img src="{{ asset('images/double 2 (2).png')}}" alt="Image 1" style="height: 250px" width="250">
     <img src="{{ asset('images/double 2 (3).png')}}" alt="Image 1" style="height: 250px" width="250">
-    <img src="{{ asset('images/double 2 (4).png')}}" alt="Image 1" style="height: 250px" width="250">
+    <img src="{{ asset('images/double 2 (4).png')}}" alt="Image 1" style="height: 250px" width="250"> --}}
 
     </div>
     </div>
 
 @endsection
-
-
-
-
-
-

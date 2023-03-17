@@ -80,11 +80,13 @@
                 <li><a href="{{ route('hotel.index')}}">À propos de nous</a></li>
                 {{-- <li><a href="{{ route('reservations.index')}}">Réservation</a></li> --}}
                 <li><a href="{{ route('admin.index')}}">Admin</a></li>
+                
             </ul>
-            <div>
-            <button>check rates</button>
-            </div>
+
         </nav>
+        <div>
+            <button><a href="{{ route('comments.index')}} ">Check rates</a></button>
+        </div>
         
 
         <main class="container">
