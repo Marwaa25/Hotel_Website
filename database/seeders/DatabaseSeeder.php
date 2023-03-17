@@ -118,8 +118,6 @@ class DatabaseSeeder extends Seeder
             ['url' => '/images/double 2 (2).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId],
             ['url' => '/images/double 2 (3).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId],
             ['url' => '/images/double 2 (4).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId],
-        ];
-        $images = [
             ['url' => 'images/appartement (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId2],
             ['url' => 'images/appartement (3).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId2],
             ['url' => 'images/appartement(4).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId2],

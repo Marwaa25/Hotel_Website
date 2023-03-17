@@ -11,11 +11,11 @@
                 <a href="{{ route('reservations.create', ['chambre_id' => $chambre->id]) }}" class="btn btn-primary">Réserver</a>
             </div>
         </div>
-        <div class="room chambre">
+        {{-- <div class="room chambre">
             <img src="{{ asset('images/double (2).png')}}" alt="Image 1" style="height: 250px" width="250">
             <img src="{{ asset('images/double 2 (2).png')}}" alt="Image 1" style="height: 250px" width="250">
             <img src="{{ asset('images/double 2 (3).png')}}" alt="Image 1" style="height: 250px" width="250">
             <img src="{{ asset('images/double 2 (4).png')}}" alt="Image 1" style="height: 250px" width="250">
-        </div>
+        </div> --}}
     </div>
 @endsection

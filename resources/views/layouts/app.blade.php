@@ -224,15 +224,14 @@
                 <li><a href="{{ route('admin.index')}}">Admin</a></li>
                 
             </ul>
+            <div>
+                <button><a href="{{ route('comments.index')}} ">Check rates</a></button>
+            </div>
 
         </nav>
-        <div>
-            <button><a href="{{ route('comments.index')}} ">Check rates</a></button>
-        </div>
+
         
-            <div>
-            <button>check rates</button>
-            </div>
+
             <p class="stars">
             <span class="star">&#9733;</span>
             <span class="star">&#9733;</span>

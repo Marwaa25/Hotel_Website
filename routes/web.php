@@ -59,6 +59,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/services/{id}/edit', [AdminController::class, 'editService'])->name('admin.services.edit');
     Route::put('/admin/services/{id}', [AdminController::class, 'updateService'])->name('admin.services.update');
     Route::delete('/admin/services/{id}', [AdminController::class, 'destroyService'])->name('admin.services.destroy');
+
+    // Routes pour les commentaires
+    Route::get('/admin/comments', [AdminController::class, 'index'])->name('admin.comments.index');
+    Route::get('/admin/comments/{id}', [AdminController::class, 'showComment'])->name('admin.comments.show');
+    Route::delete('/admin/comments/{id}', [AdminController::class, 'destroyComment'])->name('admin.comments.destroy');
+
+
     
 });
 
@@ -73,8 +80,8 @@ Route::get('/comments', [CommentController::class, 'index'])->name('comments.ind
 Route::get('/comments/create', [CommentController::class, 'create'])->name('comments.create');
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::get('/comments/{comment}', [CommentController::class, 'show'])->name('comments.show');
-Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
-Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
+// Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
+// Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 Route::get('/contact',[ContactController::class,'create'])->name('contact.contact');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reservation;
 use App\Models\Chambre;
 use App\Models\Service;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,8 +16,9 @@ class AdminController extends Controller
         $reservations = Reservation::all();
         $chambres = Chambre::all();
         $services = Service::all();
+        $comments = Comment::all();
 
-        return view('admin.index', compact('reservations', 'chambres', 'services'));
+        return view('admin.index', compact('reservations', 'chambres', 'services' , 'comments'));
     }
     
     // Réservations
@@ -175,4 +177,24 @@ public function storeServices(Request $request)
 
         return redirect()->route('admin.services.index')->with('success', 'Le service a été supprimé avec succès.');
     }
+    // Comments
+
+    public function showComment($id)
+    {
+        $comment = Comment::findOrFail($id);
+
+        return view('admin.comments.show', compact('comment'));
+    }
+
+    public function destroyComment($id)
+    {
+        // Delete the comment
+        $comment = Comment::findOrFail($id);
+        $comment->delete();
+
+        return redirect()->route('admin.comments.index')->with('success', 'Le commentaire a été supprimé avec succès.');
+    }
+        
+
+   
 }

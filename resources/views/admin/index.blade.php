@@ -68,6 +68,7 @@
                         <td>{{ $chambre->prix_par_nuit }}</td>
                         <td>{{ $chambre->disponibilite }}</td>
                         <td>
+                            <a href="{{ route('admin.chambres.show', $chambre) }}" class="btn btn-primary">View</a>
                             <a href="{{ route('admin.chambres.edit', $chambre->id) }}" class="btn btn-sm btn-primary">Editer</a>
                             <form action="{{ route('admin.chambres.destroy', $chambre->id) }}" method="POST" class="d-inline">
                                 @csrf
@@ -108,6 +109,40 @@
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
                             </form>
                         </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <h2>Comments</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Client ID</th>
+                    <th>Comment</th>
+                    <th>Note</th>
+                    <th>Date Comment</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($comments as $comment)
+                    <tr>
+                        <td>{{ $comment->id }}</td>
+                        <td>{{ $comment->ID_Client }}</td>
+                        <td>{{ $comment->Comment }}</td>
+                        <td>{{ $comment->Note }}</td>
+                        <td>{{ $comment->datecomment }}</td>
+                        <td><a href="{{ route('admin.comments.show', $comment) }}" class="btn btn-secondary">View</a></td>
+                    
+                                {{-- <a href="{{ route('admin.comments.edit', $comment->id) }}" class="btn btn-sm btn-primary">Editer</a> --}}
+                                <form action="{{ route('admin.comments.destroy', $comment) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Voulez-vous vraiment supprimer cette réservation ?')">Supprimer</button>
+                                </form>
+
                     </tr>
                 @endforeach
             </tbody>
