@@ -134,7 +134,8 @@
                         <td>{{ $comment->Comment }}</td>
                         <td>{{ $comment->Note }}</td>
                         <td>{{ $comment->datecomment }}</td>
-                        <td><a href="{{ route('admin.comments.show', $comment) }}" class="btn btn-secondary">View</a></td>
+                        <td>
+                            <a href="{{ route('admin.comments.show', $comment) }}" class="btn btn-secondary">View</a>
                     
                                 {{-- <a href="{{ route('admin.comments.edit', $comment->id) }}" class="btn btn-sm btn-primary">Editer</a> --}}
                                 <form action="{{ route('admin.comments.destroy', $comment) }}" method="POST" class="d-inline">
@@ -142,6 +143,7 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Voulez-vous vraiment supprimer cette réservation ?')">Supprimer</button>
                                 </form>
+                        </td>
 
                     </tr>
                 @endforeach
