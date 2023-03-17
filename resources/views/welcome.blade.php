@@ -2,11 +2,8 @@
 
 
 @section('content')
-    <h1>Accueil</h1>
-    <p>Bienvenue sur notre site !</p>
-    <video autoplay muted loop id="myVideo">
-        <source src="video.mp4" type="video/mp4">
-    </video>
+<h1>slide</h1>
+
     <div id="map"></div>
     
 @endsection
