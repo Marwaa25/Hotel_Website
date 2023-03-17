@@ -17,7 +17,6 @@ class Chambre extends Model
         'Etage',
         'Prix_par_nuit',
         'Disponibilité',
-        'Image'
     ];
 
     public function reservations()
