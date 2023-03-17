@@ -1,4 +1,6 @@
-<!-- create.blade.php -->
+@extends('layouts.header')
+
+@section('content')
 <form action="{{ route('reservations.store') }}" method="POST">
     @csrf
     <div>
@@ -47,3 +49,4 @@
     
     <button type="submit">Réserver</button>
 </form>
+@endsection

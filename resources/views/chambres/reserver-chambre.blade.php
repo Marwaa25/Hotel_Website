@@ -1,4 +1,4 @@
-<!-- reserver-chambre.blade.php -->
+@extends('layouts.header')
 
 @extends('layouts.app')
 
