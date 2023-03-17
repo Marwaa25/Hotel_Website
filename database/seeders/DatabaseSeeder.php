@@ -13,6 +13,8 @@ use App\Models\personnel;
 use App\Models\Reservation;
 use App\Models\Client;
 use App\Models\User;
+use App\Models\Image;
+use Illuminate\Support\Facades\Storage;
 
 
 class DatabaseSeeder extends Seeder
@@ -100,6 +102,91 @@ class DatabaseSeeder extends Seeder
             'disponibilite'=>true,
             'prix_par_nuit' => 50,
         ]);
+        $chambre = Chambre::create([
+            'id' => '201',
+            'etage'=>2,
+            'type_de_chambre' => 'double',
+            'disponibilite'=>true,
+            'prix_par_nuit' => 50,
+        ]);
+        
+        $chambreId = 101; // the ID of the chambre you want to associate with the images
+        $chambreId2 = 201;
+        // create some image records for the chambre
+        $images = [
+            ['url' => '/images/double (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId],
+            ['url' => '/images/double 2 (2).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId],
+            ['url' => '/images/double 2 (3).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId],
+            ['url' => '/images/double 2 (4).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId],
+        ];
+        $images = [
+            ['url' => 'images/appartement (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId2],
+            ['url' => 'images/appartement (3).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId2],
+            ['url' => 'images/appartement(4).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId2],
+            ['url' => 'images/appartement(5).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId2],
+        ];
+        // insert the image records into the database
+        foreach ($images as $image) {
+            Image::create($image);
+        }
+        // Image::create([
+        //     'url' => 'images/simple.jpg',
+        //     'alt' => 'Chambre Simple',
+        //     'chambre_id' => 101,
+        // ]);
+
+        // Image::create([
+        //     'url' => 'images/double.jpg',
+        //     'alt' => 'Chambre Double',
+        //     'chambre_id' => 2,
+        // ]);
+        // $image1 = new Image([
+        //     'url' => 'images/Double (2).png',
+        //     'alt' => 'Image 1'
+        // ]);
+        // $image1->save();
+        
+        // $image2 = new Image([
+        //     'url' => 'images/double 2 (2).png',
+        //     'alt' => 'Image 2'
+        // ]);
+        // $image2->save();
+        
+        // $image3 = new Image([
+        //     'url' => 'images/double 2 (3).png',
+        //     'alt' => 'Image 3'
+        // ]);
+        // $image3->save();
+        
+        // $image4 = new Image([
+        //     'url' => 'images/double 2 (4).png',
+        //     'alt' => 'Image 4'
+        // ]);
+        // $image4->save();
+        
+        // // attach the images to the chambre with id 101
+        // $chambre = Chambre::find(101);
+        // $chambre->images()->attach([$image1->id, $image2->id, $image3->id, $image4->id]);
+
+        // $image1Path = Storage::disk('public')->path('images/couloir.jpg');
+        // $image2Path = Storage::disk('public')->path('images/double 2.jpg');
+        // $images = [
+        //     [
+        //         'url' => $image1Path,
+        //         'alt' => 'Chambre Image 1',
+        //     ],
+        //     [
+        //         'url' => $image2Path,
+        //         'alt' => 'Chambre Image 2',
+        //     ],
+        // ];
+
+        // foreach ($images as $image) {
+        //     $chambre->images()->create([
+        //         'url' => $image['url'],
+        //         'alt' => $image['alt'],
+        //     ]);
+        // }
         Reservation::create([
             'email' => 'johndoe@example.com',
             'date_arrivee' => '2023-04-01',
@@ -108,3 +195,4 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
+?>
