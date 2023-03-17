@@ -23,17 +23,17 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.reservations.update',$reservation->id) }}" method="POST">
+    <form action="{{ route('admin.reservations.update', $reservation->id) }}" method="POST">
         @csrf
-        @method('PUT')
+        @method('POST')
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Chambre:</strong>
-                    <select class="form-control" name="id_chambre">
+                    <select class="form-control" name="chambre_id">
                         @foreach ($chambres as $chambre)
-                            <option value="{{ $chambre->id_chambre }}" @if ($chambre->id_chambre == $reservation->id_chambre) selected @endif>{{ $chambre->numero }}</option>
+                            <option value="{{ $chambre->id }}" @if ($chambre->id == $selectedChambreId) selected @endif>{{ $chambre->type_de_chambre }}</option>
                         @endforeach
                     </select>
                 </div>
