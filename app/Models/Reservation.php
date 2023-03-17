@@ -13,7 +13,9 @@ class Reservation extends Model
         'chambre_id',
         'email',
         'date_arrivee',
-        'date_depart'
+        'date_depart',
+        'payment_method'
+
     ];
     public function chambre()
     {

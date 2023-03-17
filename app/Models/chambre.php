@@ -17,16 +17,11 @@ class Chambre extends Model
         'Etage',
         'Prix_par_nuit',
         'Disponibilité',
-        'Image'
     ];
 
     public function reservations()
     {
         return $this->hasMany(Reservation::class);
-    }
-    public function images()
-    {
-        return $this->hasMany(Image::class);
     }
     
 

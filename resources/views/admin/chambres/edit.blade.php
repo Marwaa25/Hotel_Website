@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.header')
 
 @section('content')
     <h1>Éditer une chambre</h1>
@@ -29,8 +29,9 @@
         <div class="form-group">
             <label for="disponibilite">Disponibilité:</label>
             <select class="form-control" id="disponibilite" name="disponibilite" required>
-                <option value="Disponible" {{ $chambre->disponibilite == 'Disponible' ? 'selected' : '' }}>Disponible</option>
-                <option value="Non disponible" {{ $chambre->disponibilite == 'Non disponible' ? 'selected' : '' }}>Non disponible</option>
+                <option value="1" {{ $chambre->disponibilite == 'oui' ? 'selected' : '' }}>oui</option>
+                <option value="0" {{ $chambre->disponibilite == 'non' ? 'selected' : '' }}>non</option>
+
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Enregistrer</button>

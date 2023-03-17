@@ -1,6 +1,5 @@
-<!-- comments.create.blade.php -->
 
-@extends('layouts.app')
+@extends('layouts.header')
 
 @section('content')
     <div class="container">
