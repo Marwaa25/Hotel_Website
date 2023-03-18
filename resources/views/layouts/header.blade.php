@@ -39,3 +39,48 @@
             </div>
         </body>
     </html>
+    <style>
+
+
+        .navbar ul{
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar li{
+            margin: 0 50px;
+        }
+
+        .navbar ul li a {
+            color: #D2B48C;
+            text-decoration: none;
+            font-size:1.2rem;
+            font-weight: bold;
+            font-family:"Constantia";
+         }
+        .navbar .title {
+           
+            align-self: center;
+            margin-bottom: 20px;
+            font-family:'Brush Script MT';
+            font-size:4rem;
+            
+        }
+        .langue{
+            margin-left:1210px;
+            margin-top:25px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            color:#191970;
+            background-color: transparent;
+       
+        }
+        .navbar .title .navbar-brand{
+            text-decoration: none;
+            color:#D2B48C;
+            text-align: center;
+            padding: 550px;
+        }
+    </style>
