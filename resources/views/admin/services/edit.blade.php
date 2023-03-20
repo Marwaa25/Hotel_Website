@@ -10,6 +10,22 @@
         {{ __('Log Out') }}
     </x-responsive-nav-link>
 </form>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <div class="container">
 <h1>Edit service</h1>
 <form action="{{ route('admin.services.update', $service->id) }}" method="POST">

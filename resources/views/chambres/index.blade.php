@@ -3,10 +3,24 @@
 @section('content')
 @foreach ($chambres as $chambre)
     <div class="box">
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <h1>{{ $chambre->type_de_chambre }}</h1>
         <div class="image">
         @foreach (range(1, 1) as $index)
-        <img src="{{ asset('images/' . $chambre->id . '_' . $index . '.png') }}" alt="{{ $chambre->Type_de_chambre }}" >
+            <img src="{{ asset('images/' . $chambre->id . '_' . $index . '.png') }}" alt="{{ $chambre->Type_de_chambre }}" >
         @endforeach  
         </div>
         <div class="description">    
@@ -18,6 +32,7 @@
     </div>
 @endforeach
 @endsection
+
 <style>
     .box{
         flex:1 1 30rem;

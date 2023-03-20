@@ -49,31 +49,49 @@ class AdminController extends Controller
 
     
     public function updateReservation(Request $request, $id)
-    {
-        $reservation = Reservation::find($id);
-    
-        if (!$reservation) {
-            abort(404);
-        }
-    
-        $request->validate([
-            'chambre_id' => 'required|exists:chambre,id',
-            'email' => 'required|email',
-            'date_arrivee' => 'required|date',
-            'date_depart' => 'required|date|after:date_arrivee',
-        ]);
-    
-        $reservation->chambre_id = $request->chambre_id;
-        $reservation->email = $request->email;
-        $reservation->date_arrivee = $request->date_arrivee;
-        $reservation->date_depart = $request->date_depart;
-    
-        $reservation->save();
-    
-        return redirect()->route('admin.reservations.index')
-            ->with('success', 'La réservation a été mise à jour avec succès.');
+{
+    $reservation = Reservation::find($id);
+
+    if (!$reservation) {
+        abort(404);
     }
-    
+
+    $request->validate([
+        'chambre_id' => 'required|exists:chambre,id',
+        'email' => 'required|email',
+        'date_arrivee' => 'required|date|after_or_equal:today',
+        'date_depart' => 'required|date|after:date_arrivee',
+    ]);
+
+    $chambre = Chambre::find($request->chambre_id);
+    $existingReservation = Reservation::where('chambre_id', $chambre->id)
+        ->where(function ($query) use ($request) {
+            $query->whereBetween('date_arrivee', [$request->date_arrivee, $request->date_depart])
+                ->orWhereBetween('date_depart', [$request->date_arrivee, $request->date_depart])
+                ->orWhere(function ($query) use ($request) {
+                    $query->where('date_arrivee', '<=', $request->date_arrivee)
+                        ->where('date_depart', '>=', $request->date_depart);
+                });
+        })
+        ->first();
+
+    if ($existingReservation) {
+        return redirect()->back()
+            ->withErrors(['chambre_id' => 'La chambre n\'est pas disponible pour cette période.'])
+            ->withInput();
+    }
+
+    $reservation->chambre_id = $chambre->id;
+    $reservation->email = $request->email;
+    $reservation->date_arrivee = $request->date_arrivee;
+    $reservation->date_depart = $request->date_depart;
+
+    $reservation->save();
+
+    return redirect()->route('admin.reservations.index')
+        ->with('success', 'La réservation a été mise à jour avec succès.');
+}
+
     
 
     public function destroyReservation($id)
@@ -99,6 +117,17 @@ class AdminController extends Controller
             'disponibilite' => 'required|boolean',
         ]);
     
+        // Vérifier si une chambre avec les mêmes attributs existe déjà
+        $existingChambre = Chambre::where('type_de_chambre', $validatedData['type_de_chambre'])
+            ->where('etage', $validatedData['etage'])
+            ->where('prix_par_nuit', $validatedData['prix_par_nuit'])
+            ->where('disponibilite', $validatedData['disponibilite'])
+            ->first();
+    
+        if ($existingChambre) {
+            return redirect()->back()->withErrors(['Chambre avec les mêmes attributs existe déjà.'])->withInput();
+        }
+    
         $chambre = new Chambre;
         $chambre->type_de_chambre = $validatedData['type_de_chambre'];
         $chambre->etage = $validatedData['etage'];
@@ -108,6 +137,8 @@ class AdminController extends Controller
     
         return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été créée avec succès.');
     }
+    
+    
     
 
     public function showChambre($id)
@@ -154,14 +185,20 @@ class AdminController extends Controller
 
 public function storeServices(Request $request)
 {
-    $service = new Service();
-    $service->name = $request->input('name');
-    $service->description = $request->input('description');
-    $service->price = $request->input('price');
-    $service->save();
+    $service = Service::firstOrCreate([
+        'name' => $request->input('name')
+    ], [
+        'description' => $request->input('description'),
+        'price' => $request->input('price')
+    ]);
 
-    return redirect()->route('admin.services.index')->with('success', 'Service créé avec succès.');
+    if ($service->wasRecentlyCreated) {
+        return redirect()->route('admin.services.index')->with('success', 'Service créé avec succès.');
+    } else {
+        return redirect()->route('admin.services.create')->with('error', 'Le service existe déjà.');
+    }
 }
+
     public function showService($id)
     {
         $service = Service::findOrFail($id);
@@ -210,6 +247,11 @@ public function storePersonnel(Request $request)
         'poste' => 'required',
     ]);
 
+    $personnel = Personnel::where('email', $validatedData['email'])->first();
+    if ($personnel) {
+        return redirect()->back()->withInput()->withErrors(['email' => 'Le personnel avec cet email existe déjà.']);
+    }
+
     $personnel = new Personnel;
     $personnel->nom = $validatedData['nom'];
     $personnel->prenom = $validatedData['prenom'];
@@ -222,6 +264,7 @@ public function storePersonnel(Request $request)
 
     return redirect()->route('admin.index')->with('success', 'Le personnel a été créé avec succès.');
 }
+
 
 
 public function showPersonnel($id)
@@ -283,23 +326,30 @@ public function destroyPersonnel($id)
     }
     
     public function storeStock(Request $request)
-    {
-        $validatedData = $request->validate([
-            'nom' => 'required',
-            'type' => 'required',
-            'description' => 'required',
-            'quantite' => 'required|numeric|min:0',
-        ]);
-    
-        $stock = new Stock;
-        $stock->nom = $validatedData['nom'];
-        $stock->type = $validatedData['type'];
-        $stock->description = $validatedData['description'];
-        $stock->quantite = $validatedData['quantite'];
-        $stock->save();
-    
-        return redirect()->route('admin.index')->with('success', 'Le stock a été créée avec succès.');
+{
+    $validatedData = $request->validate([
+        'nom' => 'required',
+        'type' => 'required',
+        'description' => 'required',
+        'quantite' => 'required|numeric|min:0',
+    ]);
+
+    $existingStock = Stock::where('nom', $validatedData['nom'])->first();
+
+    if ($existingStock) {
+        return redirect()->back()->with('error', 'Un stock avec le même nom existe déjà.');
     }
+
+    $stock = new Stock;
+    $stock->nom = $validatedData['nom'];
+    $stock->type = $validatedData['type'];
+    $stock->description = $validatedData['description'];
+    $stock->quantite = $validatedData['quantite'];
+    $stock->save();
+
+    return redirect()->route('admin.index')->with('success', 'Le stock a été créé avec succès.');
+}
+
 
     public function showStock($id)
     {
