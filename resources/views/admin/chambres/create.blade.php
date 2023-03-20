@@ -27,9 +27,10 @@
         </div>
         <div class="form-group">
             <label for="disponibilite">Disponibilité:</label>
-            <select class="form-control" id="disponibilite" name="disponibilite" required>
-                <option value="1">Disponible</option>
-                <option value="0">Non disponible</option>
+           <select class="form-control" id="disponibilite" name="disponibilite" required>
+                <option value="1" {{ $chambre->disponibilite == 'oui' ? 'selected' : '' }}>oui</option>
+                <option value="0" {{ $chambre->disponibilite == 'non' ? 'selected' : '' }}>non</option>
+
             </select>
         </div>
       
