@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tache', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ID_Personnel')->constrained('personnel')->onDelete('cascade');
-            $table->string('description_tache');
-            $table->dateTime('date_debut');
-            $table->dateTime('date_fin');
+            $table->string('nom');
+            $table->string('type');
+            $table->text('description');
+            $table->integer('quantite')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tache');
+        Schema::dropIfExists('stocks');
     }
 };

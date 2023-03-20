@@ -81,38 +81,84 @@
             </tbody>
         </table>
         <hr>
-        <h2>Services</h2>
-        <a href="{{ route('admin.services.create') }}" class="btn btn-primary mb-3">Create Service</a>
-        <table class="table">
+       
+
+        <h2>Personnels</h2>
+        <a href="{{ route('admin.personnels.create') }}" class="btn btn-primary mb-3">Ajouter un personnel</a>
+
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Téléphone</th>
+                    <th>Email</th>
+                    <th>Adresse</th>
+                    <th>Salaire</th>
+                    <th>Poste</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($services as $service)
+                @foreach ($personnels as $personnel)
                     <tr>
-                        <td>{{ $service->id }}</td>
-                        <td>{{ $service->name }}</td>
-                        <td>{{ $service->description }}</td>
-                        <td>{{ $service->price }}</td>
+                        <td>{{ $personnel->Nom }}</td>
+                        <td>{{ $personnel->Prenom }}</td>
+                        <td>{{ $personnel->Telephone }}</td>
+                        <td>{{ $personnel->Email }}</td>
+                        <td>{{ $personnel->Adresse }}</td>
+                        <td>{{ $personnel->Salaire }}</td>
+                        <td>{{ $personnel->Poste }}</td>
                         <td>
-                            <a href="{{ route('admin.services.show', $service) }}" class="btn btn-primary">View</a>
-                            <a href="{{ route('admin.services.edit', $service) }}" class="btn btn-secondary">Edit</a>
-                            <form action="{{ route('admin.services.destroy', $service) }}" method="POST" style="display:inline">
+                            <a href="{{ route('admin.personnels.show', $personnel->id) }}" class="btn btn-primary">Voir</a>
+                            <a href="{{ route('admin.personnels.edit', $personnel->id) }}" class="btn btn-warning">Modifier</a>
+                            <form action="{{ route('admin.personnels.destroy', $personnel->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce personnel ?')">Supprimer</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+
+        <hr>
+<h2>Stock</h2>
+<a href="{{ route('admin.stock.create') }}" class="btn btn-primary mb-3">Ajouter un article</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Article</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Quantité</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($stocks as $stock)
+            <tr>
+                <td>{{ $stock->nom }}</td>
+                <td>{{ $stock->type }}</td>
+                <td>{{ $stock->description }}</td>
+                <td>{{ $stock->quantite }}</td>
+                <td>
+                    <a href="{{ route('admin.stock.show', $stock->id) }}" class="btn btn-primary">Voir</a>
+                    <a href="{{ route('admin.stock.edit', $stock->id) }}" class="btn btn-warning">Modifier</a>
+                    <form action="{{ route('admin.stock.destroy', $stock->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
+        
         <h2>Comments</h2>
 
         <table class="table">

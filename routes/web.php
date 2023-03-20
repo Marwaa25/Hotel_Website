@@ -65,7 +65,25 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/comments/{id}', [AdminController::class, 'showComment'])->name('admin.comments.show');
     Route::delete('/admin/comments/{id}', [AdminController::class, 'destroyComment'])->name('admin.comments.destroy');
 
+    //Routes pour les personnels
+    
+    Route::get('/personnels/create', [AdminController::class, 'createPersonnel'])->name('admin.personnels.create');
+    Route::post('/personnels', [AdminController::class, 'storePersonnel'])->name('admin.personnels.store');
+    Route::get('/personnels/{id}', [AdminController::class, 'showPersonnel'])->name('admin.personnels.show');
+    Route::get('/personnels/{id}/edit', [AdminController::class, 'editPersonnel'])->name('admin.personnels.edit');
+    Route::put('/personnels/{id}', [AdminController::class, 'updatePersonnel'])->name('admin.personnels.update');
+    Route::delete('/personnels/{id}', [AdminController::class, 'destroyPersonnel'])->name('admin.personnels.destroy');
+     
+    //Routes pour le stock
 
+    Route::get('/stock/create', [AdminController::class, 'createStock'])->name('admin.stock.create');
+    Route::post('/stock', [AdminController::class, 'storeStock'])->name('admin.stock.store');
+    Route::get('/stock/{id}', [AdminController::class, 'showStock'])->name('admin.stock.show');
+    Route::get('/stock/{id}/edit', [AdminController::class, 'editStock'])->name('admin.stock.edit');
+    Route::put('/stock/{id}', [AdminController::class, 'updateStock'])->name('admin.stock.update');
+    Route::delete('/stock/{id}', [AdminController::class, 'destroyStock'])->name('admin.stock.destroy');
+    
+    
     
 });
 
