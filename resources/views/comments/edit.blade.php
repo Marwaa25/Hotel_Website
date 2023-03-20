@@ -1,4 +1,4 @@
-@extends('layouts.header')
+{{-- @extends('layouts.header')
 
 @section('content')
     <div class="container">
@@ -18,4 +18,4 @@
             <button type="submit" class="btn btn-primary">Update Comment</button>
         </form>
     </div>
-@endsection
+@endsection --}}

@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('layouts.header')
 
 @section('content')
     <div class="row justify-content-center">
@@ -38,6 +38,22 @@
                                 @enderror
                             </div>
                         </div>
+                        
+
+                        <div class="form-group row">
+                            <label for="telephone" class="col-md-4 col-form-label text-md-right">Téléphone</label>
+
+                            <div class="col-md-6">
+                                <input id="telephone" type="text" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone', $personnel->telephone) }}" required autocomplete="telephone">
+
+                                @error('telephone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">Adresse email</label>
@@ -54,32 +70,19 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="telephone" class="col-md-4 col-form-label text-md-right">Téléphone</label>
-
+                            <label for="adresse" class="col-md-4 col-form-label text-md-right">Adresse</label>
+    
                             <div class="col-md-6">
-                                <input id="telephone" type="text" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone', $personnel->telephone) }}" required autocomplete="telephone">
-
-                                @error('telephone')
+                                <input id="adresse" type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" value="{{ old('adresse', $personnel->adresse) }}" required autocomplete="adresse">
+    
+                                @error('adresse')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="date_embauche" class="col-md-4 col-form-label text-md-right">Date d'embauche</label>
-
-                            <div class="col-md-6">
-                                <input id="date_embauche" type="date" class="form-control @error('date_embauche') is-invalid @enderror" name="date_embauche" value="{{ old('date_embauche', $personnel->date
-                                 @error('date_embauche')
-                                 @error('date_embauche')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
+                           
 
                     <div class="form-group row">
                         <label for="salaire" class="col-md-4 col-form-label text-md-right">Salaire</label>
@@ -96,18 +99,22 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="photo" class="col-md-4 col-form-label text-md-right">Photo</label>
+                        <label for="poste" class="col-md-4 col-form-label text-md-right">Poste</label>
 
                         <div class="col-md-6">
-                            <input id="photo" type="file" class="form-control-file @error('photo') is-invalid @enderror" name="photo">
+                            <input id="poste" type="text" class="form-control @error('poste') is-invalid @enderror" name="poste" value="{{ old('poste', $personnel->poste) }}" required autocomplete="adresse">
 
-                            @error('photo')
+                            @error('poste')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                     </div>
+
+
+               
+
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">

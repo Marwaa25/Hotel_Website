@@ -3,6 +3,11 @@
     <head>
         <!-- Les balises meta et les liens vers les feuilles de styles -->
         <script src="https://kit.fontawesome.com/ea3e2fd2ef.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --}}
+
     </head>
     <body>
         <nav class='navbar'>
@@ -36,3 +41,48 @@
             </div>
         </body>
     </html>
+    <style>
+
+
+        .navbar ul{
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar li{
+            margin: 0 50px;
+        }
+
+        .navbar ul li a {
+            color: #D2B48C;
+            text-decoration: none;
+            font-size:1.2rem;
+            font-weight: bold;
+            font-family:"Constantia";
+         }
+        .navbar .title {
+           
+            align-self: center;
+            margin-bottom: 20px;
+            font-family:'Brush Script MT';
+            font-size:4rem;
+            
+        }
+        .langue{
+            margin-left:1210px;
+            margin-top:25px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            color:#191970;
+            background-color: transparent;
+       
+        }
+        .navbar .title .navbar-brand{
+            text-decoration: none;
+            color:#D2B48C;
+            text-align: center;
+            padding: 550px;
+        }
+    </style>

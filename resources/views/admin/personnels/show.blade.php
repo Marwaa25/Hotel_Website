@@ -1,6 +1,4 @@
-<!-- resources/views/personnel/show.blade.php -->
-
-@extends('layouts.app')
+@extends('layouts.header')
 
 @section('content')
     <div class="container">
@@ -12,34 +10,38 @@
                         <a href="{{ route('admin.index') }}" class="btn btn-primary btn-sm float-right">Retour</a>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="nom">Nom</label>
-                            <p>{{ $personnel->Nom }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="prenom">Prénom</label>
-                            <p>{{ $personnel->Prenom }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="adresse">Adresse</label>
-                            <p>{{ $personnel->Adresse }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <p>{{ $personnel->Email }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <p>{{ $personnel->Telephone }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="poste">Poste</label>
-                            <p>{{ $personnel->Poste }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="salaire">Salaire</label>
-                            <p>{{ $personnel->Salaire }}</p>
-                        </div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Nom:</strong></td>
+                                    <td>{{ $personnel->Nom }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Prénom:</strong></td>
+                                    <td>{{ $personnel->Prenom }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Adresse:</strong></td>
+                                    <td>{{ $personnel->Adresse }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Email:</strong></td>
+                                    <td>{{ $personnel->Email }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Téléphone:</strong></td>
+                                    <td>{{ $personnel->Telephone }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Poste:</strong></td>
+                                    <td>{{ $personnel->Poste }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Salaire:</strong></td>
+                                    <td>{{ $personnel->Salaire }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

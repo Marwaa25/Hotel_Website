@@ -29,12 +29,8 @@ class CommentController extends Controller
         return view('comments.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    //  * Store a newly created resource in storage.
+
     public function store(Request $request)
     {
         $comment = new Comment;
@@ -47,58 +43,14 @@ class CommentController extends Controller
         return redirect()->route('comments.index')->with('success', 'Comment added successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+    //  * Display the specified resource.
+
     public function show($id)
     {
         $comment = Comment::find($id);
         return view('comments.show', ['comment' => $comment]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $comment = Comment::find($id);
-        return view('comments.edit', ['comment' => $comment]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $comment = Comment::find($id);
-        $comment->Comment = $request->input('comment');
-        $comment->Note = $request->input('note');
-        $comment->save();
-
-        return redirect()->route('comments.index')->with('success', 'Comment updated successfully.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $comment = Comment::find($id);
-        $comment->delete();
-
-        return redirect()->route('comments.index')->with('success', 'Comment deleted successfully.');
-    }
+    
 }

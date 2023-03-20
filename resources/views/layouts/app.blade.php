@@ -47,17 +47,19 @@
             border: none;
             cursor: pointer;
             background-color:white;
+            margin-left:166vh;
+        }
+        button a {
+            text-decoration:none;
             color:#191970;
-            margin-left:170vh;
-    
-            
         }
          .navbar ul li a {
-            color: #F0F8FF;
             text-decoration: none;
-            font-size:1.2rem;
+            font-size:1.3rem;
             font-weight: bold;
             font-family:"Constantia";
+            color:rgba(255,255,255,.3);
+            text-shadow: 4px 3px 0px #7A7A7A;
          }
         .navbar .title {
             align-self: center;
@@ -90,7 +92,8 @@
             margin-right: 5px;
             }
         .address {
-            color: #3b4a20;
+            color:#D3D3D3;
+            margin-top:20px;
             text-decoration: none;
             font-size:20px;
             justify-content:center;
@@ -359,16 +362,18 @@ form a {
     font-size:28px;
 }
 
+
+
     </style>
     </head>
     <body>
         <nav class='navbar'>
             <div>
             <select class="langue" name="langue">
-                    <option value="francais">Français</option>
-                    <option value="anglais">Anglais</option>
-                    <option value="espagnol">Espagnol</option>
-                    <option value="allemand">Arabe</option>
+                    <option value="francais">Fr</option>
+                    <option value="anglais">Ang</option>
+                    <option value="espagnol">Esp</option>
+                    <option value="allemand">Ar</option>
                 </select>
             </div>
             <div class='title'>
@@ -380,9 +385,12 @@ form a {
                 <li><a href="{{ route('chambres.index') }}">Nos chambres</a></li> 
                 <li><a href="{{ route('services.index') }}">Nos services</a></li>
                 <li><a href="{{route('contact.contact')}}">Contact</a></li>
-                <li><a href="{{ route('hotel.index')}}">À propos de nous</a></li>
-                <li><a href="{{ route('admin.index')}}">Admin</a></li>
+                <li><a class='exep' href="{{ route('hotel.index')}}">À propos de nous</a></li>
+                <li><a class='exep' href="{{ route('admin.index')}}">Admin</a></li>
             </ul>
+            <div>
+                <button><a href="{{ route('comments.index')}} ">Check rates</a></button>
+            </div>
             <div class="dropdown">
                 <button class="dropdown-btn"><span></span><span></span><span></span></button>
                 <div class="dropdown-content">
@@ -397,9 +405,6 @@ form a {
                     <a href="#">Tél: 05 39 66 32 19 / Fax: 05 39 66 32 32</a>
                     <a href="#">Email:cote.dor@live.fr</a>
                 </div>
-            </div>
-            <div>
-            <button>check rates</button>
             </div>
             <p class="stars">
             <span class="star">&#9733;</span>
@@ -463,6 +468,8 @@ form a {
             </div>
             <a class="discover-btn" href="{{ route('hotel.index')}}">DÉCOUVREZ CE QUI FAIT NOTRE DIFFÉRENCE</a>
         </div>
+
+
 
         <main class="container">
             @yield('content')

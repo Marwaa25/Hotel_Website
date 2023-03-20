@@ -60,26 +60,28 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/services/{id}', [AdminController::class, 'updateService'])->name('admin.services.update');
     Route::delete('/admin/services/{id}', [AdminController::class, 'destroyService'])->name('admin.services.destroy');
 
+    // Routes pour les commentaires
+    Route::get('/admin/comments', [AdminController::class, 'index'])->name('admin.comments.index');
+    Route::get('/admin/comments/{id}', [AdminController::class, 'showComment'])->name('admin.comments.show');
+    Route::delete('/admin/comments/{id}', [AdminController::class, 'destroyComment'])->name('admin.comments.destroy');
 
-
-        // Afficher le formulaire de création d'un personnel
-        Route::get('/personnels/create', [AdminController::class, 'createPersonnel'])->name('admin.personnels.create');
+    //Routes pour les personnels
     
-        // Enregistrer un nouveau personnel
-        Route::post('/personnels', [AdminController::class, 'storePersonnel'])->name('admin.personnels.store');
-    
-        // Afficher les détails d'un personnel
-        Route::get('/personnels/{id}', [AdminController::class, 'showPersonnels'])->name('admin.personnels.show');
-    
-        // Afficher le formulaire d'édition d'un personnel
-        Route::get('/personnels/{id}/edit', [AdminController::class, 'editPersonnel'])->name('admin.personnels.edit');
-    
-        // Mettre à jour les informations d'un personnel
-        Route::put('/personnels/{id}', [AdminController::class, 'updatePersonnel'])->name('admin.personnels.update');
-    
-        // Supprimer un personnel
-        Route::delete('/personnels/{id}', [AdminController::class, 'destroyPersonnel'])->name('admin.personnels.destroy');
+    Route::get('/personnels/create', [AdminController::class, 'createPersonnel'])->name('admin.personnels.create');
+    Route::post('/personnels', [AdminController::class, 'storePersonnel'])->name('admin.personnels.store');
+    Route::get('/personnels/{id}', [AdminController::class, 'showPersonnel'])->name('admin.personnels.show');
+    Route::get('/personnels/{id}/edit', [AdminController::class, 'editPersonnel'])->name('admin.personnels.edit');
+    Route::put('/personnels/{id}', [AdminController::class, 'updatePersonnel'])->name('admin.personnels.update');
+    Route::delete('/personnels/{id}', [AdminController::class, 'destroyPersonnel'])->name('admin.personnels.destroy');
      
+    //Routes pour le stock
+
+    Route::get('/stock/create', [AdminController::class, 'createStock'])->name('admin.stock.create');
+    Route::post('/stock', [AdminController::class, 'storeStock'])->name('admin.stock.store');
+    Route::get('/stock/{id}', [AdminController::class, 'showStock'])->name('admin.stock.show');
+    Route::get('/stock/{id}/edit', [AdminController::class, 'editStock'])->name('admin.stock.edit');
+    Route::put('/stock/{id}', [AdminController::class, 'updateStock'])->name('admin.stock.update');
+    Route::delete('/stock/{id}', [AdminController::class, 'destroyStock'])->name('admin.stock.destroy');
     
     
     
@@ -96,8 +98,8 @@ Route::get('/comments', [CommentController::class, 'index'])->name('comments.ind
 Route::get('/comments/create', [CommentController::class, 'create'])->name('comments.create');
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::get('/comments/{comment}', [CommentController::class, 'show'])->name('comments.show');
-Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
-Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
+// Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
+// Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 Route::get('/contact',[ContactController::class,'create'])->name('contact.contact');

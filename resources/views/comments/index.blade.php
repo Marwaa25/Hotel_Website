@@ -26,15 +26,7 @@
                             <td>{{ $comment->Comment }}</td>
                             <td>{{ $comment->Note }}</td>
                             <td>{{ $comment->datecomment }}</td>
-                            <td>
-                                <a href="{{ route('comments.show', $comment->id) }}" class="btn btn-secondary">View</a>
-                                <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-primary">Edit</a>
-                                <form action="{{ route('comments.destroy', $comment->id) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </td>
+                            <td><a href="{{ route('comments.show', $comment->id) }}" class="btn btn-secondary">View</a></td>
                         </tr>
                     @endforeach
                 </tbody>
