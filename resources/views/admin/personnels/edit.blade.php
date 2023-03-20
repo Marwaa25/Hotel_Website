@@ -2,6 +2,22 @@
 
 @section('content')
     <div class="row justify-content-center">
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Éditer le personnel</div>
@@ -15,7 +31,7 @@
                             <label for="nom" class="col-md-4 col-form-label text-md-right">Nom</label>
 
                             <div class="col-md-6">
-                                <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom', $personnel->nom) }}" required autocomplete="nom" autofocus>
+                                <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ $personnel->nom }}" required autocomplete="nom" autofocus>
 
                                 @error('nom')
                                     <span class="invalid-feedback" role="alert">
