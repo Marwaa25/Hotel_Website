@@ -98,17 +98,46 @@ class DatabaseSeeder extends Seeder
         $chambre = Chambre::create([
             'id' => '101',
             'etage'=>2,
-            'type_de_chambre' => 'simple',
+            'type_de_chambre' => 'Chambre Simple',
             'disponibilite'=>true,
-            'prix_par_nuit' => 50,
+            'prix_par_nuit' => 400,
         ]);
         $chambre = Chambre::create([
             'id' => '201',
             'etage'=>2,
-            'type_de_chambre' => 'double',
+            'type_de_chambre' => 'Chambre Double',
             'disponibilite'=>true,
-            'prix_par_nuit' => 50,
+            'prix_par_nuit' => 500,
         ]);
+        $chambre = Chambre::create([
+            'id' => '203',
+            'etage'=>2,
+            'type_de_chambre' => 'Chambre Triple',
+            'disponibilite'=>true,
+            'prix_par_nuit' => 660,
+        ]);
+        $chambre = Chambre::create([
+            'id' => '305',
+            'etage'=>2,
+            'type_de_chambre' => 'Suite',
+            'disponibilite'=>true,
+            'prix_par_nuit' => 500,
+        ]);
+        $chambre = Chambre::create([
+            'id' => '401',
+            'etage'=>2,
+            'type_de_chambre' => 'Appartement',
+            'disponibilite'=>true,
+            'prix_par_nuit' => 950,
+        ]);
+        $chambre = Chambre::create([
+            'id' => '204',
+            'etage'=>2,
+            'type_de_chambre' => 'Chambre Quadruple',
+            'disponibilite'=>true,
+            'prix_par_nuit' => 774,
+        ]);
+
         
         $chambreId = 101; // the ID of the chambre you want to associate with the images
         $chambreId2 = 201;
