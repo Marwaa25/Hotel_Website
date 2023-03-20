@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reservation;
 use App\Models\Chambre;
 use App\Models\Service;
+use App\Models\Personnel;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,8 +16,9 @@ class AdminController extends Controller
         $reservations = Reservation::all();
         $chambres = Chambre::all();
         $services = Service::all();
+        $personnels = Personnel::all();
 
-        return view('admin.index', compact('reservations', 'chambres', 'services'));
+        return view('admin.index', compact('reservations', 'chambres', 'services', 'personnels'));
     }
     
     // Réservations
@@ -182,4 +184,90 @@ public function storeServices(Request $request)
 
         return redirect()->route('admin.services.index')->with('success', 'Le service a été supprimé avec succès.');
     }
+
+   // Personnel
+public function createPersonnel()
+{
+    return view('admin.personnels.create');
+}
+
+public function storePersonnel(Request $request)
+{
+    $validatedData = $request->validate([
+        'nom' => 'required',
+        'prenom' => 'required',
+        'telephone' => 'required',
+        'adresse' => 'required',
+        'email' => 'required|email|unique:personnel,email',
+        'salaire' => 'required|numeric|min:0',
+        'poste' => 'required',
+    ]);
+
+    $personnel = new Personnel;
+    $personnel->nom = $validatedData['nom'];
+    $personnel->prenom = $validatedData['prenom'];
+    $personnel->telephone = $validatedData['telephone'];
+    $personnel->adresse = $validatedData['adresse'];
+    $personnel->email = $validatedData['email'];
+    $personnel->salaire = $validatedData['salaire'];
+    $personnel->poste = $validatedData['poste'];
+    $personnel->save();
+
+    return redirect()->route('admin.index')->with('success', 'Le personnel a été créé avec succès.');
+}
+
+
+public function showPersonnel($id)
+{
+    $personnel = Personnel::findOrFail($id);
+
+    return view('admin.personnels.show', compact('personnel'));
+}
+
+public function editPersonnel($id)
+{
+    $personnel = Personnel::findOrFail($id);
+
+    return view('admin.personnels.edit', compact('personnel'));
+}
+
+public function updatePersonnel(Request $request, $id)
+{
+    $validatedData = $request->validate([
+        'nom' => 'required',
+        'prenom' => 'required',
+        'telephone' => 'required',
+        'email' => 'required|email',
+        'salaire' => 'required|numeric|min:0',
+        'date_embauche' => 'required|date',
+        'date_naissance' => 'required|date',
+        'adresse' => 'required',
+        'ville' => 'required',
+        'pays' => 'required',
+    ]);
+
+    $personnel = Personnel::findOrFail($id);
+    $personnel->nom = $validatedData['nom'];
+    $personnel->prenom = $validatedData['prenom'];
+    $personnel->telephone = $validatedData['telephone'];
+    $personnel->email = $validatedData['email'];
+    $personnel->salaire = $validatedData['salaire'];
+    $personnel->date_embauche = $validatedData['date_embauche'];
+    $personnel->date_naissance = $validatedData['date_naissance'];
+    $personnel->adresse = $validatedData['adresse'];
+    $personnel->ville = $validatedData['ville'];
+    $personnel->pays = $validatedData['pays'];
+    $personnel->save();
+
+    return redirect()->route('admin.personnels.index')->with('success', 'Le personnel a été mis à jour avec succès.');
+}
+
+
+public function destroyPersonnel($id)
+{
+    $personnel = Personnel::findOrFail($id);
+    $personnel->delete();
+
+    return redirect()->route('admin.index')->with('success', 'Le personnel a été supprimé avec succès.');
+}
 }

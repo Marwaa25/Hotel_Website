@@ -59,6 +59,29 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/services/{id}/edit', [AdminController::class, 'editService'])->name('admin.services.edit');
     Route::put('/admin/services/{id}', [AdminController::class, 'updateService'])->name('admin.services.update');
     Route::delete('/admin/services/{id}', [AdminController::class, 'destroyService'])->name('admin.services.destroy');
+
+
+
+        // Afficher le formulaire de création d'un personnel
+        Route::get('/personnels/create', [AdminController::class, 'createPersonnel'])->name('admin.personnels.create');
+    
+        // Enregistrer un nouveau personnel
+        Route::post('/personnels', [AdminController::class, 'storePersonnel'])->name('admin.personnels.store');
+    
+        // Afficher les détails d'un personnel
+        Route::get('/personnels/{id}', [AdminController::class, 'showPersonnels'])->name('admin.personnels.show');
+    
+        // Afficher le formulaire d'édition d'un personnel
+        Route::get('/personnels/{id}/edit', [AdminController::class, 'editPersonnel'])->name('admin.personnels.edit');
+    
+        // Mettre à jour les informations d'un personnel
+        Route::put('/personnels/{id}', [AdminController::class, 'updatePersonnel'])->name('admin.personnels.update');
+    
+        // Supprimer un personnel
+        Route::delete('/personnels/{id}', [AdminController::class, 'destroyPersonnel'])->name('admin.personnels.destroy');
+     
+    
+    
     
 });
 
