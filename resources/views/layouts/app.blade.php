@@ -3,8 +3,47 @@
     <head>
         <!-- Les balises meta et les liens vers les feuilles de styles -->
         <script src="https://kit.fontawesome.com/ea3e2fd2ef.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <script>
+                $(document).ready(function(){
+        $('.slider').slick({
+          autoplay: true,
+          autoplaySpeed: 3000,
+          arrows: false,
+          dots: true,
+          centerMode: true,
+          centerPadding: '0px',
+          responsive: [
+            {
+              breakpoint: 0,
+              settings: {
+                centerPadding: '0px'
+              }
+            },
+            {
+              breakpoint: 0,
+              settings: {
+                centerMode: false,
+                centerPadding: '0px'
+              }
+            }
+          ]
+        });
+        $('.prev').click(function(){
+          $('.slider').slick('slickPrev');
+        });
+        $('.next').click(function(){
+          $('.slider').slick('slickNext');
+        });
+      });
+      </script>
+
     <style>
-        .navbar {
+  
+      .navbar {
       
             background-image: url('pics/background-header.jpeg');
             background-size: cover;
@@ -58,8 +97,9 @@
             font-size:1.3rem;
             font-weight: bold;
             font-family:"Constantia";
-            color:rgba(255,255,255,.3);
-            text-shadow: 4px 3px 0px #7A7A7A;
+            color:white;
+            text-shadow: 2px 2px 5px gray;
+            
          }
         .navbar .title {
             align-self: center;
@@ -361,9 +401,84 @@ form a {
     color:#2F4F4F;
     font-size:28px;
 }
+.slider{
+  margin-top:50px;
+}
+.slider img{
+  width:100%;
+  height:700px;
+}
+.slider div {
+  position: relative;
+}
+.slider .fixe{
+  display:flex;
+  flex-wrap:wrap;
+  gap:300px;
+  margin-left:50px;
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  border-bottom: 2px solid white;
+}
+.slider .fixe h2{
+  color:white;
+  font-family:arial;
+  font-size:2.5rem;
+}
+.slider .fixe a{
+  text-decoration:none;
+  color:white;
+  margin-top:45px;
+  margin-bottom:15px;
+  font-size:20px;
+  border: 1px solid black;
+  padding:10px 20px;
+  background-color:transparent; 
+  border-radius: 5px;
+}
 
+.slider h3 {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  margin-left:50px;
+  font-size: 3rem;
+  text-align: left;
+}
+.slider p {
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 60%;
+  color:white;
+  text-shadow: 2px 2px 5px gray;
+  padding: 10px;
+  margin-left:50px;
+  font-size: 2rem;
+  text-align: left;
+}
+.slider .reserv  {
+  bottom:220px;
 
+}
+.slider .reserv a{
+  text-decoration:none;
+  color:white;
+  font-size:20px;
+  padding:10px 25px;
+  background-color:black; 
+  margin-left:300px;
+  border-radius: 5px;
+}
 
+body {
+  max-width: 100%;
+  margin: 0;
+}
     </style>
     </head>
     <body>
@@ -468,9 +583,58 @@ form a {
             </div>
             <a class="discover-btn" href="{{ route('hotel.index')}}">DÉCOUVREZ CE QUI FAIT NOTRE DIFFÉRENCE</a>
         </div>
-
-
-
+        <div class="slider">
+        <div>
+          <div class="fixe">
+          <h2>Notre sélection de chambres et suites</h2>
+          <a href="ok">Visiter les chambres</a>
+          </div>
+          <img src="pics/pic5.jpeg">
+          <h3>Triple</h3>
+          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <div class="reserv"><a  href="reserv">Reserver</a></div>
+        </div>
+        <div>
+          <div class="fixe">
+          <h2>Notre sélection de chambres et suites</h2>
+          <a href="ok">Visiter les chambres</a>
+          </div>
+          <img src="pics/pic4.jpeg">
+          <h3>Titre 2</h3>
+          <p>Description</p>
+          <div class="reserv"><a  href="reserv">Reserver</a></div>
+        </div>
+        <div>
+        <div class="fixe">
+          <h2>Notre sélection de chambres et suites</h2>
+          <a href="ok">Visiter les chambres</a>
+          </div>
+          <img src="pics/pic2.jpeg">
+          <h3>Titre 3</h3>
+          <p>Description</p>
+          <div class="reserv"><a  href="reserv">Reserver</a></div>
+        </div>
+        <div>
+        <div class="fixe">
+          <h2>Notre sélection de chambres et suites</h2>
+          <a href="ok">Visiter les chambres</a>
+          </div>
+          <img src="pics/pic3.jpeg">
+          <h3>Titre 3</h3>
+          <p>Description</p>
+          <div class="reserv"><a  href="reserv">Reserver</a></div>
+        </div>
+        <div>
+        <div class="fixe">
+          <h2>Notre sélection de chambres et suites</h2>
+          <a href="ok">Visiter les chambres</a>
+          </div>
+          <img src="pics/pic1.jpeg">
+          <h3>Titre 3</h3>
+          <p>Description</p>
+          <div class="reserv"><a  href="reserv">Reserver</a></div>
+        </div>
+      </div>
         <main class="container">
             @yield('content')
         </main>
