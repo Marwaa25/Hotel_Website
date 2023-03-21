@@ -85,7 +85,7 @@
             border-radius: 5px;
             border: none;
             cursor: pointer;
-            background-color:white;
+            background-color:#FFEFD5;
             margin-left:166vh;
         }
         button a {
@@ -97,7 +97,7 @@
             font-size:1.3rem;
             font-weight: bold;
             font-family:"Constantia";
-            color:white;
+            color:#FFEFD5;
             text-shadow: 2px 2px 5px gray;
             
          }
