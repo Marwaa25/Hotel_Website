@@ -105,7 +105,8 @@ class AdminController extends Controller
     // Chambres
     public function createChambre()
     {
-        return view('admin.chambres.create');
+        $chambre = new Chambre();
+        return view('admin.chambres.create', compact('chambre'));
     }
 
     public function storeChambre(Request $request)
@@ -132,7 +133,8 @@ class AdminController extends Controller
         $chambre->type_de_chambre = $validatedData['type_de_chambre'];
         $chambre->etage = $validatedData['etage'];
         $chambre->prix_par_nuit = $validatedData['prix_par_nuit'];
-        $chambre->disponibilite = $validatedData['disponibilite'];
+        $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
+        
         $chambre->save();
     
         return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été créée avec succès.');

@@ -2,12 +2,14 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <!-- Les balises meta et les liens vers les feuilles de styles -->
+        @vite(['resources/css/app.css','resources/js/app.js'])
         <script src="https://kit.fontawesome.com/ea3e2fd2ef.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
         <script>
+          
                 $(document).ready(function(){
         $('.slider').slick({
           autoplay: true,
@@ -41,7 +43,7 @@
       });
       </script>
 
-    <style>
+    {{-- <style>
   
       .navbar {
       
@@ -479,7 +481,7 @@ body {
   max-width: 100%;
   margin: 0;
 }
-    </style>
+    </style> --}}
     </head>
     <body>
         <nav class='navbar'>

@@ -26,11 +26,17 @@
             </thead>
             <tbody>
                 @foreach ($chambres as $chambre)
+                @if($chambre->disponibilite)
+                        disponible
+                    @else
+                        non disponible
+                    @endif
+
                     <tr>
                         <td>{{ $chambre->type_de_chambre }}</td>
                         <td>{{ $chambre->etage }}</td>
                         <td>{{ $chambre->prix_par_nuit }}</td>
-                        <td>{{ $chambre->disponibilite == 'Disponible' ? 'Oui' : 'Non' }}</td>
+                        <td>{{ $chambre->disponibilite ? 'Disponible' : 'Non disponible' }}</td>
                         <td>
                             <a href="{{ route('admin.chambres.edit', $chambre) }}" class="btn btn-sm btn-primary">Editer</a>
                             <form action="{{ route('admin.chambres.destroy', $chambre) }}" method="POST" class="d-inline">
