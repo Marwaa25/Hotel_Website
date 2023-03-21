@@ -1,28 +1,23 @@
 @extends('layouts.header')
 
 @section('content')
-@if ($errors->any())
-<div class="alert alert-danger">
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
 
-@if (session('success'))
-<div class="alert alert-success">
-    {{ session('success') }}
-</div>
-@endif
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Créer un nouveau stock') }}</div>
-
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <strong>Attention!</strong> Il y a eu quelques problèmes avec les champs saisis.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.stock.store') }}">
                             @csrf

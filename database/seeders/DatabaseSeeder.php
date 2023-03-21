@@ -139,23 +139,23 @@ class DatabaseSeeder extends Seeder
         ]);
 
         
-        $chambreId = 101; // the ID of the chambre you want to associate with the images
-        $chambreId2 = 201;
-        // create some image records for the chambre
-        $images = [
-            ['url' => '/images/double (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId],
-            ['url' => '/images/double 2 (2).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId],
-            ['url' => '/images/double 2 (3).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId],
-            ['url' => '/images/double 2 (4).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId],
-            ['url' => 'images/appartement (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId2],
-            ['url' => 'images/appartement (3).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId2],
-            ['url' => 'images/appartement(4).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId2],
-            ['url' => 'images/appartement(5).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId2],
-        ];
-        // insert the image records into the database
-        foreach ($images as $image) {
-            Image::create($image);
-        }
+        // $chambreId = 101; // the ID of the chambre you want to associate with the images
+        // $chambreId2 = 201;
+        // // create some image records for the chambre
+        // $images = [
+        //     ['url' => '/images/double (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId],
+        //     ['url' => '/images/double 2 (2).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId],
+        //     ['url' => '/images/double 2 (3).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId],
+        //     ['url' => '/images/double 2 (4).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId],
+        //     ['url' => 'images/appartement (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId2],
+        //     ['url' => 'images/appartement (3).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId2],
+        //     ['url' => 'images/appartement(4).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId2],
+        //     ['url' => 'images/appartement(5).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId2],
+        // ];
+        // // insert the image records into the database
+        // foreach ($images as $image) {
+        //     Image::create($image);
+        // }
         // Image::create([
         //     'url' => 'images/simple.jpg',
         //     'alt' => 'Chambre Simple',

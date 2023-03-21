@@ -276,41 +276,28 @@ public function showPersonnel($id)
     return view('admin.personnels.show', compact('personnel'));
 }
 
-// Personnel
 public function editPersonnel($id)
 {
     $personnel = Personnel::findOrFail($id);
-
-    return view('admin.personnels.edit', compact('personnel'));
+    return view('admin.personnels.edit', ['personnel' => $personnel]);
 }
 
 public function updatePersonnel(Request $request, $id)
-{
-    
-    $chambre->save();
-    $validatedData = $request->validate([
-        'nom' => 'required',
-        'prenom' => 'required',
-        'telephone' => 'required',
-        'adresse' => 'required',
-        'email' => 'required|email|unique:personnel,email,'.$id,
-        'salaire' => 'required|numeric|min:0',
-        'poste' => 'required',
-    ]);
 
+{
     $personnel = Personnel::findOrFail($id);
-    $personnel->nom =  $request->input('nom');
-    $personnel->prenom =  $request->input('prenom');
-    $personnel->telephone =  $request->input('telephone');
-    $personnel->adresse =  $request->input('adresse');
-    $personnel->email =  $request->input('email');
-    $personnel->salaire =  $request->input('salaire');
-    $personnel->poste =  $request->input('poste');
+
+    $personnel->Nom = $request->Nom;
+    $personnel->Prenom = $request->Prenom;
+    $personnel->Telephone = $request->Telephone;
+    $personnel->Adresse = $request->Adresse;
+    $personnel->Email = $request->Email;
+    $personnel->Salaire = $request->Salaire;
+    $personnel->Poste = $request->Poste;
     $personnel->save();
 
     return redirect()->route('admin.index')->with('success', 'Le personnel a été modifié avec succès.');
 }
-
 
 public function destroyPersonnel($id)
 {
@@ -339,7 +326,7 @@ public function destroyPersonnel($id)
     $existingStock = Stock::where('nom', $validatedData['nom'])->first();
 
     if ($existingStock) {
-        return redirect()->back()->with('error', 'Un stock avec le même nom existe déjà.');
+        return redirect()->back()->withInput()->withErrors(['nom' => 'Un stock avec ce nom existe déjà.']);
     }
 
     $stock = new Stock;
