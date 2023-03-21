@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container">
@@ -18,7 +18,8 @@
             {{ session('success') }}
         </div>
     @endif
-    
+    <hr>
+
         <div>
         <h2>Réservations</h2>
         <form method="POST" action="{{ route('logout') }}">
@@ -140,6 +141,7 @@
         </table>
 
         <hr>
+
 <h2>Stock</h2>
 <a href="{{ route('admin.stock.create') }}" class="btn btn-primary mb-3">Ajouter un article</a>
 
@@ -173,6 +175,7 @@
         @endforeach
     </tbody>
 </table>
+        <hr>
 
         
         <h2>Comments</h2>
@@ -212,4 +215,3 @@
             </tbody>
         </table>
     @endsection
-    
