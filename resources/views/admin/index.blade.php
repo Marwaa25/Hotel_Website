@@ -263,8 +263,7 @@
             <table class="w-full table-auto">
                 <thead>
                     <tr class="bg-gray-200">
-                        <th class="px-4 py-3 text-left text-gray-600">ID</th>
-                        <th class="px-4 py-3 text-left text-gray-600">Client ID</th>
+                        <th class="px-4 py-3 text-left text-gray-600">Client</th>
                         <th class="px-4 py-3 text-left text-gray-600">Comment</th>
                         <th class="px-4 py-3 text-left text-gray-600">Note</th>
                         <th class="px-4 py-3 text-left text-gray-600">Date Comment</th>
@@ -274,8 +273,7 @@
                 <tbody>
                     @foreach ($comments as $comment)
                     <tr class="border-b border-gray-200 hover:bg-gray-100">
-                        <td class="py-2 px-4">{{ $comment->id }}</td>
-                        <td class="py-2 px-4">{{ $comment->ID_Client }}</td>
+                        <td class="py-2 px-4">{{ $comment->client_name}}</td>
                         <td class="py-2 px-4">{{ $comment->Comment }}</td>
                         <td class="py-2 px-4">{{ $comment->Note }}</td>
                         <td class="py-2 px-4">{{ $comment->datecomment }}</td>

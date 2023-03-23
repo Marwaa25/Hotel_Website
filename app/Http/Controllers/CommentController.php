@@ -35,6 +35,7 @@ class CommentController extends Controller
     {
         $comment = new Comment;
         $comment->ID_Client = $request->input('client_id');
+        $comment->client_name = $request->input('client_name');
         $comment->Comment = $request->input('comment');
         $comment->Note = $request->input('note');
         $comment->datecomment = date('Y-m-d');
