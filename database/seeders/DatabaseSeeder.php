@@ -99,63 +99,63 @@ class DatabaseSeeder extends Seeder
             'id' => '101',
             'etage'=>2,
             'type_de_chambre' => 'Chambre Simple',
-            'disponibilite'=>true,
+            'disponibilite'=>'Disponible',
             'prix_par_nuit' => 400,
         ]);
         $chambre = Chambre::create([
             'id' => '201',
             'etage'=>2,
             'type_de_chambre' => 'Chambre Double',
-            'disponibilite'=>true,
+            'disponibilite'=>'Disponible',
             'prix_par_nuit' => 500,
         ]);
         $chambre = Chambre::create([
             'id' => '203',
             'etage'=>2,
             'type_de_chambre' => 'Chambre Triple',
-            'disponibilite'=>true,
+            'disponibilite'=>'Disponible',
             'prix_par_nuit' => 660,
         ]);
         $chambre = Chambre::create([
             'id' => '305',
             'etage'=>2,
             'type_de_chambre' => 'Suite',
-            'disponibilite'=>true,
+            'disponibilite'=>'Disponible',
             'prix_par_nuit' => 500,
         ]);
         $chambre = Chambre::create([
             'id' => '401',
             'etage'=>2,
             'type_de_chambre' => 'Appartement',
-            'disponibilite'=>true,
+            'disponibilite'=>'Disponible',
             'prix_par_nuit' => 950,
         ]);
         $chambre = Chambre::create([
             'id' => '204',
             'etage'=>2,
             'type_de_chambre' => 'Chambre Quadruple',
-            'disponibilite'=>true,
+            'disponibilite'=>'Disponible',
             'prix_par_nuit' => 774,
         ]);
 
         
-        $chambreId = 101; // the ID of the chambre you want to associate with the images
-        $chambreId2 = 201;
-        // create some image records for the chambre
-        $images = [
-            ['url' => '/images/double (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId],
-            ['url' => '/images/double 2 (2).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId],
-            ['url' => '/images/double 2 (3).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId],
-            ['url' => '/images/double 2 (4).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId],
-            ['url' => 'images/appartement (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId2],
-            ['url' => 'images/appartement (3).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId2],
-            ['url' => 'images/appartement(4).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId2],
-            ['url' => 'images/appartement(5).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId2],
-        ];
-        // insert the image records into the database
-        foreach ($images as $image) {
-            Image::create($image);
-        }
+        // $chambreId = 101; // the ID of the chambre you want to associate with the images
+        // $chambreId2 = 201;
+        // // create some image records for the chambre
+        // $images = [
+        //     ['url' => '/images/double (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId],
+        //     ['url' => '/images/double 2 (2).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId],
+        //     ['url' => '/images/double 2 (3).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId],
+        //     ['url' => '/images/double 2 (4).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId],
+        //     ['url' => 'images/appartement (2).png', 'alt' => 'Image 1', 'chambre_id' => $chambreId2],
+        //     ['url' => 'images/appartement (3).png', 'alt' => 'Image 2', 'chambre_id' => $chambreId2],
+        //     ['url' => 'images/appartement(4).png', 'alt' => 'Image 3', 'chambre_id' => $chambreId2],
+        //     ['url' => 'images/appartement(5).png', 'alt' => 'Image 4', 'chambre_id' => $chambreId2],
+        // ];
+        // // insert the image records into the database
+        // foreach ($images as $image) {
+        //     Image::create($image);
+        // }
         // Image::create([
         //     'url' => 'images/simple.jpg',
         //     'alt' => 'Chambre Simple',

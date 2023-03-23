@@ -1,7 +1,23 @@
 @extends('layouts.header')
-
+@section('content')
+@if (session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+@if ($errors->any())
 @section('content')
     <h1>{{ $chambre->type_de_chambre }}</h1>
+   
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+    
     <div class="col-md-6">
         <a href="{{ route('reservations.create', ['chambre_id' => $chambre->id]) }}" class="btn btn-primary">Réserver</a>
     </div>

@@ -10,6 +10,22 @@
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            
     <h1>Créer une chambre</h1>
     <form action="{{ route('admin.chambres.store') }}" method="POST">
         @csrf
@@ -27,9 +43,10 @@
         </div>
         <div class="form-group">
             <label for="disponibilite">Disponibilité:</label>
-            <select class="form-control" id="disponibilite" name="disponibilite" required>
-                <option value="1">Disponible</option>
-                <option value="0">Non disponible</option>
+           <select class="form-control" id="disponibilite" name="disponibilite" required>
+                <option value="1" {{ $chambre->disponibilite == 'oui' ? 'selected' : '' }}>oui</option>
+                <option value="0" {{ $chambre->disponibilite == 'non' ? 'selected' : '' }}>non</option>
+
             </select>
         </div>
       
