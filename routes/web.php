@@ -55,8 +55,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/services/create', [AdminController::class, 'createService'])->name('admin.services.create');
     Route::post('/admin/services', [AdminController::class, 'storeServices'])->name('admin.services.store');
-    Route::get('/admin/services/{id}', [AdminController::class, 'showService'])->name('admin.services.show');
-    Route::get('/admin/services/{id}/edit', [AdminController::class, 'editService'])->name('admin.services.edit');
+    Route::get('/admin/services/{service}', [AdminController::class, 'showService'])->name('admin.services.show');
+    Route::get('/admin/services/{service}/edit', [AdminController::class, 'editService'])->name('admin.services.edit');
     Route::put('/admin/services/{id}', [AdminController::class, 'updateService'])->name('admin.services.update');
     Route::delete('/admin/services/{id}', [AdminController::class, 'destroyService'])->name('admin.services.destroy');
 
