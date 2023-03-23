@@ -61,6 +61,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Comment::create([
             'ID_Client'=>'1',
+            'Client_Name'=>'Ahmed',
             'Comment'=>'Le service est excellent',
             'Note'=>'8.8',
             'datecomment'=>'2023-03-08 14:44:04']);

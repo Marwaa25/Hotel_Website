@@ -11,7 +11,6 @@
                 <table id="comments" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Client</th>
                             <th>Comment</th>
                             <th>Note</th>
@@ -22,8 +21,7 @@
                     <tbody>
                         @foreach($comments as $comment)
                             <tr>
-                                <td>{{ $comment->id }}</td>
-                                <td>{{ $comment->client->name }}</td>
+                                <td>{{ $comment->client_name}}</td>
                                 <td>{{ $comment->comment }}</td>
                                 <td>{{ $comment->note }}</td>
                                 <td>{{ $comment->datecomment }}</td>
