@@ -11,10 +11,11 @@ class Comment extends Model
 
     protected $table = 'comments';
     protected $primaryKey = 'id';
-    protected $fillable = ['ID_Client', 'Comment', 'Note', 'datecomment'];
-
-    public function client()
-    {
-        return $this->belongsTo(Client::class, 'ID_Client');
-    }
+    protected $fillable = [
+        'ID_Client',
+        'client_name',
+        'Comment',
+        'Note',
+        'datecomment',
+    ];
 }

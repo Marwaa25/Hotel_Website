@@ -10,8 +10,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Client ID</th>
+                        <th>Nom Client</th>
                         <th>Comment</th>
                         <th>Note</th>
                         <th>Date Comment</th>
@@ -21,8 +20,7 @@
                 <tbody>
                     @foreach($comments as $comment)
                         <tr>
-                            <td>{{ $comment->id }}</td>
-                            <td>{{ $comment->ID_Client }}</td>
+                            <td>{{ $comment->client_name }}</td>
                             <td>{{ $comment->Comment }}</td>
                             <td>{{ $comment->Note }}</td>
                             <td>{{ $comment->datecomment }}</td>

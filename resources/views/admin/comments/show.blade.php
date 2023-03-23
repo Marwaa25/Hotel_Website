@@ -9,8 +9,8 @@
 
                     <div class="card-body">
                         <div class="form-group">
-                            <strong>Client ID:</strong>
-                            {{ $comment->ID_Client }}
+                            <strong>Client:</strong>
+                            {{ $comment->client_name }}
                         </div>
                         <div class="form-group">
                             <strong>Comment:</strong>

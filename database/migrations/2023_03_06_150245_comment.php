@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ID_Client')->constrained('clients')->onDelete('cascade');
-            $table->text('Comment');
+            $table->string('client_name')->nullable();
+            $table->text('Comment')->nullable();
             $table->decimal('Note', 3, 1);
             $table->date('datecomment');
+            $table->unsignedBigInteger('ID_Client')->nullable();
             $table->timestamps();
         });
     }
