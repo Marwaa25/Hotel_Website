@@ -1,50 +1,44 @@
-@extends('layouts.header')
+@extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        Détails du personnel
-                        <a href="{{ route('admin.index') }}" class="btn btn-primary btn-sm float-right">Retour</a>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td><strong>Nom:</strong></td>
-                                    <td>{{ $personnel->Nom }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Prénom:</strong></td>
-                                    <td>{{ $personnel->Prenom }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Adresse:</strong></td>
-                                    <td>{{ $personnel->Adresse }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Email:</strong></td>
-                                    <td>{{ $personnel->Email }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Téléphone:</strong></td>
-                                    <td>{{ $personnel->Telephone }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Poste:</strong></td>
-                                    <td>{{ $personnel->Poste }}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Salaire:</strong></td>
-                                    <td>{{ $personnel->Salaire }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container mx-auto px-4 py-8">
+<div class="bg-white shadow-lg rounded-lg">
+<div class="px-6 py-4">
+<h1 class="text-3xl font-semibold mb-4">Détails du personnel</h1>
+<a href="{{ route('admin.index') }}" class="btn btn-primary btn-sm float-right mb-4">Retour</a>
+<table class="table w-full">
+<tbody>
+<tr>
+<td class="font-semibold">Nom:</td>
+<td>{{ $personnel->Nom }}</td>
+</tr>
+<tr>
+<td class="font-semibold">Prénom:</td>
+<td>{{ $personnel->Prenom }}</td>
+</tr>
+<tr>
+<td class="font-semibold">Adresse:</td>
+<td>{{ $personnel->Adresse }}</td>
+</tr>
+<tr>
+<td class="font-semibold">Email:</td>
+<td>{{ $personnel->Email }}</td>
+</tr>
+<tr>
+<td class="font-semibold">Téléphone:</td>
+<td>{{ $personnel->Telephone }}</td>
+</tr>
+<tr>
+<td class="font-semibold">Poste:</td>
+<td>{{ $personnel->Poste }}</td>
+</tr>
+<tr>
+<td class="font-semibold">Salaire:</td>
+<td>{{ $personnel->Salaire }}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 @endsection

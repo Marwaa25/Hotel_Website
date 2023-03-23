@@ -54,11 +54,11 @@
               <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                 @yield('content')
               </main>
-              <footer class=" bg-gray-800">
+              {{-- <footer class=" bg-gray-800">
                 <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between text-gray-400">
                   <div>© 2023 Cote d'or, Inc. Tous droits réservés.</div>
                   <div>Créé par moi-même</div>
                 </div>
-              </footer>
+              </footer> --}}
             </body>
 </html>
