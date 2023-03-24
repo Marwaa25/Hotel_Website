@@ -16,6 +16,8 @@ class ReservationController extends Controller
 
     public function store(Request $request)
     {
+        $reservation->methode_paiement = 'CMI';
+
         // Vérifier si la date d'arrivée est égale ou postérieure à la date d'aujourd'hui
         $today = today();
         if ($request->input('date_arrivee') < $today) {

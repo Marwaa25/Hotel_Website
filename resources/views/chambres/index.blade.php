@@ -1,22 +1,41 @@
 @extends('layouts.header')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
 
 @section('content')
 @foreach ($chambres as $chambre)
-    <div class="box">
-        @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+<script>
+    // Vérifier si la réponse contient un message de succès
+    @if(Session::has('success'))
+        // Afficher une alerte de SweetAlert avec le message de succès
+        Swal.fire({
+            icon: 'success',
+            title: 'Succès!',
+            text: '{{ Session::get('success') }}',
+            showConfirmButton: false,
+            timer: 3000
+        });
     @endif
+
+    // Vérifier si la réponse contient des erreurs
     @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+        // Construire un message d'erreur avec tous les messages d'erreur
+        var errorMessages = '';
+        @foreach ($errors->all() as $error)
+            errorMessages += '{{ $error }}\n';
+        @endforeach
+
+        // Afficher une alerte de SweetAlert avec les messages d'erreur
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur!',
+            text: errorMessages,
+            showConfirmButton: false,
+            timer: 5000
+        });
+    @endif
+</script>
+    <div class="box">
+       
         <h1>{{ $chambre->type_de_chambre }}</h1>
         <div class="image">
         @foreach (range(1, 1) as $index)
@@ -30,6 +49,15 @@
         </div>  
     </div>
 @endforeach
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Succès',
+            text: "{{ session('success') }}",
+        });
+    </script>
+@endif
 @endsection
 
 <style>

@@ -1,23 +1,41 @@
 @extends('layouts.header')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
 
 @section('content')
 <form action="{{ route('reservations.store') }}" method="POST">
     @csrf
-    @if ($errors->any())
-    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-        <ul>
+    <script>
+        // Vérifier si la réponse contient un message de succès
+        @if(Session::has('success'))
+            // Afficher une alerte de SweetAlert avec le message de succès
+            Swal.fire({
+                icon: 'success',
+                title: 'Succès!',
+                text: '{{ Session::get('success') }}',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        @endif
+    
+        // Vérifier si la réponse contient des erreurs
+        @if ($errors->any())
+            // Construire un message d'erreur avec tous les messages d'erreur
+            var errorMessages = '';
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                errorMessages += '{{ $error }}\n';
             @endforeach
-        </ul>
-    </div>
-@endif
-
-@if (session('success'))
-    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-        {{ session('success') }}
-    </div>
-@endif
+    
+            // Afficher une alerte de SweetAlert avec les messages d'erreur
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur!',
+                text: errorMessages,
+                showConfirmButton: false,
+                timer: 5000
+            });
+        @endif
+    </script>
+    
     <div>
         <label for="chambre_id">Chambre</label>
         <select name="chambre_id" id="chambre_id">
@@ -64,4 +82,13 @@
     
     <button type="submit">Réserver</button>
 </form>
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Succès',
+            text: "{{ session('success') }}",
+        });
+    </script>
+@endif
 @endsection
