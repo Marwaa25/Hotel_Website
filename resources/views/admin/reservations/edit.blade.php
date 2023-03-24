@@ -1,65 +1,67 @@
-@extends('layouts.header')
+@extends('layouts.admin')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Modifier une réservation</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admin.reservations.index') }}"> Retour</a>
-            </div>
+<div class="flex justify-between items-center">
+<h2 class="text-2xl font-bold">Modifier une réservation</h2>
+<a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{{ route('admin.reservations.index') }}"> Retour</a>
+</div>
+
+
+@if ($errors->any())
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <strong class="font-bold">Attention!</strong>
+        <span class="block sm:inline">Il y a eu quelques problèmes avec les champs saisis.</span>
+        <ul class="list-disc ml-5 mt-2">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<form action="{{ route('admin.reservations.update', $reservation->id) }}" method="POST" class="mt-5">
+    @csrf
+    @method('POST')
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+            <label class="block font-medium text-gray-700 mb-2" for="chambre_id">
+                Chambre
+            </label>
+            <select class="form-select block w-full mt-1" name="chambre_id" id="chambre_id">
+                @foreach ($chambres as $chambre)
+                    <option value="{{ $chambre->id }}" @if ($chambre->id == $selectedChambreId) selected @endif>{{ $chambre->type_de_chambre }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <label class="block font-medium text-gray-700 mb-2" for="email">
+                Email
+            </label>
+            <input type="email" name="email" value="{{ $reservation->email }}" class="form-input block w-full mt-1" placeholder="Email">
         </div>
     </div>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Attention!</strong> Il y a eu quelques problèmes avec les champs saisis.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
+        <div>
+            <label class="block font-medium text-gray-700 mb-2" for="date_arrivee">
+                Date d'arrivée
+            </label>
+            <input type="date" name="date_arrivee" value="{{ $reservation->date_arrivee }}" class="form-input block w-full mt-1" placeholder="Date d'arrivée">
         </div>
-    @endif
-
-    <form action="{{ route('admin.reservations.update', $reservation->id) }}" method="POST">
-        @csrf
-        @method('POST')
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Chambre:</strong>
-                    <select class="form-control" name="chambre_id">
-                        @foreach ($chambres as $chambre)
-                            <option value="{{ $chambre->id }}" @if ($chambre->id == $selectedChambreId) selected @endif>{{ $chambre->type_de_chambre }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Email:</strong>
-                    <input type="email" name="email" value="{{ $reservation->email }}" class="form-control" placeholder="Email">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Date d'arrivée:</strong>
-                    <input type="date" name="date_arrivee" value="{{ $reservation->date_arrivee }}" class="form-control" placeholder="Date d'arrivée">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Date de départ:</strong>
-                    <input type="date" name="date_depart" value="{{ $reservation->date_depart }}" class="form-control" placeholder="Date de départ">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Enregistrer</button>
-            </div>
+        <div>
+            <label class="block font-medium text-gray-700 mb-2" for="date_depart">
+                Date de départ
+            </label>
+            <input type="date" name="date_depart" value="{{ $reservation->date_depart }}" class="form-input block w-full mt-1" placeholder="Date de départ">
         </div>
+    </div>
 
-    </form>
+    <div class="mt-5">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Enregistrer
+        </button>
+    </div>
+
+</form>
 @endsection
