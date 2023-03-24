@@ -181,50 +181,180 @@
                journal quotidien gratuit,<br>
                produits de salle de bains <br>
                de bonne marque</p>
+               <h2>Parking</h2>
+            <p>L'établissement ne dispose pas de parking.</p>
             <hr>
         </div>
         <div class="div2">
-            <p>ok2</p>
+        <h2>Internet</h2>
+            <p>Espaces publics : gratuit<br>
+              En chambre : gratuit</p>
+            <h2>Accueil des enfants</h2>
+            <p>Enfants bienvenus</p>
+            <h2>Services disponibles</h2>
+            <p>Hôtel climatisé  <br>
+                Service de blanchisserie <br>
+                Service de conciergerie <br>
+                Réception ouverte 24h/24<br>
+                Service d'étage
+            </p>
+            <h2>Animaux de compagnie</h2>
+                 <p>Chiens non admis <br>
+                .. <br>
+              ..</p>
+            <hr>
         </div>
         <div class="div3">
-          <p>ok3</p>
+  
+            <h2>Animaux de compagnie</h2>
+            <p>Chiens non admis</p>
+            <h2>Politique fumeurs</h2>
+            <p> Espaces publics non-fumeurs<br>
+                Chambres fumeursdisponibles</p>
+                <h2>Langues parlées</h2>
+                  <p>
+                  Arabe <br>
+                Anglais <br>
+                Français <br>
+                  </p>
+                <h2>Activités</h2>
+                <p>plage</p>
+                <h2>Général</h2>
+                <p>Climatisation
+                   Chambres familiales</p>
+
+            <hr>
         </div>
         </div>
         <div class="text" id="text2">
 
         <div class="div1">
-            <h2>Titre 4</h2>
-            <p>Texte 4</p>
-            <h2>Titre 5</h2>
-            <p>Texte 5</p>
-            <h2>Titre 6</h2>
-            <p>Texte 6</p>
+            <h2>Petit déjeuner</h2>
+            <p>Petit déjeuner continental : 55 MAD <br>
+                  Petit déjeuner américain : 60 MAD <br>
+                  Petit déjeuner buffet : 99 MAD <br>
+                  Petit déjeuner fytness : 99 MAD <br>
+                  Petit déjeuner croque speciale : 55 MAD <br>
+                  Petit déjeuner beldi : 70 MAD <br>
+                  Petit déjeuner espagnol : 60 MAD</p>
+            <h2>Plats marocains</h2>
+            <p>
+            Pastilla <br>
+            Tajine <br>
+            Harira <br>
+            Couscous <br>
+            Refissa <br>
+            Seffa <br>
+            Mrouzia <br>
+            Mechoui <br>
+            Tangia <br>
+            Soupe <br>
+            Poissons <br>
+            . <br>
+            . <br>
+
             <hr>
         </div>
         <div class="div2">
-            <p>ok2</p>
+        <h2>Boissons</h2>
+            <p>
+            Thé à la menthe <br>
+            Café Noir <br>
+            Café noos-noos (café au lait) <br>
+            Café expresso (marque Lavazza) <br>
+            Thé noir <br>
+            Louisa (verveine) <br>
+            Jus d’orange <br>
+            Jus de fruits frais (selon saison) : <br>
+             citron, fraises, melon, pomme, banane <br>
+            Cocktail Chamali (betterave / orange / banane) <br>
+            Jus d'avocat <br>
+            Jus d’orange + carotte <br>
+            Jus de concombre au citron et thym <br>
+            Mojito
+            </p>
+            <h2>Fast Food</h2>
+            <p>Pizza <br>
+              Tacos <br>
+              crepes sales <br>
+              Panini <br>
+              Chauarma <br>
+              Burger
+            </p>
         </div>
         <div class="div3">
-          <p>ok3</p>
+          <h2>Salades</h2>
+          <p>
+          Salade marocaine <br>
+          Salade César <br>
+          Salade de riz aux légumes croquants <br>
+          Salade de tomates au basilic <br>
+          Salade de bœuf à la vietnamienne <br>
+          </p>
+          <h2>Patisserie</h2>
+          <p>Cornets au sesame amande et miel <br>
+          Corne de gazelle-Kaab leghzal <br>
+          Ghribas aux noix et aux amandes <br>
+          Cigares aux amandes  <br>
+          Sablés fondant à la noisette <br>
+          Baghrirs <br>
+          Sfenj <br>
+          Baklawa <br>
+        </p>
+        <h2>Desserts</h2>
+        <p>
+            Tarte Oreo <br>
+            Tiramisu <br>
+            Cake à la ricotta et au citron <br>
+            Salade de fruits
+        </p>
         </div>
 
         </div>
         <div class="text" id="text3">
-
         <div class="div1">
-            <h2>Titre 7</h2>
-            <p>Texte 7</p>
-            <h2>Titre 8</h2>
-            <p>Texte 8</p>
-            <h2>Titre 9</h2>
-            <p>Texte 9</p>
+            <h2>Lieux à proximité</h2>
+                <p>Jardin Corniche Rincon : 150 m <br>
+                Jardin de Corniche 2 : 450 m <br>
+                Place Corniche de M'diq : 600 m <br>
+                Jardin d'Hopital Mohamel 6 : 650 m <br>
+                Jardin de Government Office de M'diq : 750 m <br>
+                Place Palestine : 10 km <br>
+                Wilaya : 11 km <br>
+                Futsal Chawdri : 12 km <br>
+                Parque Ziana : 13 km <br>
+                Parc Ryad : 13 km </p>
+              
+            <h2>Restaurants et cafés</h2>
+                <p>RestaurantLa Corniche : 200 m <br>
+                RestaurantNourain : 400 m <br>
+                Café / barChez Bilal : 450 m </p>
             <hr>
           </div>
           <div class="div2">
-              <p>ok2</p>
+              <h2>Plages à proximité</h2>
+              <p>
+              Plage de M'Diq : 150 m <br>
+              Kabila Beach : 3,8 km <br>
+              Cabo Negro Beach : 4,4 km <br>
+              Marina Smir Beach : 7 km <br>
+              Martil Beach : 7 km <br>
+              </p>
+              <h2>Aéroports les plus proches </h2>
+                  <p>Aéroport Tétouan - Sania R'mel : 10 km <br>
+                  Aéroport international de Gibraltar : 52 km <br>
+                  Aéroport de Tanger - Ibn Battouta :54 km </p>
           </div>
           <div class="div3">
-            <p>ok3</p>
+          <h2>Infos generals</h2>
+                <p>Situé à 400 mètres de la plage de M'Diq, <br>
+                  l'hotel cote d'or m'diq propose un hébergement <br>
+                   2 étoiles et un restaurant à M'diq.  <br>
+                   Cet hôtel 2 étoiles propose un service d'étage  <br>
+                   et une réception ouverte 24h/24. Certaines <br>
+                   s'ouvrent sur une terrasse avec vue sur la mer. <br>
+                   L'aéroport de Tétouan-Sania R'mel, le plus proche,<br>
+                    est implanté à 17 km.</p>
           </div>
         </div>
 
@@ -284,12 +414,12 @@
       <div class="opinion">
         <div class="fixe">
           <h2>Nos clients donnent leur avis</h2>
-          <div class="div1">
+          <div class="div11">
             <h3> Zoubida Hassnaoui .- USA</h3>
             <h3>10/10</h3>
           </div>
           <div class="ligne"></div>
-          <div class="div2">
+          <div class="div12">
           <h4>CLIENT DEPUIS MAI 2018, ULTIMATE</h4>
           <p>It was a very pleasurable experience!! Very good service and very central location!! Beautiful rooms!! Very nicely equipped ....!!</p>
            </div>
@@ -297,12 +427,12 @@
         </div>
         <div class="fixe">
           <h2>Nos clients donnent leur avis</h2>
-          <div class="div1">
+          <div class="div11">
             <h3>Imii .France</h3>
             <h3>9/10</h3>
           </div>
           <div class="ligne"></div>
-          <div class="div2">
+          <div class="div12">
           <h4>CLIENT DEPUIS MAI 2022, ULTIMATE</h4>
           <p>
               L'emplacement est top ,dans le corniche ,
@@ -383,6 +513,31 @@
           </div>
         </div>
         </div>
+        <div class="containerIM">
+            <div class="imageIM" style="top: 50px; left: 750px; width: 170px; height: 170px;">
+              <img src="./pics/image1.png"  style="max-width:100%; height:auto;">
+            </div>
+            <div class="imageIM" style="top: 20px; left: 220px; width: 180px; height: 180px;">
+              <img src="./pics/image2.jpg" style="max-width:100%; height:auto;">
+            </div>
+            <div class="imageIM" style="top: 150px; left: 10px; width: 180px; height: 180px;">
+              <img src="./pics/image3.jpg"  style="max-width:100%; height:auto;">
+            </div>
+            <div class="imageIM" style="top: 400px; left: 190px; width: 170px; height: 170px;">
+              <img src="./pics/image4.jpg"  style="max-width:100%; height:auto;">
+            </div>
+            <div class="imageIM" style="top: 450px; left: 480px; width: 200px; height: 200px;">
+              <img src="./pics/image6.jpg"  style="max-width:100%; height:auto;">
+            </div>
+            <div class="titleIM" style="color:grey">Restaurant COTE D'OR</div>
+            <div class="imageIM" style="top: 100px; left: 500px; width: 150px; height: 160px;">
+              <img src="./pics/image7.jpg" style="max-width:100%; height:auto;">
+            </div>
+            <div class="imageIM" style="top: 300px; left: 700px; width: 150px; height: 150px;">
+              <img src="./pics/image8.jpg"  style="max-width:100%; height:auto;">
+            </div>
+          </div>
+
 
         <main class="container">
             @yield('content')

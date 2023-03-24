@@ -44,8 +44,9 @@ button {
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    background-color:white;
-    margin-left:166vh;
+    background-color:rgb(255, 255, 255);
+    margin-left:170vh;
+    margin-top: 100px;
 }
 button a {
     text-decoration:none;
@@ -53,10 +54,10 @@ button a {
 }
  .navbar ul li a {
     text-decoration: none;
-    font-size:1.3rem;
+    font-size:2rem;
     font-weight: bold;
     font-family:"Constantia";
-    color:white;
+    color:rgb(71, 71, 71);
     text-shadow: 2px 2px 5px gray;
     
  }
@@ -64,7 +65,7 @@ button a {
     align-self: center;
     margin-bottom: 20px;
     font-family:'Brush Script MT';
-    font-size:4rem;
+    font-size:6rem;
     
 }
 .langue{
@@ -163,7 +164,9 @@ margin: 0;
 }
 .spane{
 background-color:white;
-padding: 8px;
+padding: 12px;
+color: #4a4a9c;
+font-weight: bold;
 border-radius: 5px;
 }
 
@@ -172,7 +175,7 @@ border-radius: 5px;
 position: relative;
 display: inline-block;
 margin-right:90%;
-margin-top:-20px;
+margin-top:-90px;
 
 }
 
@@ -199,9 +202,10 @@ transition: all 0.3s ease-in-out;
 display: none;
 position: absolute;
 top: 32px;
-height:400px;
-width:280px;
-
+height:370px;
+width:300px;
+font-size: 16px;
+color: #333;
 background-color: #fff;
 min-width: 160px;
 z-index: 1;
@@ -244,7 +248,8 @@ transform: translateY(-6px) rotate(-45deg);
 }
 form a {
 background-color:white;
-padding: 8px;
+font-size: 16px;
+padding: 10px 30px;
 border-radius: 5px;
 text-decoration:none;
 color:gray;
@@ -253,14 +258,16 @@ box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 .features {
 display: flex;
 justify-content: space-around;
-margin-top:60px;
-color:#A9A9A9;
+margin-bottom: 100px;
+margin-top:100px;
+color:#6f6f6f;
 }
 
 .feature {
 display: flex;
 align-items: center;
 margin-right: 20px;
+font-size: large;
 }
 
 .feature i {
@@ -582,7 +589,7 @@ html::-webkit-scrollbar-thumb{
    padding-bottom: 80px;
    color:#7b8282;
 }
-.opinion .fixe .div1{
+.opinion .fixe .div11{
    display: flex;
    flex-wrap: wrap;
    gap: 50px;
@@ -594,10 +601,10 @@ html::-webkit-scrollbar-thumb{
    width: 300px;
    margin-bottom: 10px;
 }
-.opinion .fixe .div2{
+.opinion .fixe .div12{
    font-size: 14px;
 }
-.opinion .fixe .div2 h4{
+.opinion .fixe .div12 h4{
    font-size: 13px;
    color: #333;
    margin-bottom: 8px;
@@ -611,7 +618,7 @@ html::-webkit-scrollbar-thumb{
    display: inline-block;
    background-color: transparent;
    color: #575757;
-   font-size: 14px;
+   font-size: 14px; 
    padding: 8px 16px;
    text-align: center;
    text-decoration: none;
@@ -754,75 +761,135 @@ html::-webkit-scrollbar-thumb{
    color:#4a4a9c;
    font-family: Arial, Helvetica, sans-serif;
 }
-		/* Style pour la mise en page */
-		.menu {
-			display: flex;
-			flex-wrap: wrap;
-         gap: 150px;
-         margin-left: 250px;
-			margin-bottom: 20px;
-         margin-top: 30px;
-		}
-
-		/* Style pour les options du menu */
-		.menu-option {
-			cursor: pointer;
-			color: #000;
-         font-size: 1.5rem;
-		}
-
-		/* Style pour l'option sélectionnée */
-		.menu-option.selected {
-			color: rgb(0, 0, 0);
-
-		}
-
-		/* Style pour le texte */
-		.text {
-			display:none;
-			margin-top: 20px;
-         margin-left: 250px;
-		}
-
-		/* Style pour le texte de l'option sélectionnée */
-		.text.selected {
-			display: block;
-		}
-      .menu-inter{
-         font-size: 3rem;
-         margin-top: 130px;
-         color: rgb(101, 101, 101);
-         margin-bottom: 20px;
-         margin-left: 250px;
-      }
-      #text1 h2{
-         color:#4b4b4b;
-         font-size: 2rem;
-         margin-top: 50px;
-         margin-bottom: 20px;
-      }
-      #text1 p{
-         line-height: 30px;
-         font-size: 14px;
-         margin-left: 20px;
-      }
-       /* #text1 {
-         display: flex;
+/* Style pour la mise en page */
+.menu {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 180px;
+   margin-left: 20%;
+   margin-bottom: 20px;
+   margin-top: 30px;
+ }
+ 
+ /* Style pour les options du menu */
+ .menu-option {
+   cursor: pointer;
+   color: #000;
+   font-size: 1.5rem;
+ }
+ 
+ /* Style pour l'option sélectionnée */
+ .menu-option.selected {
+   color: rgb(0, 0, 0);
+ }
+ 
+ /* Style pour le texte */
+ .text {
+   display:none;
+   margin-top: 20px;
+   margin-left: 20%;
+ }
+ 
+ /* Style pour le texte de l'option sélectionnée */
+ .text.selected {
+   display: block;
+ }
+ 
+ .menu-inter{
+   font-size: 3rem;
+   margin-top: 130px;
+   color: rgb(101, 101, 101);
+   margin-bottom: 20px;
+   margin-left: 20%;
+ }
+ 
+ #text1 h2{
+   color:#4b4b4b;
+   font-size: 2rem;
+   margin-top: 50px;
+   margin-bottom: 20px;
+ }
+ 
+ #text1 p{
+   line-height: 30px;
+   font-size: 14px;
+   margin-left: 20px;
+ }
+ 
+       #text1 {
          justify-content: space-between;
-       } */
+       } 
        
-       /*.div1,
+       .div1,
        .div2,
        .div3 {
+         display:inline-block;
          width: 30%;
-         border-right: 1px dashed #ccc;
-         padding-right: 20px;
-         margin-right: 20px;
+         border-right: 2px dotted #414141;
+         box-sizing: border-box;
+         margin-right: 30px;
        }
        
        .div3 {
          border-right: none;
-       } */
-        
+       }
+       #text2 h2{
+         color:#4b4b4b;
+         font-size: 2rem;
+         margin-top: 50px;
+         margin-bottom: 20px;
+       }
+       
+       #text2 p{
+         line-height: 30px;
+         font-size: 14px;
+         margin-left: 20px;
+       }
+       
+             #text3 {
+               justify-content: space-between;
+             } 
+             #text3 h2{
+               color:#4b4b4b;
+               font-size: 2rem;
+               margin-top: 50px;
+               margin-bottom: 20px;
+             }
+             
+             #text3 p{
+               line-height: 30px;
+               font-size: 14px;
+               margin-left: 20px;
+             }
+             
+                   #text3 {
+                     justify-content: space-between;
+                   } 
     
-
+             .containerIM {
+               margin-top: 100px;
+               position: relative;
+               width: 800px;
+               height: 600px;
+               margin-left: 18%;
+               margin-bottom: 100px;
+                  
+             }
+             
+             .imageIM {
+               position: absolute;
+             }
+             
+             .titleIM {
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               z-index: -1;
+               background-color: white;
+               padding: 10px;
+               font-size: 24px;
+               font-weight: bold;
+             }
+             
+             
