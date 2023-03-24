@@ -9,6 +9,7 @@ use App\Models\Personnel;
 use App\Models\Stock;
 use App\Models\Comment;
 use Illuminate\Http\Request;
+// use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -136,7 +137,8 @@ class AdminController extends Controller
         $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
         
         $chambre->save();
-    
+        // Alert::success('Succès', 'Les données ont été enregistrées avec succès.');
+        //     return redirect()->route('admin.chambres.index');  
         return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été créée avec succès.');
     }
     
