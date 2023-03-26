@@ -7,29 +7,35 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
         {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     </head>
     <body>
-        <nav class='navbar'>
-            <div>
-            <select class="langue" name="langue">
-                    <option value="francais">Français</option>
-                    <option value="anglais">Anglais</option>
-                    <option value="espagnol">Espagnol</option>
-                    <option value="allemand">Arabe</option>
-                </select>
-            </div>
-            <div class='title'>
-                <a class="navbar-brand" href="#">Cote d'or</a>
-            </div>
+    <nav class='navbar'>
+ 
             <ul>
-                <li><a href="{{ route('/') }}">Accueil</a></li>
-                <li><a href="{{ route('chambres.index') }}">Nos chambres</a></li> 
-                <li><a href="{{ route('services.index') }}">Nos services</a></li>
-                <li><a href="{{route('contact.contact')}}">Contact</a></li>
-                <li><a href="{{ route('hotel.index')}}">À propos de nous</a></li>
-                <li><a href="{{ route('admin.index')}}">Admin</a></li>
+                <li>
+                    <div class="crown">
+                        <i class="fas fa-crown"></i>
+                    </div>    
+                </li>
+                <li><a href="{{ route('/') }}" class="a1">Accueil</a></li>
+                <li><a href="{{ route('chambres.index') }}" class="a1">Nos chambres</a></li> 
+                <li><a href="{{ route('services.index') }}" class="a1">Nos services</a></li>
+                <li><a href="{{route('contact.contact')}}" class="a1">Contact</a></li>
+                <li><a href="{{ route('hotel.index')}}" class="a1">À propos de nous</a></li>
+                <li><a href="{{ route('admin.index')}}" class="a1">Admin</a></li>
+                <li>
+                <select class="langue" name="langue">
+                    <option value="francais">Fr</option>
+                    <option value="anglais">Ang</option>
+                    <option value="espagnol">Esp</option>
+                    <option value="allemand">Ar</option>
+                </select>
+                </li>
+                <li class="reserver"> <a href="{{ route('reservations.create') }}" class="btn btn-primary">Réserver maintenant</a></li>
             </ul>
+        </nav>
             <main class="container">
                 @yield('content')
             </main>
@@ -41,48 +47,3 @@
             </div>
         </body>
     </html>
-    <style>
-
-
-        .navbar ul{
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar li{
-            margin: 0 50px;
-        }
-
-        .navbar ul li a {
-            color: #D2B48C;
-            text-decoration: none;
-            font-size:1.2rem;
-            font-weight: bold;
-            font-family:"Constantia";
-         }
-        .navbar .title {
-           
-            align-self: center;
-            margin-bottom: 20px;
-            font-family:'Brush Script MT';
-            font-size:4rem;
-            
-        }
-        .langue{
-            margin-left:1210px;
-            margin-top:25px;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            color:#191970;
-            background-color: transparent;
-       
-        }
-        .navbar .title .navbar-brand{
-            text-decoration: none;
-            color:#D2B48C;
-            text-align: center;
-            padding: 550px;
-        }
-    </style>
