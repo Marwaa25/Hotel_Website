@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
 
 @section('content')
-<form action="{{ route('reservations.store') }}" method="POST">
+<form action="{{ route('reservations.store') }}" method="POST" id="payment-form">
     @csrf
     <script>
         // Vérifier si la réponse contient un message de succès
@@ -36,52 +36,93 @@
         @endif
     </script>
     
-    <div>
+    <div class="form-group">
         <label for="chambre_id">Chambre</label>
-        <select name="chambre_id" id="chambre_id">
-            @foreach($chambres as $chambre)
-                <option value="{{ $chambre->id }}">{{ $chambre->type_de_chambre }}</option>
+        <select name="chambre_id" id="chambre_id" class="form-control">
+            @foreach ($chambres as $chambre)
+                <option value="{{ $chambre->id }}">{{ $chambre->type_de_chambre }} </option>
             @endforeach
         </select>
+
     </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-    </div>
-    <div>
+
+    <div class="form-group">
         <label for="date_arrivee">Date d'arrivée</label>
-        <input type="date" name="date_arrivee" id="date_arrivee" required>
+        <input type="date" name="date_arrivee" id="date_arrivee" class="form-control" required>
     </div>
-    <div>
+
+    <div class="form-group">
         <label for="date_depart">Date de départ</label>
-        <input type="date" name="date_depart" id="date_depart" required>
+        <input type="date" name="date_depart" id="date_depart" class="form-control" required>
     </div>
-    
-    <div>
+
+    <div class="form-group">
         <label for="nombre_de_personnes">Nombre de personnes</label>
-        <input type="number" name="nombre_de_personnes" id="nombre_de_personnes" min="1" required>
+        <input type="number" name="nombre_de_personnes" id="nombre_de_personnes" class="form-control" min="1" required>
     </div>
-    <div>
-        <label for="nom_carte">Nom sur la carte</label>
-        <input type="text" name="nom_carte" id="nom_carte" required>
+
+    <div class="form-group">
+        <label for="email">Adresse e-mail</label>
+        <input type="email" name="email" id="email" class="form-control" required>
     </div>
-    <div>
-        <label for="numero_carte">Numéro de carte</label>
-        <input type="text" name="numero_carte" id="numero_carte" required>
+
+    <div class="form-group">
+        <label for="card-element">Carte de crédit</label>
+        <div id="card-element" class="form-control">
+            <!-- Stripe Element will be inserted here. -->
+        </div>
     </div>
-    <div>
-        <label for="date_expiration">Date d'expiration</label>
-        <input type="text" name="date_expiration" id="date_expiration" required>
-    </div>
-    <div>
-        <label for="code_secu">Code de sécurité</label>
-        <input type="text" name="code_secu" id="code_secu" required>
-    </div>
-    
-    
-    
-    <button type="submit">Réserver</button>
+
+    <button type="submit" class="btn btn-primary" id="submit-button">Réserver</button>
+
 </form>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    // Set up Stripe.js and the Elements card payment form
+    const stripe = Stripe('{{ env('STRIPE_KEY') }}');
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
+
+    // Handle form submission and payment processing
+    const form = document.getElementById('payment-form');
+    const submitButton = document.getElementById('submit-button');
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        // Disable the submit button to prevent multiple clicks
+        submitButton.disabled = true;
+
+        // Create a payment method using the card element and the customer's email
+        const { paymentMethod, error } = await stripe.createPaymentMethod({
+            type: 'card',
+            card: cardElement,
+            billing_details: {
+                email: document.getElementById('email').value,
+            },
+        });
+
+        // Handle any errors from creating a payment method
+        if (error) {
+            const errorElement = document.getElementById('card-errors');
+            errorElement.textContent = error.message;
+            submitButton.disabled = false;
+            return;
+        }
+
+        // Send the payment method ID to the server to complete the payment
+        const tokenInput = document.createElement('input');
+        tokenInput.setAttribute('type', 'hidden');
+        tokenInput.setAttribute('name', 'payment_method');
+        tokenInput.setAttribute('value', paymentMethod.id);
+        form.appendChild(tokenInput);
+
+        // Submit the form
+        form.submit();
+    });
+</script>
+
 @if (session('success'))
     <script>
         Swal.fire({

@@ -43,7 +43,6 @@
         @endforeach  
         </div>
         <div class="description">    
-            <p>Etage: {{ $chambre->etage }}</p>
             <p>Prix par nuit: {{ $chambre->prix_par_nuit }}</p>
             <a href="{{ route('chambres.show', $chambre) }}">Voir la chambre</a>
         </div>  
