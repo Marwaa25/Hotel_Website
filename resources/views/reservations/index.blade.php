@@ -1,6 +1,8 @@
 @extends('layouts.header')
 
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+
     <div class="container">
         <h1>Liste des réservations</h1>
         <table class="table">

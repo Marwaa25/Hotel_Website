@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Chambre;
+use Stripe\Stripe;
+
+
 
 class ReservationController extends Controller
 {
@@ -16,6 +19,9 @@ class ReservationController extends Controller
 
     public function store(Request $request)
     {
+        Stripe::setApiKey('sk_test_51MlAg4D2dzVBVsLgV6HnejFU9d931M4kKYKTjLIj0WlplpPCVpi4epJbEru4uwqMfAFFpkPUYWMWor01c1XDte1N009ZrrNreL');
+
+
         // Vérifier si la date d'arrivée est égale ou postérieure à la date d'aujourd'hui
         $today = today();
         if ($request->input('date_arrivee') < $today) {
@@ -49,14 +55,21 @@ class ReservationController extends Controller
         }
 
         // Si la chambre est disponible, créer la réservation
+        // $intent = \Stripe\PaymentIntent::create([
+        //     'amount' => $chambre->prix_total,
+        //     'currency' => 'EUR',
+        // ]);
+        
         $reservation = new Reservation();
         $reservation->chambre_id = $chambre->id;
         $reservation->email = $request->input('email');
         $reservation->date_arrivee = $request->input('date_arrivee');
         $reservation->date_depart = $request->input('date_depart');
         $reservation->nombre_de_personnes = $request->input('nombre_de_personnes');
-        $reservation->methode_paiement = $request->input('methode_paiement');
+        $reservation->methode_paiement = 'Stripe';
+        // $reservation->payment_intent_id = $intent->id;
         $reservation->save();
+        
 
         // Envoyer un message de succès
         return redirect()->route('chambres.index')->with('success', 'La réservation a été créée avec succès.');

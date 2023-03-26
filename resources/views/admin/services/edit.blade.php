@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 
 @section('content')
@@ -6,9 +7,9 @@
     @csrf
 
 <x-responsive-nav-link :href="route('logout')"
-        onclick="event.preventDefault();
-                    this.closest('form').submit();"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+    onclick="event.preventDefault();
+                this.closest('form').submit();"
+    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
     {{ __('Log Out') }}
 </x-responsive-nav-link>
 </form>
@@ -28,12 +29,10 @@
 </div>
 @endif
 
-<div class="container mx-auto px-4 py-6">
-    <h1 class="text-2xl font-bold mb-6">Edit service</h1>
-
-<form action="{{ route('admin.services.update', $service->id) }}" method="POST" class="max-w-md">
-    @csrf
-    @method('PUT')
+<div class="flex justify-center items-center h-screen">
+    <form action="{{ route('admin.services.update', $service->id) }}" method="POST" class="max-w-md bg-white p-8 rounded-lg shadow-md">
+        @csrf
+        @method('PUT')
 
     <div class="mb-4">
         <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
@@ -51,15 +50,20 @@
         @enderror
     </div>
 
-    <div class="mb-4">
-        <label for="price" class="block text-gray-700 font-bold mb-2">Price</label>
-        <input type="number" class="form-input @error('price') border-red-500 @enderror" id="price" name="price" value="{{ old('price', $service->price) }}">
-        @error('price')
-            <p class="text-red-500 text-xs italic">{{ $message }}</p>
-        @enderror
+    <div class="mb-4 flex flex-row items-center">
+        <label for="price" class="block text-gray-700 font-bold mr-4">Price</label>
+        <div class="relative rounded-md shadow-sm">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                $
+            </span>
+            <input type="number" class="form-input pl-7 @error('price') border-red-500 @enderror" id="price" name="price" value="{{ old('price', $service->price) }}">
+            @error('price')
+                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+            @enderror
+        </div>
     </div>
 
-    <div class="flex items-center">
+    <div class="flex justify-end">
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Save
         </button>
