@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Chambre;
 use Stripe\Stripe;
-
+use App\Mail\ReservationConfirmation;
+use Illuminate\Support\Facades\Mail;
 
 
 class ReservationController extends Controller
@@ -70,6 +71,9 @@ class ReservationController extends Controller
         // $reservation->payment_intent_id = $intent->id;
         $reservation->save();
         
+         // Send an email confirmation to the client
+         Mail::to($request->input('email'))->send(new ReservationConfirmation($reservation));
+
 
         // Envoyer un message de succès
         return redirect()->route('chambres.index')->with('success', 'La réservation a été créée avec succès.');
