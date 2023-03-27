@@ -224,16 +224,16 @@
 
       <div class="owl-carousel owl-theme">
         <div class="item">
-          <img src="pics/g2.jpg" alt="">
+          <img src="pics/siimple.jpg" alt="">
         </div>
         <div class="item">
-          <img src="pics/g5.jpg" alt="">
+          <img src="pics/douuble.jpg" alt="">
         </div>
         <div class="item">
-          <img src="pics/g6.jpg" alt="">
+          <img src="pics/appart.jpg" alt="">
         </div>
         <div class="item">
-          <img src="pics/home3.jpg" alt="">
+          <img src="pics/siimple2.jpg" alt="">
         </div>
         <div class="item">
           <img src="pics/r2.jpg" alt="">
@@ -242,10 +242,10 @@
           <img src="pics/r3.jpg" alt="">
         </div>
         <div class="item">
-          <img src="pics/g1.png" alt="">
+          <img src="pics/toi1.jpg" alt="">
         </div>
         <div class="item">
-          <img src="pics/g11.png" alt="">
+          <img src="pics/quadruple.jpg" alt="">
         </div>
       </div>
 
