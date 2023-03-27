@@ -1,7 +1,18 @@
 @extends('layouts.header')
+@vite(['resources/css/chambres.css'])
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
 
 @section('content')
+
+<div class="background-image">
+        <h1>Cote d'or M'diq Maroc</h1>
+        <div class="line"></div>
+        <div class="bar">
+            <i class="fas fa-crown"></i>
+            <h3>COTE D'OR > </h3>
+            <a href="{{ route('reservations.create')}}">Réserver</a>
+        </div>
+    </div>
 @foreach ($chambres as $chambre)
 <script>
     // Vérifier si la réponse contient un message de succès
@@ -59,43 +70,3 @@
 @endif
 @endsection
 
-<style>
-    .box{
-        flex:1 1 30rem;
-        box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
-        border-radius: .5rem;
-        border:.1rem solid rgba(0,0,0,.1);
-        position: relative;    
-        width: 59%;
-       
-    }
-    .image{
-        position: relative;
-        text-align:left;
-        /* padding-top: 2rem; */
-        /* overflow:hidden; */
-        width: 30px;
-    }
-    .all{
-        display: flex;
-        justify-content: space-between
-        
-    }
-    img{
-    width:400px;
-    }
-    /* .box:hover .image img{
-    transform: scale(1.1);
-    } */
-    .description{
-    padding-top:1rem;
-    text-align:right;
-    
-}
-    .description p{
-    font-size: 2.5rem;
-    color:#333;
-    margin-top: -50px
-}
-
-</style>
