@@ -45,19 +45,46 @@
         });
     @endif
 </script>
+<div class="all">
     <div class="box">
-       
-        <h1>{{ $chambre->type_de_chambre }}</h1>
         <div class="image">
         @foreach (range(1, 1) as $index)
-            <img src="{{ asset('images/' . $chambre->id . '_' . $index . '.png') }}" alt="{{ $chambre->Type_de_chambre }}" >
-        @endforeach  
+            @foreach (['jpg', 'jpeg', 'png'] as $ext)
+                @php
+                    $filename = 'images/' . $chambre->id . '_' . $index . '.' . $ext;
+                @endphp
+                @if (file_exists(public_path($filename)))
+                    <img src="{{ asset($filename) }}" alt="{{ $chambre->Type_de_chambre }}" >
+                    @break
+                @endif
+            @endforeach
+        @endforeach
         </div>
-        <div class="description">    
-            <p>Prix par nuit: {{ $chambre->prix_par_nuit }}</p>
-            <a href="{{ route('chambres.show', $chambre) }}">Voir la chambre</a>
-        </div>  
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+             Minima nobis deserunt quas laboriosam temporibus laborum,
+            consectetur, odit harum magni aliquid aperiam vitae provident
+            dolor earum sint cupiditate molestiae illo facilis.
+        </p>
+        <a href="{{ route('chambres.show', $chambre) }}">Detais et photos</a>
     </div>
+    <div class="box">
+        <h1>{{ $chambre->type_de_chambre }} et petit déjeuner</h1>
+        <div class="description">    
+            <p>Prix par nuit:</p> <br><h2> {{ $chambre->prix_par_nuit }} MAD </h2>
+            <p><i class="fas fa-check"></i> Annulation SANS FRAIS avant minimum 1 semaine</p>
+            <p><i class="fas fa-check"></i> PAYEZ PLUS TARD</p>
+        </div>  
+        <div class="includ">
+            <h3>INCLUS DANS LE TARIF (1)</h3>
+            <p><i class="fas fa-check"></i> Petit déjeuner pour deux chaque jour</p>
+        </div>
+        <div class="recommend">
+        <p><i class="fas fa-user-circle"></i> Pour bénéficier, de nos offres , vous pouvez reserver avant plus d'une semaine <span class="separator"></span></p>
+        </div> 
+        <a class="reser" href="{{ route('reservations.create')}}">Réserver</a>
+    </div>
+</div>
 @endforeach
 @if (session('success'))
     <script>
@@ -69,4 +96,50 @@
     </script>
 @endif
 @endsection
+@section('footer')
+        <footer>
+        <section class="footer">
+            <div class="box-container">
+                <div class="box2">
+                    <h3>Liens Rapides</h3>
+                        <a href="#">Accueil</a>
+                        <a href="#">Nos chambres</a>
+                        <a href="#">Nos services</a>
+                        <a href="#">Contact</a>
+                        <a href="#">À propos de nous</a>
+                        <a href="#">Réservation</a>
+                </div>
+                <div class="box2">
+                    <h3>Liens Supplémentaires</h3>
+                    <a href="#"> <i class="fas fa-angle-right"></i> Poser des questions</a>
+                    <a href="#"> <i class="fas fa-angle-right"></i>prestation d'été</a>
+                    <a href="#"> <i class="fas fa-angle-right"></i>près de nous</a>
+                    <a href="#"> <i class="fas fa-angle-right"></i> Les offres de Cote d'or</a>
+                </div>
+                <div class="box2">
+                    <h3>Infos de contact</h3>
+                    <a href="#"> <i class="fas fa-phone"></i>+212 539 663 219</a>
+                    <a href="#"> <i class="fas fa-phone"></i> +212 539 663 232 </a>
+                    <a href="#"> <i class="fas fa-envelope"></i>cote.dor@live.fr</a>
+                    <a href="#"> <i class="fas fa-map"></i>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</a>
+                </div>
+                <div class="box2">
+                    <h3>Suivez-nous</h3>
+                    <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                    <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                    <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                    <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+                </div>
+            </div>
+            <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | tous les droits sont réservés! </div>
+        </section>
+        </footer>
+
+
+
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
+@endsection
+
+
 
