@@ -2,111 +2,9 @@
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
-.navbar {
-      
-    background-image: url('/public/pics/background-header.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 88vh; 
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
-    flex-direction: column;
-    animation-name: slide;
-    animation-duration: 10s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    position: relative;
-    }
-
-    @keyframes slide {
-    from {
-        background-position: center;
-    }
-    to {
-        background-position: right;
-    }
-    }
-
-.navbar ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar li {
-    margin: 0 50px;
-}
-button {
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background-color:rgb(255, 255, 255);
-    margin-left:170vh;
-    margin-top: 100px;
-}
-button a {
-    text-decoration:none;
-    color:#191970;
-}
- .navbar ul li a {
-    text-decoration: none;
-    font-size:2rem;
-    font-weight: bold;
-    font-family:"Constantia";
-    color:rgb(71, 71, 71);
-    text-shadow: 2px 2px 5px gray;
-    
- }
-.navbar .title {
-    align-self: center;
-    margin-bottom: 20px;
-    font-family:'Brush Script MT';
-    font-size:6rem;
-    
-}
-.langue{
-    margin-left:1210px;
-    margin-top:25px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    color:#191970;
-    background-color: transparent;
-
-}
-.navbar .title .navbar-brand{
-    text-decoration: none;
-    color:#D2B48C;
-}
-.stars {
-    font-size: 30px;
-    color: gray;
-    }
-
-.star {
-    display: inline-block;
-    margin-right: 5px;
-    }
-.address {
-    color:#D3D3D3;
-    margin-top:20px;
-    text-decoration: none;
-    font-size:20px;
-    justify-content:center;
-    font-weight:bold;
-}
-.address i {
-    margin-right: 8px;
-}
-
 
 form {
 position: absolute;
-top: 88%;
 left: 50%;
 transform: translate(-50%, -50%);
 display: flex;
@@ -629,9 +527,9 @@ html::-webkit-scrollbar-thumb{
 
 .card {
    width: 30%;
-   margin: 0 1.5%;
    display: inline-block;
    perspective: 1000px;
+   margin-bottom: 100px;
  }
  
  .card-inner {
@@ -891,5 +789,278 @@ html::-webkit-scrollbar-thumb{
                font-size: 24px;
                font-weight: bold;
              }
+
+
+
+             html{
+               font-size: 62.5%;
+               overflow-x: hidden;
+            }
+            
+            html::-webkit-scrollbar{
+               width: 0.5rem;
+            }
+            
+            html::-webkit-scrollbar-track{
+               background-color: gray;
+            }
+            
+            html::-webkit-scrollbar-thumb{
+               background-color: gray;
+            }
+           
+            .navbar {
+               position: fixed; /* Rend la nav fixe */
+               top: 0; /* Fixe la position en haut de la page */
+               width: 100%; /* Étend la nav à 100% de la largeur de la page */
+               background-color: #fff; /* Couleur de fond de la nav */
+               z-index: 999; /* Défini la profondeur d'empilement pour être devant les autres éléments */
+               padding: 20px; /* Ajoute de la marge intérieure à la nav pour plus d'espace */
+               box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ajoute une ombre à la nav pour la rendre plus visible */
+               text-align: center;
+           
+             }
+             
+             .navbar .langue {
+               border: none;
+               margin-right: 80px;
+               font-size:17px ;
+               color: rgb(86, 86, 86);
+             }
+            
+             
+             .navbar ul {
+               padding: 0; /* Réinitialise la marge intérieure de la liste */
+               list-style: none; /* Supprime les puces de la liste */
+           
+             }
+             
+             .navbar ul li {
+               display: inline-block; /* Affiche les éléments de la liste sur une ligne horizontale */
+               margin-left: 20px; /* Ajoute de la marge à gauche pour séparer les éléments de la liste */
+             }
+             
+            
+             .navbar ul li a {
+               display: block; /* Affiche les liens comme des blocs pour qu'ils remplissent tout l'espace disponible */
+               text-decoration: none; /* Supprime les soulignements des liens */
+               transition: color 0.2s ease-in-out; /* Ajoute une transition pour la couleur de texte des liens */
+               font-size: 18px;
+               margin-right: 25px;
+             }
+             .navbar ul li .a1{
+               color: rgb(69, 67, 67);
+             }
+             .crown i{
+               font-size: 22px;
+               float: left;
+               color:silver;
+               margin-right: 100px;
+            }
+            .reserver a {
+               border: solid 1px #c9b395;
+               background-color: #c9b395;
+               padding:10px;
+               border-radius: 2%;
+               color: whitesmoke;
+            }
+            .background-image {
+               background-image: url('/public/pics/background-header.jpeg');
+               background-size: cover;
+               background-position: center center;
+               height: 100vh;
+               margin-top: 80px;
+               align-items: center;
+               position: relative;
+             }
+  
+             
+             .background-image h1 {
+               text-align: center;
+               line-height: 500px; /* doit être égale à la hauteur de la div parent */
+               font-size: 6rem;
+               color:#ffffff;
+               font-family: 'Brush Script MT';
+             }
+             
+             .background-image .stars {
+               position: absolute;
+               bottom: 550px;
+               left: 50%;
+               transform: translateX(-50%);
+             }
+             
+             .background-image .stars .star {
+               color:rgb(102, 102, 102);
+               font-size: 3rem;
+               margin-right: 10px;
+             }
+             
+             .background-image .address {
+               color: #3c3b3b;
+               position: absolute;
+               bottom: 0;
+               font-weight: bold;
+               left: 50%;
+               font-size: 21px;
+               transform: translateX(-50%);
+               margin-bottom:350px;
+             }
+             header{
+               margin-top: 100px;
+             }
+             .dropdown{
+               position: absolute;
+               top: 250px; /* la même valeur que margin-top de header*/
+               right: 100px;
+             }
+             .rates a{
+               text-decoration: none;
+               position: absolute;
+               color: white;
+               font-size: 18px;
+               border: solid 1px whitesmoke;
+               background-color: transparent;
+               padding: 10px 20px;
+               top: 250px; /* la même valeur que margin-top de header*/
+               float: left;
+             }
+             .gallary img {
+               width: 100%;
+               height: 650px;
+             }
+
+             .owl-carousel {
+               margin-top: 100px;
+               margin-bottom: 100px;
+               position: relative;
+             }
+
+             .owl-carousel .owl-next,
+               .owl-carousel .owl-prev {
+               height: 50px;
+               position: absolute;
+               width: 50px;
+               cursor: pointer;
+               top: 35%;
+               background: white !important;
+               transition: 0.5s;
+               }
+               .gallary{
+                  position: relative;
+               }
+               .owl-carousel .owl-prev {
+               left: 33px;
+               }
+
+               .owl-carousel .owl-next {
+               right: 33px;
+               }
+
+               .owl-carousel .owl-next:hover,
+               .owl-carousel .owl-prev:hover {
+               background: #C1B086 !important;
+               } 
+               .selection{
+               position: absolute;
+                  font-size: 3rem;
+                  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                  color:white;
+                  margin-left: 150px;
+                  top: 80px;
+                 
+               }
+               .linee{
+                  border-bottom: 2px solid white;
+                  width: 1200px;
+                  margin-top: 150px;
+                  position: absolute;
+                  margin-left: 150px;
+               
+               }
+               .item h5{
+                  position: absolute;
+                  font-size: 5rem;
+                  font-family:'URW Chancery';
+                  color:white;
+                  margin-left: 170px;
+                  top: 260px;
+               }
+               .item p{
+                  position: absolute;
+                  font-size: 2rem;
+                  font-family:'Parkavenue';
+                  color:white;
+                  margin-left: 170px;
+                  top: 340px;
+                  width: 800px;
+                  line-height: 28px;
+               }
+               .reser a{
+                  color: red;
+               }
+               .item a {
+                  position: absolute;
+                  font-size: 2rem;
+                  color:white;
+                  font-weight: bold;
+                  border: solid 1px white;
+                  padding: 10px 30px;
+                  background-color: transparent;
+                  margin-left: 1100px;
+                  top: 80px;
+               }
+               .item{
+                  position: relative;
+                  
+               }
+
+               .gallary2{
+                  margin-top: -100px;
+                  background-color: #e0efef;
+                  height: 500px;
+                  margin-bottom: 50px;
+                  padding-top: 80px;
+               }
+               .gallary2 h2{
+                  font-size: 3rem;
+                  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                  color: rgb(91, 90, 90);
+                  margin-left: 250px;
+                  
+               }
+               .item1{
+                  margin-left: 250px;
+               }
+               .ligne{
+                  border-bottom: 1px solid black;
+                  width: 600px;
+                  margin-bottom: 10px;
+               }
+               .item1 h4{
+                  color: #575757;
+                  margin-bottom: 20px;
+               }
+               .item1 p{
+                  width: 600px;
+                  font-size: 17px;
+                  line-height: 30px;
+                  color: #414141;
+               }
+               .div11{
+                  display: flex;
+                  flex-wrap: wrap;
+                  color: #3c3b3b;
+                  gap:400px;
+                  font-size: 18px;
+                  margin-bottom: 15px;
+               }
+                
+
              
              
+             
+             
+             
+
+           

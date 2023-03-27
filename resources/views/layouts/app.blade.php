@@ -82,31 +82,15 @@
  
   </head>
     <body>
-        <nav class='navbar'>
-            <div>
-            <select class="langue" name="langue">
-                    <option value="francais">Fr</option>
-                    <option value="anglais">Ang</option>
-                    <option value="espagnol">Esp</option>
-                    <option value="allemand">Ar</option>
-                </select>
-            </div>
-            <div class='title'>
-                <a class="navbar-brand" href="#">Cote d'or</a>
-            </div>
-    
-            <ul>
-                <li><a href="{{ route('/') }}">Accueil</a></li>
-                <li><a href="{{ route('chambres.index') }}">Nos chambres</a></li> 
-                <li><a href="{{ route('services.index') }}">Nos services</a></li>
-                <li><a href="{{route('contact.contact')}}">Contact</a></li>
-                <li><a class='exep' href="{{ route('hotel.index')}}">À propos de nous</a></li>
-                <li><a class='exep' href="{{ route('admin.index')}}">Admin</a></li>
-            </ul>
-            <div>
-                <button><a href="{{ route('comments.index')}} ">Check rates</a></button>
-            </div>
-            <div class="dropdown">
+        <div>
+        @extends('layouts.header')
+        </div>
+        <div class="background-image">
+              <h1>Cote d'or</h1>
+              <div class="rates">
+                <a href="{{ route('comments.index')}} ">Check rates</a>
+              </div>
+              <div class="dropdown">
                 <button class="dropdown-btn"><span></span><span></span><span></span></button>
                 <div class="dropdown-content">
                     <p>Menu</p>
@@ -120,17 +104,17 @@
                     <a href="#">Tél: 05 39 66 32 19 / Fax: 05 39 66 32 32</a>
                     <a href="#">Email:cote.dor@live.fr</a>
                 </div>
-            </div>
-            <p class="stars">
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            </p>
-            <a href="#" class="address">
-            <i class="fas fa-map-marker-alt"></i> AV Casablanca lot n°90 mdiq, 93200 M'diq, Maroc 
-            </a>
-        </nav>
-        <form action="" method="GET">
+              </div>
+              <p class="stars">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+              </p>
+              <a href="#" class="address">
+              <i class="fas fa-map-marker-alt"></i> AV Casablanca lot n°90 mdiq, 93200 M'diq, Maroc 
+              </a> 
+        </div>
+       <form action="" method="GET">
             <span class='spane'><i class="fa fa-search"></i></span>
             <input type="text" name="search" placeholder="Cote d'or M'diq Maroc">
             <input type="date" name="date_arrivee" class="form-control" id="date_arrivee" required title="Entrez la date d'arrivée">
@@ -138,7 +122,8 @@
             <input type="number" name="guests" placeholder="2 Adultes">
             <a href="{{ route('reservations.create')}}">Réserver</a>
         </form>
-        <div class="features">
+   
+       <div class="features">
         <div class="feature">
             <i class="fas fa-water"></i>
             <span>Front de mer</span>
@@ -358,90 +343,108 @@
           </div>
         </div>
 
-        <div class="slider">
+<section class="gallary mtop " id="gallary">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
         <div>
-          <div class="fixe">
-          <h2>Notre sélection de chambres et suites</h2>
-          <a href="ok">Visiter les chambres</a>
-          </div>
-          <img src="pics/pic5.jpeg">
-          <h3>Triple</h3>
+            <h2 class="selection">Notre sélection de chambres et suites</h2>
+            <a href="ok">Visiter les chambres</a>
+            <div class="linee"></div>
+        </div>
+          <h5>Chambre Double</h5>
           <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
-          <div class="reserv"><a  href="reserv">Reserver</a></div>
+          <img src="./pics/r2.jpg" alt="">
         </div>
+        <div class="item">
         <div>
-          <div class="fixe">
-          <h2>Notre sélection de chambres et suites</h2>
-          <a href="ok">Visiter les chambres</a>
-          </div>
-          <img src="pics/pic4.jpeg">
-          <h3>Titre 2</h3>
-          <p>Description</p>
-          <div class="reserv"><a  href="reserv">Reserver</a></div>
+            <h2 class="selection">Notre sélection de chambres et suites</h2>
+            <a href="ok">Visiter les chambres</a>
+            <div class="linee"></div>
         </div>
+          <h5>Chambre Simple</h5>
+          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <img src="./pics/g5.jpg" alt="ok1">
+        </div>
+        <div class="item">
         <div>
-        <div class="fixe">
-          <h2>Notre sélection de chambres et suites</h2>
-          <a href="ok">Visiter les chambres</a>
-          </div>
-          <img src="pics/pic2.jpeg">
-          <h3>Titre 3</h3>
-          <p>Description</p>
-          <div class="reserv"><a  href="reserv">Reserver</a></div>
+            <h2 class="selection">Notre sélection de chambres et suites</h2>
+            <a href="ok">Visiter les chambres</a>
+            <div class="linee"></div>
         </div>
+          <h5>Chambre Triple</h5>
+          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <img src="./pics/triple.jpeg" alt="ok2">
+        </div>
+        <div class="item">
         <div>
-        <div class="fixe">
-          <h2>Notre sélection de chambres et suites</h2>
-          <a href="ok">Visiter les chambres</a>
-          </div>
-          <img src="pics/pic3.jpeg">
-          <h3>Titre 3</h3>
-          <p>Description</p>
-          <div class="reserv"><a  href="reserv">Reserver</a></div>
+            <h2 class="selection">Notre sélection de chambres et suites</h2>
+            <a href="ok">Visiter les chambres</a>
+            <div class="linee"></div>
         </div>
+          <h5>Chambre Familiale</h5>
+          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <img src="./pics/triple2.jpeg" alt="ok3">
+        </div>
+        <div class="item">
         <div>
-        <div class="fixe">
-          <h2>Notre sélection de chambres et suites</h2>
-          <a href="ok">Visiter les chambres</a>
-          </div>
-          <img src="pics/pic1.jpeg">
-          <h3>Titre 3</h3>
-          <p>Description</p>
-          <div class="reserv"><a  href="reserv">Reserver</a></div>
+            <h2 class="selection">Notre sélection de chambres et suites</h2>
+            <a href="ok">Visiter les chambres</a>
+            <div class="linee"></div>
         </div>
-      </div>
+          <h5>Chambre Quadruple</h5>
+          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <img src="./pics/quadruple.jpeg" alt="ok4">
+        </div>
+        <div class="item">
+        <div>
+            <h2 class="selection">Notre sélection de chambres et suites</h2>
+            <a href="ok">Visiter les chambres</a>
+            <div class="linee"></div>
+        </div>
+          <h5>Suite</h5>
+          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <img src="./pics/suite.jpeg" alt="ok5">
+        </div>
+        <div class="item">
+        <div>
+            <h2 class="selection">Notre sélection de chambres et suites</h2>
+            <a href="ok">Visiter les chambres</a>
+            <div class="linee"></div>
+        </div>
+          <h5>Appartement</h5>
+          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <img src="./pics/r3.jpg" alt="ok6">
+        </div>
 
-      <div class="opinion">
-        <div class="fixe">
-          <h2>Nos clients donnent leur avis</h2>
-          <div class="div11">
-            <h3> Zoubida Hassnaoui .- USA</h3>
-            <h3>10/10</h3>
-          </div>
-          <div class="ligne"></div>
-          <div class="div12">
-          <h4>CLIENT DEPUIS MAI 2018, ULTIMATE</h4>
-          <p>It was a very pleasurable experience!! Very good service and very central location!! Beautiful rooms!! Very nicely equipped ....!!</p>
-           </div>
-          <div class="comment"><a  href="{{ route('comments.index')}} ">Votre avis</a></div>
+      </div>
+    </div>
+    </section>
+    <section class="gallary2 mtop " id="gallary">
+      <h2>Nos clients donnent leur avis</h2>
+      <div class="owl-carousel owl-theme">
+        <div class="item1">
+        <div class="div11">
+              <h3>Imii .France</h3>
+              <h4>9/10</h4>
+            </div>
+            <h4>CLIENT DEPUIS MAI 2018, ULTIMATE</h4>
+            <div class="ligne"></div>
+            <p> L'emplacement est top ,dans le corniche ,
+              Les chambres sont propre , les personnels sont gentils , serviable , le petit-déjeuner est top</p>
         </div>
-        <div class="fixe">
-          <h2>Nos clients donnent leur avis</h2>
-          <div class="div11">
-            <h3>Imii .France</h3>
-            <h3>9/10</h3>
-          </div>
-          <div class="ligne"></div>
-          <div class="div12">
-          <h4>CLIENT DEPUIS MAI 2022, ULTIMATE</h4>
-          <p>
-              L'emplacement est top ,dans le corniche ,
-              Les chambres sont propre , les personnels sont gentils , serviable , le petit-déjeuner est top
-          </p>
-           </div>
-          <div class="comment"><a  href="{{ route('comments.index')}} ">Votre avis</a></div>
+        <div class="item1">
+            <div class="div11">
+              <h3>najwa .imarat</h3>
+              <h4>10/10</h4>
+            </div>
+            <h4>CLIENT DEPUIS MAI 2018, ULTIMATE</h4>
+            <div class="ligne"></div>
+            <p>It was a very pleasurable experience!! Very good service and very central location!! Beautiful rooms!! Very nicely equipped ....!!</p>
+
         </div>
       </div>
+    </div>
+    </section>
       <div>
       <div class="card-title">Également dans la Collection des offres</div>
         <div class="card">
@@ -536,18 +539,12 @@
             <div class="imageIM" style="top: 300px; left: 700px; width: 150px; height: 150px;">
               <img src="./pics/image8.jpg"  style="max-width:100%; height:auto;">
             </div>
-          </div>
+          </div> 
 
 
         <main class="container">
             @yield('content')
         </main>
-        <div>
-        @yield('scripts')
-        </div>
-        <div>
-            @yield('footer')
-        </div>
         <script>
                       // Sélectionne tous les éléments de menu-option
             const menuOptions = document.querySelectorAll('.menu-option');
@@ -574,6 +571,31 @@
               });
             });
 
-        </script>
+        </script> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
     </body>
 </html>
