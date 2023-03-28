@@ -363,7 +363,7 @@
         </div>
           <h5>Chambre Simple</h5>
           <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
-          <img src="./pics/g5.jpg" alt="ok1">
+          <img src="./pics/siimple.jpg" alt="ok1">
         </div>
         <div class="item">
         <div>
@@ -373,7 +373,7 @@
         </div>
           <h5>Chambre Triple</h5>
           <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
-          <img src="./pics/triple.jpeg" alt="ok2">
+          <img src="./pics/triple.jpg" alt="ok2">
         </div>
         <div class="item">
         <div>
@@ -383,7 +383,7 @@
         </div>
           <h5>Chambre Familiale</h5>
           <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
-          <img src="./pics/triple2.jpeg" alt="ok3">
+          <img src="./pics/familial.png" alt="ok3">
         </div>
         <div class="item">
         <div>
@@ -393,7 +393,7 @@
         </div>
           <h5>Chambre Quadruple</h5>
           <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
-          <img src="./pics/quadruple.jpeg" alt="ok4">
+          <img src="./pics/quadruple.jpg" alt="ok4">
         </div>
         <div class="item">
         <div>
@@ -403,7 +403,7 @@
         </div>
           <h5>Suite</h5>
           <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
-          <img src="./pics/suite.jpeg" alt="ok5">
+          <img src="./pics/siimple2.jpg" alt="ok5">
         </div>
         <div class="item">
         <div>
@@ -413,7 +413,7 @@
         </div>
           <h5>Appartement</h5>
           <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
-          <img src="./pics/r3.jpg" alt="ok6">
+          <img src="./pics/appart.jpg" alt="ok6">
         </div>
 
       </div>
