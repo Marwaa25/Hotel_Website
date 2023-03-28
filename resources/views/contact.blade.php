@@ -50,9 +50,96 @@
         <label for="message">Message :</label>
         <textarea name="message" id="message" cols="30" rows="10" required></textarea>
 
-        <button type="submit">Envoyer</button>
+        <button type="submit">ENVOYER</button>
     </form>
+</div><div class="linkbox-wrapper">
+  <div class="linkbox linkbox-hotel">
+    <h4>Hotel Cote d'Or <a href="#" class="toggle-lorem show-lorem">+</a></h4>
+    <div class="linkbox-info hotel-info">
+      <div class="columns-wrapper">
+        <div class="lorem-columns">
+          <div class="column">
+            <h5>General</h5>
+            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</h6>
+            <h6>+212 539 663 219</h6>
+          </div>
+          <div class="column">
+            <h5>Media </h5>
+            <h6>cote.dorHotel@live.fr</h6>
+          </div>
+          <div class="column">
+            <h5>Telephone</h5>
+            <h6>+212 539 663 219</h6>
+            <h6>+212 539 663 232</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="linkbox linkbox-restaurant">
+    <h4>Restaurant Cote d'Or <a href="#" class="toggle-lorem show-lorem">+</a></h4>
+    <div class="linkbox-info restaurant-info">
+      <div class="columns-wrapper">
+        <div class="lorem-columns">
+          <div class="column">
+            <h5>General</h5>
+            <h6>Some address</h6>
+            <h6>Some phone number</h6>
+          </div>
+          <div class="column">
+            <h5>Media </h5>
+            <h6>cote.dorRestau@live.fr</h6>
+          </div>
+          <div class="column">
+            <h5>Telephone</h5>
+            <h6>Some phone number</h6>
+            <h6>Another phone number</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="linkbox linkbox-cafe">
+    <h4>Cafe Cote d'Or <a href="#" class="toggle-lorem show-lorem">+</a></h4>
+    <div class="linkbox-info cafe-info">
+      <div class="columns-wrapper">
+        <div class="lorem-columns">
+          <div class="column">
+            <h5>General</h5>
+            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</h6>
+            <h6>+212 539 663 219</h6>
+          </div>
+          <div class="column">
+            <h5>Media </h5>
+            <h6>cote.dorHotel@live.fr</h6>
+          </div>
+          <div class="column">
+            <h5>Telephone</h5>
+            <h6>+212 539 663 219</h6>
+            <h6>+212 539 663 232</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+  <script>// select all the links with class "more"
+    const links = document.querySelectorAll('.toggle-lorem');
+    // loop through the links and add an event listener for "click" events
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            event.preventDefault();
+
+            // find the closest ".linkbox" element and toggle the "show" class on its ".column" children
+            this.closest('.linkbox').querySelectorAll('.column').forEach(column => {
+                column.classList.toggle('show');
+            });
+        });
+    });
+    
+
+
+  </script>
 @if (session('success'))
     <script>
         Swal.fire({

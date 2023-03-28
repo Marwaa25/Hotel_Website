@@ -1,5 +1,8 @@
-
+*{
+  margin: 0;
+}
 .footer{
+  margin-top: 50px;
     background: url(../views/footer/footer-bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
@@ -165,6 +168,7 @@
   
   button[type="submit"] {
     background-color: #BAA382;
+    font-weight: bold;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -194,6 +198,75 @@
   .background h1{
     color:white;
     font-family:'Times New Roman', Times, serif;
+  }.linkbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
+  .linkbox {
+    background-color: white;
+    color: black;
+    width: 70%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
+  }
   
+  .linkbox a {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+  }
+  
+  .linkbox h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9em;
+    margin-left: 20px;
+  }
+  
+  .linkbox .lorem {
+    display: none;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .linkbox .lorem.show {
+    display: block;
+  }
+  
+  .linkbox .column {
+    width: 25%;
+    display: none;
+    vertical-align: top;
+    margin-left: 40px;
+  }
+  
+  .linkbox .column h5 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  
+  .linkbox .column h6 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin-top: 5px;
+  }
+  
+  .linkbox .show {
+    display: block !important; /* override display none */
+    
+}
+.lorem-columns{
+  display: flex;
+margin-left: 80px
+;}
