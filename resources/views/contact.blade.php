@@ -38,6 +38,9 @@
     <h1>CONTACTEZ-NOUS</h1>
     
 </div>
+<div class="para">
+  <p>Si vous avez des questions , n'ésitez pas de nous contacter si-dessous et nous vous répondrons le plus tôt possible</p>
+</div>
 <div class="boxform">
     <form method="POST" action="/contact">
         @csrf() 
@@ -52,7 +55,9 @@
 
         <button type="submit">ENVOYER</button>
     </form>
-</div><div class="linkbox-wrapper">
+</div>
+
+<div class="linkbox-wrapper">
   <div class="linkbox linkbox-hotel">
     <h4>Hotel Cote d'Or <a href="#" class="toggle-lorem show-lorem">+</a></h4>
     <div class="linkbox-info hotel-info">
@@ -61,7 +66,6 @@
           <div class="column">
             <h5>General</h5>
             <h6>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</h6>
-            <h6>+212 539 663 219</h6>
           </div>
           <div class="column">
             <h5>Media </h5>
@@ -83,8 +87,7 @@
         <div class="lorem-columns">
           <div class="column">
             <h5>General</h5>
-            <h6>Some address</h6>
-            <h6>Some phone number</h6>
+            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</h6>
           </div>
           <div class="column">
             <h5>Media </h5>
@@ -92,8 +95,8 @@
           </div>
           <div class="column">
             <h5>Telephone</h5>
-            <h6>Some phone number</h6>
-            <h6>Another phone number</h6>
+            <h6>+212 539 663 219</h6>
+            <h6>+212 539 663 232</h6>
           </div>
         </div>
       </div>
@@ -107,7 +110,6 @@
           <div class="column">
             <h5>General</h5>
             <h6>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</h6>
-            <h6>+212 539 663 219</h6>
           </div>
           <div class="column">
             <h5>Media </h5>
