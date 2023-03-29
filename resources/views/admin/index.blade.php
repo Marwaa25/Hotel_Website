@@ -50,11 +50,9 @@
                     <td class="px-4 py-3">{{ $reservation->date_arrivee }}</td>
                     <td class="px-4 py-3">{{ $reservation->date_depart }}</td>
                   <td class="px-4 py-3 flex items-center">
-  <!-- Bouton de modification de l'article -->
   <a href="{{ route('admin.reservations.edit', $reservation->id) }}" class="text-blue-500 hover:underline mr-4">
     <i class="fas fa-pencil-alt"></i>
   </a>
-  <!-- Formulaire de suppression de l'article -->
   <form action="{{ route('admin.reservations.destroy', $reservation->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette réservation ?')">
     @csrf
     @method('DELETE')
@@ -93,15 +91,10 @@
                     <td class=" px-4 py-2">{{ $chambre->etage }}</td>
                     <td class=" px-4 py-2">{{ $chambre->prix_par_nuit }}</td>
                     <td class=" px-4 py-2">{{ $chambre->disponibilite }}</td>
-                    <td class="px-4 py-3 flex items-center">                        <!-- Bouton de visualisation de l'article -->
-            <a href="{{ route('admin.chambres.show', $chambre->id) }}" class="text-blue-500 hover:underline mr-4">
-                <i class="fas fa-eye"></i>
-              </a>
-              <!-- Bouton de modification de l'article -->
+                    <td class="px-4 py-3 flex items-center">           
               <a href="{{ route('admin.chambres.edit', $chambre->id) }}" class="text-blue-500 hover:underline mr-4">
                 <i class="fas fa-pencil-alt"></i>
               </a>
-              <!-- Formulaire de suppression de l'article -->
               <form action="{{ route('admin.chambres.destroy', $chambre->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette chambre ?')">
                 @csrf
                 @method('DELETE')
@@ -200,18 +193,14 @@
         </table>
 
         <hr>
-<!-- Titre de la page -->
 <h2 class="text-3xl font-bold mb-4">Stock</h2>
 
-<!-- Bouton d'ajout d'article -->
 <a href="{{ route('admin.stock.create') }}" class="inline-block px-4 py-2 mb-4 text-white bg-blue-500 rounded hover:bg-blue-600">
   Ajouter un article
 </a>
 
-<!-- Tableau de données -->
 <div class="overflow-x-auto">
   <table class="w-full ">
-    <!-- En-tête du tableau -->
     <thead>
       <tr class="bg-gray-200">
         <th class="px-4 py-3 text-left text-gray-600">Article</th>
@@ -221,7 +210,6 @@
         <th class="px-4 py-3 text-left text-gray-600">Actions</th>
       </tr>
     </thead>
-    <!-- Corps du tableau -->
     <tr class="border-b border-gray-200 hover:bg-gray-100">
       @foreach ($stocks as $stock)
       <tr class="hover:bg-gray-100">
@@ -231,15 +219,12 @@
         <td class="py-2 px-4">{{ $stock->quantite }}</td>
         <td class="py-2 px-4">
           <div class="flex justify-center items-center">
-            <!-- Bouton de visualisation de l'article -->
             <a href="{{ route('admin.stock.show', $stock->id) }}" class="text-blue-500 hover:underline mr-4">
               <i class="fas fa-eye"></i>
             </a>
-            <!-- Bouton de modification de l'article -->
             <a href="{{ route('admin.stock.edit', $stock->id) }}" class="text-blue-500 hover:underline mr-4">
               <i class="fas fa-pencil-alt"></i>
             </a>
-            <!-- Formulaire de suppression de l'article -->
             <form action="{{ route('admin.stock.destroy', $stock->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">
               @csrf
               @method('DELETE')
@@ -278,11 +263,9 @@
                         <td class="py-2 px-4">{{ $comment->Note }}</td>
                         <td class="py-2 px-4">{{ $comment->datecomment }}</td>
                         <td class="px-4 py-3 flex items-center">
-                            <!-- Bouton de visualisation de l'article -->
             <a href="{{ route('admin.comments.show', $comment->id) }}" class="text-blue-500 hover:underline mr-4">
                 <i class="fas fa-eye"></i>
               </a>
-              <!-- Formulaire de suppression de l'article -->
               <form action="{{ route('admin.comments.destroy', $comment->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?')">
                 @csrf
                 @method('DELETE')

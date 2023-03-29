@@ -187,7 +187,7 @@
                     <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
                 </div>
             </div>
-            <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | tous les droits sont réservés! </div>
+            <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | Tous les droits sont réservés! </div>
         </section>
         </footer>
 @endsection()

@@ -14,16 +14,16 @@
     <div class="container">
         <h5>Nous attendons vos avis</h5>
         <h1>COMMENTAIRES</h1>
-        <a href="{{ route('comments.create') }}" class="btn btn-primary">Create Comment</a>
+        <a href="{{ route('comments.create') }}" class="btn btn-primary">Donnez votre avis </a>
         <hr>
         @if(count($comments) > 0)
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nom Client</th>
-                        <th>Comment</th>
+                        <th>Nom </th>
+                        <th>Avis</th>
                         <th>Note</th>
-                        <th>Date Comment</th>
+                        <th>Date</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -34,7 +34,7 @@
                             <td>{{ $comment->Comment }}</td>
                             <td>{{ $comment->Note }}</td>
                             <td>{{ $comment->datecomment }}</td>
-                            <td><a href="{{ route('comments.show', $comment->id) }}" class="btn btn-secondary">View</a></td>
+                            <td><a href="{{ route('comments.show', $comment->id) }}" class="btn btn-secondary">Plus</a></td>
                         </tr>
                     @endforeach
                 </tbody>

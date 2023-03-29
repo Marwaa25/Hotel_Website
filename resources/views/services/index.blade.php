@@ -3,13 +3,11 @@
 @section('content')
 <div>
     <div class="background-image">
-        <h1>Cote d'or M'diq Maroc</h1>
+        <h1>NOS SERVICES</h1>
     </div>
 </div>
     <div class="part">
-        <h1>UNE STATION BALNÉAIRE ENTIÈREMENT ÉQUIPÉE</h1>
-        <p>Avec un club pour enfants pour les plus jeunes, des salles de yoga et de remise en forme pour les personnes soucieuses de leur santé, une gamme de salles de réunion, notre spa primé et bien plus encore,
-             le Banyan Tree Tamouda Bay dépassera vos attentes.</p>
+        <h1>DES CHAMBRES ENTIÈREMENT ÉQUIPÉE, DE DIFFÉRENTS SERVICES A EN BÉNÉFICIER</h1>
     </div>
     <div class="all">
         <h2>NOS SERVICES</h2>
@@ -41,29 +39,29 @@
             <div class="facilities">
                 <img src="pics/Wifi-Hotel.jpg" alt="">
                 <h1>Wifi Disponible</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae autem facere, aliquid fuga enim officiis a neque expedita pariatur dolorem minus necessitatibus.</p>
-            </div>
+<p>La connexion WiFi est disponible dans toutes les chambres, ainsi que dans les espaces communs tels que le hall et le restaurant .</p> 
+           </div>
             <div class="facilities">
                 <img src="pics/menage.jpg" alt="">
                 <h1>Menage</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae autem facere, aliquid fuga enim officiis a neque expedita pariatur dolorem minus necessitatibus.</p>
+                <p>Notre personnels veille à ce que toutes les chambres soient propres avant votre arrivée , ce qui les poussent à bien nettoyer la chambre tous les jours</p>
             </div>
             <div class="facilities">
                 <img src="pics/blanchisserie.jpg" alt="">
                 <h1>Blanchisserie</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae autem facere, aliquid fuga enim officiis a neque expedita pariatur dolorem minus necessitatibus.</p>
+                <p>Lors de votre séjour , notre personnel s'occupe du lavage , séchage et même repassage des vêtements</p>
             </div>
         </div>
         <div class="box2">
             <div class="facilities">
                 <img src="pics/roomDining.jpg" alt="">
                 <h1>Service de chambre</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae autem facere, aliquid fuga enim officiis a neque expedita pariatur dolorem minus necessitatibus.</p>
+                <p>Votre petit déjeuner arrivera chez vous dès le matin , il vous suffit juste de demander</p>
             </div>
             <div class="facilities">
                 <img src="pics/bagagiste.jpg" alt="">
                 <h1>Bagagerie</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae autem facere, aliquid fuga enim officiis a neque expedita pariatur dolorem minus necessitatibus.</p>
+                <p>Votre confort est notre joie , Lors de votre séjour ne pensez pas à votre bagage , nous nous occupons de tous , pensez à votre confort</p>
             </div>
         </div>
     </div>
@@ -130,7 +128,7 @@
                     <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
                 </div>
             </div>
-            <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | tous les droits sont réservés! </div>
+            <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | Tous les droits sont réservés! </div>
         </section>
         </footer>
 

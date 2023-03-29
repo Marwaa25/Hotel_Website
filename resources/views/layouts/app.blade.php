@@ -348,7 +348,7 @@
         <div class="item">
         <div>
             <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="ok">Visiter les chambres</a>
+            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
             <div class="linee"></div>
         </div>
           <h5>Chambre Double</h5>
@@ -358,7 +358,7 @@
         <div class="item">
         <div>
             <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="ok">Visiter les chambres</a>
+            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
             <div class="linee"></div>
         </div>
           <h5>Chambre Simple</h5>
@@ -368,7 +368,7 @@
         <div class="item">
         <div>
             <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="ok">Visiter les chambres</a>
+            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
             <div class="linee"></div>
         </div>
           <h5>Chambre Triple</h5>
@@ -378,7 +378,7 @@
         <div class="item">
         <div>
             <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="ok">Visiter les chambres</a>
+            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
             <div class="linee"></div>
         </div>
           <h5>Chambre Familiale</h5>
@@ -388,7 +388,7 @@
         <div class="item">
         <div>
             <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="ok">Visiter les chambres</a>
+            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
             <div class="linee"></div>
         </div>
           <h5>Chambre Quadruple</h5>
@@ -398,7 +398,7 @@
         <div class="item">
         <div>
             <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="ok">Visiter les chambres</a>
+            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
             <div class="linee"></div>
         </div>
           <h5>Suite</h5>
@@ -408,7 +408,7 @@
         <div class="item">
         <div>
             <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="ok">Visiter les chambres</a>
+            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
             <div class="linee"></div>
         </div>
           <h5>Appartement</h5>
@@ -465,7 +465,7 @@
                 <div class="price-with-cancel"><span class="price-text">A partir de</span> <span class="price-amount">700 MAD par nuit</span></div>
                 <div class="price-no-cancel"><span class="price-text">A partir de</span> <span class="price-amount">500 MAD par nuit</span></div>
               </div>
-              <div class="reserveer"><a href="#">Voir la disponibilité / Reserver</a></div>
+              <div class="reserveer"><a href="{{ route('chambres.index')}}">Voir la disponibilité / Reserver</a></div>
             </div>
           </div>
         </div>
@@ -488,7 +488,7 @@
                 <div class="price-with-cancel"><span class="price-text">A partir de</span> <span class="price-amount">700 MAD par nuit</span></div>
                 <div class="price-no-cancel"><span class="price-text">A partir de</span> <span class="price-amount">500 MAD par nuit</span></div>
               </div>
-              <div class="reserveer"><a href="#">Voir la disponibilité / Reserver</a></div>
+              <div class="reserveer"><a href="{{ route('chambres.index')}}">Voir la disponibilité / Reserver</a></div>
             </div>
           </div>
         </div>
@@ -511,7 +511,7 @@
                 <div class="price-with-cancel"><span class="price-text">A partir de</span> <span class="price-amount">700 MAD par nuit</span></div>
                 <div class="price-no-cancel"><span class="price-text">A partir de</span> <span class="price-amount">500 MAD par nuit</span></div>
               </div>
-              <div class="reserveer"><a href="#">Voir la disponibilité / Reserver</a></div>
+              <div class="reserveer"><a href="{{ route('chambres.index')}}">Voir la disponibilité / Reserver</a></div>
             </div>
           </div>
         </div>

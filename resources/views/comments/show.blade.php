@@ -14,15 +14,15 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Comment Details') }}</div>
+                    <div class="card-header">{{ __('Details') }}</div>
 
                     <div class="card-body">
                         <div class="form-group">
-                            <strong>Nom Client:</strong>
+                            <strong>Nom :</strong>
                             {{ $comment->client_name }}
                         </div>
                         <div class="form-group">
-                            <strong>Comment:</strong>
+                            <strong>Avis:</strong>
                             {{ $comment->Comment }}
                         </div>
                         <div class="form-group">
@@ -33,7 +33,7 @@
                             <strong>Date:</strong>
                             {{ $comment->datecomment }}
                         </div>
-                        <a class="btn1 btn-primary" href="{{ route('comments.index') }}">Back</a>
+                        <a class="btn1 btn-primary" href="{{ route('comments.index') }}">Retour</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
                 </div>
             </div>
-            <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | tous les droits sont réservés! </div>
+            <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | Tous les droits sont réservés! </div>
         </section>
         </footer>
 

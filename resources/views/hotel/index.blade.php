@@ -4,7 +4,7 @@
 @section('content')
 <div>
     <div class="background-image">
-        <h1>Cote d'or M'diq Maroc</h1>
+        <h1>À propos de nous</h1>
         <div class="line"></div>
         <div class="bar">
             <i class="fas fa-crown"></i>
@@ -316,7 +316,7 @@
                     <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
                 </div>
             </div>
-            <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | tous les droits sont réservés! </div>
+            <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | Tous les droits sont réservés! </div>
         </section>
         </footer>
 

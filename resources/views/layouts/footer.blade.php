@@ -3,16 +3,16 @@
       <div class="box-container">
          <div class="box">
             <h3>Liens Rapides</h3>
-                <a href="#">Accueil</a>
-                <a href="#">Nos chambres</a>
-                <a href="#">Nos services</a>
-                <a href="#">Contact</a>
-                <a href="#">À propos de nous</a>
-                <a href="#">Réservation</a>
+                <a href="{{ route('/')}}">Accueil</a>
+                <a href="{{ route('chambres.index')}}">Nos chambres</a>
+                <a href="{{ route('services.index')}}">Nos services</a>
+                <a href="{{ route('contact.contact')}}">Contact</a>
+                <a href="{{ route('hotel.index')}}">À propos de nous</a>
+                <a href="{{ route('chambres.index')}}">Réservation</a>
          </div>
          <div class="box">
             <h3>Liens Supplémentaires</h3>
-            <a href="#"> <i class="fas fa-angle-right"></i> Poser des questions</a>
+            <a href="{{ route('contact.contact')}}"> <i class="fas fa-angle-right"></i> Poser des questions</a>
             <a href="#"> <i class="fas fa-angle-right"></i>prestation d'été</a>
             <a href="#"> <i class="fas fa-angle-right"></i>près de nous</a>
             <a href="#"> <i class="fas fa-angle-right"></i> Les offres de Cote d'or</a>
@@ -32,7 +32,7 @@
             <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
          </div>
       </div>
-      <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | tous les droits sont réservés! </div>
+      <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | Tous les droits sont réservés! </div>
    </section>
 </footer>
 

@@ -10,8 +10,9 @@
 </div>
 <div class="part">
         <h1>COTE D'OR, LE BON CHOIX</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis et sit totam maxime illo praesentium blanditiis unde eum, accusantium accusamus doloremque saepe, ducimus dolor dolores magnam quae incidunt pariatur alias.</p>
-</div>
+        <p>Faites votre réservation , dans la chambre qui vous plait à la date qui vous convient.</p>
+        <p>Bon séjour</p>
+      </div>
 <form action="{{ route('reservations.store') }}" method="POST" id="payment-form">
     @csrf
     <script>
@@ -137,8 +138,8 @@
 <section class="offer mtop" id="services">
     <div class="container">
       <div class="heading">
-        <h5>EXCLUSIVE OFFERS </h5>
-        <h3>You can get an exclusive offer </h3>
+        <h5> OFFRES EXCLUSIVEs  </h5>
+        <h3>Bénéficier de nos offres </h3>
       </div>
 
       <div class="content grid2 mtop">
@@ -153,10 +154,10 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <h5>A partir de 400 MAD/nuit</h5>
+<p>Grand lit,salle de bain , petit déjeuner inclut , wifi et services </p> 
+           <h5>A partir de 400 MAD/nuit</h5>
             <button class="flex1">
-              <span>Check Availability</span>
+              <span>Voir la disponnibilité</span>
               <i class="fas fa-arrow-circle-right"></i>
             </button>
           </div>
@@ -172,10 +173,10 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <h5>A partir de 500 MAD/nuit</h5>
+            <p>Deux lits twin ,salle de bain , petit déjeuner inclut , wifi et services </p>  
+             <h5>A partir de 500 MAD/nuit</h5>
             <button class="flex1">
-              <span>Check Availability</span>
+              <span>Voir la disponnibilité</span>
               <i class="fas fa-arrow-circle-right"></i>
             </button>
           </div>
@@ -191,10 +192,9 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <h5>A partir de 600 MAD/nuit</h5>
+            <p>Trois lits simples ,salle de bain , petit déjeuner inclut , wifi et services </p>             <h5>A partir de 600 MAD/nuit</h5>
             <button class="flex1">
-              <span>Check Availability</span>
+              <span>Voir la disponnibilité</span>
               <i class="fas fa-arrow-circle-right"></i>
             </button>
           </div>
@@ -210,10 +210,9 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <h5>A partir de 700 MAD/nuit</h5>
+            <p>Grand lit et deux lits twin ,salle de bain , petit déjeuner inclut , wifi et services </p>             <h5>A partir de 700 MAD/nuit</h5>
             <button class="flex1">
-              <span>Check Availability</span>
+              <span>Voir la disponnibilité</span>
               <i class="fas fa-arrow-circle-right"></i>
             </button>
           </div>
@@ -229,10 +228,10 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <h5>A partir de 800 MAD/nuit</h5>
+            <p> Grand lit ,salle de bain , peti salon, petit déjeuner inclut , wifi et services </p>     
+                    <h5>A partir de 800 MAD/nuit</h5>
             <button class="flex1">
-              <span>Check Availability</span>
+              <span>Voir la disponnibilité</span>
               <i class="fas fa-arrow-circle-right"></i>
             </button>
           </div>
@@ -248,10 +247,10 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Deux chambres , une avec un grand lit et l'autre avec deux lits twin , salle de bain , salon , cuisine , petit déjeuner inclut , wifi et services </p>           
             <h5>A partir de 900 MAD/nuit</h5>
             <button class="flex1">
-              <span>Check Availability</span>
+              <span>Voir la disponnibilité</span>
               <i class="fas fa-arrow-circle-right"></i>
             </button>
           </div>

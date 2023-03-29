@@ -5,19 +5,17 @@
 @section('content')
 
 <div class="background-image">
-        <h1>Cote d'or M'diq Maroc</h1>
+        <h1>NOS CHAMBRES</h1>
         <div class="line"></div>
         <div class="bar">
             <i class="fas fa-crown"></i>
-            <h3>COTE D'OR > </h3>
+            <h3>CÔTE D'OR > </h3>
             <a href="{{ route('reservations.create')}}">Réserver</a>
         </div>
     </div>
 @foreach ($chambres as $chambre)
 <script>
-    // Vérifier si la réponse contient un message de succès
     @if(Session::has('success'))
-        // Afficher une alerte de SweetAlert avec le message de succès
         Swal.fire({
             icon: 'success',
             title: 'Succès!',
@@ -27,15 +25,12 @@
         });
     @endif
 
-    // Vérifier si la réponse contient des erreurs
     @if ($errors->any())
-        // Construire un message d'erreur avec tous les messages d'erreur
         var errorMessages = '';
         @foreach ($errors->all() as $error)
             errorMessages += '{{ $error }}\n';
         @endforeach
 
-        // Afficher une alerte de SweetAlert avec les messages d'erreur
         Swal.fire({
             icon: 'error',
             title: 'Erreur!',
@@ -61,10 +56,10 @@
         @endforeach
         </div>
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-             Minima nobis deserunt quas laboriosam temporibus laborum,
-            consectetur, odit harum magni aliquid aperiam vitae provident
-            dolor earum sint cupiditate molestiae illo facilis.
+            Equipée de lits confortables, de tables de chevet avec des lampes de lecture, d'un bureau et d'une chaise 
+            pour travailler, ainsi que d'une télévision à écran plat pour se divertir. La chambre dispose également d'une salle de bain
+            privative avec douche ou baignoire, serviettes et articles de toilette de base. 
+            Enfin, Tous nos chambres offrent souvent une vue agréable sur l'extérieur.       
         </p>
         <a href="{{ route('chambres.show', $chambre) }}">Detais et photos</a>
     </div>
@@ -80,7 +75,7 @@
             <p><i class="fas fa-check"></i> Petit déjeuner pour deux chaque jour</p>
         </div>
         <div class="recommend">
-        <p><i class="fas fa-user-circle"></i> Pour bénéficier, de nos offres , vous pouvez reserver avant plus d'une semaine <span class="separator"></span></p>
+        <p><i class="fas fa-user-circle"></i> Pour bénéficier, de nos offres , vous pouvez réserver avant plus d'une semaine <span class="separator"></span></p>
         </div> 
         <a class="reser" href="{{ route('reservations.create')}}">Réserver</a>
     </div>
