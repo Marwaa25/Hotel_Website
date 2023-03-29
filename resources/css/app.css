@@ -923,7 +923,7 @@ html::-webkit-scrollbar-thumb{
                background-color: transparent;
                padding: 10px 20px;
                top: 250px; /* la même valeur que margin-top de header*/
-               float: left;
+               float: right;
              }
              .gallary img {
                width: 100%;
