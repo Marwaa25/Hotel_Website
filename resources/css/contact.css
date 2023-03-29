@@ -1,0 +1,281 @@
+
+.footer{
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: -6px;
+    margin-top: 50px;
+    background: url(../views/footer/footer-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+ 
+ }
+.footer .box-container{
+    display: grid;
+    margin: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+ }
+ .footer .box-container .box {
+    margin-top: 50px;
+    margin-left: 100px;
+ 
+ }
+ 
+ .footer .box-container .box h3{
+    color:whitesmoke;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+ }
+ 
+ .footer .box-container .box a{
+    color:whitesmoke;
+    font-size: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: block;
+ }
+ 
+ .footer .box-container .box a i{
+    color:whitesmoke;
+    padding-right: .5rem;
+    transition: .2s linear;
+ }
+ 
+ .footer .box-container .box a:hover i{
+    padding-right: 2rem;
+ }
+ 
+ .footer .credit{
+    text-align: center;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-top: .1rem solid var(--light-white);
+    font-size: 2rem;
+    color:whitesmoke;
+ }
+ 
+ .footer .credit span{
+    color:whitesmoke;
+ }
+ html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+ }
+ 
+ html::-webkit-scrollbar{
+    width: 0.5rem;
+ }
+ 
+ html::-webkit-scrollbar-track{
+    background-color: gray;
+ }
+ 
+ html::-webkit-scrollbar-thumb{
+    background-color: gray;
+ }
+
+ .navbar {
+    position: fixed; /* Rend la nav fixe */
+    top: 0; /* Fixe la position en haut de la page */
+    left: 0; /* Fixe la navbar sur le bord gauche */
+    right: 0; /* Fixe la navbar sur le bord droit */
+    background-color: #fff; /* Couleur de fond de la nav */
+    z-index: 999; /* Défini la profondeur d'empilement pour être devant les autres éléments */
+    padding: 8px; /* Ajoute de la marge intérieure à la nav pour plus d'espace */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ajoute une ombre à la nav pour la rendre plus visible */
+    text-align: center;
+}
+
+  
+  .navbar .langue {
+    border: none;
+    margin-right: 80px;
+    font-size:17px ;
+    color: rgb(86, 86, 86);
+  }
+ 
+  
+  .navbar ul {
+    padding: 0; /* Réinitialise la marge intérieure de la liste */
+    list-style: none; /* Supprime les puces de la liste */
+
+  }
+  
+  .navbar ul li {
+    display: inline-block; /* Affiche les éléments de la liste sur une ligne horizontale */
+    margin-left: 20px; /* Ajoute de la marge à gauche pour séparer les éléments de la liste */
+  }
+  
+ 
+  .navbar ul li a {
+    display: block; /* Affiche les liens comme des blocs pour qu'ils remplissent tout l'espace disponible */
+    text-decoration: none; /* Supprime les soulignements des liens */
+    transition: color 0.2s ease-in-out; /* Ajoute une transition pour la couleur de texte des liens */
+    font-size: 18px;
+    margin-right: 25px;
+  }
+  .navbar ul li .a1{
+    color: rgb(69, 67, 67);
+  }
+  
+ .crown i{
+    font-size: 22px;
+    float: left;
+    color:silver;
+    margin-right: 100px;
+ }
+ .reserver a {
+    border: solid 1px #c9b395;
+    background-color: #c9b395;
+    padding:10px;
+    border-radius: 2%;
+    color: whitesmoke;
+ }
+ .background-image {
+    background-image: url('/public/pics/back6.jpeg');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .boxform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  form {
+    width: 50%;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input, textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+    background-color: #BAA382;
+    font-weight: bold;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #BAA382;
+  }
+  body {
+    background-color: #e4e2df;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+  }
+  .background {
+    background-image: url('/public/images/contact.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .background h1{
+    color:white;
+    font-family:'Times New Roman', Times, serif;
+  }.linkbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .para p {
+    font-size: 0.8em;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -60px;
+    
+  }
+  .linkbox {
+    background-color: white;
+    color: black;
+    width: 70%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
+  }
+  
+  .linkbox a {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+  }
+  
+  .linkbox h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9em;
+    margin-left: 20px;
+  }
+  
+  .linkbox .lorem {
+    display: none;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .linkbox .lorem.show {
+    display: block;
+  }
+  
+  .linkbox .column {
+    width: 25%;
+    display: none;
+    vertical-align: top;
+    margin-left: 40px;
+  }
+  
+  .linkbox .column h5 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  
+  .linkbox .column h6 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin-top: 5px;
+  }
+  
+  .linkbox .show {
+    display: block !important; /* override display none */
+    
+}
+.lorem-columns{
+  display: flex;
+margin-left: 80px
+;}
