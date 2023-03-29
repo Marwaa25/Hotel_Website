@@ -20,62 +20,48 @@ class ReservationController extends Controller
 
     public function store(Request $request)
     {
-        Stripe::setApiKey('sk_test_51MlAg4D2dzVBVsLgV6HnejFU9d931M4kKYKTjLIj0WlplpPCVpi4epJbEru4uwqMfAFFpkPUYWMWor01c1XDte1N009ZrrNreL');
-
-
-        // Vérifier si la date d'arrivée est égale ou postérieure à la date d'aujourd'hui
-        $today = today();
-        if ($request->input('date_arrivee') < $today) {
-            return redirect()->back()->withInput()->withErrors(['La date d\'arrivée doit être égale ou postérieure à la date d\'aujourd\'hui.']);
-        }
-        
-        // Vérifier si la date d'arrivée est inférieure à la date de départ
-        if ($request->input('date_arrivee') >= $request->input('date_depart')) {
-            return redirect()->back()->withInput()->withErrors(['La date d\'arrivée doit être antérieure à la date de départ.']);
-        }
-        
+        Stripe::setApiKey('sk_test_51MlAg4D2dzVBVsLgV6HnejFU9d931M4kKYKTjLIj0Wlpl...');
+    
+        // Valider les données de la demande
+        $this->validate($request, [
+            'chambre_id' => 'required',
+            'date_arrivee' => 'required|date',
+            'date_depart' => 'required|date|after:date_arrivee',
+            'nombre_de_personnes' => 'required|integer|min:1',
+            'email' => 'required|email',
+            'payment_method' => 'required',
+        ]);
+    
         // Récupérer la chambre sélectionnée
-        $chambre = Chambre::find($request->input('chambre_id'));
-
-        // Vérifier si la chambre est disponible pendant la période sélectionnée
-        $reservations = Reservation::where('chambre_id', $chambre->id)
-        ->where('nombre_de_personnes', $request->input('nombre_de_personnes'))
-        ->where(function ($query) use ($request) {
-            $query->whereBetween('date_arrivee', [$request->input('date_arrivee'), $request->input('date_depart')])
-                ->orWhereBetween('date_depart', [$request->input('date_arrivee'), $request->input('date_depart')])
-                ->orWhere(function ($query) use ($request) {
-                    $query->where('date_arrivee', '<=', $request->input('date_arrivee'))
-                        ->where('date_depart', '>=', $request->input('date_depart'));
-                });
-        })
-        ->count();
-
-        // Si la chambre n'est pas disponible, renvoyer un message d'erreur
-        if ($reservations > 0) {
-            return redirect()->back()->withInput()->withErrors(['La chambre est déjà réservée pour cette période.']);
+        $chambre = Chambre::findOrFail($request->chambre_id);
+    
+        // Calculer le nombre de nuits réservées
+        $date_arrivee = new \DateTime($request->date_arrivee);
+        $date_depart = new \DateTime($request->date_depart);
+        $nb_nuits = $date_depart->diff($date_arrivee)->days;
+    
+        // Vérifier si le nombre de nuits réservées est supérieur à zéro
+        if ($nb_nuits <= 0) {
+            return back()->withErrors(['date_depart' => 'La date de départ doit être après la date d\'arrivée.']);
         }
-
-        // Si la chambre est disponible, créer la réservation
-        // $intent = \Stripe\PaymentIntent::create([
-        //     'amount' => $chambre->prix_total,
-        //     'currency' => 'EUR',
-        // ]);
-        
+    
+        // Calculer le prix total de la réservation
+        $prix_total = $chambre->prix_par_nuit * $nb_nuits * $request->nombre_de_personnes;
+    
+        // Créer une nouvelle réservation
         $reservation = new Reservation();
-        $reservation->chambre_id = $chambre->id;
-        $reservation->email = $request->input('email');
-        $reservation->date_arrivee = $request->input('date_arrivee');
-        $reservation->date_depart = $request->input('date_depart');
-        $reservation->nombre_de_personnes = $request->input('nombre_de_personnes');
-        $reservation->methode_paiement = 'Stripe';
-        // $reservation->payment_intent_id = $intent->id;
+        $reservation->chambre_id = $request->chambre_id;
+        $reservation->date_arrivee = $request->date_arrivee;
+        $reservation->date_depart = $request->date_depart;
+        $reservation->nombre_de_personnes = $request->nombre_de_personnes;
+        $reservation->email = $request->email;
+        $reservation->prix_total = $prix_total;
         $reservation->save();
-        
-         // Send an email confirmation to the client
-         Mail::to($request->input('email'))->send(new ReservationConfirmation($reservation));
-
-
-        // Envoyer un message de succès
-        return redirect()->route('chambres.index')->with('success', 'La réservation a été créée avec succès.');
+    
+        // Envoyer un email de confirmation de réservation
+        Mail::to($request->email)->send(new ReservationConfirmation($reservation));
+    
+        // Rediriger vers la page de confirmation avec un message de succès
+        return redirect()->route('chambres.index', ['id' => $reservation->id])->with('success', 'Votre réservation a été effectuée avec succès! Le prix total est de ' . $reservation->prix_total . '€.');
     }
-}
+    }
