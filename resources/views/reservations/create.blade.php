@@ -1,7 +1,17 @@
 @extends('layouts.header')
+@vite(['resources/css/reservation.css'])
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
 
 @section('content')
+
+<div class="background-image">
+        <h1>Cote d'or M'diq Maroc</h1>
+        <div class="line"></div>
+</div>
+<div class="part">
+        <h1>COTE D'OR, LE BON CHOIX</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis et sit totam maxime illo praesentium blanditiis unde eum, accusantium accusamus doloremque saepe, ducimus dolor dolores magnam quae incidunt pariatur alias.</p>
+</div>
 <form action="{{ route('reservations.store') }}" method="POST" id="payment-form">
     @csrf
     <script>
@@ -72,8 +82,10 @@
             <!-- Stripe Element will be inserted here. -->
         </div>
     </div>
-
-    <button type="submit" class="btn btn-primary" id="submit-button">Réserver</button>
+    <div class="butt">
+        <button class="btn">Annuler</button>
+        <button type="submit" class="btn" id="submit-button">Réserver</button>
+    </div>
 
 </form>
 <script src="https://js.stripe.com/v3/"></script>
@@ -122,6 +134,131 @@
         form.submit();
     });
 </script>
+<section class="offer mtop" id="services">
+    <div class="container">
+      <div class="heading">
+        <h5>EXCLUSIVE OFFERS </h5>
+        <h3>You can get an exclusive offer </h3>
+      </div>
+
+      <div class="content grid2 mtop">
+        <div class="box flex">
+          <div class="left">
+            <img src="/pics/siimple.jpg" alt="">
+          </div>
+          <div class="right">
+            <h4>CHAMBRE SIMPLE</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>A partir de 400 MAD/nuit</h5>
+            <button class="flex1">
+              <span>Check Availability</span>
+              <i class="fas fa-arrow-circle-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="left">
+            <img src="/pics/douuble.jpg" alt="">
+          </div>
+          <div class="right">
+            <h4>CHAMBRE DOUBLE</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>A partir de 500 MAD/nuit</h5>
+            <button class="flex1">
+              <span>Check Availability</span>
+              <i class="fas fa-arrow-circle-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="left">
+            <img src="/pics/triple.jpg" alt="">
+          </div>
+          <div class="right">
+            <h4>CHAMBRE TRIPLE</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>A partir de 600 MAD/nuit</h5>
+            <button class="flex1">
+              <span>Check Availability</span>
+              <i class="fas fa-arrow-circle-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="left">
+            <img src="/pics/quadruple.jpg" alt="">
+          </div>
+          <div class="right">
+            <h4>CHAMBRE QUADRUPLE</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>A partir de 700 MAD/nuit</h5>
+            <button class="flex1">
+              <span>Check Availability</span>
+              <i class="fas fa-arrow-circle-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="left">
+            <img src="/pics/siimple2.jpg" alt="">
+          </div>
+          <div class="right">
+            <h4>SUITE</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>A partir de 800 MAD/nuit</h5>
+            <button class="flex1">
+              <span>Check Availability</span>
+              <i class="fas fa-arrow-circle-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="box flex">
+          <div class="left">
+            <img src="/pics/appart.jpg" alt="">
+          </div>
+          <div class="right">
+            <h4>APPARTEMENT</h4>
+            <div class="rate flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>A partir de 900 MAD/nuit</h5>
+            <button class="flex1">
+              <span>Check Availability</span>
+              <i class="fas fa-arrow-circle-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 @if (session('success'))
     <script>
@@ -132,4 +269,48 @@
         });
     </script>
 @endif
+@endsection
+@section('footer')
+        <footer>
+        <section class="footer">
+            <div class="box-container">
+                <div class="box2">
+                    <h3>Liens Rapides</h3>
+                        <a href="#">Accueil</a>
+                        <a href="#">Nos chambres</a>
+                        <a href="#">Nos services</a>
+                        <a href="#">Contact</a>
+                        <a href="#">À propos de nous</a>
+                        <a href="#">Réservation</a>
+                </div>
+                <div class="box2">
+                    <h3>Liens Supplémentaires</h3>
+                    <a href="#"> <i class="fas fa-angle-right"></i> Poser des questions</a>
+                    <a href="#"> <i class="fas fa-angle-right"></i>prestation d'été</a>
+                    <a href="#"> <i class="fas fa-angle-right"></i>près de nous</a>
+                    <a href="#"> <i class="fas fa-angle-right"></i> Les offres de Cote d'or</a>
+                </div>
+                <div class="box2">
+                    <h3>Infos de contact</h3>
+                    <a href="#"> <i class="fas fa-phone"></i>+212 539 663 219</a>
+                    <a href="#"> <i class="fas fa-phone"></i> +212 539 663 232 </a>
+                    <a href="#"> <i class="fas fa-envelope"></i>cote.dor@live.fr</a>
+                    <a href="#"> <i class="fas fa-map"></i>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</a>
+                </div>
+                <div class="box2">
+                    <h3>Suivez-nous</h3>
+                    <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                    <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                    <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                    <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+                </div>
+            </div>
+            <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | tous les droits sont réservés! </div>
+        </section>
+        </footer>
+
+
+
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
 @endsection
