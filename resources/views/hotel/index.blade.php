@@ -8,13 +8,13 @@
         <div class="line"></div>
         <div class="bar">
             <i class="fas fa-crown"></i>
-            <h3>COTE D'OR > </h3>
+            <h3>CÔTE D'OR > </h3>
             <a href="{{ route('reservations.create')}}">Réserver</a>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h1>Cote d'or</h1>
+            <h1>Côte d'or</h1>
             <p>Hotel Cote d'or jouit d'un emplacement idéal au bord de la mer. 
             Il propose des chambres confortables avec une vue extraordinaire .
             Ces chambres pratiques et confortables sont insonorisées et dotées de la climatisation, 
@@ -84,8 +84,8 @@
         <div class="heading">
           <h5>A propos de nous</h5>
           <h2>Bienvenu chez hotel Cote d'or</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Notre hôtel est le choix parfait pour les voyageurs à la recherche d'un séjour confortable et abordable avec une vue imprenable sur la Méditerranée. </p>
+          <p> Nous sommes situés en plein cœur de la ville, à quelques pas des principales attractions touristiques et des restaurants locaux.</p>
           <button class="btn1">Voir aussi</button>
         </div>
       </div>
@@ -95,7 +95,7 @@
     <div class="container">
       <div class="text">
         <h2>Notre equipe</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p>Chez nous, vous pourrez profiter d'un hébergement confortable à des tarifs compétitifs. Nos chambres sont équipées de tout ce dont vous avez besoin pour un séjour agréable, notamment d'une salle de bain privée, de la climatisation, d'une télévision et d'un accès Wi-Fi gratuit. </p>
 
         <div class="content">
           <div class="box flex">
@@ -129,7 +129,13 @@
         </div>
 
         <div class="para">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <p>J'ai passé un merveilleux séjour dans cet hôtel avec vue sur la mer. L'emplacement est tout simplement incroyable, avec une vue imprenable sur l'océan. Le personnel était très sympathique et accueillant, et m'a fait me sentir comme chez moi dès mon arrivée.
+
+Le restaurant de l'hôtel proposait une cuisine délicieuse, en particulier leur spécialité de fruits de mer frais. J'ai également été impressionné par la qualité des cocktails préparés par le barman.
+
+Ma chambre était spacieuse et confortable, avec une vue magnifique sur l'océan. J'ai adoré écouter les vagues se briser sur la plage chaque matin.
+
+Je recommande vivement cet hôtel à tous ceux qui cherchent un séjour relaxant au bord de la mer avec une cuisine délicieuse et un personnel amical et attentionné. Je prévois déjà de revenir l'année prochaine pour profiter de cet endroit exceptionnel une fois de plus</p>
 
           <div class="box flex">
             <div class="img">
@@ -154,37 +160,37 @@
       <div class="right">
         <div class="text">
           <h2>Notre Restaurant</h2>
-          <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi totam modi quis illum voluptatibus perferendis ullam est asperiores atque tempore cumque perspiciatis, recusandae ipsam, impedit enim temporibus cum! Quam, unde.</p>
+          <p> Notre restaurant est l'endroit idéal pour savourer des plats locaux tout en profitant de la vue sur la mer Méditerranée. Nous sommes fiers de proposer une cuisine fraîche et délicieuse préparée à partir d'ingrédients locaux de première qualité..</p>
         </div>
         <div class="accordionWrapper">
           <div class="accordionItem open">
             <h2 class="accordionIHeading">Cuisine marocaine</h2>
             <div class="accordionItemContent">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <p>Nous sommes fiers de proposer des plats traditionnels marocains ainsi que des options plus modernes pour répondre à tous les goûts. Nous nous approvisionnons en produits frais et de qualité supérieure auprès de fournisseurs locaux, afin de garantir que chaque bouchée est pleine de saveurs délicieuses.
               </p>
             </div>
           </div>
-          <div class="accordionItem close">
-            <h2 class="accordionIHeading">Cuisine espagnole</h2>
+          {{-- <div class="accordionItem close">
+            <h2 class="accordionIHeading">Cuisine Turk</h2>
             <div class="accordionItemContent">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
-          </div>
+          </div> --}}
           <div class="accordionItem close">
-            <h2 class="accordionIHeading">Cuisine italiane</h2>
+            <h2 class="accordionIHeading">Cuisine italienne</h2>
             <div class="accordionItemContent">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <p>Notre cuisine italienne est inspirée par les saveurs authentiques de l'Italie, avec des plats préparés à partir d'ingrédients frais et de qualité supérieure. Que vous cherchiez à déguster une pizza fraîche sortie du four ou des pâtes fraîches faites maison, nous avons quelque chose pour satisfaire toutes les papilles.
               </p>
             </div>
           </div>
-          <div class="accordionItem close">
-            <h2 class="accordionIHeading">Cuisine ..... </h2>
+          {{-- <div class="accordionItem close">
+            <h2 class="accordionIHeading">Cuisine Marocaine </h2>
             <div class="accordionItemContent">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <p>Nous sommes fiers de proposer des plats traditionnels marocains ainsi que des options plus modernes pour répondre à tous les goûts. Nous nous approvisionnons en produits frais et de qualité supérieure auprès de fournisseurs locaux, afin de garantir que chaque bouchée est pleine de saveurs délicieuses.
               </p>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
@@ -214,11 +220,11 @@
     <div class="container">
       <div class="heading_top flex1">
         <div class="heading">
-          <h5>WELCOME TO OUR PHOTO GALLERY</h5>
-          <h2>Photo Gallery of Our Hotel</h2>
+          <h5>Bienvenue à notre galerie</h5>
+          <h2>Galerie de notre hôtel</h2>
         </div>
         <div class="button">
-          <button class="btn1">VIEW GALLERY</button>
+          <button class="btn1">Regarder la galerie</button>
         </div>
       </div>
 
