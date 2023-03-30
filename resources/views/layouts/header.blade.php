@@ -21,8 +21,7 @@
                         <i class="fas fa-crown"></i>
                     </div>    
                 </li>
-                <li><a href="{{ route('/') }}" class="a1">Accueil</a></li>
-                                <li><a href="{{ route('/') }}" class="a1">{{ __('Acceuil') }}</a></li>
+                <li><a href="{{ route('/') }}" class="a1">{{ __('Acceuil') }}</a></li>
                 <li><a href="{{ route('chambres.index') }}" class="a1">{{ __('Nos chambres') }}</a></li> 
                 <li><a href="{{ route('services.index') }}" class="a1">{{__('Nos services')}}</a></li>
                 <li><a href="{{route('contact.contact')}}" class="a1">{{__("Contact")}}</a></li>
