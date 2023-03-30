@@ -1,4 +1,11 @@
 {
+    "Acceuil":"Home",
+    "Nos chambres":"Our Rooms",
+    "Nos services" : "Our Services",
+    "Contact" : "Contact",
+    "À propos de nous" : "About Us",
+    "Admin" : "Admin",
+    "Réserver maintenant" : "Book Now",
     "(and :count more error)": "(and :count more error)",
     "(and :count more errors)": "(and :count more errors)",
     "A new verification link has been sent to the email address you provided during registration.": "A new verification link has been sent to the email address you provided during registration.",
