@@ -4,25 +4,18 @@
 @section('content')
 <div>
     <div class="background-image">
-        <h1>À propos de nous</h1>
+        <h1>{{__('À propos de nous')}}</h1>
         <div class="line"></div>
         <div class="bar">
             <i class="fas fa-crown"></i>
             <h3>CÔTE D'OR > </h3>
-            <a href="{{ route('reservations.create')}}">Réserver</a>
+            <a href="{{ route('reservations.create')}}">{{__('Réserver')}}</a>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <h1>Côte d'or</h1>
-            <p>Hotel Cote d'or jouit d'un emplacement idéal au bord de la mer. 
-            Il propose des chambres confortables avec une vue extraordinaire .
-            Ces chambres pratiques et confortables sont insonorisées et dotées de la climatisation, 
-            d'une salle de bains moderne, et d'une télévision avec chaînes internationales. 
-            L'accès Internet sans fil gratuit est disponible dans tout l'établissement.
-            Dégustez un repas dans notre restaurant de l'hôtel qui servent de différents plats . 
-            L'hôtel est situé à proximité de la mer de M'diq, du Corniche, des taxis et de la mosquée. 
-            Le personnel courtois sera ravi de vous aider et vous accueillera chaleureusement.</p>
+            <p>{{__('Hotel Cote d\'or jouit d\'un emplacement idéal au bord de la mer. Il propose des chambres confortables avec une vue extraordinaire .Ces chambres pratiques et confortables sont insonorisées et dotées de la climatisation, d\'une salle de bains moderne, et d\'une télévision avec chaînes internationales. L\'accès Internet sans fil gratuit est disponible dans tout l\'établissement.Dégustez un repas dans notre restaurant de l\'hôtel qui sert différents plats . L\'hôtel est situé à proximité de la mer de M\'diq, du Corniche, des taxis et de la mosquée. Le personnel courtois sera ravi de vous aider et vous accueillera chaleureusement.')}}</p>
         </div>
         <div class="col">
             <div class="card"></div>
@@ -31,35 +24,35 @@
     </div>
     <div class="infos">
             <div class="rating">
-                <h2>Rating</h2>
-                <button> 8.1 </button> <span>>> Tres bien</span>
+                <h2>{{__('Notation')}}</h2>
+                <button> 8.1 </button> <span>>> {{__('Très bien')}}</span>
             </div>
             <div>
-                <h2>FACILITIES AND SERVICES</h2>
+                <h2>{{__('INSTALLATIONS ET SERVICES')}}</h2>
                 <div class="services">
                     <div class="service">
                         <i class="fas fa-hotel"></i>
-                        <h3>Hôtel</h3>
+                        <h3>{{__('Hôtel')}}</h3>
                     </div>
                     <div class="service">
                         <i class="fas fa-utensils"></i>
-                        <h3>Restaurant</h3>
+                        <h3>{{__('Restaurant')}}</h3>
                     </div>
                     <div class="service">
                     <i class="fas fa-coffee"></i>
-                        <h3>Cafétéria</h3>
+                        <h3>{{__('Cafétéria')}}</h3>
                     </div>
                     <div class="service">
                         <i class="fas fa-concierge-bell"></i>
-                        <h3>Service d'étage</h3>
+                        <h3>{{__('Service d\'étage')}}</h3>
                     </div>
                     <div class="service">
                     <i class="fas fa-user-friends"></i>
-                        <h3>Chambres familiales</h3>
+                        <h3>{{__('Chambres familiales')}}</h3>
                     </div>
                     <div class="service">
                     <i class="fas fa-umbrella-beach"></i>
-                        <h3>Plage</h3>
+                        <h3>{{__('Plage')}}</h3>
                     </div>
                     </div>
 
@@ -82,11 +75,11 @@
       </div>
       <div class="right">
         <div class="heading">
-          <h5>A propos de nous</h5>
-          <h2>Bienvenu chez hotel Cote d'or</h2>
-          <p>Notre hôtel est le choix parfait pour les voyageurs à la recherche d'un séjour confortable et abordable avec une vue imprenable sur la Méditerranée. </p>
-          <p> Nous sommes situés en plein cœur de la ville, à quelques pas des principales attractions touristiques et des restaurants locaux.</p>
-          <button class="btn1">Voir aussi</button>
+          <h5>{{__('À propos de nous')}}</h5>
+          <h2>{{__('Bienvenue à l\'Hôtel Côte d\'Or')}}</h2>
+          <p>{{__('Notre hôtel est le choix parfait pour les voyageurs à la recherche d\'un séjour confortable et abordable avec une vue imprenable sur la Méditerranée. ')}}</p>
+          <p>{{__(' Nous sommes situés en plein cœur de la ville, à quelques pas des principales attractions touristiques et des restaurants locaux.')}}</p>
+          <button class="btn1">{{__('Voir aussi')}}</button>
         </div>
       </div>
     </div>
@@ -94,8 +87,8 @@
   <section class="wrapper top">
     <div class="container">
       <div class="text">
-        <h2>Notre equipe</h2>
-        <p>Chez nous, vous pourrez profiter d'un hébergement confortable à des tarifs compétitifs. Nos chambres sont équipées de tout ce dont vous avez besoin pour un séjour agréable, notamment d'une salle de bain privée, de la climatisation, d'une télévision et d'un accès Wi-Fi gratuit. </p>
+        <h2>{{__('Notre équipe')}}</h2>
+        <p>{{__('Avec nous, vous pouvez profiter d\'un hébergement confortable à des tarifs compétitifs. Nos chambres sont équipées de tout ce dont vous avez besoin pour un séjour agréable, notamment une salle de bain privée, la climatisation, la télévision et un accès Wi-Fi gratuit.')}}</p>
 
         <div class="content">
           <div class="box flex">
@@ -124,18 +117,12 @@
     <div class="container">
       <div class="text">
         <div class="heading">
-          <h5>Les point de vues</h5>
-          <h2>A propos de nous</h2>
+          <h5>{{__('Les points de vue')}}</h5>
+          <h2>{{__('À propos de nous')}}</h2>
         </div>
 
         <div class="para">
-          <p>J'ai passé un merveilleux séjour dans cet hôtel avec vue sur la mer. L'emplacement est tout simplement incroyable, avec une vue imprenable sur l'océan. Le personnel était très sympathique et accueillant, et m'a fait me sentir comme chez moi dès mon arrivée.
-
-Le restaurant de l'hôtel proposait une cuisine délicieuse, en particulier leur spécialité de fruits de mer frais. J'ai également été impressionné par la qualité des cocktails préparés par le barman.
-
-Ma chambre était spacieuse et confortable, avec une vue magnifique sur l'océan. J'ai adoré écouter les vagues se briser sur la plage chaque matin.
-
-Je recommande vivement cet hôtel à tous ceux qui cherchent un séjour relaxant au bord de la mer avec une cuisine délicieuse et un personnel amical et attentionné. Je prévois déjà de revenir l'année prochaine pour profiter de cet endroit exceptionnel une fois de plus</p>
+          <p>{{__('J\'ai passé un merveilleux séjour dans cet hôtel avec vue sur la mer. L\'emplacement est tout simplement incroyable, avec une vue imprenable sur l\'océan. Le personnel était très sympathique et accueillant, et m\'a fait me sentir comme chez moi dès mon arrivée.Le restaurant de l\'hôtel proposait une cuisine délicieuse, en particulier leur spécialité de fruits de mer frais. J\'ai également été impressionné par la qualité des cocktails préparés par le barman.Ma chambre était spacieuse et confortable, avec une vue magnifique sur l\'océan. J\'ai adoré écouter les vagues se briser sur la plage chaque matin.Je recommande vivement cet hôtel à tous ceux qui cherchent un séjour relaxant au bord de la mer avec une cuisine délicieuse et un personnel amical et attentionné. Je prévois déjà de revenir l\'année prochaine pour profiter de cet endroit exceptionnel une fois de plus.')}}</p>
 
           <div class="box flex">
             <div class="img">
@@ -159,14 +146,14 @@ Je recommande vivement cet hôtel à tous ceux qui cherchent un séjour relaxant
       </div>
       <div class="right">
         <div class="text">
-          <h2>Notre Restaurant</h2>
-          <p> Notre restaurant est l'endroit idéal pour savourer des plats locaux tout en profitant de la vue sur la mer Méditerranée. Nous sommes fiers de proposer une cuisine fraîche et délicieuse préparée à partir d'ingrédients locaux de première qualité..</p>
+          <h2>{{__('Notre Restaurant')}}</h2>
+          <p>{{__('Notre restaurant est l\'endroit idéal pour savourer des plats locaux tout en profitant de la vue sur la mer Méditerranée. Nous sommes fiers de proposer une cuisine fraîche et délicieuse préparée à partir d\'ingrédients locaux de première qualité...')}}</p>
         </div>
         <div class="accordionWrapper">
           <div class="accordionItem open">
-            <h2 class="accordionIHeading">Cuisine marocaine</h2>
+            <h2 class="accordionIHeading">{{__('Cuisine marocaine')}}</h2>
             <div class="accordionItemContent">
-              <p>Nous sommes fiers de proposer des plats traditionnels marocains ainsi que des options plus modernes pour répondre à tous les goûts. Nous nous approvisionnons en produits frais et de qualité supérieure auprès de fournisseurs locaux, afin de garantir que chaque bouchée est pleine de saveurs délicieuses.
+              <p>{{__('Nous sommes fiers de proposer des plats traditionnels marocains ainsi que des options plus modernes pour répondre à tous les goûts. Nous nous approvisionnons en produits frais et de qualité supérieure auprès de fournisseurs locaux, afin de garantir que chaque bouchée est pleine de saveurs délicieuses.')}}
               </p>
             </div>
           </div>
@@ -178,9 +165,9 @@ Je recommande vivement cet hôtel à tous ceux qui cherchent un séjour relaxant
             </div>
           </div> --}}
           <div class="accordionItem close">
-            <h2 class="accordionIHeading">Cuisine italienne</h2>
+            <h2 class="accordionIHeading">{{__('Cuisine italienne')}}</h2>
             <div class="accordionItemContent">
-              <p>Notre cuisine italienne est inspirée par les saveurs authentiques de l'Italie, avec des plats préparés à partir d'ingrédients frais et de qualité supérieure. Que vous cherchiez à déguster une pizza fraîche sortie du four ou des pâtes fraîches faites maison, nous avons quelque chose pour satisfaire toutes les papilles.
+              <p>{{('Notre cuisine italienne est inspirée par les saveurs authentiques de l\'Italie, avec des plats préparés à partir d\'ingrédients frais et de qualité supérieure. Que vous cherchiez à déguster une pizza fraîche sortie du four ou des pâtes fraîches faites maison, nous avons quelque chose pour satisfaire toutes les papilles.')}}
               </p>
             </div>
           </div>
@@ -220,11 +207,11 @@ Je recommande vivement cet hôtel à tous ceux qui cherchent un séjour relaxant
     <div class="container">
       <div class="heading_top flex1">
         <div class="heading">
-          <h5>Bienvenue à notre galerie</h5>
-          <h2>Galerie de notre hôtel</h2>
+          <h5>{{__('Bienvenue dans notre galerie')}}</h5>
+          <h2>{{__('Galerie de notre hôtel')}}</h2>
         </div>
         <div class="button">
-          <button class="btn1">Regarder la galerie</button>
+          <button class="btn1">{{__('Regarder la galerie')}}</button>
         </div>
       </div>
 
@@ -292,37 +279,37 @@ Je recommande vivement cet hôtel à tous ceux qui cherchent un séjour relaxant
         <section class="footer">
             <div class="box-container">
                 <div class="box">
-                    <h3>Liens Rapides</h3>
-                        <a href="#">Accueil</a>
-                        <a href="#">Nos chambres</a>
-                        <a href="#">Nos services</a>
-                        <a href="#">Contact</a>
-                        <a href="#">À propos de nous</a>
-                        <a href="#">Réservation</a>
+                    <h3>{{__('Liens Rapides')}}</h3>
+                        <a href="{{ route('/') }}" class="a1">{{__('Accueil')}}</a>
+                        <a href="{{ route('chambres.index') }}">{{__('Nos chambres')}}</a>
+                        <a href="{{ route('services.index') }}">{{__('Nos services')}}</a>
+                        <a href="{{route('contact.contact')}}">{{__('Contact')}}</a>
+                        <a href="{{ route('hotel.index')}}">{{__('À propos de nous')}}</a>
+                        <a href="{{ route('reservations.create')}}">{{__('Réservation')}}</a>
                 </div>
                 <div class="box">
-                    <h3>Liens Supplémentaires</h3>
-                    <a href="#"> <i class="fas fa-angle-right"></i> Poser des questions</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i>prestation d'été</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i>près de nous</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i> Les offres de Cote d'or</a>
+                    <h3>{{__('Liens Supplémentaires')}}</h3>
+                    <a href="{{route('contact.contact')}}"> <i class="fas fa-angle-right"></i> {{__('Poser des questions')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i>{{__('Service d\'été')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i>{{__('Près de nous')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i> {{__('Les offres de Cote d\'Or')}}</a>
                 </div>
                 <div class="box">
-                    <h3>Infos de contact</h3>
+                    <h3>{{__('Infos de contact')}}</h3>
                     <a href="#"> <i class="fas fa-phone"></i>+212 539 663 219</a>
                     <a href="#"> <i class="fas fa-phone"></i> +212 539 663 232 </a>
                     <a href="#"> <i class="fas fa-envelope"></i>cote.dor@live.fr</a>
                     <a href="#"> <i class="fas fa-map"></i>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</a>
                 </div>
                 <div class="box">
-                    <h3>Suivez-nous</h3>
+                    <h3>{{__('Suivez-nous')}}</h3>
                     <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
                     <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
                     <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
                     <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
                 </div>
             </div>
-            <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | Tous les droits sont réservés! </div>
+            <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | {{__('Tous les droits sont réservés!')}} </div>
         </section>
         </footer>
 

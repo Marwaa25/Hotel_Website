@@ -3,6 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'Acceuil' => 'Home',
+    'Accueil' => 'Home',
     'POURQUOI' => "WHY",
 ];
