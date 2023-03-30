@@ -28,7 +28,7 @@
                 <li><a href="{{ route('hotel.index')}}" class="a1">{{__('À propos de nous')}}</a></li>
                 <li><a href="{{ route('admin.index')}}" class="a1">{{__('Admin')}}</a></li>
               
-                <li class="reserver"> <a href="{{ route('reservations.create') }}" class="btn btn-primary">Réserver maintenant</a></li>
+                <li class="reserver"> <a href="{{ route('reservations.create') }}" class="btn btn-primary">{{__("Réserver maintenant")}}</a></li>
                 <li>
                     <x-slot name="content">
                         <x-dropdown-link :href="route('languageConverter','ar')">
