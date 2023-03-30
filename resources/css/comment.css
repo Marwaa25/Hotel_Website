@@ -265,4 +265,53 @@ html::-webkit-scrollbar-thumb{
     font-size: 17px;
     text-decoration: none;
   }
+
+  .contain {
+    max-width: 500px;
+    margin:0 auto;
+    padding: 20px;
+
+  
+  }
+  .contain form{
+    border: #9ba1a1 solid 1px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+  }
+  .form-group {
+    margin-bottom: 20px;
+  
+  }
+  .contain .btn2{
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    background-color: #93bab8;
+    color: white;
+    border: none;
+    font-size: 17px;
+    margin-left: 200px;
+    border-radius: 5px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #9a8972;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  textarea[name="comment"] {
+    height: 200px;
+    padding: 20px;
+ 
+  }
+  
   
