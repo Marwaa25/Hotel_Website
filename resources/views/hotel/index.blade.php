@@ -167,7 +167,7 @@
           <div class="accordionItem close">
             <h2 class="accordionIHeading">{{__('Cuisine italienne')}}</h2>
             <div class="accordionItemContent">
-              <p>{{('Notre cuisine italienne est inspirée par les saveurs authentiques de l\'Italie, avec des plats préparés à partir d\'ingrédients frais et de qualité supérieure. Que vous cherchiez à déguster une pizza fraîche sortie du four ou des pâtes fraîches faites maison, nous avons quelque chose pour satisfaire toutes les papilles.')}}
+              <p>{{__('Notre cuisine italienne est inspirée par les saveurs authentiques de l\'Italie, avec des plats préparés à partir d\'ingrédients frais et de qualité supérieure. Que vous cherchiez à déguster une pizza fraîche sortie du four ou des pâtes fraîches faites maison, nous avons quelque chose pour satisfaire toutes les papilles.')}}
               </p>
             </div>
           </div>
