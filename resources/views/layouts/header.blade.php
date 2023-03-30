@@ -22,20 +22,27 @@
                     </div>    
                 </li>
                 <li><a href="{{ route('/') }}" class="a1">Accueil</a></li>
-                <li><a href="{{ route('chambres.index') }}" class="a1">Nos chambres</a></li> 
-                <li><a href="{{ route('services.index') }}" class="a1">Nos services</a></li>
-                <li><a href="{{route('contact.contact')}}" class="a1">Contact</a></li>
-                <li><a href="{{ route('hotel.index')}}" class="a1">À propos de nous</a></li>
-                <li><a href="{{ route('admin.index')}}" class="a1">Admin</a></li>
-                <li>
-                <select class="langue" name="langue">
-                    <option value="francais">Fr</option>
-                    <option value="anglais">Ang</option>
-                    <option value="espagnol">Esp</option>
-                    <option value="allemand">Ar</option>
-                </select>
-                </li>
+                                <li><a href="{{ route('/') }}" class="a1">{{ __('Acceuil') }}</a></li>
+                <li><a href="{{ route('chambres.index') }}" class="a1">{{ __('Nos chambres') }}</a></li> 
+                <li><a href="{{ route('services.index') }}" class="a1">{{__('Nos services')}}</a></li>
+                <li><a href="{{route('contact.contact')}}" class="a1">{{__("Contact")}}</a></li>
+                <li><a href="{{ route('hotel.index')}}" class="a1">{{__('À propos de nous')}}</a></li>
+                <li><a href="{{ route('admin.index')}}" class="a1">{{__('Admin')}}</a></li>
+              
                 <li class="reserver"> <a href="{{ route('reservations.create') }}" class="btn btn-primary">Réserver maintenant</a></li>
+                <li>
+                    <x-slot name="content">
+                        <x-dropdown-link :href="route('languageConverter','ar')">
+                            {{ __('ar') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('languageConverter','fr')">
+                            {{ __('fr') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('languageConverter','en')">
+                            {{ __('en') }}
+                        </x-dropdown-link>
+                        
+                </li>
             </ul>
         </nav>
             <main class="container">

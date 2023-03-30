@@ -18,11 +18,10 @@ class LanguageConverter
     {
 
 
-        if (session()->has('locale')){
-            
-            App::setLocale(session()->get("locale"));
-
+        if (session()->has('locale')) {
+            App::setLocale(session('locale'));
         }
+
         return $next($request);
     }
 }

@@ -105,4 +105,12 @@ Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->nam
 Route::get('/contact',[ContactController::class,'create'])->name('contact.contact');
 Route::post('/contact',[ContactController::class,'store'])->name('contact.contact');
 
+Route::get('/languageConverter/{locale}',function($locale){
+	if(in_array($locale,['fr','ar','en']))
+	{
+		session()->put("locale",$locale);
+	}
+	return redirect()->back();				
+})->name('languageConverter');  
+
 require __DIR__.'/auth.php';
