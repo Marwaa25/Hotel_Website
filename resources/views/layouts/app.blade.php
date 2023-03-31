@@ -94,15 +94,15 @@
                 <button class="dropdown-btn"><span></span><span></span><span></span></button>
                 <div class="dropdown-content">
                     <p>Menu</p>
-                    <a href="{{ route('/') }}">Accueil</a>
-                    <a href="{{ route('chambres.index') }}">Nos chambres</a>
-                    <a href="{{ route('services.index') }}">Nos services</a>
-                    <a href="{{route('contact.contact')}}">Contact</a>
-                    <a href="{{ route('hotel.index')}}">À propos de nous</a>
-                    <a href="{{ route('reservations.create') }}" class="btn btn-primary">Réservation</a>
-                    <a href="{{ route('admin.index')}}">Administrateur</a>
-                    <a href="#">Tél: 05 39 66 32 19 / Fax: 05 39 66 32 32</a>
-                    <a href="#">Email:cote.dor@live.fr</a>
+                    <a href="{{ route('/') }}" class="a1">{{ __('Acceuil') }}</a>
+                    <a href="{{ route('chambres.index') }}">{{__('Nos chambres')}}</a>
+                    <a href="{{ route('services.index') }}">{{__('Nos services')}}</a>
+                    <a href="{{route('contact.contact')}}">{{__('Contact')}}</a>
+                    <a href="{{ route('hotel.index')}}">{{__('À propos de nous')}}</a>
+                    <a href="{{ route('reservations.create') }}" class="btn btn-primary">{{__('Réservation')}}</a>
+                    <a href="{{ route('admin.index')}}">{{__('Administrateur')}}</a>
+                    <a href="#">{{__('Tél')}}: 05 39 66 32 19 / Fax: 05 39 66 32 32</a>
+                    <a href="#">{{__('Email')}}:cote.dor@live.fr</a>
                 </div>
               </div>
               <p class="stars">
@@ -120,93 +120,91 @@
             <input type="date" name="date_arrivee" class="form-control" id="date_arrivee" required title="Entrez la date d'arrivée">
             <input type="date" name="date_depart" class="form-control" id="date_depart" required title="Entrez la date de depart">
             <input type="number" name="guests" placeholder="2 Adultes">
-            <a href="{{ route('reservations.create')}}">Réserver</a>
+            <a href="{{ route('reservations.create')}}">{{__('Réserver')}}</a>
         </form>
    
        <div class="features">
         <div class="feature">
             <i class="fas fa-water"></i>
-            <span>Front de mer</span>
+            <span>{{__('Front de mer')}}</span>
         </div>
         <div class="feature">
             <i class="fas fa-concierge-bell"></i>
-            <span>Service d'étage</span>
+            <span>{{__('Service d\'étage')}}</span>
         </div>
         <div class="feature">
             <i class="fas fa-users"></i>
-            <span>Chambres familiales</span>
+            <span>{{__('Chambres familiales')}}</span>
         </div>
         </div>
 
         <div class="why-choose">
-            <h2>Pourquoi</h2>
+            <h2>{{__('Pourquoi')}}</h2>
             <div class="stats">
                 <div class="number">10 000</div>
-                <div class="description">clients ont fait le choix de Cote d'or ?</div>
+                <div class="description">{{__('clients ont fait le choix de Cote d\'or ?')}}</div>
             </div>
-            <a class="discover-btn" href="{{ route('hotel.index')}}">DÉCOUVREZ CE QUI FAIT NOTRE DIFFÉRENCE</a>
+            <a class="discover-btn" href="{{ route('hotel.index')}}">{{__('DÉCOUVREZ CE QUI FAIT NOTRE DIFFÉRENCE')}}</a>
         </div>
-        <div class="menu-inter">L'hotel en Bref</div>
+        <div class="menu-inter">{{__('L\'hotel en Bref')}}</div>
         <div class="menu">
-          <div class="menu-option selected" data-target="text1">INFORMATIONS PRATIQUES</div>
-          <div class="menu-option" data-target="text2">RESTAURANTS ET CAFEE</div>
-          <div class="menu-option" data-target="text3">ENVIRONS DE L'HOTEL </div>
+          <div class="menu-option selected" data-target="text1">{{__('INFORMATIONS PRATIQUES')}}</div>
+          <div class="menu-option" data-target="text2">{{__('RESTAURANTS ET CAFEE')}}</div>
+          <div class="menu-option" data-target="text3">{{__('ENVIRONS DE L\'HOTEL ')}}</div>
         </div>
         <div  class="text" id="text1">
         <div class="div1">
-            <h2>Adresse</h2>
-            <p>av casablanca lot n°90, M'diq, Maroc<br> Bon emplacement - voir la carte</p>
-            <h2>Heure d'arrivée / de départ</h2>
-            <p>Enregistrement15:00 <br>
-              Heure de départmidi</p>
-            <h2>Chambres</h2>
-            <p>50 chambres et suites et appartements<br>
-               WIFI,TV,coffre-fort dans la chambre, <br>
-               Restaurant, cafetière / théière,<br>
-               journal quotidien gratuit,<br>
-               produits de salle de bains <br>
-               de bonne marque</p>
-               <h2>Parking</h2>
-            <p>L'établissement ne dispose pas de parking.</p>
+            <h2>{{__('Adresse')}}</h2>
+            <p>av casablanca lot n°90, M'diq, Maroc<br>{{__('Bon emplacement')}} - {{__('voir la carte')}}</p>
+            <h2>{{__('Heure d\'arrivée / de départ')}}</h2>
+            <p>{{__('Enregistrement')}}15:00 <br>
+             {{__(' Heure de départmidi')}}</p>
+            <h2>{{__('Chambres')}}</h2>
+            <p>50 {{__('chambres et suites et appartements')}}<br>
+             {{__('  WIFI,TV,coffre-fort dans la chambre,')}} <br>
+              {{__(' Restaurant, cafetière / théière,')}}<br>
+               {{__('journal quotidien gratuit,')}}<br>
+              {{__(' produits de salle de bains')}} <br>
+              {{__(' de bonne marque')}}</p>
+               <h2>{{__('Parking')}}</h2>
+            <p>{{__('L\'établissement ne dispose pas de parking.')}}</p>
             <hr>
         </div>
         <div class="div2">
-        <h2>Internet</h2>
-            <p>Espaces publics : gratuit<br>
-              En chambre : gratuit</p>
-            <h2>Accueil des enfants</h2>
-            <p>Enfants bienvenus</p>
-            <h2>Services disponibles</h2>
-            <p>Hôtel climatisé  <br>
-                Service de blanchisserie <br>
-                Service de conciergerie <br>
-                Réception ouverte 24h/24<br>
-                Service d'étage
+        <h2>{{__('Internet')}}</h2>
+            <p>{{__('Espaces publics : gratuit')}}<br>
+             {{__(' En chambre : gratuit')}}</p>
+            <h2>{{__('Accueil des enfants')}}</h2>
+            <p>{{('Enfants bienvenus')}}</p>
+            <h2>{{__('Services disponibles')}}</h2>
+            <p>{{__('Hôtel climatisé ')}} <br>
+                {{__('Service de blanchisserie')}} <br>
+                {{__('Service de conciergerie')}} <br>
+                {{__('Réception ouverte')}} 24h/24<br>
+                {{__('Service d\'étage')}}
             </p>
-            <h2>Animaux de compagnie</h2>
-                 <p>Chiens non admis <br>
-                .. <br>
-              ..</p>
+            <h2>{{__('Animaux de compagnie')}}</h2>
+                 <p>{{__('Chiens non autorisés ')}}<br>
+                
             <hr>
         </div>
         <div class="div3">
   
-            <h2>Animaux de compagnie</h2>
-            <p>Chiens non admis</p>
-            <h2>Politique fumeurs</h2>
-            <p> Espaces publics non-fumeurs<br>
-                Chambres fumeursdisponibles</p>
-                <h2>Langues parlées</h2>
+            
+            <h2>{{__('Politique fumeurs')}}</h2>
+            <p> {{__('Espaces publics non-fumeurs')}}<br>
+                {{__('Chambres fumeurs disponibles')}}</p>
+                <h2>{{__('Langues parlées')}}</h2>
                   <p>
-                  Arabe <br>
-                Anglais <br>
-                Français <br>
+                  {{__('Arabe')}} <br>
+                {{__('Anglais')}} <br>
+                {{__('Français')}} <br>
                   </p>
-                <h2>Activités</h2>
-                <p>plage</p>
-                <h2>Général</h2>
-                <p>Climatisation
-                   Chambres familiales</p>
+                <h2>{{__('Activités')}}</h2>
+                <p>{{__('plage')}}</p>
+                <h2>{{__('Général')}}</h2>
+                <p>{{__('Climatisation')}}</p>
+                <p>{{__('Chambres familiales')}}</p>
 
             <hr>
         </div>
@@ -214,15 +212,15 @@
         <div class="text" id="text2">
 
         <div class="div1">
-            <h2>Petit déjeuner</h2>
-            <p>Petit déjeuner continental : 55 MAD <br>
-                  Petit déjeuner américain : 60 MAD <br>
-                  Petit déjeuner buffet : 99 MAD <br>
-                  Petit déjeuner fytness : 99 MAD <br>
-                  Petit déjeuner croque speciale : 55 MAD <br>
-                  Petit déjeuner beldi : 70 MAD <br>
-                  Petit déjeuner espagnol : 60 MAD</p>
-            <h2>Plats marocains</h2>
+            <h2>{{__('Petit déjeuner')}}</h2>
+            <p>{{__('Petit déjeuner continental')}} : 55 MAD <br>
+                  {{__('Petit déjeuner américain ')}}: 60 MAD <br>
+                  {{__('Petit déjeuner buffet')}} : 99 MAD <br>
+                  {{__('Petit déjeuner fitness')}} : 99 MAD <br>
+                  {{__('Petit déjeuner croque speciale')}} : 55 MAD <br>
+                  {{__('Petit déjeuner beldi')}} : 70 MAD <br>
+                  {{__('Petit déjeuner espagnol')}} : 60 MAD</p>
+            <h2>{{__('Plats marocains')}}</h2>
             <p>
             Pastilla <br>
             Tajine <br>
@@ -235,111 +233,113 @@
             Tangia <br>
             Soupe <br>
             Poissons <br>
-            . <br>
-            . <br>
-
             <hr>
         </div>
         <div class="div2">
-        <h2>Boissons</h2>
+        <h2>{{__('Boissons')}}</h2>
             <p>
-            Thé à la menthe <br>
-            Café Noir <br>
-            Café noos-noos (café au lait) <br>
-            Café expresso (marque Lavazza) <br>
-            Thé noir <br>
-            Louisa (verveine) <br>
-            Jus d’orange <br>
-            Jus de fruits frais (selon saison) : <br>
-             citron, fraises, melon, pomme, banane <br>
-            Cocktail Chamali (betterave / orange / banane) <br>
-            Jus d'avocat <br>
-            Jus d’orange + carotte <br>
-            Jus de concombre au citron et thym <br>
-            Mojito
+            {{__('Thé à la menthe')}} <br>
+           {{__('Café Noir')}} <br>
+            {{__('Café  au lait ')}}<br>
+            {{__('Café expresso (marque Lavazza)')}} <br>
+            {{__('Thé noir')}} <br>
+           {{__(' Louisa (verveine)')}} <br>
+            {{__('Jus d’orange')}} <br>
+           {{__(' Jus de fruits frais (selon saison)')}} : <br>
+            {{__(' citron, fraises, melon, pomme, banane')}} <br>
+           {{__(' Cocktail Chamali (betterave / orange / banane) ')}}<br>
+           {{__(' Jus d\'avocat')}} <br>
+           {{__('Jus d\'orange')}} + {{__('carotte')}} <br>
+           {{__(' Jus de concombre au citron et thym')}} <br>
+            {{__('Mojito')}}
             </p>
-            <h2>Fast Food</h2>
-            <p>Pizza <br>
-              Tacos <br>
-              crepes sales <br>
-              Panini <br>
-              Chauarma <br>
-              Burger
+            <h2>{{__('Fast Food')}}</h2>
+            <p>
+              {{__('Pizza')}} <br>
+              {{__('Tacos')}} <br>
+              {{__('crêpes salées')}} <br>
+              {{__('Panini')}} <br>
+              {{__('Chawarma')}} <br>
+              {{__('Burger')}}
             </p>
+            
         </div>
         <div class="div3">
-          <h2>Salades</h2>
+          <h2>{{__('Salades')}}</h2>
           <p>
-          Salade marocaine <br>
-          Salade César <br>
-          Salade de riz aux légumes croquants <br>
-          Salade de tomates au basilic <br>
-          Salade de bœuf à la vietnamienne <br>
+          {{__('Salade marocaine')}} <br>
+          {{__('Salade César')}} <br>
+          {{__('Salade de riz aux légumes croquants')}} <br>
+          {{__('Salade de tomates au basilic')}} <br>
+          {{__('Salade de bœuf à la vietnamienne')}} <br>
           </p>
-          <h2>Patisserie</h2>
-          <p>Cornets au sesame amande et miel <br>
-          Corne de gazelle-Kaab leghzal <br>
-          Ghribas aux noix et aux amandes <br>
-          Cigares aux amandes  <br>
-          Sablés fondant à la noisette <br>
-          Baghrirs <br>
-          Sfenj <br>
-          Baklawa <br>
+          <h2>{{__('Patisserie')}}</h2>
+          <p>{{__('Cornets au sesame amande et miel')}} <br>
+          {{__('Corne de gazelle-Kaab leghzal')}} <br>
+          {{__('Ghribas aux noix et aux amandes')}} <br>
+          {{__('Cigares aux amandes')}}  <br>
+          {{__('Sablés fondant à la noisette')}} <br>
+          {{__('Baghrirs')}} <br>
+          {{__('Sfenj')}} <br>
+          {{__('Baklawa')}} <br>
         </p>
-        <h2>Desserts</h2>
+        <h2>{{__('Desserts')}}</h2>
         <p>
-            Tarte Oreo <br>
-            Tiramisu <br>
-            Cake à la ricotta et au citron <br>
-            Salade de fruits
-        </p>
+          {{__('Tarte Oreo')}} <br>
+          {{__('Tiramisu')}} <br>
+          {{__('Cake à la ricotta et au citron')}} <br>
+          {{__('Salade de fruits')}}
+      </p>
         </div>
 
         </div>
         <div class="text" id="text3">
         <div class="div1">
-            <h2>Lieux à proximité</h2>
-                <p>Jardin Corniche Rincon : 150 m <br>
-                Jardin de Corniche 2 : 450 m <br>
-                Place Corniche de M'diq : 600 m <br>
-                Jardin d'Hopital Mohamel 6 : 650 m <br>
-                Jardin de Government Office de M'diq : 750 m <br>
-                Place Palestine : 10 km <br>
-                Wilaya : 11 km <br>
-                Futsal Chawdri : 12 km <br>
-                Parque Ziana : 13 km <br>
-                Parc Ryad : 13 km </p>
-              
-            <h2>Restaurants et cafés</h2>
-                <p>RestaurantLa Corniche : 200 m <br>
-                RestaurantNourain : 400 m <br>
-                Café / barChez Bilal : 450 m </p>
-            <hr>
+          <h2>{{__('Lieux à proximité')}}</h2>
+          <p>
+              {{__('Jardin Corniche Rincon')}} : 150 m <br>
+              {{__('Jardin de Corniche 2')}} : 450 m <br>
+              {{__('Place Corniche de M\'diq')}} : 600 m <br>
+              {{__('Jardin d\'Hopital Mohamel 6')}} : 650 m <br>
+              {{__('Jardin de Government Office de M\'diq')}} : 750 m <br>
+              {{__('Place Palestine')}} : 10 km <br>
+              {{__('Wilaya')}} : 11 km <br>
+              {{__('Futsal Chawdri')}} : 12 km <br>
+              {{__('Parque Ziana')}} : 13 km <br>
+              {{__('Parc Ryad')}} : 13 km
+          </p>
+          <h2>{{__('Restaurants et cafés')}}</h2>
+          <p>{{__('RestaurantLa Corniche')}} : 200 m <br>
+          {{__('RestaurantNourain')}} : 400 m <br>
+          {{__('Café / barChez Bilal')}} : 450 m </p>
+      <hr>
           </div>
           <div class="div2">
-              <h2>Plages à proximité</h2>
-              <p>
-              Plage de M'Diq : 150 m <br>
-              Kabila Beach : 3,8 km <br>
-              Cabo Negro Beach : 4,4 km <br>
-              Marina Smir Beach : 7 km <br>
-              Martil Beach : 7 km <br>
-              </p>
-              <h2>Aéroports les plus proches </h2>
-                  <p>Aéroport Tétouan - Sania R'mel : 10 km <br>
-                  Aéroport international de Gibraltar : 52 km <br>
-                  Aéroport de Tanger - Ibn Battouta :54 km </p>
-          </div>
+            <h2>{{__('Plages à proximité')}}</h2>
+            <p>
+            {{__('Plage de M\'Diq')}} : 150 m <br>
+            {{__('Kabila Beach')}} : 3,8 km <br>
+            {{__('Cabo Negro Beach')}} : 4,4 km <br>
+            {{__('Marina Smir Beach')}} : 7 km <br>
+            {{__('Martil Beach')}} : 7 km <br>
+            </p>
+            <h2>{{__('Aéroports les plus proches')}}</h2>
+            <p>
+            {{__('Aéroport Tétouan - Sania R\'mel')}} : 10 km <br>
+            {{__('Aéroport international de Gibraltar')}} : 52 km <br>
+            {{__('Aéroport de Tanger - Ibn Battouta')}} : 54 km
+            </p>
+            </div>
           <div class="div3">
-          <h2>Infos generals</h2>
-                <p>Situé à 400 mètres de la plage de M'Diq, <br>
-                  l'hotel cote d'or m'diq propose un hébergement <br>
-                   2 étoiles et un restaurant à M'diq.  <br>
-                   Cet hôtel 2 étoiles propose un service d'étage  <br>
-                   et une réception ouverte 24h/24. Certaines <br>
-                   s'ouvrent sur une terrasse avec vue sur la mer. <br>
-                   L'aéroport de Tétouan-Sania R'mel, le plus proche,<br>
-                    est implanté à 17 km.</p>
+          <h2>{{__('Infos generals')}}</h2>
+                <p>{{__('Situé à 400 mètres de la plage de M\'Diq')}}, <br>
+                 {{__(' l\'hotel cote d\'or m\'diq propose un hébergement')}} <br>
+                   2{{__(' étoiles et un restaurant à M\'diq')}}.  <br>
+                 {{__('  Cet hôtel')}} 2 {{__('étoiles propose un service d\'étage ')}} <br>
+                   {{__('et une réception ouverte')}} 24h/24.{{__(' Certaines')}} <br>
+                 {{__('  s\'ouvrent sur une terrasse avec vue sur la mer')}}. <br>
+                   {{__('L\'aéroport de Tétouan-Sania R\'mel, le plus proche,')}}<br>
+                  {{__('  est implanté à')}} 17 km.</p>
           </div>
         </div>
 
@@ -347,72 +347,72 @@
       <div class="owl-carousel owl-theme">
         <div class="item">
         <div>
-            <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
+            <h2 class="selection">{{__('Notre sélection de chambres et suites')}}</h2>
+            <a href="{{ route('chambres.index')}}">{{__('Visiter les chambres')}}</a>
             <div class="linee"></div>
         </div>
-          <h5>Chambre Double</h5>
-          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <h5>{{__('Chambre Double')}}</h5>
+          <p>10 m , {{__('Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres')}}</p>
           <img src="./pics/r2.jpg" alt="">
         </div>
         <div class="item">
         <div>
-            <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
+            <h2 class="selection">{{__('Notre sélection de chambres et suites')}}</h2>
+            <a href="{{ route('chambres.index')}}">{{__('Visiter les chambres')}}</a>
             <div class="linee"></div>
         </div>
-          <h5>Chambre Simple</h5>
-          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <h5>{{__('Chambre Simple')}}</h5>
+          <p>10 m ,{{__(' Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres')}}</p>
           <img src="./pics/siimple.jpg" alt="ok1">
         </div>
         <div class="item">
         <div>
-            <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
+            <h2 class="selection">{{__('Notre sélection de chambres et suites')}}</h2>
+            <a href="{{ route('chambres.index')}}">{{__('Visiter les chambres')}}</a>
             <div class="linee"></div>
         </div>
-          <h5>Chambre Triple</h5>
-          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <h5>{{__('Chambre Triple')}}</h5>
+          <p>10 m ,{{__(' Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres')}}</p>
           <img src="./pics/triple.jpg" alt="ok2">
         </div>
         <div class="item">
         <div>
-            <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
+            <h2 class="selection">{{__('Notre sélection de chambres et suites')}}</h2>
+            <a href="{{ route('chambres.index')}}">{{__('Visiter les chambres')}}</a>
             <div class="linee"></div>
         </div>
-          <h5>Chambre Familiale</h5>
-          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <h5>{{__('Chambre Familiale')}}</h5>
+          <p>10 m , {{__('Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres')}}</p>
           <img src="./pics/familial.png" alt="ok3">
         </div>
         <div class="item">
         <div>
-            <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
+            <h2 class="selection">{{__('Notre sélection de chambres et suites')}}</h2>
+            <a href="{{ route('chambres.index')}}">{{__('Visiter les chambres')}}</a>
             <div class="linee"></div>
         </div>
-          <h5>Chambre Quadruple</h5>
-          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <h5>{{__('Chambre Quadruple')}}</h5>
+          <p>10 m , {{__('Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres')}}</p>
           <img src="./pics/quadruple.jpg" alt="ok4">
         </div>
         <div class="item">
         <div>
-            <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
+            <h2 class="selection">{{__('Notre sélection de chambres et suites')}}</h2>
+            <a href="{{ route('chambres.index')}}">{{__('Visiter les chambres')}}</a>
             <div class="linee"></div>
         </div>
-          <h5>Suite</h5>
-          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <h5>{{__('Suite')}}</h5>
+          <p>10 m , {{__('Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres')}}</p>
           <img src="./pics/siimple2.jpg" alt="ok5">
         </div>
         <div class="item">
         <div>
-            <h2 class="selection">Notre sélection de chambres et suites</h2>
-            <a href="{{ route('chambres.index')}}">Visiter les chambres</a>
-            <div class="linee"></div>
+          <h2 class="selection">{{__('Notre sélection de chambres et suites')}}</h2>
+          <a href="{{ route('chambres.index')}}">{{__('Visiter les chambres')}}</a>
+          <div class="linee"></div>
         </div>
-          <h5>Appartement</h5>
-          <p>10 m , Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres</p>
+          <h5>{{__('Appartement')}}</h5>
+          <p>10 m , {{__('Vue: vue sur la mer et la ville , Localization: de 1ere au 3eme etage , Baignoire et douche dans toutes les chambres')}}</p>
           <img src="./pics/appart.jpg" alt="ok6">
         </div>
 
@@ -420,52 +420,52 @@
     </div>
     </section>
     <section class="gallary2 mtop " id="gallary">
-      <h2>Nos clients donnent leur avis</h2>
+      <h2>{{__('Nos clients donnent leur avis')}}</h2>
       <div class="owl-carousel owl-theme">
         <div class="item1">
         <div class="div11">
               <h3>Imii .France</h3>
               <h4>9/10</h4>
             </div>
-            <h4>CLIENT DEPUIS MAI 2018, ULTIMATE</h4>
+            <h4>{{__('CLIENT DEPUIS MAI 2018, ULTIMATE')}}</h4>
             <div class="ligne"></div>
-            <p> L'emplacement est top ,dans le corniche ,
-              Les chambres sont propre , les personnels sont gentils , serviable , le petit-déjeuner est top</p>
+            <p>{{__(' L\'emplacement est top ,dans le corniche ,
+              Les chambres sont propre , les personnels sont gentils , serviable , le petit-déjeuner est top')}}</p>
         </div>
         <div class="item1">
             <div class="div11">
               <h3>najwa .imarat</h3>
               <h4>10/10</h4>
             </div>
-            <h4>CLIENT DEPUIS MAI 2018, ULTIMATE</h4>
+            <h4>{{__('CLIENT DEPUIS MAI 2018, ULTIMATE')}}</h4>
             <div class="ligne"></div>
-            <p>It was a very pleasurable experience!! Very good service and very central location!! Beautiful rooms!! Very nicely equipped ....!!</p>
+            <p>{{__('It was a very pleasurable experience!! Very good service and very central location!! Beautiful rooms!! Very nicely equipped ')}}....!!</p>
 
         </div>
       </div>
     </div>
     </section>
       <div>
-      <div class="card-title">Également dans la Collection des offres</div>
+      <div class="card-title">{{__('Également dans la Collection des offres')}}</div>
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
               <img src="./pics/slide5.jpg" alt="Image 1">
             </div>
             <div class="card-back">
-              <h1>Chambre Double Standard</h1>
+              <h1>{{__('Chambre Double Standard')}}</h1>
               <p>
-                    2 lits simples <br>
-                  10 m²Balcon /Climatisation<br>
-                  Salle de bains privative dans l'hébergement <br>
-                  Télévision à écran plat Terrasse<br>
-                  Wi-Fi Gratuit
+                    2 {{__('lits simples')}} <br>
+                  10 m² {{__('Balcon /Climatisation')}}<br>
+                {{__('  Salle de bains privative dans l\'hébergement')}} <br>
+                  {{__('Télévision à écran plat Terrasse')}}<br>
+                  {{__('Wi-Fi Gratuit')}}
               </p>
               <div class="price-container">
-                <div class="price-with-cancel"><span class="price-text">A partir de</span> <span class="price-amount">700 MAD par nuit</span></div>
-                <div class="price-no-cancel"><span class="price-text">A partir de</span> <span class="price-amount">500 MAD par nuit</span></div>
+                <div class="price-with-cancel"><span class="price-text">{{__('A partir de')}}</span> <span class="price-amount">700 MAD {{__('par nuit')}}</span></div>
+                <div class="price-no-cancel"><span class="price-text">{{__('A partir de')}}</span> <span class="price-amount">500 MAD {{__('par nuit')}}</span></div>
               </div>
-              <div class="reserveer"><a href="{{ route('chambres.index')}}">Voir la disponibilité / Reserver</a></div>
+              <div class="reserveer"><a href="{{ route('chambres.index')}}">{{__('Voir la disponibilité')}} / {{__('Réserver')}}</a></div>
             </div>
           </div>
         </div>
@@ -476,19 +476,19 @@
               <img src="./pics/slide1.jpg" alt="Image 2">
             </div>
             <div class="card-back">
-              <h1>Chambre Double Standard</h1>
+              <h1>{{__('Chambre Double Standard')}}</h1>
               <p>
-                    2 lits simples <br>
-                  10 m²Balcon /Climatisation<br>
-                  Salle de bains privative dans l'hébergement <br>
-                  Télévision à écran plat Terrasse<br>
-                  Wi-Fi Gratuit
+                    {{__('2 lits simples')}} <br>
+                  {{__('10 m²Balcon /Climatisation')}}<br>
+                  {{__('Salle de bains privative dans l\'hébergement')}}<br>
+                  {{__('Télévision à écran plat Terrasse')}}<br>
+                  {{__('Wi-Fi Gratuit')}}
               </p>
               <div class="price-container">
-                <div class="price-with-cancel"><span class="price-text">A partir de</span> <span class="price-amount">700 MAD par nuit</span></div>
-                <div class="price-no-cancel"><span class="price-text">A partir de</span> <span class="price-amount">500 MAD par nuit</span></div>
+                <div class="price-with-cancel"><span class="price-text">{{__('A partir de')}}</span> <span class="price-amount">700 MAD {{__('par nuit')}}</span></div>
+                <div class="price-no-cancel"><span class="price-text">{{__('A partir de')}}</span> <span class="price-amount">500 MAD {{__('par nuit')}}</span></div>
               </div>
-              <div class="reserveer"><a href="{{ route('chambres.index')}}">Voir la disponibilité / Reserver</a></div>
+              <div class="reserveer"><a href="{{ route('chambres.index')}}">{{__('Voir la disponibilité')}} / {{__('Réserver')}}</a></div>
             </div>
           </div>
         </div>
@@ -499,43 +499,43 @@
               <img src="./pics/slide6.jpg" alt="Image 3">
             </div>
             <div class="card-back">
-              <h1>Chambre Double Standard</h1>
+              <h1>{{__('Chambre Double Standard')}}</h1>
               <p>
-                    2 lits simples <br>
-                  10 m²Balcon /Climatisation<br>
-                  Salle de bains privative dans l'hébergement <br>
-                  Télévision à écran plat Terrasse<br>
-                  Wi-Fi Gratuit
+                {{__('2 lits simples')}} <br>
+                {{__('10 m²Balcon /Climatisation')}}<br>
+                {{__('Salle de bains privative dans l\'hébergement')}}<br>
+                {{__('Télévision à écran plat Terrasse')}}<br>
+                {{__('Wi-Fi Gratuit')}}
               </p>
               <div class="price-container">
-                <div class="price-with-cancel"><span class="price-text">A partir de</span> <span class="price-amount">700 MAD par nuit</span></div>
-                <div class="price-no-cancel"><span class="price-text">A partir de</span> <span class="price-amount">500 MAD par nuit</span></div>
+                <div class="price-with-cancel"><span class="price-text">{{__('A partir de')}}</span> <span class="price-amount">700 MAD {{__('par nuit')}}</span></div>
+                <div class="price-no-cancel"><span class="price-text">{{__('A partir de')}}</span> <span class="price-amount">500 MAD {{__('par nuit')}}</span></div>
               </div>
-              <div class="reserveer"><a href="{{ route('chambres.index')}}">Voir la disponibilité / Reserver</a></div>
+              <div class="reserveer"><a href="{{ route('chambres.index')}}">{{__('Voir la disponibilité')}} / {{__('Réserver')}}</a></div>
             </div>
           </div>
         </div>
         </div>
-        <div class="containerIM">
-            <div class="imageIM" style="top: 50px; left: 750px; width: 170px; height: 170px;">
-              <img src="./pics/image1.png"  style="max-width:100%; height:auto;">
-            </div>
-            <div class="imageIM" style="top: 20px; left: 220px; width: 180px; height: 180px;">
-              <img src="./pics/image2.jpg" style="max-width:100%; height:auto;">
-            </div>
-            <div class="imageIM" style="top: 150px; left: 10px; width: 180px; height: 180px;">
-              <img src="./pics/image3.jpg"  style="max-width:100%; height:auto;">
-            </div>
-            <div class="imageIM" style="top: 400px; left: 190px; width: 170px; height: 170px;">
-              <img src="./pics/image4.jpg"  style="max-width:100%; height:auto;">
-            </div>
-            <div class="imageIM" style="top: 450px; left: 480px; width: 200px; height: 200px;">
-              <img src="./pics/image6.jpg"  style="max-width:100%; height:auto;">
-            </div>
-            <div class="titleIM" style="color:grey">Restaurant COTE D'OR</div>
-            <div class="imageIM" style="top: 100px; left: 500px; width: 150px; height: 160px;">
-              <img src="./pics/image7.jpg" style="max-width:100%; height:auto;">
-            </div>
+  <div class="containerIM">
+    <div class="imageIM" style="top: 50px; left: 750px; width: 170px; height: 170px;">
+      <img src="./pics/image1.png" alt="{{__('element')}}" style="max-width:100%; height:auto;">
+    </div>
+    <div class="imageIM" style="top: 20px; left: 220px; width: 180px; height: 180px;">
+      <img src="./pics/image2.jpg" alt="{{__('element')}}" style="max-width:100%; height:auto;">
+    </div>
+    <div class="imageIM" style="top: 150px; left: 10px; width: 180px; height: 180px;">
+      <img src="./pics/image3.jpg" alt="{{__('element')}}" style="max-width:100%; height:auto;">
+    </div>
+    <div class="imageIM" style="top: 400px; left: 190px; width: 170px; height: 170px;">
+      <img src="./pics/image4.jpg" alt="{{__('element')}}" style="max-width:100%; height:auto;">
+    </div>
+    <div class="imageIM" style="top: 450px; left: 480px; width: 200px; height: 200px;">
+      <img src="./pics/image6.jpg" alt="{{__('element')}}" style="max-width:100%; height:auto;">
+    </div>
+    <div class="titleIM" style="color:grey">{{__('Restaurant COTE D\'OR')}}</div>
+    <div class="imageIM" style="top: 100px; left: 500px; width: 150px; height: 160px;">
+      <img src="./pics/image7.jpg" alt="{{__('element')}}" style="max-width:100%; height:auto;">
+    </div>
             <div class="imageIM" style="top: 300px; left: 700px; width: 150px; height: 150px;">
               <img src="./pics/image8.jpg"  style="max-width:100%; height:auto;">
             </div>
