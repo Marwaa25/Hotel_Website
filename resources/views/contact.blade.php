@@ -35,25 +35,25 @@
     @endif
 </script>
 <div class="background">
-    <h1>CONTACTEZ-NOUS</h1>
+    <h1>{{__('CONTACTEZ-NOUS')}}</h1>
     
 </div>
 <div class="para">
-  <p>Si vous avez des questions , n'ésitez pas de nous contacter si-dessous et nous vous répondrons le plus tôt possible</p>
+  <p>{{__('Si vous avez des questions , n\'hésitez pas de nous contacter si-dessous et nous vous répondrons le plus tôt possible.')}}</p>
 </div>
 <div class="boxform">
     <form method="POST" action="/contact">
         @csrf() 
-        <label for="name">Nom :</label>
+        <label for="name">{{__('Nom :')}}</label>
         <input type="text" name="name" id="name" required>
 
-        <label for="email">Email :</label>
+        <label for="email">{{__('Email :')}}</label>
         <input type="email" name="email" id="email" required>
 
-        <label for="message">Message :</label>
+        <label for="message">{{__('Message :')}}</label>
         <textarea name="message" id="message" cols="30" rows="10" required></textarea>
 
-        <button type="submit">ENVOYER</button>
+        <button type="submit">{{__('ENVOYER')}}</button>
     </form>
 </div>
 
@@ -64,15 +64,15 @@
       <div class="columns-wrapper">
         <div class="lorem-columns">
           <div class="column">
-            <h5>General</h5>
-            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</h6>
+            <h5>{{__('Général')}}</h5>
+            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, {{__('Maroc')}}</h6>
           </div>
           <div class="column">
-            <h5>Media </h5>
+            <h5>{{__('Média')}}</h5>
             <h6>cote.dorHotel@live.fr</h6>
           </div>
           <div class="column">
-            <h5>Telephone</h5>
+            <h5>{{__('Téléphone')}}</h5>
             <h6>+212 539 663 219</h6>
             <h6>+212 539 663 232</h6>
           </div>
@@ -86,15 +86,15 @@
       <div class="columns-wrapper">
         <div class="lorem-columns">
           <div class="column">
-            <h5>General</h5>
-            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</h6>
+            <h5>{{__('Général')}}</h5>
+            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, {{__('Maroc')}}</h6>
           </div>
           <div class="column">
-            <h5>Media </h5>
+            <h5>{{__('Média')}} </h5>
             <h6>cote.dorRestau@live.fr</h6>
           </div>
           <div class="column">
-            <h5>Telephone</h5>
+            <h5>{{__('Téléphone')}}</h5>
             <h6>+212 539 663 219</h6>
             <h6>+212 539 663 232</h6>
           </div>
@@ -108,15 +108,15 @@
       <div class="columns-wrapper">
         <div class="lorem-columns">
           <div class="column">
-            <h5>General</h5>
-            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</h6>
+            <h5>{{__('Général')}}</h5>
+            <h6>av casablanca lot n°90 mdiq, 93200 M'diq, {{__('Maroc')}}</h6>
           </div>
           <div class="column">
-            <h5>Media </h5>
+            <h5>{{__('Média')}} </h5>
             <h6>cote.dorHotel@live.fr</h6>
           </div>
           <div class="column">
-            <h5>Telephone</h5>
+            <h5>{{__('Téléphone')}}</h5>
             <h6>+212 539 663 219</h6>
             <h6>+212 539 663 232</h6>
           </div>
@@ -157,37 +157,42 @@
         <section class="footer">
             <div class="box-container">
                 <div class="box">
-                    <h3>Liens Rapides</h3>
-                        <a href="#">Accueil</a>
-                        <a href="#">Nos chambres</a>
-                        <a href="#">Nos services</a>
-                        <a href="#">Contact</a>
-                        <a href="#">À propos de nous</a>
-                        <a href="#">Réservation</a>
+                    <h3>{{__('Liens Rapides')}}</h3>
+                        <a href="{{ route('/') }}" class="a1">{{__('Accueil')}}</a>
+                        <a href="{{ route('chambres.index') }}">{{__('Nos chambres')}}</a>
+                        <a href="{{ route('services.index') }}">{{__('Nos services')}}</a>
+                        <a href="{{route('contact.contact')}}">{{__('Contact')}}</a>
+                        <a href="{{ route('hotel.index')}}">{{__('À propos de nous')}}</a>
+                        <a href="{{ route('reservations.create')}}">{{__('Réservation')}}</a>
                 </div>
                 <div class="box">
-                    <h3>Liens Supplémentaires</h3>
-                    <a href="#"> <i class="fas fa-angle-right"></i> Poser des questions</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i>prestation d'été</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i>près de nous</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i> Les offres de Cote d'or</a>
+                    <h3>{{__('Liens Supplémentaires')}}</h3>
+                    <a href="{{route('contact.contact')}}"> <i class="fas fa-angle-right"></i> {{__('Poser des questions')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i>{{__('Service d\'été')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i>{{__('Près de nous')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i> {{__('Les offres de Cote d\'Or')}}</a>
                 </div>
                 <div class="box">
-                    <h3>Infos de contact</h3>
+                    <h3>{{__('Infos de contact')}}</h3>
                     <a href="#"> <i class="fas fa-phone"></i>+212 539 663 219</a>
                     <a href="#"> <i class="fas fa-phone"></i> +212 539 663 232 </a>
                     <a href="#"> <i class="fas fa-envelope"></i>cote.dor@live.fr</a>
                     <a href="#"> <i class="fas fa-map"></i>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</a>
                 </div>
                 <div class="box">
-                    <h3>Suivez-nous</h3>
+                    <h3>{{__('Suivez-nous')}}</h3>
                     <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
                     <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
                     <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
                     <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
                 </div>
             </div>
-            <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | Tous les droits sont réservés! </div>
+            <div class="credit">© 2023<span> Côte d'or Hotel Group </span> | {{__('Tous les droits sont réservés!')}} </div>
         </section>
         </footer>
-@endsection()
+
+
+
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
+@endsection
