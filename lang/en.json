@@ -72,12 +72,25 @@
 
     "CONTACTEZ-NOUS" : "CONTACT US",
     "Si vous avez des questions , n'hésitez pas de nous contacter si-dessous et nous vous répondrons le plus tôt possible." : "If you have any questions, do not hesitate to contact us below and we will answer you as soon as possible.",
-    "Nom :": "Name :",
+    "Nom": "Name",
     "ENVOYER" : "SEND",
     "Général" : "General",
     "Maroc" : "Morocco",
     "Média" : "Media",
     "Téléphone" : "Telephone",
+
+
+    "Donnez votre avis" : "Share your opinion",
+    "Avis" : "Opinion",
+    "Soumettre" : "Submit",
+    "Nous attendons vos avis" : "We are waiting for your opinions",
+    "COMMENTAIRES" : "COMMENTS",
+    "Détails" : "Details",
+    "Aucun commentaire trouvé." : "No comments found.",
+    "Voir les ratings" : "See the ratings",
+    "Retour" : "Back",
+
+
 
 
     "Liens Rapides" : "Quick Links",

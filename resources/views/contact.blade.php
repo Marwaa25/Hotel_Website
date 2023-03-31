@@ -44,13 +44,13 @@
 <div class="boxform">
     <form method="POST" action="/contact">
         @csrf() 
-        <label for="name">{{__('Nom :')}}</label>
+        <label for="name">{{__('Nom')}} :</label>
         <input type="text" name="name" id="name" required>
 
-        <label for="email">{{__('Email :')}}</label>
+        <label for="email">{{__('Email')}} :</label>
         <input type="email" name="email" id="email" required>
 
-        <label for="message">{{__('Message :')}}</label>
+        <label for="message">{{__('Message')}} :</label>
         <textarea name="message" id="message" cols="30" rows="10" required></textarea>
 
         <button type="submit">{{__('ENVOYER')}}</button>
