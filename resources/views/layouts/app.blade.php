@@ -222,17 +222,18 @@
                   {{__('Petit déjeuner espagnol')}} : 60 MAD</p>
             <h2>{{__('Plats marocains')}}</h2>
             <p>
-            Pastilla <br>
-            Tajine <br>
-            Harira <br>
-            Couscous <br>
-            Refissa <br>
-            Seffa <br>
-            Mrouzia <br>
-            Mechoui <br>
-            Tangia <br>
-            Soupe <br>
-            Poissons <br>
+              {{__('Pastilla')}} <br>
+              {{__('Tajine')}} <br>
+              {{__('Harira')}} <br>
+              {{__('Couscous')}} <br>
+              {{__('Refissa')}} <br>
+              {{__('Seffa')}} <br>
+              {{__('Mrouzia')}} <br>
+              {{__('Mechoui')}} <br>
+              {{__('Tangia')}} <br>
+              {{__('Soupe')}} <br>
+              {{__('Poissons')}} <br>
+              
             <hr>
         </div>
         <div class="div2">
@@ -240,7 +241,7 @@
             <p>
             {{__('Thé à la menthe')}} <br>
            {{__('Café Noir')}} <br>
-            {{__('Café  au lait ')}}<br>
+            {{__('Café au lait ')}}<br>
             {{__('Café expresso (marque Lavazza)')}} <br>
             {{__('Thé noir')}} <br>
            {{__(' Louisa (verveine)')}} <br>
@@ -249,7 +250,7 @@
             {{__(' citron, fraises, melon, pomme, banane')}} <br>
            {{__(' Cocktail Chamali (betterave / orange / banane) ')}}<br>
            {{__(' Jus d\'avocat')}} <br>
-           {{__('Jus d\'orange')}} + {{__('carotte')}} <br>
+           {{__('Jus d’orange')}} + {{__('carotte')}} <br>
            {{__(' Jus de concombre au citron et thym')}} <br>
             {{__('Mojito')}}
             </p>
