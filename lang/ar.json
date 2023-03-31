@@ -1,5 +1,42 @@
 {
-    "Acceuil":"منزل",
+    "Accueil":"منزل",
+    "À propos de nous" : "معلومات عنا",
+
+
+
+    "Réservation" : "حجز",
+    "Réserver" : "للحجز",
+    "Réserver maintenant" : "احجز الان",
+    "Hotel Cote d'or jouit d'un emplacement idéal au bord de la mer. Il propose des chambres confortables avec une vue extraordinaire .Ces chambres pratiques et confortables sont insonorisées et dotées de la climatisation, d'une salle de bains moderne, et d'une télévision avec chaînes internationales. L'accès Internet sans fil gratuit est disponible dans tout l'établissement.Dégustez un repas dans notre restaurant de l'hôtel qui sert différents plats . L'hôtel est situé à proximité de la mer de M'diq, du Corniche, des taxis et de la mosquée. Le personnel courtois sera ravi de vous aider et vous accueillera chaleureusement." : ". يتمتع الفندق بموقع مثالي بجانب البحر ، ويوفر غرفًا مريحة مع إطلالة غير عادية ، وهذه الغرف العملية والمريحة عازلة للصوت ومجهزة بتكييف وحمام حديث وتلفزيون مع قنوات عالمية. تتوفر خدمة الإنترنت اللاسلكي مجانًا في جميع أنحاء العقار. استمتع بتناول وجبة في مطعم الفندق الذي يقدم مجموعة متنوعة من الأطباق. يقع الفندق بالقرب من بحر المضيق والكورنيش وسيارات الأجرة والمسجد. سيسعد الموظفون المهذبون بمساعدتك وسيرحبون بك بحرارة ",
+    "Notation" : "تقييم",
+    "Très bien" : "جيد جدا",
+    "INSTALLATIONS ET SERVICES" : "المرافق والخدمات",
+    "Hôtel" : "الفندق",
+    "Restaurant" : "مطعم",
+    "Cafétéria" : "كافيتريا",
+    "Service d'étage" : "خدمة الغرف",
+    "Chambres familiales" : "غرف عائلية",
+    "Plage" : "شاطئ",
+    "Bienvenue à l'Hôtel Côte d'Or" : "Côte d'Or مرحبًا بكم في فندق",
+    "Notre hôtel est le choix parfait pour les voyageurs à la recherche d'un séjour confortable et abordable avec une vue imprenable sur la Méditerranée. ":"فندقنا هو الخيار الأمثل للمسافرين الباحثين عن إقامة مريحة وبأسعار معقولة مع مناظر خلابة للبحر الأبيض المتوسط.",
+    " Nous sommes situés en plein cœur de la ville, à quelques pas des principales attractions touristiques et des restaurants locaux." : "نحن موجودون في قلب المدينة ، على مسافة قريبة من مناطق الجذب السياحي الرئيسية والمطاعم المحلية.",
+    "Voir aussi" : "شاهد المزيد",
+    "Notre équipe" : "فريقنا",
+    "Avec nous, vous pouvez profiter d'un hébergement confortable à des tarifs compétitifs. Nos chambres sont équipées de tout ce dont vous avez besoin pour un séjour agréable, notamment une salle de bain privée, la climatisation, la télévision et un accès Wi-Fi gratuit." : "معنا يمكنك الاستمتاع بإقامة مريحة بأسعار تنافسية. تم تجهيز غرفنا بكل ما تحتاجه لإقامة ممتعة ، بما في ذلك حمام خاص وتكييف وتلفزيون وخدمة الواي فاي المجانية.",
+    "Les points de vue" : "وجهات النظر",
+    "J'ai passé un merveilleux séjour dans cet hôtel avec vue sur la mer. L'emplacement est tout simplement incroyable, avec une vue imprenable sur l'océan. Le personnel était très sympathique et accueillant, et m'a fait me sentir comme chez moi dès mon arrivée.Le restaurant de l'hôtel proposait une cuisine délicieuse, en particulier leur spécialité de fruits de mer frais. J'ai également été impressionné par la qualité des cocktails préparés par le barman.Ma chambre était spacieuse et confortable, avec une vue magnifique sur l'océan. J'ai adoré écouter les vagues se briser sur la plage chaque matin.Je recommande vivement cet hôtel à tous ceux qui cherchent un séjour relaxant au bord de la mer avec une cuisine délicieuse et un personnel amical et attentionné. Je prévois déjà de revenir l'année prochaine pour profiter de cet endroit exceptionnel une fois de plus." : ".لقد حظيت بإقامة رائعة في هذا الفندق المطل على البحر. الموقع مذهل مع منظر رائع على المحيط. كان الموظفون ودودين للغاية ومتعاونين وجعلوني أشعر بأنني في المنزل منذ لحظة وصولي. كان مطعم الفندق طعامًا لذيذًا ، وخاصة المأكولات البحرية الطازجة. لقد تأثرت أيضًا بجودة الكوكتيلات التي أعدها النادل. كانت غرفتي فسيحة ومريحة مع إطلالة رائعة على المحيط. أحببت الاستماع إلى الأمواج وهي تهطل على الشاطئ كل صباح. أوصي بشدة بهذا الفندق لأي شخص يبحث عن إقامة مريحة على البحر مع طعام لذيذ وفريق عمل ودود يقظ. أخطط بالفعل للعودة العام المقبل للاستمتاع بهذا المكان الاستثنائي مرة أخرى",
+    "Notre Restaurant" : "مطعمنا",
+    "Notre restaurant est l'endroit idéal pour savourer des plats locaux tout en profitant de la vue sur la mer Méditerranée. Nous sommes fiers de proposer une cuisine fraîche et délicieuse préparée à partir d'ingrédients locaux de première qualité..." : ".مطعمنا هو المكان المثالي لتذوق الأطباق المحلية أثناء الاستمتاع بإطلالة على البحر الأبيض المتوسط. نحن نفخر بأنفسنا لتقديم المأكولات الطازجة واللذيذة المحضرة من المكونات المحلية الممتازة",
+    "Cuisine marocaine" : "المطبخ المغربي",
+    "Nous sommes fiers de proposer des plats traditionnels marocains ainsi que des options plus modernes pour répondre à tous les goûts. Nous nous approvisionnons en produits frais et de qualité supérieure auprès de fournisseurs locaux, afin de garantir que chaque bouchée est pleine de saveurs délicieuses." : ".نفخر بأنفسنا لتقديم الأطباق المغربية التقليدية بالإضافة إلى المزيد من الخيارات الحديثة التي تناسب جميع الأذواق. نحن نصدر المنتجات الطازجة والأعلى جودة من الموردين المحليين ، للتأكد من أن كل قضمة مليئة بالنكهة اللذيذة",
+    "Cuisine italienne" : "المطبخ الإيطالي",
+    "Notre cuisine italienne est inspirée par les saveurs authentiques de l'Italie, avec des plats préparés à partir d'ingrédients frais et de qualité supérieure. Que vous cherchiez à déguster une pizza fraîche sortie du four ou des pâtes fraîches faites maison, nous avons quelque chose pour satisfaire toutes les papilles." : ".مطبخنا الإيطالي مستوحى من النكهات الإيطالية الأصيلة ، مع أطباق مُعدّة باستخدام مكونات طازجة وعالية الجودة. سواء كنت تبحث عن الاستمتاع بالبيتزا الطازجة من الفرن أو المعكرونة الطازجة المصنوعة منزليًا ، فلدينا ما يرضي كل ذوق",
+    "Bienvenue dans notre galerie" : "مرحبا بكم في معرضنا",
+    "Galerie de notre hôtel" : "معرض فندقنا",
+    "Regarder la galerie" : "مشاهدة المعرض",
+
+
+
 
     "(and :count more error)": "(و :count خطأ إضافي)",
     "(and :count more errors)": "(و :count أخطاء إضافية)",
