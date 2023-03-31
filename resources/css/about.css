@@ -516,7 +516,7 @@
   }
   
   .heading h5 {
-    font-weight: 400;
+    font-size: 20px;
     letter-spacing: 2px;
     padding-top: 20px;
     color: #5f5f5f;
@@ -534,6 +534,7 @@
     line-height: 25px;
     color: #5f5f5f;
     margin: 0 0 20px 50px;
+    font-size: 20px;
   }
   
   .heading .btn1 {
@@ -670,12 +671,13 @@
   
   .restaurant h2 {
     margin-bottom: 20px;
-    font-weight: 400;
+    font-size: 25px;
   }
   
   .restaurant .text p {
     margin-bottom: 50px;
     line-height: 25px;
+    font-size: 25px;
   }
   
   .accordionItem {

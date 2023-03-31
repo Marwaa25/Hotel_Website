@@ -5,12 +5,12 @@
 @section('content')
 
 <div class="background-image">
-        <h1>NOS CHAMBRES</h1>
+        <h1>{{__('NOS CHAMBRES')}}</h1>
         <div class="line"></div>
         <div class="bar">
             <i class="fas fa-crown"></i>
             <h3>CÔTE D'OR > </h3>
-            <a href="{{ route('reservations.create')}}">Réserver</a>
+            <a href="{{ route('reservations.create')}}">{{__('Réserver')}}</a>
         </div>
     </div>
 @foreach ($chambres as $chambre)
@@ -56,28 +56,25 @@
         @endforeach
         </div>
         <p>
-            Equipée de lits confortables, de tables de chevet avec des lampes de lecture, d'un bureau et d'une chaise 
-            pour travailler, ainsi que d'une télévision à écran plat pour se divertir. La chambre dispose également d'une salle de bain
-            privative avec douche ou baignoire, serviettes et articles de toilette de base. 
-            Enfin, Tous nos chambres offrent souvent une vue agréable sur l'extérieur.       
+            {{__('Equipée de lits confortables, de tables de chevet avec des lampes de lecture, d\'un bureau et d\'une chaise pour travailler, ainsi que d\'une télévision à écran plat pour se divertir. La chambre dispose également d\'une salle de bain privative avec douche ou baignoire, serviettes et articles de toilette de base. ')}}
         </p>
-        <a href="{{ route('chambres.show', $chambre) }}">Detais et photos</a>
+        <a href="{{ route('chambres.show', $chambre) }}">{{__('Détails et photos')}}</a>
     </div>
     <div class="box">
-        <h1>{{ $chambre->type_de_chambre }} et petit déjeuner</h1>
+        <h1>{{__($chambre->type_de_chambre) }} {{__('avec petit déjeuner')}}</h1>
         <div class="description">    
-            <p>Prix par nuit:</p> <br><h2> {{ $chambre->prix_par_nuit }} MAD </h2>
-            <p><i class="fas fa-check"></i> Annulation SANS FRAIS avant minimum 1 semaine</p>
-            <p><i class="fas fa-check"></i> PAYEZ PLUS TARD</p>
+            <p>{{__('Prix par nuit:')}}</p> <br><h2> {{ $chambre->prix_par_nuit }} MAD </h2>
+            <p><i class="fas fa-check"></i> {{__('Annulation GRATUITE avant minimum 1 semaine')}}</p>
+            <p><i class="fas fa-check"></i> {{__('PAYEZ PLUS TARD')}}</p>
         </div>  
         <div class="includ">
-            <h3>INCLUS DANS LE TARIF (1)</h3>
-            <p><i class="fas fa-check"></i> Petit déjeuner pour deux chaque jour</p>
+            <h3>{{__('INCLUS DANS LE TARIF (1)')}}</h3>
+            <p><i class="fas fa-check"></i> {{__('Petit déjeuner pour deux chaque jour')}}</p>
         </div>
         <div class="recommend">
-        <p><i class="fas fa-user-circle"></i> Pour bénéficier, de nos offres , vous pouvez réserver avant plus d'une semaine <span class="separator"></span></p>
+        <p><i class="fas fa-user-circle"></i> {{__('Pour bénéficier, de nos offres , vous pouvez réserver avant plus d\'une semaine ')}}<span class="separator"></span></p>
         </div> 
-        <a class="reser" href="{{ route('reservations.create')}}">Réserver</a>
+        <a class="reser" href="{{ route('reservations.create')}}">{{__('Réserver')}}</a>
     </div>
 </div>
 @endforeach
@@ -96,37 +93,37 @@
         <section class="footer">
             <div class="box-container">
                 <div class="box2">
-                    <h3>Liens Rapides</h3>
-                        <a href="#">Accueil</a>
-                        <a href="#">Nos chambres</a>
-                        <a href="#">Nos services</a>
-                        <a href="#">Contact</a>
-                        <a href="#">À propos de nous</a>
-                        <a href="#">Réservation</a>
+                    <h3>{{__('Liens Rapides')}}</h3>
+                    <a href="{{ route('/') }}" class="a1">{{__('Accueil')}}</a>
+                    <a href="{{ route('chambres.index') }}">{{__('Nos chambres')}}</a>
+                    <a href="{{ route('services.index') }}">{{__('Nos services')}}</a>
+                    <a href="{{route('contact.contact')}}">{{__('Contact')}}</a>
+                    <a href="{{ route('hotel.index')}}">{{__('À propos de nous')}}</a>
+                    <a href="{{ route('reservations.create')}}">{{__('Réservation')}}</a>
                 </div>
                 <div class="box2">
-                    <h3>Liens Supplémentaires</h3>
-                    <a href="#"> <i class="fas fa-angle-right"></i> Poser des questions</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i>prestation d'été</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i>près de nous</a>
-                    <a href="#"> <i class="fas fa-angle-right"></i> Les offres de Cote d'or</a>
+                    <h3>{{__('Liens Supplémentaires')}}</h3>
+                    <a href="{{route('contact.contact')}}"> <i class="fas fa-angle-right"></i> {{__('Poser des questions')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i>{{__('Service d\'été')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i>{{__('Près de nous')}}</a>
+                    <a href="{{ route('/') }}"> <i class="fas fa-angle-right"></i> {{__('Les offres de Cote d\'Or')}}</a>
                 </div>
                 <div class="box2">
-                    <h3>Infos de contact</h3>
+                    <h3>{{__('Infos de contact')}}</h3>
                     <a href="#"> <i class="fas fa-phone"></i>+212 539 663 219</a>
                     <a href="#"> <i class="fas fa-phone"></i> +212 539 663 232 </a>
                     <a href="#"> <i class="fas fa-envelope"></i>cote.dor@live.fr</a>
                     <a href="#"> <i class="fas fa-map"></i>av casablanca lot n°90 mdiq, 93200 M'diq, Maroc</a>
                 </div>
                 <div class="box2">
-                    <h3>Suivez-nous</h3>
+                    <h3>{{__('Suivez-nous')}}</h3>
                     <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
                     <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
                     <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
                     <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
                 </div>
             </div>
-            <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | tous les droits sont réservés! </div>
+            <div class="credit">© 2023<span> Cote d'or Hotel Group </span> | {{__('Tous les droits sont réservés!')}} </div>
         </section>
         </footer>
 
@@ -135,6 +132,3 @@
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
 @endsection
-
-
-
