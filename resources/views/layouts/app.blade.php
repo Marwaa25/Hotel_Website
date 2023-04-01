@@ -88,20 +88,20 @@
         <div class="background-image">
               <h1>Cote d'or</h1>
               <div class="rates">
-                <a href="{{ route('comments.index')}} ">Check rates</a>
+                <a href="{{ route('comments.index')}} ">{{__('Check rates')}}</a>
               </div>
               <div class="dropdown">
                 <button class="dropdown-btn"><span></span><span></span><span></span></button>
                 <div class="dropdown-content">
-                    <p>Menu</p>
-                    <a href="{{ route('/') }}" class="a1">{{ __('Acceuil') }}</a>
+                    <p>{{__('Menu')}}</p>
+                    <a href="{{ route('/') }}" class="a1">{{ __('Accueil') }}</a>
                     <a href="{{ route('chambres.index') }}">{{__('Nos chambres')}}</a>
                     <a href="{{ route('services.index') }}">{{__('Nos services')}}</a>
                     <a href="{{route('contact.contact')}}">{{__('Contact')}}</a>
                     <a href="{{ route('hotel.index')}}">{{__('À propos de nous')}}</a>
                     <a href="{{ route('reservations.create') }}" class="btn btn-primary">{{__('Réservation')}}</a>
                     <a href="{{ route('admin.index')}}">{{__('Administrateur')}}</a>
-                    <a href="#">{{__('Tél')}}: 05 39 66 32 19 / Fax: 05 39 66 32 32</a>
+                    <a href="#">{{__('Tél')}}: 05 39 66 32 19 / {{__('Fax')}}: 05 39 66 32 32</a>
                     <a href="#">{{__('Email')}}:cote.dor@live.fr</a>
                 </div>
               </div>
@@ -111,7 +111,7 @@
                 <span class="star">&#9733;</span>
               </p>
               <a href="#" class="address">
-              <i class="fas fa-map-marker-alt"></i> AV Casablanca lot n°90 mdiq, 93200 M'diq, Maroc 
+              <i class="fas fa-map-marker-alt"></i> {{__('AV Casablanca lot n°90 mdiq, 93200 M\'diq, Maroc')}}
               </a> 
         </div>
        <form action="" method="GET">
@@ -119,7 +119,7 @@
             <input type="text" name="search" placeholder="Cote d'or M'diq Maroc">
             <input type="date" name="date_arrivee" class="form-control" id="date_arrivee" required title="Entrez la date d'arrivée">
             <input type="date" name="date_depart" class="form-control" id="date_depart" required title="Entrez la date de depart">
-            <input type="number" name="guests" placeholder="2 Adultes">
+            <input type="number" name="guests" placeholder="{{__('2 Adultes')}}">
             <a href="{{ route('reservations.create')}}">{{__('Réserver')}}</a>
         </form>
    
@@ -175,7 +175,7 @@
             <p>{{__('Espaces publics : gratuit')}}<br>
              {{__(' En chambre : gratuit')}}</p>
             <h2>{{__('Accueil des enfants')}}</h2>
-            <p>{{('Enfants bienvenus')}}</p>
+            <p>{{__('Enfants bienvenus')}}</p>
             <h2>{{__('Services disponibles')}}</h2>
             <p>{{__('Hôtel climatisé ')}} <br>
                 {{__('Service de blanchisserie')}} <br>
