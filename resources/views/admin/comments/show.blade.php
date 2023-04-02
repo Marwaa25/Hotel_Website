@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layouts.header')
+@vite(['resources/css/comment.css'])
 @section('content')
     <div class="container">
         <div class="row">
@@ -36,3 +36,11 @@
         </div>
     </div>
 @endsection
+<style>
+ .container {
+    max-width: 800px; /* largeur maximale du conteneur */
+    margin: 0 auto; /* centrer le conteneur horizontalement */
+    padding: 20px; /* espacement intérieur du conteneur */
+    margin-top:100px;
+}
+</style>
