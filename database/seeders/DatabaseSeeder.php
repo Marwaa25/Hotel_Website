@@ -10,6 +10,7 @@ use App\Models\chambre;
 use App\Models\Comment;
 use App\Models\tache;
 use App\Models\personnel;
+use App\Models\Stock;
 use App\Models\Reservation;
 use App\Models\Client;
 use App\Models\User;
@@ -220,6 +221,39 @@ class DatabaseSeeder extends Seeder
             'date_arrivee' => '2023-04-01',
             'date_depart' => '2023-04-05',
             'chambre_id' => $chambre->id,
+        ]);
+        Personnel::create([
+            'Nom' => 'John',
+            'Prenom' => 'Doe',
+            'Adresse' => '123 Main St',
+            'Email' => 'john.doe@example.com',
+            'Telephone' => '555-1234',
+            'Poste' => 'Manager',
+            'Salaire' => 50000
+        ]);
+    
+        Personnel::create([
+            'Nom' => 'Jane',
+            'Prenom' => 'Doe',
+            'Adresse' => '456 Oak Ave',
+            'Email' => 'jane.doe@example.com',
+            'Telephone' => '555-5678',
+            'Poste' => 'Assistant',
+            'Salaire' => 30000
+        ]);
+
+        Stock::create([
+            'nom' => 'Shampoo',
+            'type' => 'Shampoo',
+            'description' => 'Shampoo',
+            'quantite' => 50
+        ]);
+    
+        Stock::create([
+            'nom' => 'Savon',
+            'type' => 'Savon',
+            'description' => 'Savon',
+            'quantite' => 100
         ]);
     }
 }

@@ -11,5 +11,4 @@ class Stock extends Model
 
     protected $fillable = ['nom', 'type', 'description', 'quantite'];
 
-    // Add any relationships or custom methods you need for your application
 }

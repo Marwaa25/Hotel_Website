@@ -101,6 +101,7 @@
                 <button type="submit" class="text-red-500 hover:underline">
                     <i class="fas fa-trash-alt"></i>
                 </button>
+              </form>
                     </td>
                   </tr>
                 @endforeach
@@ -272,6 +273,7 @@
                 <button type="submit" class="text-red-500 hover:underline">
                     <i class="fas fa-trash-alt"></i>
                 </button>
+              </form>
                         </td>
                     </tr>
                     @endforeach
