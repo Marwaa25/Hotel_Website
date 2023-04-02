@@ -1,12 +1,9 @@
 {
-    "Accueil":"منزل",
-    "À propos de nous" : "معلومات عنا",
+  
 
 
 
-    "Réservation" : "حجز",
-    "Réserver" : "للحجز",
-    "Réserver maintenant" : "احجز الان",
+   
     "Hotel Cote d'or jouit d'un emplacement idéal au bord de la mer. Il propose des chambres confortables avec une vue extraordinaire .Ces chambres pratiques et confortables sont insonorisées et dotées de la climatisation, d'une salle de bains moderne, et d'une télévision avec chaînes internationales. L'accès Internet sans fil gratuit est disponible dans tout l'établissement.Dégustez un repas dans notre restaurant de l'hôtel qui sert différents plats . L'hôtel est situé à proximité de la mer de M'diq, du Corniche, des taxis et de la mosquée. Le personnel courtois sera ravi de vous aider et vous accueillera chaleureusement." : ". يتمتع الفندق بموقع مثالي بجانب البحر ، ويوفر غرفًا مريحة مع إطلالة غير عادية ، وهذه الغرف العملية والمريحة عازلة للصوت ومجهزة بتكييف وحمام حديث وتلفزيون مع قنوات عالمية. تتوفر خدمة الإنترنت اللاسلكي مجانًا في جميع أنحاء العقار. استمتع بتناول وجبة في مطعم الفندق الذي يقدم مجموعة متنوعة من الأطباق. يقع الفندق بالقرب من بحر المضيق والكورنيش وسيارات الأجرة والمسجد. سيسعد الموظفون المهذبون بمساعدتك وسيرحبون بك بحرارة ",
     "Notation" : "تقييم",
     "Très bien" : "جيد جدا",
@@ -14,8 +11,6 @@
     "Hôtel" : "الفندق",
     "Restaurant" : "مطعم",
     "Cafétéria" : "كافيتريا",
-    "Service d'étage" : "خدمة الغرف",
-    "Chambres familiales" : "غرف عائلية",
     "Plage" : "شاطئ",
     "Bienvenue à l'Hôtel Côte d'Or" : "Côte d'Or مرحبًا بكم في فندق",
     "Notre hôtel est le choix parfait pour les voyageurs à la recherche d'un séjour confortable et abordable avec une vue imprenable sur la Méditerranée. ":"فندقنا هو الخيار الأمثل للمسافرين الباحثين عن إقامة مريحة وبأسعار معقولة مع مناظر خلابة للبحر الأبيض المتوسط.",
@@ -40,12 +35,6 @@
     "Equipée de lits confortables, de tables de chevet avec des lampes de lecture, d'un bureau et d'une chaise pour travailler, ainsi que d'une télévision à écran plat pour se divertir. La chambre dispose également d'une salle de bain privative avec douche ou baignoire, serviettes et articles de toilette de base. " : ".مجهزة بأسرة مريحة وطاولات بجانب السرير مع مصابيح للقراءة ومكتب وكرسي للعمل وجهاز تلفزيون بشاشة مسطحة للترفيه. تحتوي الغرفة أيضًا على حمام خاص مع دش أو حوض استحمام ومناشف ولوازم استحمام أساسية",
     "Détails et photos" : "التفاصيل والصور",
     "avec petit déjeuner" : "مع الافطار",
-    "Chambre Simple" : "غرفة بسيطة",
-    "Chambre Double" : "غرفة مزدوجة",
-    "Chambre Triple" : "غرفة ثلاثية",
-    "Chambre Quadruple" : "غرفة رباعية",
-    "Suite" : "جناح",
-    "Appartement" : "شقة",
     "Prix par nuit:" : ":سعر الليلة الواحدة",
     "Annulation GRATUITE avant minimum 1 semaine":"إلغاء مجاني قبل أسبوع واحد على الأقل",
     "PAYEZ PLUS TARD" : "ادفع لاحقا",
@@ -74,7 +63,6 @@
     "Nom": "اسم",
     "Message":"رسالة",
     "ENVOYER" : "أرسل",
-    "Général" : "عام",
     "Maroc" : "Morocco",
     "Média" : "وسائط",
     "Téléphone" : "هاتف",
@@ -107,7 +95,6 @@
     "Grand lit,salle de bain , petit déjeuner inclut , wifi et services" : "سرير مزدوج ، حمام ، الإفطار شامل ، خدمة الاتصال اللاسلكي بالإنترنت عبر تقنية واي فاي",
     "À partir de" : "ابتداء من",
     "nuit" : "ليلة",
-    "Voir la disponibilité" : "انظر التوفر",
     "Deux lits twin ,salle de bain , petit déjeuner inclut , wifi et services" : "سريرين مفردين وحمام ووجبة إفطار شاملة وواي فاي وخدمات",
     "Trois lits simples ,salle de bain , petit déjeuner inclut , wifi et services" : "ثلاثة أسرة مفردة ، حمام ، الإفطار شامل ، خدمة الاتصال اللاسلكي بالإنترنت عبر تقنية واي فاي والخدمات",
     "Grand lit et deux lits twin ,salle de bain , petit déjeuner inclut , wifi et services" : "سرير مزدوج واحد ، سريرين مزدوجين ، حمام ، إفطار شامل ، واي فاي وخدمات",
