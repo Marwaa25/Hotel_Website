@@ -15,15 +15,15 @@
         <form action="{{ route('comments.store') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="client_name">{{__('Nom :')}}</label>
+                <label for="client_name">{{__('Nom')}} :</label>
                 <input type="text" name="client_name" class="form-control">
             </div>
             <div class="form-group">
-                <label for="comment">{{__('Avis:')}}</label>
+                <label for="comment">{{__('Avis')}} :</label>
                 <textarea name="comment" class="form-control"></textarea>
             </div>
             <div class="form-group">
-                <label for="note">{{__('Note:')}}</label>
+                <label for="note">{{__('Note')}} :</label>
                 <input type="text" name="note" class="form-control">
             </div>
             <button type="submit" class="btn2">{{__('Soumettre')}}</button>
