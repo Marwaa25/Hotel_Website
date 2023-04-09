@@ -101,4 +101,13 @@
                 @yield('footer')
             </div>
         </body>
+        <script>
+    var botmanWidget = {
+aboutText: 'Write Something',
+introMessage: "Ecrivez Salut ou Bonjour pour commencer la conversation ! ✋"
+};
+</script>
+
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+
     </html>

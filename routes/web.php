@@ -9,6 +9,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BotManController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,5 +113,7 @@ Route::get('/languageConverter/{locale}',function($locale){
 	}
 	return redirect()->back();				
 })->name('languageConverter');  
+
+Route::match(['get', 'post'], 'botman', [BotManController::class, 'handle']);
 
 require __DIR__.'/auth.php';

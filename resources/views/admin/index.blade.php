@@ -107,7 +107,10 @@
                 @endforeach
               </tbody>
             </table>
+          </div>
+    </div>
         <hr>
+        <div class="bg-white shadow-lg rounded-lg px-6 py-8">
           <h2 class="text-3xl font-bold mb-4">Services</h2>
           <a href="{{ route('admin.services.create') }}" class="inline-block px-4 py-2 mb-4 text-white bg-blue-500 rounded hover:bg-blue-600">Ajouter un service</a>
           <table class="w-full">
@@ -146,8 +149,10 @@
                   @endforeach
               </tbody>
           </table>
-<hr>      
+        </div>
         
+<hr>      
+<div class="bg-white shadow-lg rounded-lg px-6 py-8">
             <h2 class="text-3xl font-bold mb-4">Personnels</h2>
             <a href="{{ route('admin.personnels.create') }}" class="inline-block px-4 py-2 mb-4 text-white bg-blue-500 rounded hover:bg-blue-600">Ajouter un personnel</a>
             <table class="w-full table-auto">
@@ -192,8 +197,10 @@
                 @endforeach
             </tbody>
         </table>
-
+</div>
         <hr>
+        <div class="bg-white shadow-lg rounded-lg px-6 py-8">
+
 <h2 class="text-3xl font-bold mb-4">Stock</h2>
 
 <a href="{{ route('admin.stock.create') }}" class="inline-block px-4 py-2 mb-4 text-white bg-blue-500 rounded hover:bg-blue-600">
@@ -244,7 +251,7 @@
         <hr>
         <div class="bg-white shadow-lg rounded-lg px-6 py-8">
 
-        
+    
             <h2 class="text-3xl font-bold mb-4">Comments</h2>
             <table class="w-full table-auto">
                 <thead>
