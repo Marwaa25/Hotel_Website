@@ -29,19 +29,31 @@
                 <li><a href="{{ route('admin.index')}}" class="a1">{{__('Admin')}}</a></li>
               
                 <li class="reserver"> <a href="{{ route('reservations.create') }}" class="btn btn-primary">{{__('Réserver maintenant')}}</a></li>
-                <li>
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('languageConverter','ar')">
-                            {{ __('ar') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('languageConverter','fr')">
-                            {{ __('fr') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('languageConverter','en')">
-                            {{ __('en') }}
-                        </x-dropdown-link>
-                        
-                </li>
+                <div class="lang">
+                    <ul>
+                        <li>
+                            <x-dropdown>
+                                <x-slot name="trigger">
+                                    <button class="focus:outline-none">
+                                        {{ __('Select Language') }}
+                                    </button>
+                                </x-slot>
+                                <x-slot name="content">
+                                    <x-dropdown-link :href="route('languageConverter','ar')">
+                                        {{ __('ar') }}
+                                    </x-dropdown-link>
+                                    <x-dropdown-link :href="route('languageConverter','fr')">
+                                        {{ __('fr') }}
+                                    </x-dropdown-link>
+                                    <x-dropdown-link :href="route('languageConverter','en')">
+                                        {{ __('en') }}
+                                    </x-dropdown-link>
+                                </x-slot>
+                            </x-dropdown>
+                        </li>
+                    </ul>
+                </div>
+                
                 {{-- <div class="languages">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
@@ -101,13 +113,80 @@
                 @yield('footer')
             </div>
         </body>
-        <script>
-    var botmanWidget = {
-aboutText: 'Write Something',
-introMessage: "Ecrivez Salut ou Bonjour pour commencer la conversation ! ✋"
-};
-</script>
-
-<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-
     </html>
+    <style>
+        /* Style for the unordered list */
+        .lang{
+            display: flex;
+            float: right;
+            padding-right: 20px
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* Style for the list items */
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 16px;
+        }
+    
+        /* Style for the dropdown links */
+        .dropdown-link {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+    
+        /* Hover style for the dropdown links */
+        .dropdown-link:hover {
+            background-color: #eee;
+        }
+    
+        /* Style for the button in the trigger slot */
+        button {
+            background-color: transparent;
+            border: none;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    
+        /* Style for the dropdown content */
+        .dropdown-content {
+            position: absolute;
+            z-index: 1;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            min-width: 160px;
+            padding: 10px;
+        }
+    
+        /* Style for the dropdown links inside the content */
+        .dropdown-content a {
+            display: block;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+    
+        /* Hover style for the dropdown links inside the content */
+        .dropdown-content a:hover {
+            background-color: #eee;
+        }
+    </style>
+    
+
+
+
