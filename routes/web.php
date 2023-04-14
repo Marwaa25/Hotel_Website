@@ -118,6 +118,8 @@ Route::get('/languageConverter/{locale}',function($locale){
 })->name('languageConverter');  
 
 Route::match(['get', 'post'], 'botman', [BotManController::class, 'handle']);
+Route::get('/reservations/{id}/infos', [ReservationController::class,'show'])->name('reservations.infos');
+Route::get('/reservations/{id}/pdf', [ReservationController::class, 'downloadPDF'])->name('reservations.pdf');
 
 
 require __DIR__.'/auth.php';

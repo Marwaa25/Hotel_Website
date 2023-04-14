@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
 use BotMan\BotMan\Messages\Incoming\Answer;
+use BotMan\BotMan\Messages\Outgoing\Question;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 
 class BotManController extends Controller
 {
@@ -15,16 +17,20 @@ class BotManController extends Controller
     {
         $botman = app('botman');
         
+        $greeting = Question::create("Bonjour! Comment puis-je vous aider? Vous pouvez poser une question sur les sujets suivants:")
+            ->fallback('Désolé, je n\'ai pas compris votre demande.')
+            ->callbackId('ask_reason')
+            ->addButtons([
+                Button::create('Heures d\'arrivée et de départ')->value('heures d\'arrivée et de départ'),
+                Button::create('Aide avec les bagages')->value('aide avec les bagages'),
+                Button::create('Service de navette depuis l\'aéroport')->value('service de navette depuis l\'aéroport'),
+                Button::create('Réservation de chambre')->value('réservation de chambre'),
+                Button::create('Service de blanchisserie')->value('service de blanchisserie'),
+                Button::create('Équipements de la chambre')->value('équipements de la chambre'),
+            ]);
         
-
-        $botman->hears('Bonjour|Salut', function($botman) {
-            $botman->reply('Bonjour! Comment puis-je vous aider? Vous pouvez poser une question sur les sujets suivants: <br>
-            - heures d\'arrivée et de départ,<br>
-            - aide avec les bagages, <br>
-            - service de navette depuis l\'aéroport,<br>
-            - réservation de chambre,<br>
-            - service de blanchisserie,<br>
-            - équipements de la chambre.');
+        $botman->hears('Bonjour|Salut', function($botman) use ($greeting) {
+            $botman->reply($greeting);
         });
         
         $botman->hears('heures d\'arrivée et de départ', function($botman) {
@@ -33,6 +39,7 @@ class BotManController extends Controller
         });
         
         $botman->hears('aide avec les bagages', function($botman) {
+            $botman->typesAndWaits(1);
             $botman->reply('Bien sûr! Nous serons heureux de vous aider avec vos bagages.');
         });
         
@@ -52,15 +59,8 @@ class BotManController extends Controller
             $botman->reply('Nos chambres sont équipées d\'un téléviseur, d\'un minibar, d\'un coffre-fort et d\'une connexion Wi-Fi gratuite.');
         });
         
-        $botman->fallback(function($botman) {
-            $botman->reply("Je suis désolé, je ne comprends pas. Vous pouvez poser une question sur les sujets suivants: <br>
-            - heures d'arrivée et de départ ,<br>
-            - aide avec les bagages , <br>
-            - service de navette depuis l'aéroport ,<br>
-            - réservation de chambre ,<br>
-            - service de blanchisserie ,<br>
-            - équipements de la chambre .<br>
-            Sinon vous pouvez nous contacter sur notre email: 'cotedor@live.fr' ou sur numéro de téléphone : '06535472842'");
+        $botman->fallback(function($botman) use ($greeting) {
+            $botman->reply($greeting);
         });
 
         $botman->listen();

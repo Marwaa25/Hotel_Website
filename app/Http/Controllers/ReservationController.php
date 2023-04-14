@@ -9,6 +9,9 @@ use Stripe\Stripe;
 use App\Mail\ReservationConfirmation;
 use Illuminate\Support\Facades\Mail;
 
+use Barryvdh\DomPDF\PDF;
+
+
 
 class ReservationController extends Controller
 {
@@ -17,6 +20,15 @@ class ReservationController extends Controller
         $chambres = Chambre::all();
         return view('reservations.create', compact('chambres'));
     }
+    public function show($id)
+    {
+        // Retrieve the reservation details
+        $reservation = Reservation::findOrFail($id);
+
+        // Display the reservation details in a view
+        return view('reservations.infos', compact('reservation'));
+    }
+
 
     public function store(Request $request)
     {
@@ -62,6 +74,12 @@ class ReservationController extends Controller
         Mail::to($request->email)->send(new ReservationConfirmation($reservation));
     
         // Rediriger vers la page de confirmation avec un message de succès
-        return redirect()->route('chambres.index', ['id' => $reservation->id])->with('success', 'Votre réservation a été effectuée avec succès! Le prix total est de ' . $reservation->prix_total . '€.');
+        return redirect()->route('reservations.infos', ['id' => $reservation->id])->with('success', 'Votre réservation a été effectuée avec succès! Le prix total est de ' . $reservation->prix_total . '€.');
+    }
+    public function downloadPDF($id, PDF $pdf)
+    {
+        $reservation = Reservation::findOrFail($id);
+        $pdf->loadView('reservations.pdf', compact('reservation'));
+        return $pdf->download('reservation-' . $id . '.pdf');
     }
     }
