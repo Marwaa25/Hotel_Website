@@ -57,7 +57,8 @@ class DatabaseSeeder extends Seeder
             'prenom' => 'Ahmad',
             'telephone'=> '061192774',
             'Adresse' => 'Adresse',
-            'email' => 'Ahmad@gmail.com'
+            'email' => 'Ahmad@gmail.com',
+            'password'=>'password',
 
         ]);
         Comment::create([
@@ -93,6 +94,14 @@ class DatabaseSeeder extends Seeder
         $user = new User();
         $user->name = "Manal";
         $user->email = "manal@gmail.com";
+        $user->email_verified_at = now();
+        $user->password = bcrypt('password');
+        $user->role = 'admin';
+        $user->save();
+
+        $user = new User();
+        $user->name = "Ahmad";
+        $user->email = "ahmad@gmail.com";
         $user->email_verified_at = now();
         $user->password = bcrypt('password');
         $user->save();

@@ -10,7 +10,7 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::all();
-        return view('clients.index', ['clients' => $clients]);
+        return view('client.index', ['clients' => $clients]);
     }
 
     public function create()
@@ -25,6 +25,7 @@ class ClientController extends Controller
             'prenom' => 'required',
             'telephone' => 'required',
             'email' => 'required|email|unique:clients',
+            'password' => 'required|password|unique:clients',
             'adresse' => 'required',
         ]);
 
@@ -61,6 +62,6 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         $client->delete();
-        return redirect()->route('clients.index');
+        return redirect()->route('client.index');
     }
 }

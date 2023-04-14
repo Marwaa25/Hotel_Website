@@ -28,10 +28,13 @@ Route::get('/', function () {
 
 
 
+Route::middleware(['auth','client'])->group(function () {
+    Route::get('/client', [ClientController::class, 'index'])->name('client.index');
+
+});
 
 
-
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
     // Routes pour les réservations
@@ -115,5 +118,6 @@ Route::get('/languageConverter/{locale}',function($locale){
 })->name('languageConverter');  
 
 Route::match(['get', 'post'], 'botman', [BotManController::class, 'handle']);
+
 
 require __DIR__.'/auth.php';
