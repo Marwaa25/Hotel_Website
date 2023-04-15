@@ -35,14 +35,15 @@
     </div>
 
     <div class="flex items-center justify-between mt-4">
+        <div class="forgot">
         @if (Route::has('password.request'))
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
                 {{ __('Forgot your password?') }}
             </a>
         @endif
-
-        <div>
-            <a href="{{ route('register') }}" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">{{ __('Register as a Client') }}</a>
+        </div>
+        <div class="client">
+            <a href="{{ route('register') }}" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">{{ __('Sinscrire en tant que Client') }}</a>
         </div>
 
         <x-primary-button class="ml-3">
@@ -51,13 +52,31 @@
     </div>
 </form>
 <div class="footer-admin">
-
 </div>
 
 
-
-   
 <style>
+  .flex{
+    display:flex;
+    width:100%;
+  }
+  .flex .client{
+    width:100%;
+    position:absolute;
+    margin-left:400px;
+  }
+  .flex .forgot{
+    margin-left:150px;
+  }
+  .flex 
+  .client a{
+    color:gray;
+    font-size:18px;
+  }
+  .flex .forgot a{
+    color:gray;
+    font-size:18px;
+  }
     .footer-admin{
         width:100%;
         height:500px;
@@ -120,7 +139,8 @@
   color: whitesmoke;
 }
 form{
-    margin-top:200px;
+    top:-50px;
+    position:absolute;
 }
 .background-image {
   background-image: url('pics/backlog.jpeg');
@@ -141,10 +161,8 @@ form{
 
 
 form {
-    position: absolute;
+  position:relative;
   background-color: #fff;
-  top: 90%;
-  left: 30%;
   padding: 20px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   max-width: 700px;
@@ -225,8 +243,6 @@ form button[type="submit"]:hover {
 .mt-4{
     margin-top:70px;
 }
-.flex a{
-    color:gray;
-}
+
 
 </style>

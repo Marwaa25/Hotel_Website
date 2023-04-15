@@ -114,6 +114,7 @@ form {
   top: 90%;
   left: 30%;
   padding: 20px;
+  padding-top:50px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   max-width: 500px;
   margin: 0 auto;
@@ -177,7 +178,7 @@ form .bg-red-100 {
 
 form button[type="submit"] {
   padding: 0.5rem 1.5rem;
-  margin-left:140px;
+  margin-left:100px;
   font-size:18px;
   background-color:#ADD8E6;
   color: white;
@@ -185,6 +186,7 @@ form button[type="submit"] {
   border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  margin-top:-40px;
 }
 
 form button[type="submit"]:hover {

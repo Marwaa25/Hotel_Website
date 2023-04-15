@@ -117,7 +117,7 @@ form{
     margin-top:200px;
 }
 .background-image {
-  background-image: url('pics/backlog.jpeg');
+  background-image: url('pics/seconnect.jpg');
   background-size: cover;
   background-position: center center;
   height: 100vh;
