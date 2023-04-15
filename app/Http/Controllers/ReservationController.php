@@ -58,7 +58,24 @@ class ReservationController extends Controller
         }
     
         // Calculer le prix total de la réservation
-        $prix_total = $chambre->prix_par_nuit * $nb_nuits * $request->nombre_de_personnes;
+        $prix_par_nuit = $chambre->prix_par_nuit;
+        $prix_total = $prix_par_nuit * $nb_nuits * $request->nombre_de_personnes;
+    
+        // Award 5 points to the user upon booking a reservation
+        $user = auth()->user();
+        if ($user) {
+            $user->points += 5;
+            $user->save();
+        }
+    
+        // Calculate discount if user has more than 50 points or if the user has 0 points
+        if ($user && $user->points > 50) {
+            $prix_total *= 0.7; // Apply 30% discount
+        } else if ($user && $user->points == 0) {
+            // Offer free breakfast and chauffeur service
+            $prix_total += $prix_par_nuit * $nb_nuits; // Add price of one night
+            
+        }
     
         // Créer une nouvelle réservation
         $reservation = new Reservation();
@@ -68,18 +85,29 @@ class ReservationController extends Controller
         $reservation->nombre_de_personnes = $request->nombre_de_personnes;
         $reservation->email = $request->email;
         $reservation->prix_total = $prix_total;
+    
         $reservation->save();
     
         // Envoyer un email de confirmation de réservation
         Mail::to($request->email)->send(new ReservationConfirmation($reservation));
     
         // Rediriger vers la page de confirmation avec un message de succès
-        return redirect()->route('reservations.infos', ['id' => $reservation->id])->with('success', 'Votre réservation a été effectuée avec succès! Le prix total est de ' . $reservation->prix_total . '€.');
+        return redirect()->route('reservations.infos', ['id' => $reservation->id])->with('success', 'Votre réservation a été effectuée avec succès! Le prix total est de ' . $reservation->prix_total . 'MAD.');
     }
+    
     public function downloadPDF($id, PDF $pdf)
     {
         $reservation = Reservation::findOrFail($id);
         $pdf->loadView('reservations.pdf', compact('reservation'));
         return $pdf->download('reservation-' . $id . '.pdf');
     }
+
+    public function index()
+{
+    $user = auth()->user();
+    $reservations = Reservation::where('email', $user->email)->get();
+    return view('reservations.index', compact('reservations'));
+}
+
+
     }

@@ -36,12 +36,12 @@ class ClientController extends Controller
 
     public function show(Client $client)
     {
-        return view('clients.show', ['client' => $client]);
+        return view('client.show', ['client' => $client]);
     }
 
     public function edit(Client $client)
     {
-        return view('clients.edit', ['client' => $client]);
+        return view('client.edit', ['client' => $client]);
     }
 
     public function update(Request $request, Client $client)
@@ -56,7 +56,7 @@ class ClientController extends Controller
 
         $client->update($validatedData);
 
-        return redirect()->route('clients.show', ['client' => $client]);
+        return redirect()->route('client.show', ['client' => $client]);
     }
 
     public function destroy(Client $client)
@@ -64,4 +64,6 @@ class ClientController extends Controller
         $client->delete();
         return redirect()->route('client.index');
     }
+
+    
 }

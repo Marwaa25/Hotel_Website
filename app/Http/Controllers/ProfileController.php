@@ -57,4 +57,20 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        $user = Auth::user();
+
+        return view('client.show', compact('user'));
+    }
 }
+
+
