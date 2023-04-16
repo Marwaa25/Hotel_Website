@@ -15,8 +15,17 @@
 
 
                     <div class="list-group">
+                        <p>{{ __('Vous pouvez consulter vos réservations ci-dessous :') }}</p>
                         <a href="{{ route('reservations.index') }}" class="btn btn-primary">Historique des réservations</a>
-                        <a href="{{ route('client.show') }}" class="list-group-item list-group-item-action">Mes informations personnelles</a>
+                    </div>
+                    <div>
+                        <p>{{__('Pour faire une nouvelle réservation , cliquez ci-dessous')}}</p>
+                        <a href="{{ route('reservations.create') }}" class="btn btn-primary">Nouvelle réservation</a>
+
+                    </div>
+                    <div class="list-group">
+                        <p>{{ __('Vous pouvez consulter vos informations personnelles ci-dessous :') }}</p>
+                    <a href="{{ route('client.show') }}" class="list-group-item list-group-item-action">Mes informations personnelles</a>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@
             <td>{{ $reservation->date_arrivee }}</td>
             <td>{{ $reservation->date_depart }}</td>
             <td>{{ $reservation->nombre_de_personnes }}</td>
-            <td>{{ $reservation->prix_total }}€</td>
+            <td>{{ $reservation->prix_total }} MAD</td>
         </tr>
         @endforeach
     </tbody>

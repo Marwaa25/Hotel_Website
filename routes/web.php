@@ -31,9 +31,9 @@ Route::get('/', function () {
 Route::middleware(['auth','client'])->group(function () {
     Route::get('/client', [ClientController::class, 'index'])->name('client.index');
     Route::get('/client/show', [ProfileController::class, 'show'])->name('client.show');
+    Route::get('/client/{user}/edit', [ClientController::class, 'edit'])->name('client.edit');
+    Route::put('/client/{user}', [ClientController::class, 'update'])->name('client.update');
     Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
-
-
 });
 
 

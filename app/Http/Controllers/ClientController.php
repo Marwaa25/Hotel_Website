@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Client;
 
 class ClientController extends Controller
@@ -39,25 +40,43 @@ class ClientController extends Controller
         return view('client.show', ['client' => $client]);
     }
 
-    public function edit(Client $client)
+    public function edit($id)
     {
-        return view('client.edit', ['client' => $client]);
+        $user = Auth::user();
+
+        return view('client.edit', compact('user'));
     }
 
-    public function update(Request $request, Client $client)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
+        $user = Auth::user();
+
         $validatedData = $request->validate([
-            'nom' => 'required',
-            'prenom' => 'required',
-            'telephone' => 'required',
-            'email' => 'required|email|unique:clients,email,'.$client->id,
-            'adresse' => 'required',
+            'name' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'sexe' => 'required|string',
+            'date_naissance' => 'required|date',
         ]);
 
-        $client->update($validatedData);
+        $user->name = $validatedData['name'];
+        $user->prenom = $validatedData['prenom'];
+        $user->email = $validatedData['email'];
+        $user->sexe = $validatedData['sexe'];
+        $user->date_naissance = $validatedData['date_naissance'];
 
-        return redirect()->route('client.show', ['client' => $client]);
+        $user->save();
+
+        return redirect()->route('client.edit', $user->id)->with('success', 'Profil mis à jour avec succès !');
     }
+
 
     public function destroy(Client $client)
     {

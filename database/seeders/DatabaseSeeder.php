@@ -101,6 +101,9 @@ class DatabaseSeeder extends Seeder
 
         $user = new User();
         $user->name = "Ahmad";
+        $user->prenom = "Ahmadi";
+        $user->sexe = "Homme";
+        $user->date_naissance = '1994-03-23';
         $user->email = "ahmad@gmail.com";
         $user->email_verified_at = now();
         $user->password = bcrypt('password');
