@@ -33,12 +33,20 @@
         });
     @endif
 </script>
-<h1>Réservation</h1>
-<p>Date d'arrivée: {{ $reservation->date_arrivee }}</p>
-<p>Date de départ: {{ $reservation->date_depart }}</p>
-<p>Nombre de personnes: {{ $reservation->nombre_de_personnes }}</p>
-<p>Prix total: {{ $reservation->prix_total }}€</p>
-<a href="{{ route('reservations.pdf', ['id' => $reservation->id]) }}">Télécharger PDF</a>
+<div class="part">
+        <h1>COTE D'OR, {{__('LE BON CHOIX')}}</h1>
+        <p>{{__('Faites votre réservation , dans la chambre qui vous plait à la date qui vous convient.')}}</p>
+        <p>{{__('Bon séjour')}}</p>
+</div>
+<div class="infopdf">
+    <h1>Facture de Réservation </h1>
+    <p>Date d'arrivée: {{ $reservation->date_arrivee }}</p>
+    <p>Date de départ: {{ $reservation->date_depart }}</p>
+    <p>Nombre de personnes: {{ $reservation->nombre_de_personnes }}</p>
+    <p>Prix total: {{ $reservation->prix_total }}€</p>
+    <p></p>
+    <a href="{{ route('reservations.pdf', ['id' => $reservation->id]) }}">Télécharger Votre Facture</a>
+</div>
 @if (session('success'))
     <script>
         Swal.fire({

@@ -110,3 +110,59 @@
     font-size: 22px;
   }
   
+  .infopdf {
+    border: 1px solid #ccc; /* Ajoute une bordure de 1 pixel avec une couleur grise claire */
+    padding: 10px; /* Ajoute un espacement intérieur de 10 pixels autour du contenu */
+    margin-bottom: 20px; /* Ajoute un espacement de 20 pixels en bas */
+    margin-top: 100px;
+  }
+  
+  .infopdf h1 {
+    font-size: 24px; /* Définit la taille de la police du titre */
+    margin-bottom: 10px; /* Ajoute un espacement de 10 pixels en bas */
+  }
+  
+  .infopdf p {
+    font-size: 18px; /* Définit la taille de la police du texte */
+    margin-bottom: 5px; /* Ajoute un espacement de 5 pixels en bas */
+  }
+  
+  .infopdf a {
+    display: inline-block; /* Transforme le lien en un bloc affiché */
+    background-color: #007bff; /* Définit la couleur d'arrière-plan du lien */
+    color: #fff; /* Définit la couleur du texte du lien */
+    padding: 10px 20px; /* Ajoute un espacement intérieur de 10 pixels en haut et en bas, et 20 pixels à gauche et à droite */
+    border-radius: 5px; /* Ajoute un arrondi de 5 pixels aux coins du bouton */
+    text-decoration: none; /* Supprime la soulignement du texte du lien */
+    margin-top: 10px; /* Ajoute un espacement de 10 pixels en haut */
+  }
+
+  
+  .part{
+    align-content: center;
+    background-color: #defffd;
+    height: 250px;
+    justify-content: space-around;
+    margin-top: 100px;
+    padding-top:50px;
+    
+}
+
+.part h1{
+    text-align: center;
+    color: #535152;
+    font-size: 2.5rem;
+    Font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
+
+}
+.part p{
+    width: 850px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left:40vh;
+    font-size: 1.2rem;
+    color:#535152;
+    line-height: 30px;
+    Font-family: MS Sans Serif, sans-serif;
+
+}
