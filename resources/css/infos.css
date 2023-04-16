@@ -166,3 +166,163 @@
     Font-family: MS Sans Serif, sans-serif;
 
 }
+/* Set body to full height and center content */
+
+  
+  .container {
+  /* Increase width to 90% */
+  width: 90%;
+  margin-top: 50px;
+  margin-left: 70px;
+  }
+  
+  /* Add border, background color and padding */
+  body, .container {
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  padding: 10px;
+  }
+  
+  /* Set the logo image height to 70px */
+  .logo img {
+  height: 70px;
+  }
+  
+  /* Add margin to the title */
+  .title {
+  margin-top: 10px;
+  }
+  
+  /* Style the info container */
+  .info-container {
+  display: flex;
+  justify-content: space-around;
+  }
+  .info-container .personnel{
+    margin-left: 240px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    width: 50px;
+    line-height: 30px;
+  }
+  .info-container .personnel h2{
+    margin-bottom: 20px;
+    color: #717070;
+  }
+  .info-container .hotel h2{
+    margin-bottom: 20px;
+    color: #717070;
+  }
+
+  .info-container .hotel{
+    margin-left: 200px;
+    margin-top: 30px;
+    margin-right: 200px;
+    margin-bottom: 70px;
+    line-height: 30px;
+  }
+  
+  .info-container div {
+  flex-basis: 48%;
+  
+  }
+  
+  /* Style the table */
+  table {
+  border-collapse: collapse;
+  width: 90%;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-left: 50px;
+  margin-right: 50px;
+  
+  }
+  table th{
+    font-size: 18px;
+    color: #45887b;
+  }
+  
+  table td, table th {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  }
+  
+  table th {
+  background-color: #eee;
+  }
+  
+  /* Style the total container */
+  .total {
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  }
+  
+  /* Add border, padding and background color to the total container */
+  .total {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  margin-left: 20px;
+  color: #153f6c;
+  
+  }
+  .total .title3{
+    margin-left: 50px;
+    margin-right: 20px;
+  }
+  
+  /* Add margin to the info containers */
+  .info-container, .total {
+  margin: 20px 0;
+  }
+  
+  /* Add box shadow to the container */
+  .container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  }
+  .logo{
+    display: flex;
+  }
+  .logo i{
+    color: rgb(146, 166, 206);
+    font-size: 28px;
+    margin-top: 3px;
+    margin-right: 20px;
+  }
+  .logo .title{
+    font-size: 22px;
+    color: rgb(97, 168, 164);
+  }
+  .header .title2{
+    font-size: 22px;
+    color: rgb(66, 70, 114);
+    font-weight: bold;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    }
+    .butt{
+      background-color:transparent; /* couleur de fond */
+      border:solid 2px rgb(63, 119, 113); /* pas de bordure */
+      color: rgb(51, 87, 86); /* couleur du texte */
+      padding: 13px 25px; /* marge interne */
+      text-align: center; /* centrage du texte */
+      text-decoration: none; /* pas de soulignement */
+      display: inline-block; /* affichage en ligne */
+      margin: 4px 2px; /* marges extérieures */
+      cursor: pointer; /* curseur de la souris en forme de main */
+      border-radius: 4px; /* arrondi des coins */
+      margin-top: 20px;
+      margin-left: 600px;
+      font-size: 18px;
+    }
