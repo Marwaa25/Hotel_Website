@@ -74,7 +74,7 @@ class ClientController extends Controller
 
         $user->save();
 
-        return redirect()->route('client.edit', $user->id)->with('success', 'Profil mis à jour avec succès !');
+        return redirect()->route('client.show', $user->id)->with('success', 'Profil mis à jour avec succès !');
     }
 
 

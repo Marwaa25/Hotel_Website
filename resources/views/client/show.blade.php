@@ -1,3 +1,5 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -26,3 +28,34 @@
         </div>
     </div>
 </div>
+<script>
+    // Vérifier si la réponse contient un message de succès
+    @if(Session::has('success'))
+        // Afficher une alerte de SweetAlert avec le message de succès
+        Swal.fire({
+            icon: 'success',
+            title: 'Succès!',
+            text: '{{ Session::get('success') }}',
+            showConfirmButton: false,
+            timer: 3000
+        });
+    @endif
+
+    // Vérifier si la réponse contient des erreurs
+    @if ($errors->any())
+        // Construire un message d'erreur avec tous les messages d'erreur
+        var errorMessages = '';
+        @foreach ($errors->all() as $error)
+            errorMessages += '{{ $error }}\n';
+        @endforeach
+
+        // Afficher une alerte de SweetAlert avec les messages d'erreur
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur!',
+            text: errorMessages,
+            showConfirmButton: false,
+            timer: 5000
+        });
+    @endif
+</script>
