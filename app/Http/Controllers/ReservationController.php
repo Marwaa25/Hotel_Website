@@ -25,8 +25,12 @@ class ReservationController extends Controller
         // Retrieve the reservation details
         $reservation = Reservation::findOrFail($id);
 
+        $date_arrivee = new \DateTime($reservation->date_arrivee);
+        $date_depart = new \DateTime($reservation->date_depart);
+        $nb_nuits = $date_depart->diff($date_arrivee)->days;
+
         // Display the reservation details in a view
-        return view('reservations.infos', compact('reservation'));
+        return view('reservations.infos', compact('reservation', 'nb_nuits'));
     }
 
 
@@ -40,7 +44,10 @@ class ReservationController extends Controller
             'date_arrivee' => 'required|date',
             'date_depart' => 'required|date|after:date_arrivee',
             'nombre_de_personnes' => 'required|integer|min:1',
+            'nom' => 'required',
+            'prenom' => 'required',
             'email' => 'required|email',
+            'telephone' => 'required|digits:10',
             'payment_method' => 'required',
         ]);
     
@@ -51,7 +58,10 @@ class ReservationController extends Controller
         $date_arrivee = new \DateTime($request->date_arrivee);
         $date_depart = new \DateTime($request->date_depart);
         $nb_nuits = $date_depart->diff($date_arrivee)->days;
-    
+
+        
+        
+        
         // Vérifier si le nombre de nuits réservées est supérieur à zéro
         if ($nb_nuits <= 0) {
             return back()->withErrors(['date_depart' => 'La date de départ doit être après la date d\'arrivée.']);
@@ -83,16 +93,27 @@ class ReservationController extends Controller
         $reservation->date_arrivee = $request->date_arrivee;
         $reservation->date_depart = $request->date_depart;
         $reservation->nombre_de_personnes = $request->nombre_de_personnes;
+        $reservation->nom = $request->nom;
+        $reservation->prenom = $request->prenom;
         $reservation->email = $request->email;
+        $reservation->telephone = $request->telephone;
+
         $reservation->prix_total = $prix_total;
     
         $reservation->save();
+
+        // Set the number of nights on the reservation object
+        $reservation->nb_nuits = $nb_nuits;
+
+        
+       
     
         // Envoyer un email de confirmation de réservation
         Mail::to($request->email)->send(new ReservationConfirmation($reservation));
     
         // Rediriger vers la page de confirmation avec un message de succès
-        return redirect()->route('reservations.infos', ['id' => $reservation->id])->with('success', 'Votre réservation a été effectuée avec succès! Le prix total est de ' . $reservation->prix_total . 'MAD.');
+        return redirect()->route('reservations.infos', ['id' => $reservation->id])->with(compact('nb_nuits'))->with('success', 'Votre réservation a été effectuée avec succès! Le prix total est de ' . $reservation->prix_total . 'MAD.' .
+       "Nous avons envoyé un email contenant les informations de votre réservation à l'adresse que vous avez fournie.Veuillez vérifier votre boîte de réception et votre dossier spam.");
     }
     
     public function downloadPDF($id, PDF $pdf)
