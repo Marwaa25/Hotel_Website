@@ -227,6 +227,9 @@ class DatabaseSeeder extends Seeder
         // }
         Reservation::create([
             'email' => 'johndoe@example.com',
+            'nom'=>'John',
+            'prenom'=>'Johnn',
+            'telephone' => '0600000000',
             'date_arrivee' => '2023-04-01',
             'date_depart' => '2023-04-05',
             'chambre_id' => $chambre->id,

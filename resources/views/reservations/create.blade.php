@@ -71,7 +71,18 @@
         <label for="nombre_de_personnes">{{__('Nombre de personnes')}}</label>
         <input type="number" name="nombre_de_personnes" id="nombre_de_personnes" class="form-control" min="1" required>
     </div>
-
+    <div class="form-group">
+      <label for="nom">{{__('Nom')}}</label>
+      <input type="text" name="nom" id="nom" class="form-control"  required>
+    </div>
+    <div class="form-group">
+      <label for="prenom">{{__('Prenom')}}</label>
+      <input type="text" name="prenom" id="prenom" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="telephone">{{__('Telephone')}}</label>
+      <input type="tel" name="telephone" id="telephone" class="form-control" required>
+    </div>
     <div class="form-group">
         <label for="email">{{__('Adresse e-mail')}}</label>
         <input type="email" name="email" id="email" class="form-control" required>

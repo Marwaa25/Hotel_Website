@@ -9,6 +9,7 @@
         {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-Xe3qZmTks4L4j/B4lRO2Q1H9s01h2M97bcFMNjzucBhN0Zef25e//tkou+CykcLJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
 
 
     </head>
@@ -33,14 +34,18 @@
                 <li class="reserver"> <a href="{{ route('reservations.create') }}" class="btn btn-primary">{{__('Réserver maintenant')}}</a></li>
                 <li>
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('languageConverter','ar')">
-                            {{ __('ar') }}
-                        </x-dropdown-link>
+
                         <x-dropdown-link :href="route('languageConverter','fr')">
-                            {{ __('fr') }}
+                            <i class="flag-icon flag-icon-fr"></i> 
+                            {{-- <span>{{ __('French') }}</span> --}}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('languageConverter','en')">
-                            {{ __('en') }}
+                            <i class="flag-icon flag-icon-gb"></i> 
+                            {{-- <span>{{ __('English') }}</span> --}}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('languageConverter','ar')">
+                            <i class="flag-icon flag-icon-ma"></i>
+                             {{-- <span>{{ __('Arabic') }}</span> --}}
                         </x-dropdown-link>
                         
                 </li>
