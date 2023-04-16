@@ -92,15 +92,15 @@
 					<td>{{ $reservation->date_depart }}</td>
 					<td>{{ $reservation->chambre->type_de_chambre }}</td>
                     <td>{{ $reservation->nombre_de_personnes }}</td>
-                    <td>{{ $reservation->chambre->prix_par_nuit }}€</td>
+                    <td>{{ $reservation->chambre->prix_par_nuit }}MAD</td>
                     <td>{{ $nb_nuits }}</td>
-                    <td>{{ $reservation->prix_total }}€</td>
+                    <td>{{ $reservation->prix_total }}MAD</td>
                     </tr>
             </tbody>
         </table>
                 <div class="total">
                     <div class="title3">Total:</div>
-                    <div>{{ $reservation->prix_total }}€</div>
+                    <div>{{ $reservation->prix_total }}MAD</div>
                 </div>
         </div>
 
