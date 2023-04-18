@@ -1,34 +1,44 @@
-<form method="POST" action="{{ route('logout') }}">
-    @csrf
-    <button type="submit">Déconnexion</button>
-</form>
-
+@extends('layouts.header')
+@vite(['resources/css/espaceclient.css'])
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="tous">
+            <div class="dashboard">
+                <div class="user-info">
+                    <div class="user-icon"><i class="fas fa-user"></i></div>
+                    <p>{{ Auth::user()->name }}
+                    {{ Auth::user()->prenom }}</p>
+                </div>
+                <div class="user-buttons">
+                    <a href="{{ route('client.show') }}" class="edit-button">Mes infos</a>
+                    <form method="POST" action="{{ route('logout') }}" class="logout-button">
+                        @csrf
+                        <button type="submit">Déconnexion</button>
+                    </form>
+                </div>
+           </div>
+        <div class="autres-infos">
             <div class="card">
-                <div class="card-header">{{ __('Mon Espace Client') }}</div>
-
                 <div class="card-body">
-                    <p>Bienvenue sur votre espace client, {{ Auth::user()->name }}!</p>
-                    <p>Nombre de points : <span id="points">{{ Auth::user()->points }}</span></p>
-
-
-                    <div class="list-group">
-                        <p>{{ __('Vous pouvez consulter vos réservations ci-dessous :') }}</p>
-                        <a href="{{ route('reservations.index') }}" class="btn btn-primary">Historique des réservations</a>
+                    <div class="part">
+                            <h1>{{ __('Mon Espace Client') }}</h1>
+                            <p>Bienvenue sur votre espace client, {{ Auth::user()->name }}!</p>
                     </div>
-                    <div>
-                        <p>{{__('Pour faire une nouvelle réservation , cliquez ci-dessous')}}</p>
-                        <a href="{{ route('reservations.create') }}" class="btn btn-primary">Nouvelle réservation</a>
+                    <p class="point">Nombre de points : <span id="points">{{ Auth::user()->points }}</span></p>
 
-                    </div>
-                    <div class="list-group">
-                        <p>{{ __('Vous pouvez consulter vos informations personnelles ci-dessous :') }}</p>
-                    <a href="{{ route('client.show') }}" class="list-group-item list-group-item-action">Mes informations personnelles</a>
+                    <div class="cartes">
+                        <div class="list-group">
+                            <p>{{ __('Vous pouvez consulter vos réservations ci-dessous :') }}</p>
+                            <a href="{{ route('reservations.index') }}" class="btn btn-primary">Historique des réservations</a>
+                        </div>
+                        <div class="list-group">
+                            <p>{{__('Pour faire une nouvelle réservation , cliquez ci-dessous')}}</p>
+                            <a href="{{ route('reservations.create') }}" class="btn btn-primary">Nouvelle réservation</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
