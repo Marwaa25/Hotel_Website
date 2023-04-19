@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    position: fixed; /* Rend la nav fixe */
+    top: 0; /* Fixe la position en haut de la page */
+    width: 100%; /* Étend la nav à 100% de la largeur de la page */
+    background-color: #fff; /* Couleur de fond de la nav */
+    z-index: 999; /* Défini la profondeur d'empilement pour être devant les autres éléments */
+    padding: 20px; /* Ajoute de la marge intérieure à la nav pour plus d'espace */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ajoute une ombre à la nav pour la rendre plus visible */
+    text-align: center;
+
+  }
+  
+  .navbar .langue {
+    border: none;
+    margin-right: 80px;
+    font-size:17px ;
+    color: rgb(86, 86, 86);
+  }
+ 
+  
+  .navbar ul {
+    padding: 0; /* Réinitialise la marge intérieure de la liste */
+    list-style: none; /* Supprime les puces de la liste */
+
+  }
+  
+  .navbar ul li {
+    display: inline-block; /* Affiche les éléments de la liste sur une ligne horizontale */
+    margin-left: 20px; /* Ajoute de la marge à gauche pour séparer les éléments de la liste */
+  }
+  
+ 
+  .navbar ul li a {
+    display: block; /* Affiche les liens comme des blocs pour qu'ils remplissent tout l'espace disponible */
+    text-decoration: none; /* Supprime les soulignements des liens */
+    transition: color 0.2s ease-in-out; /* Ajoute une transition pour la couleur de texte des liens */
+    font-size: 18px;
+    margin-right: 25px;
+  }
+  .navbar ul li .a1{
+    color: rgb(69, 67, 67);
+  }
+  
+ .crown i{
+    font-size: 22px;
+    float: left;
+    color:rgb(140, 174, 246);
+    margin-right: 100px;
+ }
+
+.container{
+    margin-top:150px;
+}
+
+/* Style pour le formulaire de réservation */
+form{
+border: 1px solid #ccc; /* Ajouter une bordure de 1 pixel de largeur, solide et grise */
+padding: 20px; /* Ajouter un espace de remplissage de 20 pixels à l'intérieur de la bordure */
+margin-left: 400px;
+margin-right: 400px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+#payment-form {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.form-group {
+flex-basis: calc(25% - 20px);
+margin-right: 20px;
+margin-bottom: 20px;
+}
+
+.form-group:last-child {
+margin-right: 0;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+font-size: 18px;
+color: #9b8d60;
+}
+
+select,
+input[type="date"],
+input[type="number"],
+input[type="email"],
+input[type="text"],
+input[type="password"],
+#card-element {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+select {
+appearance: none;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23343a40' d='M3.9 6.9l1.1-1.1 1.1 1.1c.2.2.5.2.7 0s.2-.5 0-.7L5.7 5.2v-4c0-.3-.2-.5-.5-.5s-.5.2-.5.5v4L3.2 5.9c-.2-.2-.2-.5 0-.7.2-.2.5-.2.7 0z'/%3E%3C/svg%3E");
+background-repeat: no-repeat;
+background-position: right 8px center;
+background-size: 16px;
+}
+
+#card-element {
+height: 40px;
+}
+
+.butt{
+margin-right: 20px;
+}
+.butto button {
+background-color: #68898d; /* couleur de fond */
+color: #fff; /* couleur du texte */
+border: none; /* bordure du bouton */
+border-radius: 5px; /* coins arrondis */
+padding: 10 20px; /* espacement interne */
+margin-top: 25px;
+margin-bottom: 20px;
+margin-left:120px;
+font-size: 16px; /* taille du texte */
+cursor: pointer; /* curseur de souris */
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.bu{
+    display: flex;
+}
+.butto2 a {
+    background-color: #68898d; /* couleur de fond */
+    color: #fff; /* couleur du texte */
+    border: none; /* bordure du bouton */
+    border-radius: 5px; /* coins arrondis */
+    padding: 10 20px; /* espacement interne */
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-top: 35px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 16px; /* taille du texte */
+    cursor: pointer; /* curseur de souris */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+.butto2{
+    margin-top: 32px;
+}
+
+/* media queries */
+
+@media (max-width:1600px){
+
+html{
+font-size: 55%;
+}
+
+.header{
+padding: 2rem 3rem;
+}
+
+}

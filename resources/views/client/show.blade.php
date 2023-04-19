@@ -1,33 +1,56 @@
+@extends('layouts.header')
+@vite(['resources/css/espaceclient.css'])
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Mon Profil') }}</div>
-
+            <div class="card-header">{{ __('Mon Profil') }}</div>
+            <div class="cart">
                 <div class="card-body">
-                    <p><strong>Nom :</strong> {{ $user->name }}</p>
-                    <p><strong>Prénom :</strong> {{ $user->prenom}}</p>
-                    <p><strong>Email :</strong> {{ $user->email }}</p>
-                    <p><strong>Sexe :</strong> {{ $user->sexe }}</p>
-                    <p><strong>Date de naissance :</strong> {{ $user->date_naissance }}</p>
-                    <p><strong>Statut :</strong> {{ $user->role }}</p>
-
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                            <a href="{{ route('client.edit', $user->id) }}" class="btn btn-primary">
-                                {{ __('Modifier mon profil') }}
-                            </a>
-                        </div>
+                    <div class="info-block">
+                        <div class="info-label">Nom :</div>
+                        <div class="info-value">{{ $user->name }}</div>
                     </div>
-                    <br>
+
+                    <div class="info-block">
+                        <div class="info-label">Prénom :</div>
+                        <div class="info-value">{{ $user->prenom}}</div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-label">Email :</div>
+                        <div class="info-value">{{ $user->email }}</div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-label">Sexe :</div>
+                        <div class="info-value">{{ $user->sexe }}</div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-label">Date de naissance :</div>
+                        <div class="info-value">{{ $user->date_naissance }}</div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-label">Statut :</div>
+                        <div class="info-value">{{ $user->role }}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modifier">
+        <a href="{{ route('client.index') }}" class="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600"><i class="fas fa-arrow-left mr-2"></i></a>
+        <a href="{{ route('client.edit', $user->id) }}" class="btn btn-primary">
+            {{ __('Modifier mon profil') }}
+        </a>
+    </div>
+    
 </div>
+
 <script>
     // Vérifier si la réponse contient un message de succès
     @if(Session::has('success'))

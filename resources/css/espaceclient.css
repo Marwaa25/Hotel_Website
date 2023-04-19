@@ -371,7 +371,76 @@
  .footer .credit span{
     color:whitesmoke;
  }
+.card-header{
+  padding: 30px;
+  margin-top: 20px;
+  font-size:20px;
+  text-align: center;
+  color: #535152;
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  animation-name: card;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.cart {
+  width: 50%;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.info-block {
+  margin-bottom: 20px;
+  display: flex;
+  margin-left: 250px;
+  font-size: 20px;
+}
+
+.info-label {
+  font-weight: bold;
+  color: #727172;
+}
+
+.info-value {
+  margin-left: 30px;
+  color: #32877e;
+
+}
+
+.btn-primary {
+  margin-top: 20px;
+}
+.modifier a.btn {
+  background-color: #6dacab;
+  color: #ffffff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 19px;
+  transition: all 0.3s ease-in-out;
+}
+.modifier a{
+  color: rgb(150, 144, 106);
+  margin-right: 20px;
+}
+.modifier{
+  margin-left: 44%;
+}
+.modifier a.btn:hover {
+  background-color: #cecaac;
+  cursor: pointer;
+}
 
 
- 
+
  

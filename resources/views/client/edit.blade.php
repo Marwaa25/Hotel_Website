@@ -1,10 +1,9 @@
-
+@extends('layouts.header')
+@vite(['resources/css/editespace.css'])
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Modifier mon profil') }}</div>
-
                     <div class="card-body">
                         @if (session('success'))
                             <div class="alert alert-success">
@@ -110,14 +109,16 @@
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                                 </div>
                             </div>
-    
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Enregistrer les modifications') }}
-                                    </button>
-                                </div>
-                            </div>
+                            <div class="bu">
+                                <div class="butto">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Enregistrer les modifications') }}
+                                        </button>
+                                    </div>
+                                    <div class="butto2">
+                                        <a href="{{ route('client.show') }}" class="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600">Retour</a>
+                                    </div>
+                            </div>  
                         </form>
                     </div>
                 </div>
