@@ -1,5 +1,10 @@
+@extends('layouts.header')
+@vite(['resources/css/comment.css'])
 
-<table>
+<div class="containe">
+<h1>{{__('Historiques de reservations')}}</h1>
+<h5>{{__('plus de reservations...plus de points...plus de remise')}}</h5>
+<table class="table">
     <thead>
         <tr>
             <th>Chambre</th>
@@ -21,3 +26,9 @@
         @endforeach
     </tbody>
 </table>
+</div>
+<style>
+    .containe{
+        margin-top:180px;
+    }
+</style>
