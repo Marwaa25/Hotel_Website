@@ -27,37 +27,53 @@ class BotManController extends Controller
                 Button::create('Réservation de chambre')->value('réservation de chambre'),
                 Button::create('Service de blanchisserie')->value('service de blanchisserie'),
                 Button::create('Équipements de la chambre')->value('équipements de la chambre'),
+                Button::create('Quitter')->value('quit'),
             ]);
         
         $botman->hears('Bonjour|Salut', function($botman) use ($greeting) {
             $botman->reply($greeting);
         });
         
-        $botman->hears('heures d\'arrivée et de départ', function($botman) {
+        $botman->hears('heures d\'arrivée et de départ', function($botman) use ($greeting) {
+            $botman->typesAndWaits(1);
             $botman->reply('L\'heure d\'arrivée est à partir de 14h et l\'heure de départ est jusqu\'à midi.');
-            
+            $botman->typesAndWaits(1);
+            $botman->reply($greeting);
         });
         
-        $botman->hears('aide avec les bagages', function($botman) {
+        $botman->hears('aide avec les bagages', function($botman) use ($greeting){
             $botman->typesAndWaits(1);
             $botman->reply('Bien sûr! Nous serons heureux de vous aider avec vos bagages.');
+            $botman->reply($greeting);
         });
         
-        $botman->hears('service de navette depuis l\'aéroport', function($botman) {
+        $botman->hears('service de navette depuis l\'aéroport', function($botman) use ($greeting) {
+            $botman->typesAndWaits(1);
             $botman->reply('Oui, nous avons un service de navette disponible pour un coût supplémentaire. Veuillez nous contacter pour plus de détails.');
+            $botman->reply($greeting);
         });
         
-        $botman->hears('réservation de chambre', function($botman) {
+        $botman->hears('réservation de chambre', function($botman) use ($greeting){
+            $botman->typesAndWaits(1);
             $botman->reply('Vous pouvez réserver une chambre en ligne sur notre site web ou en nous appelant directement.');
+            $botman->reply($greeting);
         });
         
-        $botman->hears('service de blanchisserie', function($botman) {
+        $botman->hears('service de blanchisserie', function($botman) use ($greeting){
+            $botman->typesAndWaits(1);
             $botman->reply('Oui, nous avons un service de blanchisserie disponible pour un coût supplémentaire. Veuillez nous contacter pour plus de détails.');
+            $botman->reply($greeting);
         });
         
-        $botman->hears('équipements de la chambre', function($botman) {
+        $botman->hears('équipements de la chambre', function($botman) use ($greeting){
+            $botman->typesAndWaits(1);
             $botman->reply('Nos chambres sont équipées d\'un téléviseur, d\'un minibar, d\'un coffre-fort et d\'une connexion Wi-Fi gratuite.');
+            $botman->reply($greeting);
         });
+        $botman->hears('quit', function ($botman) {
+            $botman->reply('Au revoir!');
+            // $botman->stopConversation();
+        }); 
         
         $botman->fallback(function($botman) use ($greeting) {
             $botman->reply($greeting);
