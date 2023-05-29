@@ -88,12 +88,12 @@
         <input type="email" name="email" id="email" class="form-control" required>
     </div>
 
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="card-element">{{__('Carte de crédit')}}</label>
         <div id="card-element" class="form-control">
             <!-- Stripe Element will be inserted here. -->
         </div>
-    </div>
+    </div> --}}
     <div class="butt">
         <button class="btn">{{__('Annuler')}}</button>
         <button type="submit" class="btn" id="submit-button">{{__('Réserver')}}</button>

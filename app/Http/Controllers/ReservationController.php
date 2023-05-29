@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Chambre;
-use Stripe\Stripe;
-use App\Mail\ReservationConfirmation;
+// use Stripe\Stripe;
+// use App\Mail\ReservationConfirmation;
 use Illuminate\Support\Facades\Mail;
 
 use Barryvdh\DomPDF\PDF;
@@ -36,7 +36,7 @@ class ReservationController extends Controller
 
     public function store(Request $request)
     {
-        Stripe::setApiKey('sk_test_51MlAg4D2dzVBVsLgV6HnejFU9d931M4kKYKTjLIj0Wlpl...');
+        // Stripe::setApiKey('sk_test_51MlAg4D2dzVBVsLgV6HnejFU9d931M4kKYKTjLIj0Wlpl...');
     
         // Valider les données de la demande
         $this->validate($request, [
@@ -48,7 +48,7 @@ class ReservationController extends Controller
             'prenom' => 'required',
             'email' => 'required|email',
             'telephone' => 'required|digits:10',
-            'payment_method' => 'required',
+            // 'payment_method' => 'required',
         ]);
     
         // Récupérer la chambre sélectionnée
@@ -109,11 +109,10 @@ class ReservationController extends Controller
        
     
         // Envoyer un email de confirmation de réservation
-        Mail::to($request->email)->send(new ReservationConfirmation($reservation));
+        // Mail::to($request->email)->send(new ReservationConfirmation($reservation));
     
         // Rediriger vers la page de confirmation avec un message de succès
-        return redirect()->route('reservations.infos', ['id' => $reservation->id])->with(compact('nb_nuits'))->with('success', 'Votre réservation a été effectuée avec succès! Le prix total est de ' . $reservation->prix_total . 'MAD.' .
-       "Nous avons envoyé un email contenant les informations de votre réservation à l'adresse que vous avez fournie.Veuillez vérifier votre boîte de réception et votre dossier spam.");
+        return redirect()->route('payment.create', ['reservation_id' => $reservation->id]);
     }
     
     public function downloadPDF($id, PDF $pdf)

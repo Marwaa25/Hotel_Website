@@ -8,6 +8,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BotManController;
 
@@ -100,6 +101,11 @@ Route::resource('hotel', HotelController::class)->only('index');
 
 Route::resource('chambres', ChambreController::class)->only('index','show');
 Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
+
+Route::get('/payment/create', [PaymentController::class, 'create'])->name('payment.create');
+Route::post('/payment/complete', [PaymentController::class, 'complete'])->name('payment.complete');
+
+
 Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
 Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
 Route::get('/comments/create', [CommentController::class, 'create'])->name('comments.create');

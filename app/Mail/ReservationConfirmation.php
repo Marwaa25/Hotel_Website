@@ -1,6 +1,6 @@
 <?php
-namespace App\Mail;
 
+namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -21,6 +21,8 @@ class ReservationConfirmation extends Mailable
 
     public function build()
     {
-        return $this->subject('Confirmation de réservation')->view('emails.ReservationConfirmation');
+        return $this->subject('Confirmation de réservation')
+            ->to($this->reservation->email)
+            ->view('emails.ReservationConfirmation');
     }
 }
