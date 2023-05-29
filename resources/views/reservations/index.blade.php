@@ -26,9 +26,30 @@
         @endforeach
     </tbody>
 </table>
+<div class="butto2">
+            <a href="{{ route('client.index') }}" class="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600">Retour</a>
+</div>
 </div>
 <style>
     .containe{
         margin-top:180px;
+    }
+    .butto2 a {
+    background-color: #68898d; /* couleur de fond */
+    color: #fff; /* couleur du texte */
+    border: none; /* bordure du bouton */
+    border-radius: 5px; /* coins arrondis */
+    padding: 10 20px; /* espacement interne */
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-top: 35px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 16px; /* taille du texte */
+    cursor: pointer; /* curseur de souris */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    .butto2{
+        margin-top: 32px;
     }
 </style>
