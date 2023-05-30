@@ -21,7 +21,7 @@
                 <h3>{{__('Ménage')}}</h3>
             </div>
             <div class="service">
-                <i class="fas fa-washing-machine"></i>
+                <i class="fas fa-tshirt"></i>
                 <h3>{{__('Blanchisserie')}}</h3>
             </div>
             <div class="service">

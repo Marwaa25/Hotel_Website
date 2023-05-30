@@ -1,3 +1,13 @@
+  /* Style pour les champs en erreur */
+  .is-invalid {
+    border-color: red !important;
+  }
+  
+  /* Style pour les messages d'erreur */
+  .invalid-feedback {
+    color: red;
+    font-size: 14px;
+  }
 .navbar {
     position: fixed; /* Rend la nav fixe */
     top: 0; /* Fixe la position en haut de la page */

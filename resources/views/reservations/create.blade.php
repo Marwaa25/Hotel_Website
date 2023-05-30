@@ -58,34 +58,59 @@
     </div>
 
     <div class="form-group">
-        <label for="date_arrivee">{{__('Date d\'arrivée')}}</label>
-        <input type="date" name="date_arrivee" id="date_arrivee" class="form-control" required>
+      <label for="date_arrivee">{{__('Date d\'arrivée')}}</label>
+      <input type="date" name="date_arrivee" id="date_arrivee" class="form-control @error('date_arrivee') is-invalid @enderror" value="{{ old('date_depart') }}" required>
+      @error('date_arrivee')
+        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+      @enderror
     </div>
-
+  
     <div class="form-group">
-        <label for="date_depart">{{__('Date de départ')}}</label>
-        <input type="date" name="date_depart" id="date_depart" class="form-control" required>
+      <label for="date_depart">{{__('Date de départ')}}</label>
+      <input type="date" name="date_depart" id="date_depart" class="form-control @error('date_depart') is-invalid @enderror" value="{{ old('date_arrivee') }}" required>
+      @error('date_depart')
+        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+      @enderror
     </div>
-
+  
     <div class="form-group">
-        <label for="nombre_de_personnes">{{__('Nombre de personnes')}}</label>
-        <input type="number" name="nombre_de_personnes" id="nombre_de_personnes" class="form-control" min="1" required>
+      <label for="nombre_de_personnes">{{__('Nombre de personnes')}}</label>
+      <input type="number" name="nombre_de_personnes" id="nombre_de_personnes" class="form-control @error('nombre_de_personnes') is-invalid @enderror" min="1" value="{{ old('nombre_de_personnes') }}" required>
+      @error('nombre_de_personnes')
+        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+      @enderror
     </div>
+  
     <div class="form-group">
       <label for="nom">{{__('Nom')}}</label>
-      <input type="text" name="nom" id="nom" class="form-control"  required>
+      <input type="text" name="nom" id="nom" class="form-control @error('nom') is-invalid @enderror" value="{{ old('nom') }}" required>
+      @error('nom')
+        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+      @enderror
     </div>
+  
     <div class="form-group">
-      <label for="prenom">{{__('Prenom')}}</label>
-      <input type="text" name="prenom" id="prenom" class="form-control" required>
+      <label for="prenom">{{__('Prénom')}}</label>
+      <input type="text" name="prenom" id="prenom" class="form-control @error('prenom') is-invalid @enderror" value="{{ old('prenom') }}" required>
+      @error('prenom')
+        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+      @enderror
     </div>
+  
     <div class="form-group">
-      <label for="telephone">{{__('Telephone')}}</label>
-      <input type="tel" name="telephone" id="telephone" class="form-control" required>
+      <label for="telephone">{{__('Téléphone')}}</label>
+      <input type="tel" name="telephone" id="telephone" class="form-control @error('telephone') is-invalid @enderror" value="{{ old('telephone') }}" required>
+      @error('telephone')
+        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+      @enderror
     </div>
+  
     <div class="form-group">
-        <label for="email">{{__('Adresse e-mail')}}</label>
-        <input type="email" name="email" id="email" class="form-control" required>
+      <label for="email">{{__('Adresse e-mail')}}</label>
+      <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required>
+      @error('email')
+        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+      @enderror
     </div>
 
     {{-- <div class="form-group">
@@ -100,6 +125,7 @@
     </div>
 
 </form>
+
 <script src="https://js.stripe.com/v3/"></script>
 <script>
     // Set up Stripe.js and the Elements card payment form
