@@ -114,15 +114,15 @@
               <i class="fas fa-map-marker-alt"></i> {{__('AV Casablanca lot n°90 mdiq, 93200 M\'diq, Maroc')}}
               </a> 
         </div>
-       <form action="" method="GET">
-            <span class='spane'><i class="fa fa-search"></i></span>
-            <input type="text" name="search" placeholder="Cote d'or M'diq Maroc">
-            <input type="date" name="date_arrivee" class="form-control" id="date_arrivee" required title="Entrez la date d'arrivée">
-            <input type="date" name="date_depart" class="form-control" id="date_depart" required title="Entrez la date de depart">
-            <input type="number" name="guests" placeholder="{{__('2 Adultes')}}">
-            <a href="{{ route('reservations.create')}}">{{__('Réserver')}}</a>
-        </form>
-   
+        <form action="{{ route('recherche') }}" method="GET">
+          <label for="dateArrivee">Date d'arrivée:</label>
+          <input type="date" name="dateArrivee" id="dateArrivee" required>
+      
+          <label for="dateDepart">Date de départ:</label>
+          <input type="date" name="dateDepart" id="dateDepart" required>
+      
+          <button type="submit">Rechercher</button>
+      </form>
        <div class="features">
         <div class="feature">
             <i class="fas fa-water"></i>
@@ -422,31 +422,30 @@
     </section>
     <section class="gallary2 mtop " id="gallary">
       <h2>{{__('Nos clients donnent leur avis')}}</h2>
-      {{-- <a href="{{ route('comments.create') }}" class="btn btn-primary">{{__('Donnez votre avis')}} </a> --}}
       <div class="owl-carousel owl-theme">
-  
-          @if($comments !== null && count($comments) > 0)
-                  @foreach($comments as $comment)
-                  
-                      <div class="item1">
-                        
-                          <div class="div11">
-                              <h3>{{ $comment->client_name }}</h3>
-                              <h4>{{ $comment->Note }}/10</h4>
-                          </div>
-                          <h4>{{__('Commentaire fait:')}} {{$comment->datecomment}}</h4>
-                          <div class="ligne"></div>
-                          <p>{{ $comment->Comment }}</p>
-                      </div>
-                  @endforeach
-          @else
-              <p>{{__('Aucun commentaire trouvé.')}}</p>
-          @endif
-  
+        <div class="item1">
+        <div class="div11">
+              <h3>Imii .France</h3>
+              <h4>9/10</h4>
+            </div>
+            <h4>{{__('CLIENT DEPUIS MAI 2018, ULTIMATE')}}</h4>
+            <div class="ligne"></div>
+            <p>{{__(' L\'emplacement est top ,dans le corniche ,
+              Les chambres sont propre , les personnels sont gentils , serviable , le petit-déjeuner est top')}}</p>
+        </div>
+        <div class="item1">
+            <div class="div11">
+              <h3>najwa .imarat</h3>
+              <h4>10/10</h4>
+            </div>
+            <h4>{{__('CLIENT DEPUIS MAI 2018, ULTIMATE')}}</h4>
+            <div class="ligne"></div>
+            <p>{{__('It was a very pleasurable experience!! Very good service and very central location!! Beautiful rooms!! Very nicely equipped ')}}....!!</p>
+
+        </div>
       </div>
-  </section>
-  
-  
+    </div>
+    </section>
       <div>
       <div class="card-title">{{__('Également dans la Collection des offres')}}</div>
         <div class="card">
