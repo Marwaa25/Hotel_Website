@@ -233,10 +233,11 @@ class DatabaseSeeder extends Seeder
             'nom'=>'John',
             'prenom'=>'Johnn',
             'telephone' => '0600000000',
-            'date_arrivee' => '2023-04-01',
-            'date_depart' => '2023-04-05',
+            'date_arrivee' => '2023-07-01',
+            'date_depart' => '2023-07-05',
             'chambre_id' => $chambre->id,
         ]);
+        
         Personnel::create([
             'Nom' => 'John',
             'Prenom' => 'Doe',
