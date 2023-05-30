@@ -10,6 +10,7 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BotManController;
 
 /*
@@ -23,9 +24,14 @@ use App\Http\Controllers\BotManController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('/');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('/');
+
+Route::get('/', [HomeController::class, 'index'])->name('/');
+
+
+// Route::get('/comm', [HomeController::class, 'index'])->name('layouts.home');
 
 
 
