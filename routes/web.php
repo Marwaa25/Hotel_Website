@@ -106,6 +106,8 @@ Route::get('/services/{service}', [ServicesController::class, 'show'])->name('se
 Route::resource('hotel', HotelController::class)->only('index');
 
 Route::resource('chambres', ChambreController::class)->only('index','show');
+Route::get('/recherche', [ChambreController::class, 'recherche'])->name('recherche');
+
 Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
 
 Route::get('/payment/create', [PaymentController::class, 'create'])->name('payment.create');
