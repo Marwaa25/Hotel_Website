@@ -117,6 +117,7 @@ class AdminController extends Controller
             'etage' => 'required',
             'prix_par_nuit' => 'required|numeric|min:0',
             'disponibilite' => 'required|boolean',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
         // Vérifier si une chambre avec les mêmes attributs existe déjà
@@ -135,7 +136,12 @@ class AdminController extends Controller
         $chambre->etage = $validatedData['etage'];
         $chambre->prix_par_nuit = $validatedData['prix_par_nuit'];
         $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
-        
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $filename);
+            $chambre->image = $filename;
+        }
         $chambre->save();
         // Alert::success('Succès', 'Les données ont été enregistrées avec succès.');
         //     return redirect()->route('admin.chambres.index');  
@@ -167,7 +173,25 @@ class AdminController extends Controller
         $chambre->etage = $request->input('etage');
         $chambre->prix_par_nuit = $request->input('prix_par_nuit');
         $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
+        if ($request->hasFile('image')) {
+            $validatedData = $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            if ($chambre->image) {
+                $imagePath = public_path('images/' . $chambre->image);
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
+                }
+            }
     
+            // Enregistrer la nouvelle image
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $filename);
+            $chambre->image = $filename;
+        }
+
         $chambre->save();
  
         return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été mise à jour avec succès.');

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ChambreImage;
+
 
 class Chambre extends Model
 {
@@ -17,11 +19,16 @@ class Chambre extends Model
         'Etage',
         'Prix_par_nuit',
         'disponibilite',
+        'image',
     ];
 
     public function reservations()
     {
         return $this->hasMany(Reservation::class);
+    }
+    public function images()
+    {
+        return $this->hasMany(ChambreImage::class);
     }
     
 

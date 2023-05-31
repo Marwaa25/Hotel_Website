@@ -29,7 +29,7 @@
     </div>
 @endif
 
-<form action="{{ route('admin.chambres.update', $chambre->id) }}" method="POST">
+<form action="{{ route('admin.chambres.update', $chambre->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     
@@ -58,6 +58,14 @@
                 <option value="0" {{ $chambre->disponibilite == 'non' ? 'selected' : '' }}>non</option>
             </select>
         </div>
+        <div class="form-group">
+            <label for="image">{{__('Image')}}</label>
+            @if ($chambre->image)
+                <img src="{{ asset('images/' . $chambre->image) }}" alt="{{ $chambre->nom }}" width="150">
+            @endif
+            <input id="image" type="file" class="form-control-file" name="image">
+        </div>
+        
     </div>
     <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Enregistrer</button>
 </form>

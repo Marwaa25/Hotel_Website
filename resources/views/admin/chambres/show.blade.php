@@ -30,11 +30,9 @@
 
 <div class="chambre mb-8">
     <div class="owl-carousel owl-theme">
-        @foreach (range(1, 5) as $index)
-            <div class="item">
-                <img src="{{ asset('images/' . $chambre->id . '_' . $index . '.png') }}" alt="{{ $chambre->type_de_chambre }}" class="w-3/4 mx-auto">
-            </div>
-        @endforeach
+        @if($chambre->image)
+        <img class="card-img-top" src="{{ asset('images/' . $chambre->image) }}" alt="{{ $chambre->nom }}">
+    @endif
     </div>
 
     <p class="text-xl mb-4">Étage : {{ $chambre->etage }}</p>

@@ -29,7 +29,7 @@
 
 <h1 class="text-2xl font-bold mb-4">Créer une chambre</h1>
 
-<form action="{{ route('admin.chambres.store') }}" method="POST">
+<form action="{{ route('admin.chambres.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="mb-4">
@@ -53,6 +53,10 @@
             <option value="1" {{ $chambre->disponibilite == 'oui' ? 'selected' : '' }}>oui</option>
             <option value="0" {{ $chambre->disponibilite == 'non' ? 'selected' : '' }}>non</option>
         </select>
+    </div>
+    <div class="mb-4">
+        <label for="image" class="form-label">Image (optionnel)</label>
+        <input type="file" class="form-control" id="image" name="image">
     </div>
 
     <div class="mt-8">
