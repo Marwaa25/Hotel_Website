@@ -63,5 +63,44 @@
                   <div>Créé par moi-même</div>
                 </div>
               </footer> --}}
+              <script>
+                  document.addEventListener('DOMContentLoaded', function() {
+        var carousels = document.querySelectorAll('.image-carousel');
+        carousels.forEach(function(carousel, chambreIndex) {
+            var images = carousel.querySelectorAll('.image-chambre');
+            var prevBtn = carousel.querySelector('.prev-btn');
+            var nextBtn = carousel.querySelector('.next-btn');
+            var currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach(function(image, i) {
+                    image.classList.add('hidden');
+                });
+                images[index].classList.remove('hidden');
+            }
+
+            function goToPrevImage() {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = images.length - 1;
+                }
+                showImage(currentIndex);
+            }
+
+            function goToNextImage() {
+                currentIndex++;
+                if (currentIndex >= images.length) {
+                    currentIndex = 0;
+                }
+                showImage(currentIndex);
+            }
+
+            prevBtn.addEventListener('click', goToPrevImage);
+            nextBtn.addEventListener('click', goToNextImage);
+        });
+    });
+
+            </script>
+            
             </body>
 </html>

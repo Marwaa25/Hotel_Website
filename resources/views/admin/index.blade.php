@@ -93,10 +93,15 @@
                         <td class="px-4 py-2">{{ $chambre->prix_par_nuit }}</td>
                         <td class="px-4 py-2">{{ $chambre->disponibilite }}</td>
                         <td class="px-4 py-2">
-                          @foreach ($chambre->images as $image)
-                              <img class="image-chambre" src="{{ asset('images/' . $image->filename) }}" alt="{{ $chambre->type_de_chambre }}">
-                          @endforeach
+                          <div class="image-carousel">
+                              @foreach ($chambre->images as $index => $image)
+                                  <img class="image-chambre @if($loop->index > 0) hidden @endif" src="{{ asset('images/' . $image->filename) }}" alt="{{ $chambre->type_de_chambre }}">
+                              @endforeach
+                              <button class="prev-btn">&#8249;</button>
+                              <button class="next-btn">&#8250;</button>
+                          </div>
                       </td>
+                    
                       
                         <td class="px-4 py-3 flex items-center">           
                             <a href="{{ route('admin.chambres.edit', $chambre->id) }}" class="text-blue-500 hover:underline mr-4">
@@ -113,12 +118,44 @@
                     </tr>
                 @endforeach
             </tbody>
-<style>
-  .image-chambre {
-    width: 100px; /* ajustez la largeur selon vos besoins */
-    height: auto; /* l'attribut height sera ajusté automatiquement pour préserver les proportions de l'image */
-}
-</style>            
+            <style>
+                  .image-carousel {
+        position: relative;
+        max-width: 300px; /* Adjust the maximum width as needed */
+        margin: 0 auto; /* Center the carousel */
+    }
+
+    .image-carousel img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .prev-btn,
+    .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px; /* Adjust the width as needed */
+        height: 30px; /* Adjust the height as needed */
+        background-color: #fff; /* Adjust the background color as needed */
+        border: none;
+        outline: none;
+        font-size: 18px; /* Adjust the font size as needed */
+        color: #000; /* Adjust the color as needed */
+        cursor: pointer;
+        z-index: 1; /* Ensure the buttons are above the images */
+    }
+
+    .prev-btn {
+        left: 5px; /* Adjust the left position as needed */
+    }
+
+    .next-btn {
+        right: 5px; /* Adjust the right position as needed */
+    }
+          </style>
+          
+                   
             </table>
           </div>
     </div>
