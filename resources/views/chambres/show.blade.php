@@ -25,20 +25,13 @@
 </div>
     <div class="chambre">
         <div class="owl-carousel owl-theme">
-             @foreach (range(1, 5) as $index)
-                @foreach (['jpg', 'jpeg', 'png'] as $ext)
-                    @php
-                        $filename = 'images/' . $chambre->id . '_' . $index . '.' . $ext;
-                    @endphp
-                    @if (file_exists(public_path($filename)))
-                        <div class="item">
-                            <img src="{{ asset($filename) }}" alt="{{ $chambre->type_de_chambre }}" style="width: 75%;">
-                        </div>
-                        @break
-                    @endif
-                @endforeach
+            @foreach ($chambre->images as $image)
+                <div class="item">
+                    <img src="{{ asset('images/' . $image->filename) }}" alt="{{ $chambre->type_de_chambre }}" style="width: 75%;">
+                </div>
             @endforeach
         </div>
+        
         <div class="detais">
             <p>{{__('Prix par nuit:')}} {{ $chambre->prix_par_nuit }} MAD</p>
             <a href="{{ route('chambres.index') }}">{{__('Retour à la liste des chambres')}}</a>
