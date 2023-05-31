@@ -34,7 +34,7 @@ class PaymentController extends Controller
 
         Mail::to($request->email)->send(new ReservationConfirmation($reservation));
 
-        return redirect()->route('reservations.infos', ['id' => $reservation->id])->with('success',"La réservation a été passé avec succès . Pour plus des informations supplémentaires, vérifiez votre email ! ");
+        return redirect()->route('reservations.infos', ['id' => $reservation->id])->with('success', trans('validation.reservation_success'));
     }
 
     private function createPaymentIntent(Reservation $reservation)

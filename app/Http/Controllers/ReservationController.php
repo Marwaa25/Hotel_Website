@@ -41,7 +41,7 @@ class ReservationController extends Controller
         // Valider les données de la demande
         $this->validate($request, [
             'chambre_id' => 'required',
-            'date_arrivee' => 'required|date',
+            'date_arrivee' => 'required|date|after_or_equal:today',
             'date_depart' => 'required|date|after:date_arrivee',
             'nombre_de_personnes' => 'required|integer|min:1',
             'nom' => 'required',
@@ -60,11 +60,15 @@ class ReservationController extends Controller
         $nb_nuits = $date_depart->diff($date_arrivee)->days;
 
         
-        
+         // Vérifier si la chambre est disponible pendant cette période
+    $disponibilite = $chambre->isDisponible($date_arrivee, $date_depart);
+    if (!$disponibilite) {
+        return back()->withErrors(['chambre_id' => __('La chambre n\'est pas disponible pendant cette période.')]);
+    }
         
         // Vérifier si le nombre de nuits réservées est supérieur à zéro
         if ($nb_nuits <= 0) {
-            return back()->withErrors(['date_depart' => 'La date de départ doit être après la date d\'arrivée.']);
+            return back()->withErrors(['La date de départ doit être après la date d\'arrivée.']);
         }
     
         // Calculer le prix total de la réservation

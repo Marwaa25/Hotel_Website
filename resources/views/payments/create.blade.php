@@ -1,19 +1,19 @@
 @extends('layouts.header')
 
 @section('content')
-    <h1>Payment Page</h1>
+    <h1>{{__('Paiement')}}</h1>
 
-    <h2>Reservation Details</h2>
+    <h2>{{__('Détails de réservations')}}</h2>
     {{-- <p>Reservation ID: {{ $reservation->id }}</p> --}}
-    <p>Reservation Price: {{ $reservation->prix_total }} MAD</p>
+    <p>{{__('Prix')}}: {{ $reservation->prix_total }} {{__('MAD')}}</p>
 
-    <h2>Payment Form</h2>
+    <h2>{{__('Formulaire de paiement')}}</h2>
     <form action="{{ route('payment.complete') }}" method="POST" id="payment-form">
         @csrf
         <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
         <div class="form-row">
             <label for="card-element">
-                Credit or debit card
+                {{__('Carte de crédit ou débit')}}
             </label>
             <div id="card-element" class="stripe-card-element">
                 <!-- A Stripe Element will be inserted here. -->
@@ -23,7 +23,7 @@
             <div id="card-errors" role="alert"></div>
         </div>
 
-        <button type="submit">Submit Payment</button>
+        <button type="submit">{{__('Confirmer')}}</button>
     </form>
 
     <script src="https://js.stripe.com/v3/"></script>
