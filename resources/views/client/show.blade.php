@@ -1,3 +1,4 @@
+
 @extends('layouts.header')
 @vite(['resources/css/espaceclient.css'])
 
@@ -10,32 +11,32 @@
             <div class="cart">
                 <div class="card-body">
                     <div class="info-block">
-                        <div class="info-label">Nom :</div>
+                        <div class="info-label">{{ __('Nom') }} :</div>
                         <div class="info-value">{{ $user->name }}</div>
                     </div>
 
                     <div class="info-block">
-                        <div class="info-label">Prénom :</div>
-                        <div class="info-value">{{ $user->prenom}}</div>
+                        <div class="info-label">{{ __('Prénom') }} :</div>
+                        <div class="info-value">{{ $user->prenom }}</div>
                     </div>
 
                     <div class="info-block">
-                        <div class="info-label">Email :</div>
+                        <div class="info-label">{{ __('Email') }} :</div>
                         <div class="info-value">{{ $user->email }}</div>
                     </div>
 
                     <div class="info-block">
-                        <div class="info-label">Sexe :</div>
+                        <div class="info-label">{{ __('Sexe') }} :</div>
                         <div class="info-value">{{ $user->sexe }}</div>
                     </div>
 
                     <div class="info-block">
-                        <div class="info-label">Date de naissance :</div>
+                        <div class="info-label">{{ __('Date de naissance') }} :</div>
                         <div class="info-value">{{ $user->date_naissance }}</div>
                     </div>
 
                     <div class="info-block">
-                        <div class="info-label">Statut :</div>
+                        <div class="info-label">{{ __('Statut') }} :</div>
                         <div class="info-value">{{ $user->role }}</div>
                     </div>
                 </div>
@@ -48,7 +49,6 @@
             {{ __('Modifier mon profil') }}
         </a>
     </div>
-    
 </div>
 
 <script>

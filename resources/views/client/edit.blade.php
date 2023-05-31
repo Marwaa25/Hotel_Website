@@ -88,27 +88,6 @@
                                 </div>
                             </div>
     
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
-    
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmation du mot de passe') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
-                                </div>
-                            </div>
                             <div class="bu">
                                 <div class="butto">
                                         <button type="submit" class="btn btn-primary">
@@ -116,7 +95,7 @@
                                         </button>
                                     </div>
                                     <div class="butto2">
-                                        <a href="{{ route('client.show') }}" class="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600">Retour</a>
+                                        <a href="{{ route('client.show') }}" class="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600">{{__('Retour')}}</a>
                                     </div>
                             </div>  
                         </form>
