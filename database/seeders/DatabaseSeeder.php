@@ -14,7 +14,8 @@ use App\Models\Stock;
 use App\Models\Reservation;
 use App\Models\Client;
 use App\Models\User;
-use App\Models\Image;
+// use App\Models\Image;
+use App\Models\ChambreImage;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -110,47 +111,179 @@ class DatabaseSeeder extends Seeder
         $user->save();
 
         $chambre = Chambre::create([
-            'id' => '101',
-            'etage'=>2,
-            'type_de_chambre' => 'Chambre Simple',
-            'disponibilite'=>'Disponible',
+            'type_de_chambre' => 'Chambre simple',
+            'etage' => 2,
             'prix_par_nuit' => 400,
+            'disponibilite' => 'Disponible',
         ]);
-        $chambre = Chambre::create([
-            'id' => '201',
-            'etage'=>2,
-            'type_de_chambre' => 'Chambre Double',
-            'disponibilite'=>'Disponible',
+
+        // Création d'images associées à la chambre
+        $images = [
+            '101_1.jpg',
+            '101_2.jpg',
+            '101_3.jpg',
+            '101_4.jpg',
+            '101_5.png'
+        ];
+
+        foreach ($images as $image) {
+            $chambreImage = new ChambreImage;
+            $chambreImage->filename = $image;
+            $chambreImage->chambre_id = $chambre->id;
+            $chambreImage->save();
+        }
+        $chambreDouble = Chambre::create([
+            'type_de_chambre' => 'Chambre double',
+            'etage' => 2,
             'prix_par_nuit' => 500,
+            'disponibilite' => 'Disponible',
         ]);
-        $chambre = Chambre::create([
-            'id' => '203',
-            'etage'=>2,
-            'type_de_chambre' => 'Chambre Triple',
-            'disponibilite'=>'Disponible',
+        
+        // Création d'images associées à la chambre double
+        $imagesDouble = [
+            '201_1.jpg',
+            '201_2.jpg',
+            '201_3.jpg',
+            '201_4.jpg',
+            '201_5.png'
+        ];
+        
+        foreach ($imagesDouble as $image) {
+            $chambreImage = new ChambreImage;
+            $chambreImage->filename = $image;
+            $chambreImage->chambre_id = $chambreDouble->id;
+            $chambreImage->save();
+        }
+        $chambreTriple = Chambre::create([
+            'type_de_chambre' => 'Chambre triple',
+            'etage' => 3,
             'prix_par_nuit' => 660,
+            'disponibilite' => 'Disponible',
         ]);
-        $chambre = Chambre::create([
-            'id' => '305',
-            'etage'=>2,
-            'type_de_chambre' => 'Suite',
-            'disponibilite'=>'Disponible',
-            'prix_par_nuit' => 500,
-        ]);
-        $chambre = Chambre::create([
-            'id' => '401',
-            'etage'=>2,
-            'type_de_chambre' => 'Appartement',
-            'disponibilite'=>'Disponible',
-            'prix_par_nuit' => 950,
-        ]);
-        $chambre = Chambre::create([
-            'id' => '204',
-            'etage'=>2,
-            'type_de_chambre' => 'Chambre Quadruple',
-            'disponibilite'=>'Disponible',
+        
+        $imagesTriple = [
+            '203_1.jpg',
+            '203_2.png',
+            '203_3.jpg',
+            '203_4.png',
+            '203_5.png'
+        ];
+        
+        foreach ($imagesTriple as $image) {
+            $chambreImage = new ChambreImage;
+            $chambreImage->filename = $image;
+            $chambreImage->chambre_id = $chambreTriple->id;
+            $chambreImage->save();
+        }
+        $chambreQuadruple = Chambre::create([
+            'type_de_chambre' => 'Chambre quadruple',
+            'etage' => 2,
             'prix_par_nuit' => 774,
+            'disponibilite' => 'Disponible',
         ]);
+        
+        $imagesQuadruple = [
+            '204_1.jpg',
+            '204_2.jpg',
+            '204_3.jpg',
+            '204_4.jpg',
+            '204_5.jpg'
+        ];
+        
+        foreach ($imagesQuadruple as $image) {
+            $chambreImage = new ChambreImage;
+            $chambreImage->filename = $image;
+            $chambreImage->chambre_id = $chambreQuadruple->id;
+            $chambreImage->save();
+        }
+                        
+        $suite = Chambre::create([
+            'type_de_chambre' => 'Suite',
+            'etage' => 4,
+            'prix_par_nuit' => 500,
+            'disponibilite' => 'Disponible',
+        ]);
+        
+        $imagesSuite = [
+            '305_1.jpg',
+            '305_2.jpg',
+            '305_3.png',
+            '305_4.jpg',
+            '305_5.png'
+        ];
+        
+        foreach ($imagesSuite as $image) {
+            $chambreImage = new ChambreImage;
+            $chambreImage->filename = $image;
+            $chambreImage->chambre_id = $suite->id;
+            $chambreImage->save();
+        }
+        $appartement = Chambre::create([
+            'type_de_chambre' => 'Appartement',
+            'etage' => 5,
+            'prix_par_nuit' => 950,
+            'disponibilite' => 'Disponible',
+        ]);
+        
+        $imagesAppartement = [
+            '401_1.jpg',
+            '401_2.jpg',
+            '401_3.png',
+            '401_4.jpg',
+            '401_5.png'
+        ];
+        
+        foreach ($imagesAppartement as $image) {
+            $chambreImage = new ChambreImage;
+            $chambreImage->filename = $image;
+            $chambreImage->chambre_id = $appartement->id;
+            $chambreImage->save();
+        }
+                
+        
+
+        // $chambre = Chambre::create([
+        //     'id' => '101',
+        //     'etage'=>2,
+        //     'type_de_chambre' => 'Chambre Simple',
+        //     'disponibilite'=>'Disponible',
+        //     'prix_par_nuit' => 400,
+        // ]);
+        // $chambre = Chambre::create([
+        //     'id' => '201',
+        //     'etage'=>2,
+        //     'type_de_chambre' => 'Chambre Double',
+        //     'disponibilite'=>'Disponible',
+        //     'prix_par_nuit' => 500,
+        // ]);
+        // $chambre = Chambre::create([
+        //     'id' => '203',
+        //     'etage'=>2,
+        //     'type_de_chambre' => 'Chambre Triple',
+        //     'disponibilite'=>'Disponible',
+        //     'prix_par_nuit' => 660,
+        // ]);
+        // $chambre = Chambre::create([
+        //     'id' => '305',
+        //     'etage'=>2,
+        //     'type_de_chambre' => 'Suite',
+        //     'disponibilite'=>'Disponible',
+        //     'prix_par_nuit' => 500,
+        // ]);
+        // $chambre = Chambre::create([
+        //     'id' => '401',
+        //     'etage'=>2,
+        //     'type_de_chambre' => 'Appartement',
+        //     'disponibilite'=>'Disponible',
+        //     'prix_par_nuit' => 950,
+        // ]);
+        // $chambre = Chambre::create([
+        //     'id' => '204',
+        //     'etage'=>2,
+        //     'type_de_chambre' => 'Chambre Quadruple',
+        //     'disponibilite'=>'Disponible',
+        //     'prix_par_nuit' => 774,
+        // ]);
 
         Reservation::create([
             'email' => 'johndoe@example.com',

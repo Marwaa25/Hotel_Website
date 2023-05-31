@@ -53,17 +53,10 @@
 <div class="all">
     <div class="box">
         <div class="image">
-        @foreach (range(1, 1) as $index)
-            @foreach (['jpg', 'jpeg', 'png'] as $ext)
-                @php
-                    $filename = 'images/' . $chambre->id . '_' . $index . '.' . $ext;
-                @endphp
-                @if (file_exists(public_path($filename)))
-                    <img src="{{ asset($filename) }}" alt="{{ $chambre->Type_de_chambre }}" >
-                    @break
-                @endif
+            @foreach ($chambre->images as $image)
+                <img src="{{ asset('images/' . $image->filename) }}" alt="{{ $chambre->type_de_chambre }}">
+                @break
             @endforeach
-        @endforeach
         </div>
         <p>
             {{__('Equipée de lits confortables, de tables de chevet avec des lampes de lecture, d\'un bureau et d\'une chaise pour travailler, ainsi que d\'une télévision à écran plat pour se divertir. La chambre dispose également d\'une salle de bain privative avec douche ou baignoire, serviettes et articles de toilette de base. ')}}
