@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\Personnel;
 use App\Models\Stock;
 use App\Models\Comment;
+use App\Models\ChambreImage;
 use Illuminate\Http\Request;
 // use RealRashid\SweetAlert\Facades\Alert;
 
@@ -111,36 +112,56 @@ class AdminController extends Controller
     }
 
     public function storeChambre(Request $request)
-    {
-        $validatedData = $request->validate([
-            'type_de_chambre' => 'required',
-            'etage' => 'required',
-            'prix_par_nuit' => 'required|numeric|min:0',
-            'disponibilite' => 'required|boolean',
-        ]);
-    
-        // Vérifier si une chambre avec les mêmes attributs existe déjà
-        $existingChambre = Chambre::where('type_de_chambre', $validatedData['type_de_chambre'])
-            ->where('etage', $validatedData['etage'])
-            ->where('prix_par_nuit', $validatedData['prix_par_nuit'])
-            ->where('disponibilite', $validatedData['disponibilite'])
-            ->first();
-    
-        if ($existingChambre) {
-            return redirect()->back()->withErrors(['Chambre avec les mêmes attributs existe déjà.'])->withInput();
-        }
-    
-        $chambre = new Chambre;
-        $chambre->type_de_chambre = $validatedData['type_de_chambre'];
-        $chambre->etage = $validatedData['etage'];
-        $chambre->prix_par_nuit = $validatedData['prix_par_nuit'];
-        $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
-        
-        $chambre->save();
-        // Alert::success('Succès', 'Les données ont été enregistrées avec succès.');
-        //     return redirect()->route('admin.chambres.index');  
-        return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été créée avec succès.');
+{
+    $validatedData = $request->validate([
+        'type_de_chambre' => 'required',
+        'etage' => 'required',
+        'prix_par_nuit' => 'required|numeric|min:0',
+        'disponibilite' => 'required|boolean',
+        'image' => 'array',
+        'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    // Vérifier si une chambre avec les mêmes attributs existe déjà
+    $existingChambre = Chambre::where('type_de_chambre', $validatedData['type_de_chambre'])
+        ->where('etage', $validatedData['etage'])
+        ->where('prix_par_nuit', $validatedData['prix_par_nuit'])
+        ->where('disponibilite', $validatedData['disponibilite'])
+        ->first();
+
+    if ($existingChambre) {
+        return redirect()->back()->withErrors(['Chambre avec les mêmes attributs existe déjà.'])->withInput();
     }
+
+    $chambre = new Chambre;
+    $chambre->type_de_chambre = $validatedData['type_de_chambre'];
+    $chambre->etage = $validatedData['etage'];
+    $chambre->prix_par_nuit = $validatedData['prix_par_nuit'];
+    $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
+    $chambre->save();
+
+    if ($request->hasFile('image')) {
+        $images = $request->file('image');
+        foreach ($images as $image) {
+            if ($image->isValid()) {
+                $filename = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path('images'), $filename);
+
+                // Save each image in the ChambreImage model
+                $chambreImage = new ChambreImage;
+                $chambreImage->filename = $filename;
+                $chambreImage->chambre_id = $chambre->id; // Assign the chambre_id value
+                $chambreImage->save();
+            } else {
+                // The file is not valid, return an error or perform appropriate action
+                return redirect()->back()->withErrors(['Le fichier image n\'est pas valide.'])->withInput();
+            }
+        }
+    }
+
+    return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été créée avec succès.');
+}
+
     
     
     
@@ -161,17 +182,52 @@ class AdminController extends Controller
    
 
     public function updateChambre(Request $request, $id)
-    {
-        $chambre = Chambre::findOrFail($id);
-        $chambre->type_de_chambre = $request->input('type_de_chambre');
-        $chambre->etage = $request->input('etage');
-        $chambre->prix_par_nuit = $request->input('prix_par_nuit');
-        $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
-    
-        $chambre->save();
- 
-        return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été mise à jour avec succès.');
+{
+    $chambre = Chambre::findOrFail($id);
+    $chambre->type_de_chambre = $request->input('type_de_chambre');
+    $chambre->etage = $request->input('etage');
+    $chambre->prix_par_nuit = $request->input('prix_par_nuit');
+    $chambre->disponibilite = $request->input('disponibilite') == '1' ? 'Disponible' : 'Non disponible';
+
+    if ($request->hasFile('image')) {
+        $validatedData = $request->validate([
+            'image' => 'array',
+            'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // Supprimer les anciennes images associées à la chambre
+        foreach ($chambre->images as $image) {
+            $imagePath = public_path('images/' . $image->filename);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+            $image->delete();
+        }
+
+        // Enregistrer les nouvelles images
+        $images = $request->file('image');
+        foreach ($images as $image) {
+            if ($image->isValid()) {
+                $filename = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path('images'), $filename);
+
+                // Save each image in the ChambreImage model
+                $chambreImage = new ChambreImage;
+                $chambreImage->filename = $filename;
+                $chambreImage->chambre_id = $chambre->id; // Assign the chambre_id value
+                $chambreImage->save();
+            } else {
+                // The file is not valid, return an error or perform appropriate action
+                return redirect()->back()->withErrors(['Le fichier image n\'est pas valide.'])->withInput();
+            }
+        }
     }
+
+    $chambre->save();
+
+    return redirect()->route('admin.chambres.index')->with('success', 'La chambre a été mise à jour avec succès.');
+}
+
 
     public function destroyChambre($id)
     {

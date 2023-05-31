@@ -1,4 +1,25 @@
 {
+
+    
+    "Mes infos":"My informations",
+    "Mon Espace Client":"My space",
+    "Bienvenue sur votre espace client":"Welcome to your space",
+    "Nombre de points":"Points",
+    "Vous pouvez consulter vos réservations ci-dessous":"You can check your reservations below",
+    "Historique des réservations":"Reservation history",
+    "Pour faire une nouvelle réservation, cliquez ci-dessous":"To make a new reservation, click below",
+    "Nouvelle réservation":"New reservation",
+    "Déconnexion":"Sign out",
+    "Prénom":"First name",
+    "Sexe":"Gender",
+    "Date de naissance":"Date of birth",
+    "Statut":"Status",
+    "Mon Profil":"My profil",
+    "Adresse email":"Email Adress",
+    "Enregistrer les modifications":"Save changes",
+    "plus de reservations...plus de points...plus de remise":" more bookings...more points...more discount",
+    "Prix total":"Total",
+
     "Accueil":"Home",
     "Nos chambres":"Our Rooms",
     "Nos services" : "Our Services",
@@ -7,6 +28,8 @@
     "Admin" : "Admin",
     "Administrateur": "Admin",
     "Tél":"Phone",
+    "Se connecter":"Sign in",
+
     
     "Localisation d'hôtel Cote d'or à M'diq, Maroc":"Hotel Location Cote D'or In M'diq, Morocco",
     "Maroc se trouve dans la ville de M'diq, Maroc":"View On Google Maps",

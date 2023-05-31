@@ -80,32 +80,45 @@
                   <th class="px-4 py-3 text-left text-gray-600">Etage</th>
                   <th class="px-4 py-3 text-left text-gray-600">Prix par nuit</th>
                   <th class="px-4 py-3 text-left text-gray-600">Disponibilité</th>
+                  <th class="px-4 py-3 text-left text-gray-600">Images</th>
                   <th class="px-4 py-3 text-left text-gray-600">Action</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($chambres as $chambre)
-                  <tr>
-                    <td class=" px-4 py-2">{{ $chambre->id }}</td>
-                    <td class=" px-4 py-2">{{ $chambre->type_de_chambre }}</td>
-                    <td class=" px-4 py-2">{{ $chambre->etage }}</td>
-                    <td class=" px-4 py-2">{{ $chambre->prix_par_nuit }}</td>
-                    <td class=" px-4 py-2">{{ $chambre->disponibilite }}</td>
-                    <td class="px-4 py-3 flex items-center">           
-              <a href="{{ route('admin.chambres.edit', $chambre->id) }}" class="text-blue-500 hover:underline mr-4">
-                <i class="fas fa-pencil-alt"></i>
-              </a>
-              <form action="{{ route('admin.chambres.destroy', $chambre->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette chambre ?')">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="text-red-500 hover:underline">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-              </form>
-                    </td>
-                  </tr>
+                    <tr>
+                        <td class="px-4 py-2">{{ $chambre->id }}</td>
+                        <td class="px-4 py-2">{{ $chambre->type_de_chambre }}</td>
+                        <td class="px-4 py-2">{{ $chambre->etage }}</td>
+                        <td class="px-4 py-2">{{ $chambre->prix_par_nuit }}</td>
+                        <td class="px-4 py-2">{{ $chambre->disponibilite }}</td>
+                        <td class="px-4 py-2">
+                          @foreach ($chambre->images as $image)
+                              <img class="image-chambre" src="{{ asset('images/' . $image->filename) }}" alt="{{ $chambre->type_de_chambre }}">
+                          @endforeach
+                      </td>
+                      
+                        <td class="px-4 py-3 flex items-center">           
+                            <a href="{{ route('admin.chambres.edit', $chambre->id) }}" class="text-blue-500 hover:underline mr-4">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <form action="{{ route('admin.chambres.destroy', $chambre->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette chambre ?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-500 hover:underline">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
                 @endforeach
-              </tbody>
+            </tbody>
+<style>
+  .image-chambre {
+    width: 100px; /* ajustez la largeur selon vos besoins */
+    height: auto; /* l'attribut height sera ajusté automatiquement pour préserver les proportions de l'image */
+}
+</style>            
             </table>
           </div>
     </div>

@@ -1,6 +1,25 @@
 {
-  
-
+    "Mes infos":"معلوماتي",
+    "Mon Espace Client":"فضائي",
+    "Bienvenue sur votre espace client":"مرحبًا بك في فضائكم ",
+    "Nombre de points":"عدد النقاط",
+    "Vous pouvez consulter vos réservations ci-dessous":"يمكنك عرض حجوزاتك أدناه",
+    "Historique des réservations":"تاريخ الحجز",
+    "Pour faire une nouvelle réservation, cliquez ci-dessous":"لإجراء حجز جديد ، انقر أدناه",
+    "Nouvelle réservation":"حجز جديد",
+    "Déconnexion":"خروج",
+    "Se connecter":"الدخول",
+    "Prénom":"النسب",
+    "Sexe":"الجنس",
+    "Date de naissance":"تاريخ الميلاد",
+    "Statut":"حالة",
+    "Mon Profil":"ملفي الشخصي",
+    "Adresse email":"البريد الإلكتروني",
+    "Enregistrer les modifications":"حفظ التغييرات",
+    "plus de reservations...plus de points...plus de remise":" حجوزات أكثر ... نقاط أكثر ... خصم أكثر",
+    "Prix total":"المجموع",
+    "MAD":"درهم",
+   
 
 
    
@@ -75,7 +94,7 @@
     "Détails" : "تفاصيل",
     "Aucun commentaire trouvé." : ".لا توجد تعليقات",
     "Voir les ratings" : "انظر التصنيفات",
-    "Retour" : "خلف",
+    "Retour" : "الرجوع",
     "Note" : "درجة",
     "Date" : "تاريخ",
 
@@ -91,7 +110,7 @@
     "Carte de crédit" : "بطاقة إئتمان",
     "Annuler" : "إلغاء",
     "OFFRES EXCLUSIVES" : "عروض حصرية",
-    "Bénéficier de nos offres" : "Take advantage of our offers",
+    "Bénéficier de nos offres" : "استفد من عروضنا",
     "Grand lit,salle de bain , petit déjeuner inclut , wifi et services" : "سرير مزدوج ، حمام ، الإفطار شامل ، خدمة الاتصال اللاسلكي بالإنترنت عبر تقنية واي فاي",
     "À partir de" : "ابتداء من",
     "nuit" : "ليلة",

@@ -2,16 +2,16 @@
 @vite(['resources/css/comment.css'])
 
 <div class="containe">
-<h1>{{__('Historiques de reservations')}}</h1>
+<h1>{{__('Historique des réservations')}}</h1>
 <h5>{{__('plus de reservations...plus de points...plus de remise')}}</h5>
 <table class="table">
     <thead>
         <tr>
-            <th>Chambre</th>
-            <th>Date d'arrivée</th>
-            <th>Date de départ</th>
-            <th>Nombre de personnes</th>
-            <th>Prix total</th>
+            <th>{{__('Chambre')}}</th>
+            <th>{{__('Date d\'arrivée')}}</th>
+            <th>{{__('Date de départ')}}</th>
+            <th>{{__('Nombre de personnes')}}</th>
+            <th>{{__('Prix total')}}</th>
         </tr>
     </thead>
     <tbody>
@@ -21,13 +21,13 @@
             <td>{{ $reservation->date_arrivee }}</td>
             <td>{{ $reservation->date_depart }}</td>
             <td>{{ $reservation->nombre_de_personnes }}</td>
-            <td>{{ $reservation->prix_total }} MAD</td>
+            <td>{{ $reservation->prix_total }} {{__('MAD')}}</td>
         </tr>
         @endforeach
     </tbody>
 </table>
 <div class="butto2">
-            <a href="{{ route('client.index') }}" class="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600">Retour</a>
+            <a href="{{ route('client.index') }}" class="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600">{{__('Retour')}}</a>
 </div>
 </div>
 <style>

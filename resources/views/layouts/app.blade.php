@@ -123,6 +123,7 @@
       
           <button type="submit">Rechercher</button>
       </form>
+     
    
        <div class="features">
         <div class="feature">
@@ -424,29 +425,27 @@
     <section class="gallary2 mtop " id="gallary">
       <h2>{{__('Nos clients donnent leur avis')}}</h2>
       <div class="owl-carousel owl-theme">
-        <div class="item1">
-        <div class="div11">
-              <h3>Imii .France</h3>
-              <h4>9/10</h4>
-            </div>
-            <h4>{{__('CLIENT DEPUIS MAI 2018, ULTIMATE')}}</h4>
-            <div class="ligne"></div>
-            <p>{{__(' L\'emplacement est top ,dans le corniche ,
-              Les chambres sont propre , les personnels sont gentils , serviable , le petit-déjeuner est top')}}</p>
-        </div>
-        <div class="item1">
-            <div class="div11">
-              <h3>najwa .imarat</h3>
-              <h4>10/10</h4>
-            </div>
-            <h4>{{__('CLIENT DEPUIS MAI 2018, ULTIMATE')}}</h4>
-            <div class="ligne"></div>
-            <p>{{__('It was a very pleasurable experience!! Very good service and very central location!! Beautiful rooms!! Very nicely equipped ')}}....!!</p>
+  
+          @if($comments !== null && count($comments) > 0)
+                  @foreach($comments as $comment)
+                      <div class="item1">
+                          <div class="div11">
+                              <h3>{{ $comment->client_name }}</h3>
+                              <h4>{{ $comment->Note }}/10</h4>
+                          </div>
+                          <h4>{{__('Date de commentaires:')}} {{$comment->datecomment}}</h4>
+                          <div class="ligne"></div>
+                          <p>{{ $comment->Comment }}</p>
+                      </div>
+                  @endforeach
 
-        </div>
+          @else
+              <p>{{__('Aucun commentaire trouvé.')}}</p>
+          @endif
+  
       </div>
-    </div>
-    </section>
+  </section>
+  
       <div>
       <div class="card-title">{{__('Également dans la Collection des offres')}}</div>
         <div class="card">
