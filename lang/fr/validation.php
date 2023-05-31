@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 return [
+        'reservation_success' => 'La réservation a été effectuée avec succès. Pour plus d\'informations, veuillez vérifier votre courrier électronique !',
+
     'accepted'             => 'Le champ :attribute doit être accepté.',
     'accepted_if'          => 'Le champ :attribute doit être accepté quand :other a la valeur :value.',
     'active_url'           => 'Le champ :attribute n\'est pas une URL valide.',

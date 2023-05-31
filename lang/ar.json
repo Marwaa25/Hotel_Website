@@ -1,3 +1,4 @@
+
 {
     "Mes infos":"معلوماتي",
     "Mon Espace Client":"فضائي",
@@ -19,10 +20,26 @@
     "plus de reservations...plus de points...plus de remise":" حجوزات أكثر ... نقاط أكثر ... خصم أكثر",
     "Prix total":"المجموع",
     "MAD":"درهم",
-   
+    "Total":"المجموع",
+    
 
+    "Détails de réservations":"تفاصيل الحجز",
+    "Paiement":"دفع",
+    "Prix":"الثمن",
+    "Formulaire de paiement":"نموذج الدفع",
+    "Carte de crédit ou débit":"بطاقة الائتمان أو الخصم",
+    "Confirmer":"تأكيد",
 
-   
+    "Nous sommes ravis de vous accueillir prochainement ! Votre réservation a bien été enregistrée et nous sommes impatients de vous offrir une expérience inoubliable.Nous vous recommandons vivement de sauvegarder la facture dès que possible  pour éviter tout problème ultérieur, Bon séjour":"يسعدنا أن نرحب بكم قريبا! لقد تم تسجيل حجزك بنجاح ونتطلع إلى تزويدك بتجربة لا تُنسى. نوصي بشدة بحفظ الفاتورة في أقرب وقت ممكن لتجنب أي مشاكل مستقبلية ، استمتع بإقامة طيبة",
+    "Bienvenue Chez Cote d'or":"مرحبا بكم في كوت دور",
+    "Facture de Réservation":"فاتورة الحجز",
+    "Informations Personnelles":"معلومات شخصية",
+    "Informations de l'Hotel":"معلومات الفندق",
+    "Type de chambre":"نوع الغرفة",
+    "Prix par nuit":"سعر الليلة الواحدة",
+    "Nombre de nuits":"عدد الليالي",
+    "Télécharger la Facture":"تحميل فاتورة",
+
     "Hotel Cote d'or jouit d'un emplacement idéal au bord de la mer. Il propose des chambres confortables avec une vue extraordinaire .Ces chambres pratiques et confortables sont insonorisées et dotées de la climatisation, d'une salle de bains moderne, et d'une télévision avec chaînes internationales. L'accès Internet sans fil gratuit est disponible dans tout l'établissement.Dégustez un repas dans notre restaurant de l'hôtel qui sert différents plats . L'hôtel est situé à proximité de la mer de M'diq, du Corniche, des taxis et de la mosquée. Le personnel courtois sera ravi de vous aider et vous accueillera chaleureusement." : ". يتمتع الفندق بموقع مثالي بجانب البحر ، ويوفر غرفًا مريحة مع إطلالة غير عادية ، وهذه الغرف العملية والمريحة عازلة للصوت ومجهزة بتكييف وحمام حديث وتلفزيون مع قنوات عالمية. تتوفر خدمة الإنترنت اللاسلكي مجانًا في جميع أنحاء العقار. استمتع بتناول وجبة في مطعم الفندق الذي يقدم مجموعة متنوعة من الأطباق. يقع الفندق بالقرب من بحر المضيق والكورنيش وسيارات الأجرة والمسجد. سيسعد الموظفون المهذبون بمساعدتك وسيرحبون بك بحرارة ",
     "Notation" : "تقييم",
     "Très bien" : "جيد جدا",

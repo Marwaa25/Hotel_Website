@@ -3,10 +3,11 @@
 declare(strict_types=1);
 
 return [
+    'reservation_success' => 'تم إتمام الحجز بنجاح. لمزيد من المعلومات الإضافية ، تحقق من بريدك الإلكتروني !',
     'accepted'             => 'يجب قبول :attribute.',
     'accepted_if'          => 'يجب قبول :attribute في حالة :other يساوي :value.',
     'active_url'           => 'حقل :attribute لا يُمثّل رابطًا صحيحًا.',
-    'after'                => 'يجب على حقل :attribute أن يكون تاريخًا لاحقًا للتاريخ :date.',
+    'after'                => 'يجب على حقل تاريخ المغادرة أن يكون تاريخًا لاحقًا لتاريخ الوصول    .',
     'after_or_equal'       => 'حقل :attribute يجب أن يكون تاريخاً لاحقاً أو مطابقاً للتاريخ :date.',
     'alpha'                => 'يجب أن لا يحتوي حقل :attribute سوى على حروف.',
     'alpha_dash'           => 'يجب أن لا يحتوي حقل :attribute سوى على حروف، أرقام ومطّات.',
