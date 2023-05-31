@@ -1,7 +1,9 @@
 {
 
     "Total":"Total",
-    
+    "Choisissez votre sexe":"Choose your gender",
+    "Femme":"Female",
+    "Homme":"Male",
 
     "Détails de réservations":"Reservation's details",
     "Paiement":"Payment",
@@ -9,7 +11,7 @@
     "Formulaire de paiement":"Payment Form",
     "Carte de crédit ou débit":"Credit or Debit Card",
     "Confirmer":"Confirm",
-
+    "Espace client":"فضاء الزبون    ",
     "Nous sommes ravis de vous accueillir prochainement ! Votre réservation a bien été enregistrée et nous sommes impatients de vous offrir une expérience inoubliable.Nous vous recommandons vivement de sauvegarder la facture dès que possible  pour éviter tout problème ultérieur, Bon séjour":"We are delighted to welcome you soon! Your reservation has been successfully registered and we look forward to providing you with an unforgettable experience. We strongly recommend that you save the invoice as soon as possible to avoid any future problems, Have a nice stay    ",
     "Bienvenue Chez Cote d'or":"Welcome in Cote D'or",
     "Facture de Réservation":"Reservation Invoice",

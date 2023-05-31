@@ -5,7 +5,7 @@
     "Bienvenue sur votre espace client":"مرحبًا بك في فضائكم ",
     "Nombre de points":"عدد النقاط",
     "Vous pouvez consulter vos réservations ci-dessous":"يمكنك عرض حجوزاتك أدناه",
-    "Historique des réservations":"تاريخ الحجز",
+    "Historique des réservations":"سجل الحجز",
     "Pour faire une nouvelle réservation, cliquez ci-dessous":"لإجراء حجز جديد ، انقر أدناه",
     "Nouvelle réservation":"حجز جديد",
     "Déconnexion":"خروج",
@@ -21,6 +21,13 @@
     "Prix total":"المجموع",
     "MAD":"درهم",
     "Total":"المجموع",
+    "Sinscrire en tant que Client":"سجل كزبون    ",
+    "Rechercher":"بحث",
+    "Espace client":"",
+    
+    "Choisissez votre sexe":"اختيار جنسك    ",
+    "Femme":"امراة    ",
+    "Homme":"رجل",
     
 
     "Détails de réservations":"تفاصيل الحجز",

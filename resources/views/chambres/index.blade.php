@@ -14,13 +14,11 @@
         </div>
     </div>
     <form action="{{ route('recherche') }}" method="GET">
-        <label for="dateArrivee">Date d'arrivée:</label>
         <input type="date" name="dateArrivee" id="dateArrivee" required>
     
-        <label for="dateDepart">Date de départ:</label>
         <input type="date" name="dateDepart" id="dateDepart" required>
     
-        <button type="submit">Rechercher</button>
+        <button type="submit">{{__('Rechercher')}}</button>
     </form>
     
 @foreach ($chambres as $chambre)

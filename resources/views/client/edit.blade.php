@@ -62,9 +62,9 @@
 
                                 <div class="col-md-6">
                                     <select id="sexe" class="form-control @error('sexe') is-invalid @enderror" name="sexe" required>
-                                        <option value="">Choisissez votre sexe</option>
-                                        <option value="Femme" {{ $user->sexe == 'Femme' ? 'selected' : '' }}>Femme</option>
-                                        <option value="Homme" {{ $user->sexe == 'Homme' ? 'selected' : '' }}>Homme</option>
+                                        <option value="">{{__('Choisissez votre sexe')}}</option>
+                                        <option value="Femme" {{ $user->sexe == 'Femme' ? 'selected' : '' }}>{{__('Femme')}}</option>
+                                        <option value="Homme" {{ $user->sexe == 'Homme' ? 'selected' : '' }}>{{__('Homme')}}</option>
                                     </select>
 
                                     @error('sexe')

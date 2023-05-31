@@ -27,10 +27,18 @@
                 <li><a href="{{ route('services.index') }}" class="a1">{{__('Nos services')}}</a></li>
                 <li><a href="{{route('contact.contact')}}" class="a1">{{__("Contact")}}</a></li>
                 <li><a href="{{ route('hotel.index')}}" class="a1">{{__('À propos de nous')}}</a></li>
-                {{-- <li><a href="{{ route('admin.index')}}" class="a1">{{__('Admin')}}</a></li> --}}
-            
-              <li><a href="{{ route('client.index') }}" class="btn btn-primary">{{__('Se connecter')}}</a>
-              </li>
+                @if(auth()->check() && auth()->user()->isAdmin())
+                <li><a href="{{ route('admin.index') }}" class="a1">{{ __('Admin') }}</a></li>
+            @endif
+            @if(auth()->check() && auth()->user()->isClient())
+                <li><a href="{{ route('client.index') }}" class="a1">{{ __('Espace client') }}</a></li>
+            @endif
+            @guest
+            <li><a href="{{ route('client.index') }}" class="btn btn-primary">{{ __('Se connecter') }}</a></li>
+        @endguest
+        {{-- @auth
+            <li><a href="{{ route('logout') }}" class="btn btn-primary">{{ __('Se déconnecter') }}</a></li>
+        @endauth --}}
                 <li class="reserver"> <a href="{{ route('reservations.create') }}" class="btn btn-primary">{{__('Réserver maintenant')}}</a></li>
                 <li>
                     <x-slot name="content">

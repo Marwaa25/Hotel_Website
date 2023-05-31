@@ -100,8 +100,9 @@
                     <a href="{{route('contact.contact')}}">{{__('Contact')}}</a>
                     <a href="{{ route('hotel.index')}}">{{__('À propos de nous')}}</a>
                     <a href="{{ route('reservations.create') }}" class="btn btn-primary">{{__('Réservation')}}</a>
-                    <a href="{{ route('admin.index')}}">{{__('Administrateur')}}</a>
-                    <a href="#">{{__('Tél')}}: 05 39 66 32 19 / {{__('Fax')}}: 05 39 66 32 32</a>
+                    @if(auth()->check() && auth()->user()->isAdmin())
+                    <a href="{{ route('admin.index') }}" class="a1">{{ __('Admin') }}</a>
+                @endif                    <a href="#">{{__('Tél')}}: 05 39 66 32 19 / {{__('Fax')}}: 05 39 66 32 32</a>
                     <a href="#">{{__('Email')}}:cote.dor@live.fr</a>
                 </div>
               </div>
@@ -115,13 +116,11 @@
               </a> 
         </div>
         <form action="{{ route('recherche') }}" method="GET">
-          <label for="dateArrivee">Date d'arrivée:</label>
           <input type="date" name="dateArrivee" id="dateArrivee" required>
       
-          <label for="dateDepart">Date de départ:</label>
           <input type="date" name="dateDepart" id="dateDepart" required>
       
-          <button type="submit">Rechercher</button>
+          <button type="submit">{{__('Rechercher')}}</button>
       </form>
      
    
