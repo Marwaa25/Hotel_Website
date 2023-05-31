@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ChambreImage;
 
-
 class Chambre extends Model
 {
     use HasFactory;
@@ -26,11 +25,9 @@ class Chambre extends Model
     {
         return $this->hasMany(Reservation::class);
     }
+
     public function images()
     {
-        return $this->hasMany(ChambreImage::class);
+        return $this->hasMany(ChambreImage::class, 'chambre_id');
     }
-    
-
-    
 }

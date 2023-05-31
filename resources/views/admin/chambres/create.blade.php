@@ -55,9 +55,11 @@
         </select>
     </div>
     <div class="mb-4">
-        <label for="image" class="form-label">Image (optionnel)</label>
-        <input type="file" class="form-control" id="image" name="image">
+        <label for="image" class="form-label">Images (optionnel)</label>
+        <input type="file" class="form-control" id="image" name="image[]" multiple>
     </div>
+    
+    
 
     <div class="mt-8">
         <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Add Room</button>

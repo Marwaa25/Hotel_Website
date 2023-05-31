@@ -92,11 +92,12 @@
                         <td class="px-4 py-2">{{ $chambre->etage }}</td>
                         <td class="px-4 py-2">{{ $chambre->prix_par_nuit }}</td>
                         <td class="px-4 py-2">{{ $chambre->disponibilite }}</td>
-                        @if($chambre->image)
-                            <td class="px-4 py-2">
-                                <img class="image-chambre" src="{{ asset('images/' . $chambre->image) }}" alt="{{ $chambre->nom }}">
-                            </td>
-                        @endif
+                        <td class="px-4 py-2">
+                          @foreach ($chambre->images as $image)
+                              <img class="image-chambre" src="{{ asset('images/' . $image->filename) }}" alt="{{ $chambre->type_de_chambre }}">
+                          @endforeach
+                      </td>
+                      
                         <td class="px-4 py-3 flex items-center">           
                             <a href="{{ route('admin.chambres.edit', $chambre->id) }}" class="text-blue-500 hover:underline mr-4">
                                 <i class="fas fa-pencil-alt"></i>

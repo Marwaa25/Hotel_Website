@@ -60,11 +60,12 @@
         </div>
         <div class="form-group">
             <label for="image">{{__('Image')}}</label>
-            @if ($chambre->image)
-                <img src="{{ asset('images/' . $chambre->image) }}" alt="{{ $chambre->nom }}" width="150">
-            @endif
-            <input id="image" type="file" class="form-control-file" name="image">
+            @foreach ($chambre->images as $image)
+                <img src="{{ asset('images/' . $image->filename) }}" alt="{{ $chambre->nom }}" width="150">
+            @endforeach
+            <input id="image" type="file" class="form-control-file" name="image[]" multiple>
         </div>
+        
         
     </div>
     <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Enregistrer</button>
