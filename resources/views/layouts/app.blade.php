@@ -114,14 +114,15 @@
               <i class="fas fa-map-marker-alt"></i> {{__('AV Casablanca lot n°90 mdiq, 93200 M\'diq, Maroc')}}
               </a> 
         </div>
-       <form action="" method="GET">
-            <span class='spane'><i class="fa fa-search"></i></span>
-            <input type="text" name="search" placeholder="Cote d'or M'diq Maroc">
-            <input type="date" name="date_arrivee" class="form-control" id="date_arrivee" required title="Entrez la date d'arrivée">
-            <input type="date" name="date_depart" class="form-control" id="date_depart" required title="Entrez la date de depart">
-            <input type="number" name="guests" placeholder="{{__('2 Adultes')}}">
-            <a href="{{ route('reservations.create')}}">{{__('Réserver')}}</a>
-        </form>
+        <form action="{{ route('recherche') }}" method="GET">
+          <label for="dateArrivee">Date d'arrivée:</label>
+          <input type="date" name="dateArrivee" id="dateArrivee" required>
+      
+          <label for="dateDepart">Date de départ:</label>
+          <input type="date" name="dateDepart" id="dateDepart" required>
+      
+          <button type="submit">Rechercher</button>
+      </form>
    
        <div class="features">
         <div class="feature">
