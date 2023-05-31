@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
         $user->save();
 
         $chambre = Chambre::create([
-            'type_de_chambre' => 'Chambre simple',
+            'type_de_chambre' => 'Chambre Simple',
             'etage' => 2,
             'prix_par_nuit' => 400,
             'disponibilite' => 'Disponible',
@@ -133,7 +133,7 @@ class DatabaseSeeder extends Seeder
             $chambreImage->save();
         }
         $chambreDouble = Chambre::create([
-            'type_de_chambre' => 'Chambre double',
+            'type_de_chambre' => 'Chambre Double',
             'etage' => 2,
             'prix_par_nuit' => 500,
             'disponibilite' => 'Disponible',
@@ -155,7 +155,7 @@ class DatabaseSeeder extends Seeder
             $chambreImage->save();
         }
         $chambreTriple = Chambre::create([
-            'type_de_chambre' => 'Chambre triple',
+            'type_de_chambre' => 'Chambre Triple',
             'etage' => 3,
             'prix_par_nuit' => 660,
             'disponibilite' => 'Disponible',
@@ -176,7 +176,7 @@ class DatabaseSeeder extends Seeder
             $chambreImage->save();
         }
         $chambreQuadruple = Chambre::create([
-            'type_de_chambre' => 'Chambre quadruple',
+            'type_de_chambre' => 'Chambre Quadruple',
             'etage' => 2,
             'prix_par_nuit' => 774,
             'disponibilite' => 'Disponible',
