@@ -34,7 +34,7 @@
                 <li><a href="{{ route('client.index') }}" class="a1">{{ __('Espace client') }}</a></li>
             @endif
             @guest
-            <li><a href="{{ route('client.index') }}" class="btn btn-primary">{{ __('Se connecter') }}</a></li>
+            <li><a href="{{ route('client.index') }}" class="#">{{ __('Se connecter') }}</a></li>
         @endguest
         {{-- @auth
             <li><a href="{{ route('logout') }}" class="btn btn-primary">{{ __('Se déconnecter') }}</a></li>

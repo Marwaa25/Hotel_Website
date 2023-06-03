@@ -342,3 +342,60 @@ margin-top:-30px;
 .chambre p {
   margin: 10px 0;
 }
+
+.recher #dateArrivee{
+  margin-left: 30px;
+}
+.recher #dateDepart{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.recher{
+  border:solid 1px gray;
+  padding:10px;
+  margin-bottom: 100px;
+}
+.recher .bt{
+  margin-right:30px;
+}
+
+form {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+  
+  
+  
+  form input[type="text"],
+  form input[type="date"],
+  form input[type="number"] {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  form button[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+  background-color: black;
+  color:white;
+  }

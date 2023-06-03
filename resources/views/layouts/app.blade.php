@@ -115,12 +115,12 @@
               <i class="fas fa-map-marker-alt"></i> {{__('AV Casablanca lot n°90 mdiq, 93200 M\'diq, Maroc')}}
               </a> 
         </div>
-        <form action="{{ route('recherche') }}" method="GET">
+        <form action="{{ route('recherche') }}" method="GET" class="recher">
           <input type="date" name="dateArrivee" id="dateArrivee" required>
       
           <input type="date" name="dateDepart" id="dateDepart" required>
       
-          <button type="submit">{{__('Rechercher')}}</button>
+          <button class="bt" type="submit">{{__('Rechercher')}}</button>
       </form>
      
    
