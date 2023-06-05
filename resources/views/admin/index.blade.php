@@ -80,7 +80,7 @@
                   <th class="px-4 py-3 text-left text-gray-600">Etage</th>
                   <th class="px-4 py-3 text-left text-gray-600">Prix par nuit</th>
                   <th class="px-4 py-3 text-left text-gray-600">Disponibilité</th>
-                  <th class="px-4 py-3 text-left text-gray-600">Images</th>
+                  <th class="px-4 py-3 text-left text-gray-600 text-center">Images</th>
                   <th class="px-4 py-3 text-left text-gray-600">Action</th>
                 </tr>
               </thead>

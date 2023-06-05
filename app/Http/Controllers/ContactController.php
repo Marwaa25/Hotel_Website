@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 
 class ContactController extends Controller
 {
@@ -14,14 +16,8 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        // Récupérer les données du formulaire
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $message = $request->input('message');
-
         // Valider les données du formulaire
-
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'message' => 'required',
@@ -29,14 +25,17 @@ class ContactController extends Controller
 
         // Créer une nouvelle instance du modèle Contact avec les données du formulaire
         $contact = new Contact();
-        $contact->name = $name;
-        $contact->email = $email;
-        $contact->message = $message;
+        $contact->name = $validatedData['name'];
+        $contact->email = $validatedData['email'];
+        $contact->message = $validatedData['message'];
 
         // Enregistrer le nouveau contact dans la base de données
         $contact->save();
 
+        // Envoyer l'e-mail à l'hôtel
+        Mail::to('cotedorhotel@gmail.com')->send(new ContactFormMail($validatedData));
+
         // Rediriger l'utilisateur vers une page de confirmation avec un message de succès
-        return redirect('/contact')->with('success', 'Votre message a été envoyé avec succès.');
+        return redirect('/contact')->with('success', trans('validation.contact_success'));
     }
 }

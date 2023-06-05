@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 return [
     'reservation_success' => 'The reservation was successfully completed. For more additional information, check your email !',
+    'contact_success' => 'Your message has been sent successfully !',
     'accepted'             => 'The :attribute must be accepted.',
     'accepted_if'          => 'The :attribute must be accepted when :other is :value.',
     'active_url'           => 'The :attribute is not a valid URL.',
